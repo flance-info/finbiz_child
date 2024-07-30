@@ -105,7 +105,7 @@ $general_settings = CCBSettingsData::get_calc_global_settings();
 							</select>
 						</div>
 					</div>
-					<div class="calc-item ccb-field ccb-field-quantity" :class="{required: getRequiredMessage('staffname_field'), 'calc-disabled': ['finish', 'show_summary'].includes(getStep)}">
+					<div v-if="sendFields[4].value == 'staff'" class="calc-item ccb-field ccb-field-quantity" :class="{required: getRequiredMessage('staffname_field'), 'calc-disabled': ['finish', 'show_summary'].includes(getStep)}">
 						<span :class="{active: getRequiredMessage('staffname_field')}" class="ccb-error-tip front default" v-text="getRequiredMessage('staffname_field')"></span>
 						<div class="calc-item__title">
 							<span><?php esc_html_e( 'Staff Name', 'cost-calculator-builder-pro' ); ?></span>
