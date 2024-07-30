@@ -37785,7 +37785,7 @@
 						summary_display: {enable: !1, form_title: "You will get a quote and invoice after submitting the form", submit_btn_text: "Get a quote", action_after_submit: "send_to_email"}
 					},
 					emailOptions: [{adminEmailAddress: "", emailDescription: ""}],
-					sendFormFields: [{name: "name", required: !0, value: ""}, {name: "email", required: !0, value: ""}, {name: "phone", required: !0, value: ""}, {name: "message", required: !1, value: ""}, {name: "staff", required: !1, value: ""}, {name: "company_name", required: !1, value: ""}, {name: "org_number", required: !1, value: ""}, {name: "last_name", required: !1, value: ""}],
+					sendFormFields: [{name: "name", required: !0, value: ""}, {name: "email", required: !0, value: ""}, {name: "phone", required: !0, value: ""}, {name: "message", required: !1, value: ""}, {name: "staff", required: !1, value: ""}, {name: "companyname", required: !1, value: ""}, {name: "orgnumber", required: !1, value: ""}, {name: "lastname", required: !1, value: ""}],
 					sendFormRequires: [{required: !1}, {required: !1}, {required: !1}, {required: !1}, {required: !1}, {required: !1}, {required: !1}, {required: !1}],
 					woo_products: {
 						tour_title: "Woo Products",
