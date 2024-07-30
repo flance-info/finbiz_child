@@ -1,4 +1,5 @@
 <?php
+
 use cBuilder\Classes\CCBSettingsData;
 
 $general_settings = CCBSettingsData::get_calc_global_settings();
@@ -17,7 +18,8 @@ $general_settings = CCBSettingsData::get_calc_global_settings();
 		</button>
 		<?php if ( isset( $general_settings['invoice']['showAfterPayment'] ) && ! $general_settings['invoice']['showAfterPayment'] && $general_settings['invoice']['use_in_all'] ) : ?>
 			<button class="calc-btn-action" @click="getInvoice">
-				<span class="ccb-ellipsis"><?php echo isset( $general_settings['invoice']['buttonText'] ) && ! empty( $general_settings['invoice']['buttonText'] ) ? esc_html( ccb_truncate_string( $general_settings['invoice']['buttonText'] ) ) : esc_html__( 'PDF Download', 'cost-calculator-builder-pro' ); ?></span>
+				<span class="ccb-ellipsis"><?php echo isset( $general_settings['invoice']['buttonText'] ) && ! empty( $general_settings['invoice']['buttonText'] ) ? esc_html( ccb_truncate_string( $general_settings['invoice']['buttonText'] ) )
+							: esc_html__( 'PDF Download', 'cost-calculator-builder-pro' ); ?></span>
 				<div class="invoice-btn-loader"></div>
 				<span class="is-pro">
 					<span class="pro-tooltip">
@@ -28,7 +30,8 @@ $general_settings = CCBSettingsData::get_calc_global_settings();
 			</button>
 			<?php if ( isset( $general_settings['invoice']['emailButton'] ) && $general_settings['invoice']['emailButton'] ) : ?>
 				<button class="calc-btn-action" @click="showSendPdf">
-					<span class="ccb-ellipsis"><?php echo isset( $general_settings['invoice']['btnText'] ) && ! empty( $general_settings['invoice']['btnText'] ) ? esc_html( ccb_truncate_string( $general_settings['invoice']['btnText'] ) ) : esc_html__( 'Send Quote', 'cost-calculator-builder-pro' ); ?></span>
+					<span class="ccb-ellipsis"><?php echo isset( $general_settings['invoice']['btnText'] ) && ! empty( $general_settings['invoice']['btnText'] ) ? esc_html( ccb_truncate_string( $general_settings['invoice']['btnText'] ) )
+								: esc_html__( 'Send Quote', 'cost-calculator-builder-pro' ); ?></span>
 					<span class="is-pro">
 						<span class="pro-tooltip">
 								pro
@@ -58,7 +61,8 @@ $general_settings = CCBSettingsData::get_calc_global_settings();
 				<?php if ( isset( $general_settings['invoice']['showAfterPayment'] ) && ! empty( $general_settings['invoice']['use_in_all'] ) ) : ?>
 					<template v-if="getInvoiceBtnStatuses">
 						<button class="calc-btn-action invoice-button ispro-wrapper" style="width: <?php echo esc_attr( empty( $general_settings['invoice']['emailButton'] ) ? '100%' : '48.5%' ); ?>" @click="getInvoice">
-							<span class="ccb-ellipsis"><?php echo isset( $general_settings['invoice']['buttonText'] ) && ! empty( $general_settings['invoice']['buttonText'] ) ? esc_html( ccb_truncate_string( $general_settings['invoice']['buttonText'] ) ) : esc_html__( 'PDF Download', 'cost-calculator-builder-pro' ); ?></span>
+							<span class="ccb-ellipsis"><?php echo isset( $general_settings['invoice']['buttonText'] ) && ! empty( $general_settings['invoice']['buttonText'] ) ? esc_html( ccb_truncate_string( $general_settings['invoice']['buttonText'] ) )
+										: esc_html__( 'PDF Download', 'cost-calculator-builder-pro' ); ?></span>
 							<div class="invoice-btn-loader"></div>
 							<span class="is-pro">
 								<span class="pro-tooltip">
@@ -70,7 +74,8 @@ $general_settings = CCBSettingsData::get_calc_global_settings();
 
 						<?php if ( ! empty( $general_settings['invoice']['emailButton'] ) ) : ?>
 							<button class="calc-btn-action ispro-wrapper" @click="showSendPdf">
-								<span class="ccb-ellipsis"><?php echo isset( $general_settings['invoice']['btnText'] ) && ! empty( $general_settings['invoice']['btnText'] ) ? esc_html( ccb_truncate_string( $general_settings['invoice']['btnText'] ) ) : esc_html__( 'Send Quote', 'cost-calculator-builder-pro' ); ?></span>
+								<span class="ccb-ellipsis"><?php echo isset( $general_settings['invoice']['btnText'] ) && ! empty( $general_settings['invoice']['btnText'] ) ? esc_html( ccb_truncate_string( $general_settings['invoice']['btnText'] ) )
+											: esc_html__( 'Send Quote', 'cost-calculator-builder-pro' ); ?></span>
 								<span class="is-pro">
 								<span class="pro-tooltip">
 									pro
@@ -119,6 +124,20 @@ $general_settings = CCBSettingsData::get_calc_global_settings();
 						</div>
 					</div>
 
+					<div class="calc-item ccb-field ccb-field-quantity" :class="{required: getRequiredMessage('staff_field'), 'calc-disabled': ['finish', 'show_summary'].includes(getStep)}">
+						<span :class="{active: getRequiredMessage('staff_field')}" class="ccb-error-tip front default" v-text="getRequiredMessage('staff_field')"></span>
+						<div class="calc-item__title">
+							<span><?php esc_html_e( 'Anstald', 'cost-calculator-builder-pro' ); ?></span>
+							<span class="ccb-required-mark"></span>
+						</div>
+						<div class="calc-input-wrapper ccb-field">
+							<select name="select_filed" v-model="sendFields[4].value" :disabled="loader" class="calc-input ccb-field ccb-appearance-field">
+								<option value="text1"> Text</option>
+								<option value="text2"> Text 2</option>
+							</select>
+						</div>
+					</div>
+
 					<div class="calc-item ccb-field ccb-field-quantity" :class="{'calc-disabled': ['finish', 'show_summary'].includes(getStep)}">
 						<div class="calc-item__title">
 							<span :class="{'require-fields': requires[3].required}"><?php esc_html_e( 'Message', 'cost-calculator-builder-pro' ); ?></span>
@@ -163,7 +182,8 @@ $general_settings = CCBSettingsData::get_calc_global_settings();
 					<?php if ( isset( $general_settings['invoice']['showAfterPayment'] ) && ! empty( $general_settings['invoice']['use_in_all'] ) ) : ?>
 						<template v-if="getInvoiceBtnStatuses">
 							<button class="calc-btn-action invoice-button ispro-wrapper" @click="getInvoice">
-								<span class="ccb-ellipsis"><?php echo isset( $general_settings['invoice']['buttonText'] ) && ! empty( $general_settings['invoice']['buttonText'] ) ? esc_html( ccb_truncate_string( $general_settings['invoice']['buttonText'] ) ) : esc_html__( 'PDF Download', 'cost-calculator-builder-pro' ); ?></span>
+								<span class="ccb-ellipsis"><?php echo isset( $general_settings['invoice']['buttonText'] ) && ! empty( $general_settings['invoice']['buttonText'] ) ? esc_html( ccb_truncate_string( $general_settings['invoice']['buttonText'] ) )
+											: esc_html__( 'PDF Download', 'cost-calculator-builder-pro' ); ?></span>
 								<div class="invoice-btn-loader"></div>
 								<span class="is-pro">
 									<span class="pro-tooltip">
@@ -175,7 +195,8 @@ $general_settings = CCBSettingsData::get_calc_global_settings();
 
 							<?php if ( ! empty( $general_settings['invoice']['emailButton'] ) ) : ?>
 								<button class="calc-btn-action ispro-wrapper" @click="showSendPdf">
-									<span class="ccb-ellipsis"><?php echo isset( $general_settings['invoice']['btnText'] ) && ! empty( $general_settings['invoice']['btnText'] ) ? esc_html( ccb_truncate_string( $general_settings['invoice']['btnText'] ) ) : esc_html__( 'Send Quote', 'cost-calculator-builder-pro' ); ?></span>
+									<span class="ccb-ellipsis"><?php echo isset( $general_settings['invoice']['btnText'] ) && ! empty( $general_settings['invoice']['btnText'] ) ? esc_html( ccb_truncate_string( $general_settings['invoice']['btnText'] ) )
+												: esc_html__( 'Send Quote', 'cost-calculator-builder-pro' ); ?></span>
 									<span class="is-pro">
 										<span class="pro-tooltip">
 											pro
