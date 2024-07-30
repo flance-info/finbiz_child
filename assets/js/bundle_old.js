@@ -217,7 +217,7 @@
 
 				function f(t, e, n, r) {
 					var a = e && e.prototype instanceof b ? e : b, o = Object.create(a.prototype), s = new I(r || []);
-					return i(o, "_invoke", {value: S(t, n, s)}), o
+					return i(o, "_invoke", {value: N(t, n, s)}), o
 				}
 
 				function h(t, e, n) {
@@ -288,7 +288,7 @@
 					})
 				}
 
-				function S(e, n, r) {
+				function N(e, n, r) {
 					var i = p;
 					return function (a, o) {
 						if (i === g) throw Error("Generator is already running");
@@ -299,7 +299,7 @@
 						for (r.method = a, r.arg = o; ;) {
 							var s = r.delegate;
 							if (s) {
-								var c = N(s, r);
+								var c = S(s, r);
 								if (c) {
 									if (c === v) continue;
 									return c
@@ -320,9 +320,9 @@
 					}
 				}
 
-				function N(e, n) {
+				function S(e, n) {
 					var r = n.method, i = e.iterator[r];
-					if (i === t) return n.delegate = null, "throw" === r && e.iterator.return && (n.method = "return", n.arg = t, N(e, n), "throw" === n.method) || "return" !== r && (n.method = "throw", n.arg = new TypeError("The iterator does not provide a '" + r + "' method")), v;
+					if (i === t) return n.delegate = null, "throw" === r && e.iterator.return && (n.method = "return", n.arg = t, S(e, n), "throw" === n.method) || "return" !== r && (n.method = "throw", n.arg = new TypeError("The iterator does not provide a '" + r + "' method")), v;
 					var a = h(i, e.iterator, n.arg);
 					if ("throw" === a.type) return n.method = "throw", n.arg = a.arg, n.delegate = null, v;
 					var o = a.arg;
@@ -509,9 +509,9 @@
 					"014b": function (t, e, n) {
 						"use strict";
 						var r = n("e53d"), i = n("07e3"), a = n("8e60"), o = n("63b6"), c = n("9138"), l = n("ebfd").KEY, d = n("294c"), u = n("dbdb"), f = n("45f2"), h = n("62a0"), p = n("5168"), m = n("ccb9"), g = n("6718"),
-							y = n("47ee"), v = n("9003"), b = n("e4ae"), _ = n("f772"), M = n("241e"), w = n("36c3"), x = n("1bc3"), k = n("aebd"), D = n("a159"), L = n("0395"), j = n("bf0b"), S = n("9aa9"), N = n("d9f6"), T = n("c3a1"),
-							O = j.f, I = N.f, A = L.f, z = r.Symbol, Y = r.JSON, $ = Y && Y.stringify, E = "prototype", C = p("_hidden"), P = p("toPrimitive"), F = {}.propertyIsEnumerable, U = u("symbol-registry"), H = u("symbols"),
-							R = u("op-symbols"), V = Object[E], Q = "function" == typeof z && !!S.f, W = r.QObject, q = !W || !W[E] || !W[E].findChild, B = a && d((function () {
+							y = n("47ee"), v = n("9003"), b = n("e4ae"), _ = n("f772"), M = n("241e"), w = n("36c3"), x = n("1bc3"), k = n("aebd"), D = n("a159"), L = n("0395"), j = n("bf0b"), N = n("9aa9"), S = n("d9f6"), T = n("c3a1"),
+							O = j.f, I = S.f, A = L.f, z = r.Symbol, Y = r.JSON, $ = Y && Y.stringify, E = "prototype", C = p("_hidden"), P = p("toPrimitive"), F = {}.propertyIsEnumerable, U = u("symbol-registry"), H = u("symbols"),
+							R = u("op-symbols"), V = Object[E], Q = "function" == typeof z && !!N.f, W = r.QObject, q = !W || !W[E] || !W[E].findChild, B = a && d((function () {
 								return 7 != D(I({}, "a", {
 									get: function () {
 										return I(this, "a", {value: 7}).a
@@ -558,7 +558,7 @@
 							}), G(t)
 						}, c(z[E], "toString", (function () {
 							return this._k
-						})), j.f = tt, N.f = K, n("6abf").f = L.f = et, n("355d").f = X, S.f = nt, a && !n("b8e3") && c(V, "propertyIsEnumerable", X, !0), m.f = function (t) {
+						})), j.f = tt, S.f = K, n("6abf").f = L.f = et, n("355d").f = X, N.f = nt, a && !n("b8e3") && c(V, "propertyIsEnumerable", X, !0), m.f = function (t) {
 							return G(p(t))
 						}), o(o.G + o.W + o.F * !Q, {Symbol: z});
 						for (var rt = "hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables".split(","), it = 0; rt.length > it;) p(rt[it++]);
@@ -580,11 +580,11 @@
 							}, defineProperty: K, defineProperties: Z, getOwnPropertyDescriptor: tt, getOwnPropertyNames: et, getOwnPropertySymbols: nt
 						});
 						var st = d((function () {
-							S.f(1)
+							N.f(1)
 						}));
 						o(o.S + o.F * st, "Object", {
 							getOwnPropertySymbols: function (t) {
-								return S.f(M(t))
+								return N.f(M(t))
 							}
 						}), Y && o(o.S + o.F * (!Q || d((function () {
 							var t = z();
@@ -617,10 +617,10 @@
 								return function () {
 									return new n(this, t)
 								}
-							}, k = e + " Iterator", D = y == p, L = !1, j = t.prototype, S = j[u] || j["@@iterator"] || y && j[y], N = S || x(y), T = y ? D ? x("entries") : N : void 0, O = "Array" == e && j.entries || S;
-							if (O && (w = d(O.call(new t))) !== Object.prototype && w.next && (l(w, k, !0), r || "function" == typeof w[u] || o(w, u, m)), D && S && S.name !== p && (L = !0, N = function () {
-								return S.call(this)
-							}), r && !b || !f && !L && j[u] || o(j, u, N), s[e] = N, s[k] = m, y) if (_ = {values: D ? N : x(p), keys: v ? N : x(h), entries: T}, b) for (M in _) M in j || a(j, M, _[M]); else i(i.P + i.F * (f || L), e, _);
+							}, k = e + " Iterator", D = y == p, L = !1, j = t.prototype, N = j[u] || j["@@iterator"] || y && j[y], S = N || x(y), T = y ? D ? x("entries") : S : void 0, O = "Array" == e && j.entries || N;
+							if (O && (w = d(O.call(new t))) !== Object.prototype && w.next && (l(w, k, !0), r || "function" == typeof w[u] || o(w, u, m)), D && N && N.name !== p && (L = !0, S = function () {
+								return N.call(this)
+							}), r && !b || !f && !L && j[u] || o(j, u, S), s[e] = S, s[k] = m, y) if (_ = {values: D ? S : x(p), keys: v ? S : x(h), entries: T}, b) for (M in _) M in j || a(j, M, _[M]); else i(i.P + i.F * (f || L), e, _);
 							return _
 						}
 					}, "0395": function (t, e, n) {
@@ -916,13 +916,13 @@
 					}, "24c5": function (t, e, n) {
 						"use strict";
 						var r, i, a, o, s = n("b8e3"), c = n("e53d"), l = n("d864"), d = n("40c3"), u = n("63b6"), f = n("f772"), h = n("79aa"), p = n("1173"), m = n("a22a"), g = n("f201"), y = n("4178").set, v = n("aba2")(), b = n("656e"),
-							_ = n("4439"), M = n("bc13"), w = n("cd78"), x = "Promise", k = c.TypeError, D = c.process, L = D && D.versions, j = L && L.v8 || "", S = c[x], N = "process" == d(D), T = function () {
+							_ = n("4439"), M = n("bc13"), w = n("cd78"), x = "Promise", k = c.TypeError, D = c.process, L = D && D.versions, j = L && L.v8 || "", N = c[x], S = "process" == d(D), T = function () {
 							}, O = i = b.f, I = !!function () {
 								try {
-									var t = S.resolve(1), e = (t.constructor = {})[n("5168")("species")] = function (t) {
+									var t = N.resolve(1), e = (t.constructor = {})[n("5168")("species")] = function (t) {
 										t(T, T)
 									};
-									return (N || "function" == typeof PromiseRejectionEvent) && t.then(T) instanceof e && 0 !== j.indexOf("6.6") && -1 === M.indexOf("Chrome/66")
+									return (S || "function" == typeof PromiseRejectionEvent) && t.then(T) instanceof e && 0 !== j.indexOf("6.6") && -1 === M.indexOf("Chrome/66")
 								} catch (t) {
 								}
 							}(), A = function (t) {
@@ -948,15 +948,15 @@
 								y.call(c, (function () {
 									var e, n, r, i = t._v, a = $(t);
 									if (a && (e = _((function () {
-										N ? D.emit("unhandledRejection", i, t) : (n = c.onunhandledrejection) ? n({promise: t, reason: i}) : (r = c.console) && r.error && r.error("Unhandled promise rejection", i)
-									})), t._h = N || $(t) ? 2 : 1), t._a = void 0, a && e.e) throw e.v
+										S ? D.emit("unhandledRejection", i, t) : (n = c.onunhandledrejection) ? n({promise: t, reason: i}) : (r = c.console) && r.error && r.error("Unhandled promise rejection", i)
+									})), t._h = S || $(t) ? 2 : 1), t._a = void 0, a && e.e) throw e.v
 								}))
 							}, $ = function (t) {
 								return 1 !== t._h && 0 === (t._a || t._c).length
 							}, E = function (t) {
 								y.call(c, (function () {
 									var e;
-									N ? D.emit("rejectionHandled", t) : (e = c.onrejectionhandled) && e({promise: t, reason: t._v})
+									S ? D.emit("rejectionHandled", t) : (e = c.onrejectionhandled) && e({promise: t, reason: t._v})
 								}))
 							}, C = function (t) {
 								var e = this;
@@ -980,8 +980,8 @@
 									}
 								}
 							};
-						I || (S = function (t) {
-							p(this, S, x, "_h"), h(t), r.call(this);
+						I || (N = function (t) {
+							p(this, N, x, "_h"), h(t), r.call(this);
 							try {
 								t(l(P, this, 1), l(C, this, 1))
 							} catch (t) {
@@ -989,10 +989,10 @@
 							}
 						}, (r = function (t) {
 							this._c = [], this._a = void 0, this._s = 0, this._d = !1, this._v = void 0, this._h = 0, this._n = !1
-						}).prototype = n("5c95")(S.prototype, {
+						}).prototype = n("5c95")(N.prototype, {
 							then: function (t, e) {
-								var n = O(g(this, S));
-								return n.ok = "function" != typeof t || t, n.fail = "function" == typeof e && e, n.domain = N ? D.domain : void 0, this._c.push(n), this._a && this._a.push(n), this._s && z(this, !1), n.promise
+								var n = O(g(this, N));
+								return n.ok = "function" != typeof t || t, n.fail = "function" == typeof e && e, n.domain = S ? D.domain : void 0, this._c.push(n), this._a && this._a.push(n), this._s && z(this, !1), n.promise
 							}, catch: function (t) {
 								return this.then(void 0, t)
 							}
@@ -1000,18 +1000,18 @@
 							var t = new r;
 							this.promise = t, this.resolve = l(P, t, 1), this.reject = l(C, t, 1)
 						}, b.f = O = function (t) {
-							return t === S || t === o ? new a(t) : i(t)
-						}), u(u.G + u.W + u.F * !I, {Promise: S}), n("45f2")(S, x), n("4c95")(x), o = n("584a")[x], u(u.S + u.F * !I, x, {
+							return t === N || t === o ? new a(t) : i(t)
+						}), u(u.G + u.W + u.F * !I, {Promise: N}), n("45f2")(N, x), n("4c95")(x), o = n("584a")[x], u(u.S + u.F * !I, x, {
 							reject: function (t) {
 								var e = O(this);
 								return (0, e.reject)(t), e.promise
 							}
 						}), u(u.S + u.F * (s || !I), x, {
 							resolve: function (t) {
-								return w(s && this === o ? S : this, t)
+								return w(s && this === o ? N : this, t)
 							}
 						}), u(u.S + u.F * !(I && n("4ee1")((function (t) {
-							S.all(t).catch(T)
+							N.all(t).catch(T)
 						}))), x, {
 							all: function (t) {
 								var e = this, n = O(e), r = n.resolve, i = n.reject, a = _((function () {
@@ -1185,10 +1185,10 @@
 								return function () {
 									return new n(this, t)
 								}
-							}, k = e + " Iterator", D = y == p, L = !1, j = t.prototype, S = j[u] || j["@@iterator"] || y && j[y], N = S || x(y), T = y ? D ? x("entries") : N : void 0, O = "Array" == e && j.entries || S;
-							if (O && (w = d(O.call(new t))) !== Object.prototype && w.next && (l(w, k, !0), r || "function" == typeof w[u] || o(w, u, m)), D && S && S.name !== p && (L = !0, N = function () {
-								return S.call(this)
-							}), r && !b || !f && !L && j[u] || o(j, u, N), s[e] = N, s[k] = m, y) if (_ = {values: D ? N : x(p), keys: v ? N : x(h), entries: T}, b) for (M in _) M in j || a(j, M, _[M]); else i(i.P + i.F * (f || L), e, _);
+							}, k = e + " Iterator", D = y == p, L = !1, j = t.prototype, N = j[u] || j["@@iterator"] || y && j[y], S = N || x(y), T = y ? D ? x("entries") : S : void 0, O = "Array" == e && j.entries || N;
+							if (O && (w = d(O.call(new t))) !== Object.prototype && w.next && (l(w, k, !0), r || "function" == typeof w[u] || o(w, u, m)), D && N && N.name !== p && (L = !0, S = function () {
+								return N.call(this)
+							}), r && !b || !f && !L && j[u] || o(j, u, S), s[e] = S, s[k] = m, y) if (_ = {values: D ? S : x(p), keys: v ? S : x(h), entries: T}, b) for (M in _) M in j || a(j, M, _[M]); else i(i.P + i.F * (f || L), e, _);
 							return _
 						}
 					}, "32e9": function (t, e, n) {
@@ -1983,7 +1983,7 @@
 							}
 
 							function d(t, e, n, r) {
-								var i = e && e.prototype instanceof y ? e : y, a = Object.create(i.prototype), o = new N(r || []);
+								var i = e && e.prototype instanceof y ? e : y, a = Object.create(i.prototype), o = new S(r || []);
 								return a._invoke = function (t, e, n) {
 									var r = f;
 									return function (i, a) {
@@ -2103,12 +2103,12 @@
 								1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 							}
 
-							function S(t) {
+							function N(t) {
 								var e = t.completion || {};
 								e.type = "normal", delete e.arg, t.completion = e
 							}
 
-							function N(t) {
+							function S(t) {
 								this.tryEntries = [{tryLoc: "root"}], t.forEach(j, this), this.reset(!0)
 							}
 
@@ -2161,9 +2161,9 @@
 									}
 									return n.done = !0, n
 								}
-							}, t.values = T, N.prototype = {
-								constructor: N, reset: function (t) {
-									if (this.prev = 0, this.next = 0, this.sent = this._sent = e, this.done = !1, this.delegate = null, this.method = "next", this.arg = e, this.tryEntries.forEach(S), !t) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = e)
+							}, t.values = T, S.prototype = {
+								constructor: S, reset: function (t) {
+									if (this.prev = 0, this.next = 0, this.sent = this._sent = e, this.done = !1, this.delegate = null, this.method = "next", this.arg = e, this.tryEntries.forEach(N), !t) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = e)
 								}, stop: function () {
 									this.done = !0;
 									var t = this.tryEntries[0].completion;
@@ -2210,7 +2210,7 @@
 								}, finish: function (t) {
 									for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 										var n = this.tryEntries[e];
-										if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
+										if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
 									}
 								}, catch: function (t) {
 									for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -2219,7 +2219,7 @@
 											var r = n.completion;
 											if ("throw" === r.type) {
 												var i = r.arg;
-												S(n)
+												N(n)
 											}
 											return i
 										}
@@ -2862,14 +2862,14 @@
 												for (var D = 0, L = g.length; D < L; D++) i = g[D], this.unuseView(i)
 											}
 											this.$_continuous = k
-										} else if (k) for (var j = 0, S = g.length; j < S; j++) (i = g[j]).nr.used && (t && (i.nr.index = u.findIndex((function (t) {
+										} else if (k) for (var j = 0, N = g.length; j < N; j++) (i = g[j]).nr.used && (t && (i.nr.index = u.findIndex((function (t) {
 											return d ? t[d] === i.item[d] : t === i.item
 										}))), (-1 === i.nr.index || i.nr.index < e || i.nr.index >= n) && this.unuseView(i));
-										for (var N, T, O, I, A = k ? null : new Map, z = e; z < n; z++) {
-											N = u[z];
-											var Y = d ? N[d] : N;
+										for (var S, T, O, I, A = k ? null : new Map, z = e; z < n; z++) {
+											S = u[z];
+											var Y = d ? S[d] : S;
 											if (null == Y) throw new Error("Key is ".concat(Y, " on item (keyField is '").concat(d, "')"));
-											i = p.get(Y), o || h[z].size ? (i ? (i.nr.used = !0, i.item = N) : (T = N[l], O = m.get(T), k ? O && O.length ? ((i = O.pop()).item = N, i.nr.used = !0, i.nr.index = z, i.nr.key = Y, i.nr.type = T) : i = this.addView(g, z, N, Y, T) : (I = A.get(T) || 0, (!O || I >= O.length) && (i = this.addView(g, z, N, Y, T), this.unuseView(i, !0), O = m.get(T)), (i = O[I]).item = N, i.nr.used = !0, i.nr.index = z, i.nr.key = Y, i.nr.type = T, A.set(T, I + 1), I++), p.set(Y, i)), i.position = null === o ? h[z - 1].accumulator : z * o) : i && this.unuseView(i)
+											i = p.get(Y), o || h[z].size ? (i ? (i.nr.used = !0, i.item = S) : (T = S[l], O = m.get(T), k ? O && O.length ? ((i = O.pop()).item = S, i.nr.used = !0, i.nr.index = z, i.nr.key = Y, i.nr.type = T) : i = this.addView(g, z, S, Y, T) : (I = A.get(T) || 0, (!O || I >= O.length) && (i = this.addView(g, z, S, Y, T), this.unuseView(i, !0), O = m.get(T)), (i = O[I]).item = S, i.nr.used = !0, i.nr.index = z, i.nr.key = Y, i.nr.type = T, A.set(T, I + 1), I++), p.set(Y, i)), i.position = null === o ? h[z - 1].accumulator : z * o) : i && this.unuseView(i)
 										}
 										return this.$_startIndex = e, this.$_endIndex = n, this.emitUpdate && this.$emit("update", e, n), clearTimeout(this.$_sortTimer), this.$_sortTimer = setTimeout(this.sortViews, 300), {continuous: k}
 									}, getListenerTarget: function () {
@@ -3051,7 +3051,7 @@
 								}, "RecycleScroller", t.$attrs, !1), t.listeners), [t._v(" "), n("template", {slot: "before"}, [t._t("before")], 2), t._v(" "), n("template", {slot: "after"}, [t._t("after")], 2)], 2)
 							};
 							L._withStripped = !0;
-							var j = _({render: L, staticRenderFns: []}, undefined, D, undefined, !1, undefined, !1, void 0, void 0, void 0), S = _({}, undefined, {
+							var j = _({render: L, staticRenderFns: []}, undefined, D, undefined, !1, undefined, !1, void 0, void 0, void 0), N = _({}, undefined, {
 								name: "DynamicScrollerItem",
 								inject: ["vscrollData", "vscrollParent", "vscrollResizeObserver"],
 								props: {
@@ -3135,16 +3135,16 @@
 									return t(this.tag, this.$slots.default)
 								}
 							}, undefined, undefined, undefined, !1, void 0, void 0, void 0);
-							var N = {
+							var S = {
 								version: "1.0.10", install: function (t, e) {
 									var n = Object.assign({}, {installComponents: !0, componentsPrefix: ""}, e);
 									for (var r in n) void 0 !== n[r] && (s[r] = n[r]);
 									n.installComponents && function (t, e) {
-										t.component("".concat(e, "recycle-scroller"), x), t.component("".concat(e, "RecycleScroller"), x), t.component("".concat(e, "dynamic-scroller"), j), t.component("".concat(e, "DynamicScroller"), j), t.component("".concat(e, "dynamic-scroller-item"), S), t.component("".concat(e, "DynamicScrollerItem"), S)
+										t.component("".concat(e, "recycle-scroller"), x), t.component("".concat(e, "RecycleScroller"), x), t.component("".concat(e, "dynamic-scroller"), j), t.component("".concat(e, "DynamicScroller"), j), t.component("".concat(e, "dynamic-scroller-item"), N), t.component("".concat(e, "DynamicScrollerItem"), N)
 									}(t, n.componentsPrefix)
 								}
 							}, T = null;
-							"undefined" != typeof window ? T = window.Vue : void 0 !== t && (T = t.Vue), T && T.use(N)
+							"undefined" != typeof window ? T = window.Vue : void 0 !== t && (T = t.Vue), T && T.use(S)
 						}).call(this, n("c8ba"))
 					}, e53d: function (t, e) {
 						var n = t.exports = "undefined" != typeof window && window.Math == Math ? window : "undefined" != typeof self && self.Math == Math ? self : Function("return this")();
@@ -3852,10 +3852,10 @@
 								key: "selectNumberingPlan", value: function (t, e) {
 									if (t && L.test(t) && (e = t, t = null), t && "001" !== t) {
 										if (!this.hasCountry(t)) throw new Error("Unknown country: ".concat(t));
-										this.numberingPlan = new S(this.getCountryMetadata(t), this)
+										this.numberingPlan = new N(this.getCountryMetadata(t), this)
 									} else if (e) {
 										if (!this.hasCallingCode(e)) throw new Error("Unknown calling code: ".concat(e));
-										this.numberingPlan = new S(this.getNumberingPlanMetadata(e), this)
+										this.numberingPlan = new N(this.getNumberingPlanMetadata(e), this)
 									} else this.numberingPlan = void 0;
 									return this
 								}
@@ -3945,7 +3945,7 @@
 									return void 0 !== this.numberingPlan
 								}
 							}]), t
-						}(), S = function () {
+						}(), N = function () {
 							function t(e, n) {
 								w(this, t), this.globalMetadataObject = n, this.metadata = e, $.call(this, n.metadata)
 							}
@@ -3982,7 +3982,7 @@
 								key: "formats", value: function () {
 									var t = this, e = this._getFormats(this.metadata) || this._getFormats(this.getDefaultCountryMetadataForRegion()) || [];
 									return e.map((function (e) {
-										return new N(e, t)
+										return new S(e, t)
 									}))
 								}
 							}, {
@@ -4038,7 +4038,7 @@
 									return this.v1 || this.v2 ? D : this.metadata[13] || D
 								}
 							}]), t
-						}(), N = function () {
+						}(), S = function () {
 							function t(e, n) {
 								w(this, t), this._format = e, this.metadata = n
 							}
@@ -4495,7 +4495,7 @@
 							}
 						}
 
-						var St = function () {
+						var Nt = function () {
 							function t(e, n, r) {
 								if (function (t, e) {
 									if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function")
@@ -4503,7 +4503,7 @@
 								if (!n) throw new TypeError("`nationalNumber` not passed");
 								if (!r) throw new TypeError("`metadata` not passed");
 								var i = new j(r);
-								Nt(e) && (this.country = e, i.country(e), e = i.countryCallingCode()), this.countryCallingCode = e, this.nationalNumber = n, this.number = "+" + this.countryCallingCode + this.nationalNumber, this.metadata = r
+								St(e) && (this.country = e, i.country(e), e = i.countryCallingCode()), this.countryCallingCode = e, this.nationalNumber = n, this.number = "+" + this.countryCallingCode + this.nationalNumber, this.metadata = r
 							}
 
 							var e, n, r;
@@ -4566,12 +4566,12 @@
 									return this.format("RFC3966", t)
 								}
 							}]) && jt(e.prototype, n), r && jt(e, r), Object.defineProperty(e, "prototype", {writable: !1}), t
-						}(), Nt = function (t) {
+						}(), St = function (t) {
 							return /^[A-Z]{2}$/.test(t)
 						};
 
 						function Tt(t, e, n) {
-							if (e[t]) return new St(t, e[t], n)
+							if (e[t]) return new Nt(t, e[t], n)
 						}
 
 						function Ot(t) {
@@ -4995,7 +4995,7 @@
 								return {}
 							}
 							if (e.v2) {
-								var f = new St(d, l, n.metadata);
+								var f = new Nt(d, l, n.metadata);
 								return c && (f.country = c), u && (f.carrierCode = u), a && (f.ext = a), f
 							}
 							var h = !!(e.extended ? n.hasSelectedNumberingPlan() : c) && H(l, n.nationalNumberPattern());
@@ -5166,14 +5166,14 @@
 							return b(Le, arguments)
 						}
 
-						function Se(t, e) {
+						function Ne(t, e) {
 							for (var n = 0; n < e.length; n++) {
 								var r = e[n];
 								r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(t, r.key, r)
 							}
 						}
 
-						var Ne = function () {
+						var Se = function () {
 							function t(e) {
 								var n = e.onCountryChange, r = e.onCallingCodeChange;
 								!function (t, e) {
@@ -5229,7 +5229,7 @@
 								key: "getDigitsWithoutInternationalPrefix", value: function () {
 									return this.international && this.IDDPrefix ? this.digits.slice(this.IDDPrefix.length) : this.digits
 								}
-							}]) && Se(e.prototype, n), r && Se(e, r), Object.defineProperty(e, "prototype", {writable: !1}), t
+							}]) && Ne(e.prototype, n), r && Ne(e, r), Object.defineProperty(e, "prototype", {writable: !1}), t
 						}();
 
 						function Te(t, e) {
@@ -5921,7 +5921,7 @@
 							}, {
 								key: "reset", value: function () {
 									var t = this;
-									return this.state = new Ne({
+									return this.state = new Se({
 										onCountryChange: function (e) {
 											t.country = e
 										}, onCallingCodeChange: function (e, n) {
@@ -6006,7 +6006,7 @@
 								key: "getNumber", value: function () {
 									var t = this.state, e = t.nationalSignificantNumber, n = t.carrierCode, r = t.callingCode, i = this._getCountry();
 									if (e && (i || r)) {
-										var a = new St(i || r, e, this.metadata.metadata);
+										var a = new Nt(i || r, e, this.metadata.metadata);
 										return n && (a.carrierCode = n), a
 									}
 								}
@@ -6228,13 +6228,13 @@
 							return r
 						}
 
-						var Ln = n("774e"), jn = n.n(Ln), Sn = n("c8bb"), Nn = n.n(Sn), Tn = n("67bb"), On = n.n(Tn);
+						var Ln = n("774e"), jn = n.n(Ln), Nn = n("c8bb"), Sn = n.n(Nn), Tn = n("67bb"), On = n.n(Tn);
 
 						function In(t) {
 							return function (t) {
 								if (kn()(t)) return Dn(t)
 							}(t) || function (t) {
-								if (void 0 !== On.a && Nn()(Object(t))) return jn()(t)
+								if (void 0 !== On.a && Sn()(Object(t))) return jn()(t)
 							}(t) || function (t, e) {
 								if (t) {
 									if ("string" == typeof t) return Dn(t, e);
@@ -6858,13 +6858,13 @@
 					return r
 				}
 
-				function S(t, e) {
+				function N(t, e) {
 					for (var n in e) t[n] = e[n];
 					return t
 				}
 
-				function N(t) {
-					for (var e = {}, n = 0; n < t.length; n++) t[n] && S(e, t[n]);
+				function S(t) {
+					for (var e = {}, n = 0; n < t.length; n++) t[n] && N(e, t[n]);
 					return e
 				}
 
@@ -7076,7 +7076,7 @@
 					return t._isVue || r && r.vmCount ? n : r ? (Lt(r.value, e, n), r.dep.notify(), n) : (t[e] = n, n)
 				}
 
-				function St(t, e) {
+				function Nt(t, e) {
 					if (Array.isArray(t) && d(e)) t.splice(e, 1); else {
 						var n = t.__ob__;
 						t._isVue || n && n.vmCount || b(t, e) && (delete t[e], n && n.dep.notify())
@@ -7088,7 +7088,7 @@
 				}, kt.prototype.observeArray = function (t) {
 					for (var e = 0, n = t.length; e < n; e++) Dt(t[e])
 				};
-				var Nt = P.optionMergeStrategies;
+				var St = P.optionMergeStrategies;
 
 				function Tt(t, e) {
 					if (!e) return t;
@@ -7115,29 +7115,29 @@
 
 				function At(t, e, n, r) {
 					var i = Object.create(t || null);
-					return e ? S(i, e) : i
+					return e ? N(i, e) : i
 				}
 
-				Nt.data = function (t, e, n) {
+				St.data = function (t, e, n) {
 					return n ? Ot(t, e, n) : e && "function" != typeof e ? t : Ot(t, e)
 				}, C.forEach((function (t) {
-					Nt[t] = It
+					St[t] = It
 				})), E.forEach((function (t) {
-					Nt[t + "s"] = At
-				})), Nt.watch = function (t, e, n, r) {
+					St[t + "s"] = At
+				})), St.watch = function (t, e, n, r) {
 					if (t === tt && (t = void 0), e === tt && (e = void 0), !e) return Object.create(t || null);
 					if (!t) return e;
 					var i = {};
-					for (var a in S(i, t), e) {
+					for (var a in N(i, t), e) {
 						var o = i[a], s = e[a];
 						o && !Array.isArray(o) && (o = [o]), i[a] = o ? o.concat(s) : Array.isArray(s) ? s : [s]
 					}
 					return i
-				}, Nt.props = Nt.methods = Nt.inject = Nt.computed = function (t, e, n, r) {
+				}, St.props = St.methods = St.inject = St.computed = function (t, e, n, r) {
 					if (!t) return e;
 					var i = Object.create(null);
-					return S(i, t), e && S(i, e), i
-				}, Nt.provide = Ot;
+					return N(i, t), e && N(i, e), i
+				}, St.provide = Ot;
 				var zt = function (t, e) {
 					return void 0 === e ? t : e
 				};
@@ -7156,7 +7156,7 @@
 							var n = t.inject = {};
 							if (Array.isArray(e)) for (var r = 0; r < e.length; r++) n[e[r]] = {from: e[r]}; else if (l(e)) for (var i in e) {
 								var a = e[i];
-								n[i] = l(a) ? S({from: i}, a) : {from: a}
+								n[i] = l(a) ? N({from: i}, a) : {from: a}
 							}
 						}
 					}(e), function (t) {
@@ -7171,7 +7171,7 @@
 					for (a in e) b(t, a) || s(a);
 
 					function s(r) {
-						var i = Nt[r] || zt;
+						var i = St[r] || zt;
 						o[r] = i(t[r], e[r], n, r)
 					}
 
@@ -7448,7 +7448,7 @@
 
 				function ye(t, e, n, r) {
 					var i, a = this.$scopedSlots[t];
-					a ? (n = n || {}, r && (n = S(S({}, r), n)), i = a(n) || e) : i = this.$slots[t] || e;
+					a ? (n = n || {}, r && (n = N(N({}, r), n)), i = a(n) || e) : i = this.$slots[t] || e;
 					var o = n && n.slot;
 					return o ? this.$createElement("template", {slot: o}, i) : i
 				}
@@ -7469,7 +7469,7 @@
 				function Me(t, e, n, r, i) {
 					if (n && s(n)) {
 						var a;
-						Array.isArray(n) && (n = N(n));
+						Array.isArray(n) && (n = S(n));
 						var o = function (o) {
 							if ("class" === o || "style" === o || g(o)) a = t; else {
 								var s = t.attrs && t.attrs.type;
@@ -7504,7 +7504,7 @@
 
 				function Le(t, e) {
 					if (e && l(e)) {
-						var n = t.on = t.on ? S({}, t.on) : {};
+						var n = t.on = t.on ? N({}, t.on) : {};
 						for (var r in e) {
 							var i = n[r], a = e[r];
 							n[r] = i ? [].concat(i, a) : a
@@ -7522,7 +7522,7 @@
 					return r && (e.$key = r), e
 				}
 
-				function Se(t, e) {
+				function Ne(t, e) {
 					for (var n = 0; n < e.length; n += 2) {
 						var r = e[n];
 						"string" == typeof r && r && (t[e[n]] = e[n + 1])
@@ -7530,12 +7530,12 @@
 					return t
 				}
 
-				function Ne(t, e) {
+				function Se(t, e) {
 					return "string" == typeof t ? e + t : t
 				}
 
 				function Te(t) {
-					t._o = xe, t._n = h, t._s = f, t._l = ge, t._t = ye, t._q = A, t._i = z, t._m = we, t._f = ve, t._k = _e, t._b = Me, t._v = yt, t._e = gt, t._u = je, t._g = Le, t._d = Se, t._p = Ne
+					t._o = xe, t._n = h, t._s = f, t._l = ge, t._t = ye, t._q = A, t._i = z, t._m = we, t._f = ve, t._k = _e, t._b = Me, t._v = yt, t._e = gt, t._u = je, t._g = Le, t._d = Ne, t._p = Se
 				}
 
 				function Oe(e, n, r, a, o) {
@@ -7919,7 +7919,7 @@
 								for (var i in n) n[i] !== r[i] && (e || (e = {}), e[i] = n[i]);
 								return e
 							}(t);
-							r && S(t.extendOptions, r), (e = t.options = Yt(n, t.extendOptions)).name && (e.components[e.name] = t)
+							r && N(t.extendOptions, r), (e = t.options = Yt(n, t.extendOptions)).name && (e.components[e.name] = t)
 						}
 					}
 					return e
@@ -8046,7 +8046,7 @@
 						get: function () {
 							return this._props
 						}
-					}), t.prototype.$set = jt, t.prototype.$delete = St, t.prototype.$watch = function (t, e, n) {
+					}), t.prototype.$set = jt, t.prototype.$delete = Nt, t.prototype.$watch = function (t, e, n) {
 						if (l(e)) return _n(this, t, e, n);
 						(n = n || {}).user = !0;
 						var r = new hn(this, t, e, n);
@@ -8128,9 +8128,9 @@
 						return Array.isArray(t) && 1 === t.length && (t = t[0]), t instanceof pt || (t = gt()), t.parent = i, t
 					}
 				}(xn);
-				var Sn = [String, RegExp, Array], Nn = {
+				var Nn = [String, RegExp, Array], Sn = {
 					KeepAlive: {
-						name: "keep-alive", abstract: !0, props: {include: Sn, exclude: Sn, max: [String, Number]}, created: function () {
+						name: "keep-alive", abstract: !0, props: {include: Nn, exclude: Nn, max: [String, Number]}, created: function () {
 							this.cache = Object.create(null), this.keys = []
 						}, destroyed: function () {
 							for (var t in this.cache) jn(this.cache, t, this.keys)
@@ -8163,11 +8163,11 @@
 							return P
 						}
 					};
-					Object.defineProperty(t, "config", e), t.util = {warn: ct, extend: S, mergeOptions: Yt, defineReactive: Lt}, t.set = jt, t.delete = St, t.nextTick = te, t.observable = function (t) {
+					Object.defineProperty(t, "config", e), t.util = {warn: ct, extend: N, mergeOptions: Yt, defineReactive: Lt}, t.set = jt, t.delete = Nt, t.nextTick = te, t.observable = function (t) {
 						return Dt(t), t
 					}, t.options = Object.create(null), E.forEach((function (e) {
 						t.options[e + "s"] = Object.create(null)
-					})), t.options._base = t, S(t.options.components, Nn), function (t) {
+					})), t.options._base = t, N(t.options.components, Sn), function (t) {
 						t.use = function (t) {
 							var e = this._installedPlugins || (this._installedPlugins = []);
 							if (e.indexOf(t) > -1) return this;
@@ -8196,7 +8196,7 @@
 								for (var n in e) yn(t.prototype, n, e[n])
 							}(o), o.extend = n.extend, o.mixin = n.mixin, o.use = n.use, E.forEach((function (t) {
 								o[t] = n[t]
-							})), a && (o.options.components[a] = o), o.superOptions = n.options, o.extendOptions = t, o.sealedOptions = S({}, o.options), i[r] = o, o
+							})), a && (o.options.components[a] = o), o.superOptions = n.options, o.extendOptions = t, o.sealedOptions = N({}, o.options), i[r] = o, o
 						}
 					}(t), function (t) {
 						E.forEach((function (e) {
@@ -8374,7 +8374,7 @@
 					var i = n.componentOptions;
 					if (!(r(i) && !1 === i.Ctor.options.inheritAttrs || e(t.data.attrs) && e(n.data.attrs))) {
 						var a, o, s = n.elm, c = t.data.attrs || {}, l = n.data.attrs || {};
-						for (a in r(l.__ob__) && (l = n.data.attrs = S({}, l)), l) o = l[a], c[a] !== o && hr(s, a, o);
+						for (a in r(l.__ob__) && (l = n.data.attrs = N({}, l)), l) o = l[a], c[a] !== o && hr(s, a, o);
 						for (a in (G || K) && l.value !== c.value && hr(s, "value", l.value), c) e(l[a]) && (Cn(a) ? s.removeAttributeNS(En, Pn(a)) : An(a) || s.removeAttribute(a))
 					}
 				}
@@ -8463,7 +8463,7 @@
 					console.error("[Vue compiler]: " + t)
 				}
 
-				function Sr(t, e) {
+				function Nr(t, e) {
 					return t ? t.map((function (t) {
 						return t[e]
 					})).filter((function (t) {
@@ -8471,7 +8471,7 @@
 					})) : []
 				}
 
-				function Nr(t, e, n, r, i) {
+				function Sr(t, e, n, r, i) {
 					(t.props || (t.props = [])).push(Cr({name: e, value: n, dynamic: i}, r)), t.plain = !1
 				}
 
@@ -8612,7 +8612,7 @@
 				function ni(t, n) {
 					if (!e(t.data.domProps) || !e(n.data.domProps)) {
 						var i, a, o = n.elm, s = t.data.domProps || {}, c = n.data.domProps || {};
-						for (i in r(c.__ob__) && (c = n.data.domProps = S({}, c)), s) i in c || (o[i] = "");
+						for (i in r(c.__ob__) && (c = n.data.domProps = N({}, c)), s) i in c || (o[i] = "");
 						for (i in c) {
 							if (a = c[i], "textContent" === i || "innerHTML" === i) {
 								if (n.children && (n.children.length = 0), a === s[i]) continue;
@@ -8664,11 +8664,11 @@
 
 				function oi(t) {
 					var e = si(t.style);
-					return t.staticStyle ? S(t.staticStyle, e) : e
+					return t.staticStyle ? N(t.staticStyle, e) : e
 				}
 
 				function si(t) {
-					return Array.isArray(t) ? N(t) : "string" == typeof t ? ai(t) : t
+					return Array.isArray(t) ? S(t) : "string" == typeof t ? ai(t) : t
 				}
 
 				var ci, li = /^--/, di = /\s*!important$/, ui = function (t, e, n) {
@@ -8688,11 +8688,11 @@
 					var i = n.data, a = t.data;
 					if (!(e(i.staticStyle) && e(i.style) && e(a.staticStyle) && e(a.style))) {
 						var o, s, c = n.elm, l = a.staticStyle, d = a.normalizedStyle || a.style || {}, u = l || d, f = si(n.data.style) || {};
-						n.data.normalizedStyle = r(f.__ob__) ? S({}, f) : f;
+						n.data.normalizedStyle = r(f.__ob__) ? N({}, f) : f;
 						var h = function (t) {
-							for (var e, n = {}, r = t; r.componentInstance;) (r = r.componentInstance._vnode) && r.data && (e = oi(r.data)) && S(n, e);
-							(e = oi(t.data)) && S(n, e);
-							for (var i = t; i = i.parent;) i.data && (e = oi(i.data)) && S(n, e);
+							for (var e, n = {}, r = t; r.componentInstance;) (r = r.componentInstance._vnode) && r.data && (e = oi(r.data)) && N(n, e);
+							(e = oi(t.data)) && N(n, e);
+							for (var i = t; i = i.parent;) i.data && (e = oi(i.data)) && N(n, e);
 							return n
 						}(n);
 						for (s in u) e(h[s]) && ui(c, s, "");
@@ -8724,7 +8724,7 @@
 					if (t) {
 						if ("object" == o(t)) {
 							var e = {};
-							return !1 !== t.css && S(e, _i(t.name || "v")), S(e, t), e
+							return !1 !== t.css && N(e, _i(t.name || "v")), N(e, t), e
 						}
 						return "string" == typeof t ? _i(t) : void 0
 					}
@@ -8734,13 +8734,13 @@
 					return {enterClass: t + "-enter", enterToClass: t + "-enter-to", enterActiveClass: t + "-enter-active", leaveClass: t + "-leave", leaveToClass: t + "-leave-to", leaveActiveClass: t + "-leave-active"}
 				})), Mi = Q && !J, wi = "transition", xi = "animation", ki = "transition", Di = "transitionend", Li = "animation", ji = "animationend";
 				Mi && (void 0 === window.ontransitionend && void 0 !== window.onwebkittransitionend && (ki = "WebkitTransition", Di = "webkitTransitionEnd"), void 0 === window.onanimationend && void 0 !== window.onwebkitanimationend && (Li = "WebkitAnimation", ji = "webkitAnimationEnd"));
-				var Si = Q ? window.requestAnimationFrame ? window.requestAnimationFrame.bind(window) : setTimeout : function (t) {
+				var Ni = Q ? window.requestAnimationFrame ? window.requestAnimationFrame.bind(window) : setTimeout : function (t) {
 					return t()
 				};
 
-				function Ni(t) {
-					Si((function () {
-						Si(t)
+				function Si(t) {
+					Ni((function () {
+						Ni(t)
 					}))
 				}
 
@@ -8798,15 +8798,15 @@
 						for (var o = a.css, c = a.type, l = a.enterClass, d = a.enterToClass, u = a.enterActiveClass, f = a.appearClass, p = a.appearToClass, m = a.appearActiveClass, g = a.beforeEnter, y = a.enter, v = a.afterEnter, b = a.enterCancelled, _ = a.beforeAppear, M = a.appear, w = a.afterAppear, x = a.appearCancelled, k = a.duration, D = Je, L = Je.$vnode; L && L.parent;) D = L.context, L = L.parent;
 						var j = !D._isMounted || !t.isRootInsert;
 						if (!j || M || "" === M) {
-							var S = j && f ? f : l, N = j && m ? m : u, T = j && p ? p : d, O = j && _ || g, I = j && "function" == typeof M ? M : y, A = j && w || v, z = j && x || b, $ = h(s(k) ? k.enter : k), E = !1 !== o && !J,
+							var N = j && f ? f : l, S = j && m ? m : u, T = j && p ? p : d, O = j && _ || g, I = j && "function" == typeof M ? M : y, A = j && w || v, z = j && x || b, $ = h(s(k) ? k.enter : k), E = !1 !== o && !J,
 								C = Fi(I), P = i._enterCb = Y((function () {
-									E && (Oi(i, T), Oi(i, N)), P.cancelled ? (E && Oi(i, S), z && z(i)) : A && A(i), i._enterCb = null
+									E && (Oi(i, T), Oi(i, S)), P.cancelled ? (E && Oi(i, N), z && z(i)) : A && A(i), i._enterCb = null
 								}));
 							t.data.show || oe(t, "insert", (function () {
 								var e = i.parentNode, n = e && e._pending && e._pending[t.key];
 								n && n.tag === t.tag && n.elm._leaveCb && n.elm._leaveCb(), I && I(i, P)
-							})), O && O(i), E && (Ti(i, S), Ti(i, N), Ni((function () {
-								Oi(i, S), P.cancelled || (Ti(i, T), C || (Pi($) ? setTimeout(P, $) : Ii(i, c, P)))
+							})), O && O(i), E && (Ti(i, N), Ti(i, S), Si((function () {
+								Oi(i, N), P.cancelled || (Ti(i, T), C || (Pi($) ? setTimeout(P, $) : Ii(i, c, P)))
 							}))), t.data.show && (n && n(), I && I(i, P)), E || C || P()
 						}
 					}
@@ -8826,7 +8826,7 @@
 					}
 
 					function x() {
-						w.cancelled || (!t.data.show && i.parentNode && ((i.parentNode._pending || (i.parentNode._pending = {}))[t.key] = t), f && f(i), b && (Ti(i, l), Ti(i, u), Ni((function () {
+						w.cancelled || (!t.data.show && i.parentNode && ((i.parentNode._pending || (i.parentNode._pending = {}))[t.key] = t), f && f(i), b && (Ti(i, l), Ti(i, u), Si((function () {
 							Oi(i, l), w.cancelled || (Ti(i, d), _ || (Pi(M) ? setTimeout(w, M) : Ii(i, c, w)))
 						}))), p && p(i, w), b || _ || w())
 					}
@@ -9167,7 +9167,7 @@
 							if (o.data.directives && o.data.directives.some(ia) && (o.data.show = !0), d && d.data && !function (t, e) {
 								return e.key === t.key && e.tag === t.tag
 							}(o, d) && !Ve(d) && (!d.componentInstance || !d.componentInstance._vnode.isComment)) {
-								var u = d.data.transition = S({}, c);
+								var u = d.data.transition = N({}, c);
 								if ("out-in" === r) return this._leaving = !0, oe(u, "afterLeave", (function () {
 									e._leaving = !1, e.$forceUpdate()
 								})), na(t, i);
@@ -9184,7 +9184,7 @@
 							return i
 						}
 					}
-				}, oa = S({tag: String, moveClass: String}, Xi);
+				}, oa = N({tag: String, moveClass: String}, Xi);
 
 				function sa(t) {
 					t.elm._moveCb && t.elm._moveCb(), t.elm._enterCb && t.elm._enterCb()
@@ -9255,7 +9255,7 @@
 					if (t = t.toLowerCase(), null != Gn[t]) return Gn[t];
 					var e = document.createElement(t);
 					return t.indexOf("-") > -1 ? Gn[t] = e.constructor === window.HTMLUnknownElement || e.constructor === window.HTMLElement : Gn[t] = /HTMLUnknownElement/.test(e.toString())
-				}, S(xn.options.directives, Zi), S(xn.options.components, da), xn.prototype.__patch__ = Q ? Hi : T, xn.prototype.$mount = function (t, e) {
+				}, N(xn.options.directives, Zi), N(xn.options.components, da), xn.prototype.__patch__ = Q ? Hi : T, xn.prototype.$mount = function (t, e) {
 					return function (t, e, n) {
 						var r;
 						return t.$el = e, t.$options.render || (t.$options.render = gt), tn(t, "beforeMount"), r = function () {
@@ -9298,7 +9298,7 @@
 					ba = p("address,article,aside,base,blockquote,body,caption,col,colgroup,dd,details,dialog,div,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,head,header,hgroup,hr,html,legend,li,menuitem,meta,optgroup,option,param,rp,rt,source,style,summary,tbody,td,tfoot,th,thead,title,tr,track"),
 					_a = /^\s*([^\s"'<>\/=]+)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/, Ma = /^\s*((?:v-[\w-]+:|@|:|#)\[[^=]+\][^\s"'<>\/=]*)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/,
 					wa = "[a-zA-Z_][\\-\\.0-9_a-zA-Z" + F.source + "]*", xa = "((?:" + wa + "\\:)?" + wa + ")", ka = new RegExp("^<" + xa), Da = /^\s*(\/?)>/, La = new RegExp("^<\\/" + xa + "[^>]*>"), ja = /^<!DOCTYPE [^>]+>/i,
-					Sa = /^<!\--/, Na = /^<!\[/, Ta = p("script,style,textarea", !0), Oa = {}, Ia = {"&lt;": "<", "&gt;": ">", "&quot;": '"', "&amp;": "&", "&#10;": "\n", "&#9;": "\t", "&#39;": "'"}, Aa = /&(?:lt|gt|quot|amp|#39);/g,
+					Na = /^<!\--/, Sa = /^<!\[/, Ta = p("script,style,textarea", !0), Oa = {}, Ia = {"&lt;": "<", "&gt;": ">", "&quot;": '"', "&amp;": "&", "&#10;": "\n", "&#9;": "\t", "&#39;": "'"}, Aa = /&(?:lt|gt|quot|amp|#39);/g,
 					za = /&(?:lt|gt|quot|amp|#39|#10|#9);/g, Ya = p("pre,textarea", !0), $a = function (t, e) {
 						return t && Ya(t) && "\n" === e[0]
 					};
@@ -9360,10 +9360,10 @@
 					for (var i = 0; i < Fa.length; i++) t = Fa[i](t, e) || t;
 					return function (t) {
 						var e, n, r, i, a, o, s, c, l = t.attrsList;
-						for (e = 0, n = l.length; e < n; e++) if (r = i = l[e].name, a = l[e].value, qa.test(r)) if (t.hasBindings = !0, (o = fo(r.replace(qa, ""))) && (r = r.replace(to, "")), Xa.test(r)) r = r.replace(Xa, ""), a = Dr(a), (c = Ka.test(r)) && (r = r.slice(1, -1)), o && (o.prop && !c && "innerHtml" === (r = w(r)) && (r = "innerHTML"), o.camel && !c && (r = w(r)), o.sync && (s = Fr(a, "$event"), c ? zr(t, '"update:"+(' + r + ")", s, null, !1, 0, l[e], !0) : (zr(t, "update:" + w(r), s, null, !1, 0, l[e]), D(r) !== w(r) && zr(t, "update:" + D(r), s, null, !1, 0, l[e])))), o && o.prop || !t.component && Va(t.tag, t.attrsMap.type, r) ? Nr(t, r, a, l[e], c) : Tr(t, r, a, l[e], c); else if (Wa.test(r)) r = r.replace(Wa, ""), (c = Ka.test(r)) && (r = r.slice(1, -1)), zr(t, r, a, o, !1, 0, l[e], c); else {
+						for (e = 0, n = l.length; e < n; e++) if (r = i = l[e].name, a = l[e].value, qa.test(r)) if (t.hasBindings = !0, (o = fo(r.replace(qa, ""))) && (r = r.replace(to, "")), Xa.test(r)) r = r.replace(Xa, ""), a = Dr(a), (c = Ka.test(r)) && (r = r.slice(1, -1)), o && (o.prop && !c && "innerHtml" === (r = w(r)) && (r = "innerHTML"), o.camel && !c && (r = w(r)), o.sync && (s = Fr(a, "$event"), c ? zr(t, '"update:"+(' + r + ")", s, null, !1, 0, l[e], !0) : (zr(t, "update:" + w(r), s, null, !1, 0, l[e]), D(r) !== w(r) && zr(t, "update:" + D(r), s, null, !1, 0, l[e])))), o && o.prop || !t.component && Va(t.tag, t.attrsMap.type, r) ? Sr(t, r, a, l[e], c) : Tr(t, r, a, l[e], c); else if (Wa.test(r)) r = r.replace(Wa, ""), (c = Ka.test(r)) && (r = r.slice(1, -1)), zr(t, r, a, o, !1, 0, l[e], c); else {
 							var d = (r = r.replace(qa, "")).match(Za), u = d && d[1];
 							c = !1, u && (r = r.slice(0, -(u.length + 1)), Ka.test(u) && (u = u.slice(1, -1), c = !0)), Ir(t, r, i, a, u, c, o, l[e])
-						} else Tr(t, r, JSON.stringify(a), l[e]), !t.component && "muted" === r && Va(t.tag, t.attrsMap.type, r) && Nr(t, r, "true", l[e])
+						} else Tr(t, r, JSON.stringify(a), l[e]), !t.component && "muted" === r && Va(t.tag, t.attrsMap.type, r) && Sr(t, r, "true", l[e])
 					}(t), t
 				}
 
@@ -9379,7 +9379,7 @@
 								return i ? (n.alias = r.replace(Ga, "").trim(), n.iterator1 = i[1].trim(), i[2] && (n.iterator2 = i[2].trim())) : n.alias = r, n
 							}
 						}(e);
-						n && S(t, n)
+						n && N(t, n)
 					}
 				}
 
@@ -9438,21 +9438,21 @@
 									zr(t, "change", r = r + " " + Fr(e, "$event.target.multiple ? $$selectedVal : $$selectedVal[0]"), null, !0)
 								}(t, r, i); else if ("input" === a && "checkbox" === o) !function (t, e, n) {
 									var r = n && n.number, i = Yr(t, "value") || "null", a = Yr(t, "true-value") || "true", o = Yr(t, "false-value") || "false";
-									Nr(t, "checked", "Array.isArray(" + e + ")?_i(" + e + "," + i + ")>-1" + ("true" === a ? ":(" + e + ")" : ":_q(" + e + "," + a + ")")), zr(t, "change", "var $$a=" + e + ",$$el=$event.target,$$c=$$el.checked?(" + a + "):(" + o + ");if(Array.isArray($$a)){var $$v=" + (r ? "_n(" + i + ")" : i) + ",$$i=_i($$a,$$v);if($$el.checked){$$i<0&&(" + Fr(e, "$$a.concat([$$v])") + ")}else{$$i>-1&&(" + Fr(e, "$$a.slice(0,$$i).concat($$a.slice($$i+1))") + ")}}else{" + Fr(e, "$$c") + "}", null, !0)
+									Sr(t, "checked", "Array.isArray(" + e + ")?_i(" + e + "," + i + ")>-1" + ("true" === a ? ":(" + e + ")" : ":_q(" + e + "," + a + ")")), zr(t, "change", "var $$a=" + e + ",$$el=$event.target,$$c=$$el.checked?(" + a + "):(" + o + ");if(Array.isArray($$a)){var $$v=" + (r ? "_n(" + i + ")" : i) + ",$$i=_i($$a,$$v);if($$el.checked){$$i<0&&(" + Fr(e, "$$a.concat([$$v])") + ")}else{$$i>-1&&(" + Fr(e, "$$a.slice(0,$$i).concat($$a.slice($$i+1))") + ")}}else{" + Fr(e, "$$c") + "}", null, !0)
 								}(t, r, i); else if ("input" === a && "radio" === o) !function (t, e, n) {
 									var r = n && n.number, i = Yr(t, "value") || "null";
-									Nr(t, "checked", "_q(" + e + "," + (i = r ? "_n(" + i + ")" : i) + ")"), zr(t, "change", Fr(e, i), null, !0)
+									Sr(t, "checked", "_q(" + e + "," + (i = r ? "_n(" + i + ")" : i) + ")"), zr(t, "change", Fr(e, i), null, !0)
 								}(t, r, i); else if ("input" === a || "textarea" === a) !function (t, e, n) {
 									var r = t.attrsMap.type, i = n || {}, a = i.lazy, o = i.number, s = i.trim, c = !a && "range" !== r, l = a ? "change" : "range" === r ? qr : "input", d = "$event.target.value";
 									s && (d = "$event.target.value.trim()"), o && (d = "_n(" + d + ")");
 									var u = Fr(e, d);
-									c && (u = "if($event.target.composing)return;" + u), Nr(t, "value", "(" + e + ")"), zr(t, l, u, null, !0), (s || o) && zr(t, "blur", "$forceUpdate()")
+									c && (u = "if($event.target.composing)return;" + u), Sr(t, "value", "(" + e + ")"), zr(t, l, u, null, !0), (s || o) && zr(t, "blur", "$forceUpdate()")
 								}(t, r, i); else if (!P.isReservedTag(a)) return Pr(t, r, i), !1;
 								return !0
 							}, text: function (t, e) {
-								e.value && Nr(t, "textContent", "_s(" + e.value + ")", e)
+								e.value && Sr(t, "textContent", "_s(" + e.value + ")", e)
 							}, html: function (t, e) {
-								e.value && Nr(t, "innerHTML", "_s(" + e.value + ")", e)
+								e.value && Sr(t, "innerHTML", "_s(" + e.value + ")", e)
 							}
 						}, isPreTag: function (t) {
 							return "pre" === t
@@ -9476,7 +9476,7 @@
 						delete: ["Backspace", "Delete", "Del"]
 					}, jo = function (t) {
 						return "if(" + t + ")return null;"
-					}, So = {
+					}, No = {
 						stop: "$event.stopPropagation();",
 						prevent: "$event.preventDefault();",
 						self: jo("$event.target !== $event.currentTarget"),
@@ -9489,7 +9489,7 @@
 						right: jo("'button' in $event && $event.button !== 2")
 					};
 
-				function No(t, e) {
+				function So(t, e) {
 					var n = e ? "nativeOn:" : "on:", r = "", i = "";
 					for (var a in t) {
 						var o = To(t[a]);
@@ -9506,7 +9506,7 @@
 					var e = ko.test(t.value), n = wo.test(t.value), r = ko.test(t.value.replace(xo, ""));
 					if (t.modifiers) {
 						var i = "", a = "", o = [];
-						for (var s in t.modifiers) if (So[s]) a += So[s], Do[s] && o.push(s); else if ("exact" === s) {
+						for (var s in t.modifiers) if (No[s]) a += No[s], Do[s] && o.push(s); else if ("exact" === s) {
 							var c = t.modifiers;
 							a += jo(["ctrl", "shift", "alt", "meta"].filter((function (t) {
 								return !c[t]
@@ -9539,7 +9539,7 @@
 						}
 					}, cloak: T
 				}, Ao = function (t) {
-					this.options = t, this.warn = t.warn || jr, this.transforms = Sr(t.modules, "transformCode"), this.dataGenFns = Sr(t.modules, "genData"), this.directives = S(S({}, Io), t.directives);
+					this.options = t, this.warn = t.warn || jr, this.transforms = Nr(t.modules, "transformCode"), this.dataGenFns = Nr(t.modules, "genData"), this.directives = N(N({}, Io), t.directives);
 					var e = t.isReservedTag || O;
 					this.maybeComponent = function (t) {
 						return !!t.component || !e(t.tag)
@@ -9632,7 +9632,7 @@
 					}(t, e);
 					r && (n += r + ","), t.key && (n += "key:" + t.key + ","), t.ref && (n += "ref:" + t.ref + ","), t.refInFor && (n += "refInFor:true,"), t.pre && (n += "pre:true,"), t.component && (n += 'tag:"' + t.tag + '",');
 					for (var i = 0; i < e.dataGenFns.length; i++) n += e.dataGenFns[i](t);
-					if (t.attrs && (n += "attrs:" + Wo(t.attrs) + ","), t.props && (n += "domProps:" + Wo(t.props) + ","), t.events && (n += No(t.events, !1) + ","), t.nativeEvents && (n += No(t.nativeEvents, !0) + ","), t.slotTarget && !t.slotScope && (n += "slot:" + t.slotTarget + ","), t.scopedSlots && (n += function (t, e, n) {
+					if (t.attrs && (n += "attrs:" + Wo(t.attrs) + ","), t.props && (n += "domProps:" + Wo(t.props) + ","), t.events && (n += So(t.events, !1) + ","), t.nativeEvents && (n += So(t.nativeEvents, !0) + ","), t.slotTarget && !t.slotScope && (n += "slot:" + t.slotTarget + ","), t.scopedSlots && (n += function (t, e, n) {
 						var r = t.for || Object.keys(e).some((function (t) {
 							var n = e[t];
 							return n.slotTargetDynamic || n.if || n.for || Uo(n)
@@ -9742,7 +9742,7 @@
 				function Go(t) {
 					var e = Object.create(null);
 					return function (n, r, i) {
-						(r = S({}, r)).warn, delete r.warn;
+						(r = N({}, r)).warn, delete r.warn;
 						var a = r.delimiters ? String(r.delimiters) + n : n;
 						if (e[a]) return e[a];
 						var o = t(n, r), s = {}, c = [];
@@ -9755,7 +9755,7 @@
 				new RegExp("\\b" + "do,if,for,let,new,try,var,case,else,with,await,break,catch,class,const,super,throw,while,yield,delete,export,import,return,switch,default,extends,finally,continue,debugger,function,arguments".split(",").join("\\b|\\b") + "\\b");
 				var Jo, Ko, Zo = (Jo = function (t, e) {
 					var n = function (t, e) {
-						Ca = e.warn || jr, Ra = e.isPreTag || O, Va = e.mustUseProp || O, Qa = e.getTagNamespace || O, e.isReservedTag, Fa = Sr(e.modules, "transformNode"), Ua = Sr(e.modules, "preTransformNode"), Ha = Sr(e.modules, "postTransformNode"), Pa = e.delimiters;
+						Ca = e.warn || jr, Ra = e.isPreTag || O, Va = e.mustUseProp || O, Qa = e.getTagNamespace || O, e.isReservedTag, Fa = Nr(e.modules, "transformNode"), Ua = Nr(e.modules, "preTransformNode"), Ha = Nr(e.modules, "postTransformNode"), Pa = e.delimiters;
 						var n, r, i = [], a = !1 !== e.preserveWhitespace, o = e.whitespace, s = !1, c = !1;
 
 						function l(t) {
@@ -9792,14 +9792,14 @@
 								} else {
 									var h = t.indexOf("<");
 									if (0 === h) {
-										if (Sa.test(t)) {
+										if (Na.test(t)) {
 											var p = t.indexOf("--\x3e");
 											if (p >= 0) {
 												e.shouldKeepComment && e.comment(t.substring(4, p), c, c + p + 3), x(p + 3);
 												continue
 											}
 										}
-										if (Na.test(t)) {
+										if (Sa.test(t)) {
 											var m = t.indexOf("]>");
 											if (m >= 0) {
 												x(m + 2);
@@ -9825,7 +9825,7 @@
 									}
 									var _ = void 0, M = void 0, w = void 0;
 									if (h >= 0) {
-										for (M = t.slice(h); !(La.test(M) || ka.test(M) || Sa.test(M) || Na.test(M) || (w = M.indexOf("<", 1)) < 0);) h += w, M = t.slice(h);
+										for (M = t.slice(h); !(La.test(M) || ka.test(M) || Na.test(M) || Sa.test(M) || (w = M.indexOf("<", 1)) < 0);) h += w, M = t.slice(h);
 										_ = t.substring(0, h)
 									}
 									h < 0 && (_ = t), _ && x(_.length), e.chars && _ && e.chars(_, c - _.length, c)
@@ -9971,7 +9971,7 @@
 				}, function (t) {
 					function e(e, n) {
 						var r = Object.create(t), i = [], a = [];
-						if (n) for (var o in n.modules && (r.modules = (t.modules || []).concat(n.modules)), n.directives && (r.directives = S(Object.create(t.directives || null), n.directives)), n) "modules" !== o && "directives" !== o && (r[o] = n[o]);
+						if (n) for (var o in n.modules && (r.modules = (t.modules || []).concat(n.modules)), n.directives && (r.directives = N(Object.create(t.directives || null), n.directives)), n) "modules" !== o && "directives" !== o && (r[o] = n[o]);
 						r.warn = function (t, e, n) {
 							(n ? a : i).push(t)
 						};
@@ -10363,7 +10363,7 @@
 						n[r] = function () {
 							var e = this.$store.state, n = this.$store.getters;
 							if (t) {
-								var r = S(this.$store, "mapState", t);
+								var r = N(this.$store, "mapState", t);
 								if (!r) return;
 								e = r.context.state, n = r.context.getters
 							}
@@ -10378,7 +10378,7 @@
 							for (var e = [], n = arguments.length; n--;) e[n] = arguments[n];
 							var r = this.$store.commit;
 							if (t) {
-								var a = S(this.$store, "mapMutations", t);
+								var a = N(this.$store, "mapMutations", t);
 								if (!a) return;
 								r = a.context.commit
 							}
@@ -10390,7 +10390,7 @@
 					return L(e).forEach((function (e) {
 						var r = e.key, i = e.val;
 						i = t + i, n[r] = function () {
-							if (!t || S(this.$store, "mapGetters", t)) {
+							if (!t || N(this.$store, "mapGetters", t)) {
 								if (i in this.$store.getters) return this.$store.getters[i];
 								console.error("[vuex] unknown getter: " + i)
 							}
@@ -10404,7 +10404,7 @@
 							for (var e = [], n = arguments.length; n--;) e[n] = arguments[n];
 							var r = this.$store.dispatch;
 							if (t) {
-								var a = S(this.$store, "mapActions", t);
+								var a = N(this.$store, "mapActions", t);
 								if (!a) return;
 								r = a.context.dispatch
 							}
@@ -10427,7 +10427,7 @@
 					}
 				}
 
-				function S(t, e, n) {
+				function N(t, e, n) {
 					var r = t._modulesNamespaceMap[n];
 					return r || console.error("[vuex] module namespace not found in " + e + "(): " + n), r
 				}
@@ -10444,9 +10444,8 @@
 			var _partials_calc_notice__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9504), _partials_invoice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6773),
 				_utils_woo_links__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(402), _utils_condition__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8836), _utils_customize__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2463),
 				_utils_helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3924), _utils_toolTip__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(330), _mixins_fields_mixin__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4506),
-				_partials_total_summary__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4671), _mixins_page_break_mixin__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(2969),
-				_partials_page_navigation_calc_page_navigation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(8271), jquery__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(4692),
-				jquery__WEBPACK_IMPORTED_MODULE_11___default = __webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_11__);
+				_partials_total_summary__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4671), jquery__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(4692),
+				jquery__WEBPACK_IMPORTED_MODULE_9___default = __webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_9__);
 
 			function _typeof(t) {
 				return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
@@ -10656,18 +10655,18 @@
 					return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 				}
 
-				function S(t) {
+				function N(t) {
 					var e = {tryLoc: t[0]};
 					1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 				}
 
-				function N(t) {
+				function S(t) {
 					var e = t.completion || {};
 					e.type = "normal", delete e.arg, t.completion = e
 				}
 
 				function T(t) {
-					this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+					this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 				}
 
 				function O(e) {
@@ -10717,7 +10716,7 @@
 					}
 				}, e.values = O, T.prototype = {
 					constructor: T, reset: function (e) {
-						if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+						if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 					}, stop: function () {
 						this.done = !0;
 						var t = this.tryEntries[0].completion;
@@ -10764,7 +10763,7 @@
 					}, finish: function (t) {
 						for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 							var n = this.tryEntries[e];
-							if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+							if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 						}
 					}, catch: function (t) {
 						for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -10773,7 +10772,7 @@
 								var r = n.completion;
 								if ("throw" === r.type) {
 									var i = r.arg;
-									N(n)
+									S(n)
 								}
 								return i
 							}
@@ -10860,7 +10859,7 @@
 				return this.split(t).join(e)
 			};
 			const __WEBPACK_DEFAULT_EXPORT__ = {
-				mixins: [_mixins_fields_mixin__WEBPACK_IMPORTED_MODULE_7__.A, _mixins_page_break_mixin__WEBPACK_IMPORTED_MODULE_9__.A],
+				mixins: [_mixins_fields_mixin__WEBPACK_IMPORTED_MODULE_7__.A],
 				props: {template: {default: ""}, content: {default: {}}, custom: 0},
 				data: function () {
 					return {
@@ -10888,15 +10887,13 @@
 						showPromocode: !0,
 						discountError: "",
 						syncedSummary: null,
-						syncedRepeaters: null,
-						syncedLastPage: null
+						syncedRepeaters: null
 					}
 				},
 				components: {
 					"calc-notices": _partials_calc_notice__WEBPACK_IMPORTED_MODULE_0__.A,
 					"calc-invoice": _partials_invoice__WEBPACK_IMPORTED_MODULE_1__.A,
-					"calc-total-summary": _partials_total_summary__WEBPACK_IMPORTED_MODULE_8__.A,
-					"calc-page-navigation": _partials_page_navigation_calc_page_navigation__WEBPACK_IMPORTED_MODULE_10__.A
+					"calc-total-summary": _partials_total_summary__WEBPACK_IMPORTED_MODULE_8__.A
 				},
 				computed: {
 					showAfterSubmit: {
@@ -10910,8 +10907,6 @@
 					}, getTheTitle: function () {
 						var t;
 						return null === (t = this.settings) || void 0 === t ? void 0 : t.title
-					}, getPageBreakSettings: function () {
-						return this.getSettings.page_break
 					}, getStickySettings: function () {
 						return this.getSettings.sticky_calc
 					}, summaryDisplaySettings: function () {
@@ -10980,8 +10975,8 @@
 					}, appearance: function () {
 						return this.$store.getters.getAppearance
 					}, boxStyle: function () {
-						var t = this.getElementAppearanceStyleByPath(this.appearance, "desktop.layout.data"), e = this.demoBoxStyle ? this.demoBoxStyle : (null == t ? void 0 : t.box_style) || "vertical";
-						return this.pageBreakEnabled ? "vertical" : e
+						var t = this.getElementAppearanceStyleByPath(this.appearance, "desktop.layout.data");
+						return this.demoBoxStyle ? this.demoBoxStyle : (null == t ? void 0 : t.box_style) || "vertical"
 					}, getSticky: function () {
 						return this.getSettings.general.sticky
 					}, getTotalStickyId: function () {
@@ -11000,9 +10995,6 @@
 						}, set: function (t) {
 							this.$store.commit("updateMainLoader", t)
 						}
-					}, checkLastPage: function () {
-						var t, e = null === (t = this.$refs) || void 0 === t ? void 0 : t.calc;
-						return (null == e ? void 0 : e.closest(".ccb-sticky-modal.pro_features")) ? this.syncedLastPage : this.isLastPage
 					}, getTotalSummaryFields: function () {
 						var t, e, n = null === (t = this.$refs) || void 0 === t ? void 0 : t.calc;
 						if ((null == n ? void 0 : n.closest(".ccb-sticky-modal.pro_features")) && null !== (e = this.syncedSummary) && void 0 !== e && e.length) return this.syncedSummary;
@@ -11015,9 +11007,7 @@
 						var o = a.filter((function (t) {
 							return t.addToSummary
 						}));
-						return o = o.filter((function (t) {
-							return !t.alias.includes("page_break")
-						})), this.showUnitInSummary ? this.summaryWithUnits(o) : o
+						return this.showUnitInSummary ? this.summaryWithUnits(o) : o
 					}, getRepeaterFields: function () {
 						var t = this, e = this.getSettings.general.hide_empty;
 						return function (n) {
@@ -11071,13 +11061,13 @@
 							var n;
 							if (t.id && +(null == e || null === (n = e.detail) || void 0 === n ? void 0 : n.calc_id) == +t.id) {
 								var r = e.detail;
-								t.syncedSummary = (null == r ? void 0 : r.summary) || [], t.syncedRepeaters = (null == r ? void 0 : r.repeater) || [], t.syncedLastPage = null == r ? void 0 : r.last_page
+								t.syncedSummary = (null == r ? void 0 : r.summary) || [], t.syncedRepeaters = (null == r ? void 0 : r.repeater) || []
 							}
 						}))
 					}, ccbSyncCalcWithSticky: function () {
 						var t, e = null === (t = this.$refs) || void 0 === t ? void 0 : t.calc;
 						if (!(null == e ? void 0 : e.closest(".ccb-sticky-modal"))) {
-							var n = new CustomEvent("ccb_sync_calc_with_sticky", {detail: {repeater: this.getRepeaterTotals, summary: this.getTotalSummaryFields, calc_id: this.id, last_page: this.checkLastPage}});
+							var n = new CustomEvent("ccb_sync_calc_with_sticky", {detail: {repeater: this.getRepeaterTotals, summary: this.getTotalSummaryFields, calc_id: this.id}});
 							document.dispatchEvent(n)
 						}
 					}, submitForm: function () {
@@ -11205,19 +11195,15 @@
 						var e = [], n = {};
 						if (this.calc_data.fields.forEach((function (t) {
 							if (!n[null == t ? void 0 : t.alias]) {
-								if (t.alias.includes("group") || t.alias.includes("page_break") && t.groupElements) {
+								if (t.alias.includes("group") && t.groupElements) {
 									e.push(t);
 									var r = t.groupElements.map((function (e) {
-										return e.alias.includes("total_field") || t.alias.includes("page_break") || (e.group_id = t.alias), e.calculateHidden = t.hidden, e.hidden = t.hidden, e
+										return e.alias.includes("total_field") || (e.group_id = t.alias), e.calculateHidden = t.hidden, e.hidden = t.hidden, e
 									}));
 									e = [].concat(_toConsumableArray(e), _toConsumableArray(r))
 								} else e.push(t);
 								n[null == t ? void 0 : t.alias] = !0
 							}
-						})), e.forEach((function (t) {
-							t.alias.includes("page") && t.groupElements.forEach((function (t) {
-								t.alias.includes("group") && (e = [].concat(_toConsumableArray(e), _toConsumableArray(t.groupElements)))
-							}))
 						})), this.calc_data.fields = e, void 0 !== this.calc_data && this.calc_data && this.calc_data.hasOwnProperty("fields")) {
 							var r;
 							if (this.calc_data.hasOwnProperty("appearance") && this.calc_data.appearance && this.$store.commit("setAppearance", this.calc_data.appearance), this.calc_data.hasOwnProperty("formula") && this.calc_data.formula && (this.formulaConst = this.calc_data.formula), this.calc_data.conditions && (this.conditions = this.calc_data.conditions), this.calc_data.settings) this.settings = this.calc_data.settings, this.$store.commit("updateSettings", this.settings), this.currentAccordionHeight = null !== (r = this.settings.general) && void 0 !== r && r.show_details_accordion ? this.currentAccordionHeight : "0px";
@@ -11438,7 +11424,7 @@
 						this.$store.commit("setCalcStore", this.calcStore)
 					}, toggleRepeater: function (t) {
 						var e, n;
-						null === (e = jquery__WEBPACK_IMPORTED_MODULE_11___default()('.calc-repeater-subtotal-header[data-index="'.concat(t, '"]'))) || void 0 === e || e.toggleClass("ccb-collapsed"), null === (n = jquery__WEBPACK_IMPORTED_MODULE_11___default()('.calc-repeater-subtotal-fields[data-index="'.concat(t, '"]'))) || void 0 === n || n.fadeToggle()
+						null === (e = jquery__WEBPACK_IMPORTED_MODULE_9___default()('.calc-repeater-subtotal-header[data-index="'.concat(t, '"]'))) || void 0 === e || e.toggleClass("ccb-collapsed"), null === (n = jquery__WEBPACK_IMPORTED_MODULE_9___default()('.calc-repeater-subtotal-fields[data-index="'.concat(t, '"]'))) || void 0 === n || n.fadeToggle()
 					}, customFadeIn: function () {
 					}, customFadeOut: function () {
 					}
@@ -11733,7 +11719,7 @@
 
 				function f(t, e, n, r) {
 					var a = e && e.prototype instanceof b ? e : b, o = Object.create(a.prototype), s = new I(r || []);
-					return i(o, "_invoke", {value: S(t, n, s)}), o
+					return i(o, "_invoke", {value: N(t, n, s)}), o
 				}
 
 				function h(t, e, n) {
@@ -11804,7 +11790,7 @@
 					})
 				}
 
-				function S(e, n, r) {
+				function N(e, n, r) {
 					var i = p;
 					return function (a, o) {
 						if (i === g) throw Error("Generator is already running");
@@ -11815,7 +11801,7 @@
 						for (r.method = a, r.arg = o; ;) {
 							var s = r.delegate;
 							if (s) {
-								var c = N(s, r);
+								var c = S(s, r);
 								if (c) {
 									if (c === v) continue;
 									return c
@@ -11836,9 +11822,9 @@
 					}
 				}
 
-				function N(e, n) {
+				function S(e, n) {
 					var r = n.method, i = e.iterator[r];
-					if (i === t) return n.delegate = null, "throw" === r && e.iterator.return && (n.method = "return", n.arg = t, N(e, n), "throw" === n.method) || "return" !== r && (n.method = "throw", n.arg = new TypeError("The iterator does not provide a '" + r + "' method")), v;
+					if (i === t) return n.delegate = null, "throw" === r && e.iterator.return && (n.method = "return", n.arg = t, S(e, n), "throw" === n.method) || "return" !== r && (n.method = "throw", n.arg = new TypeError("The iterator does not provide a '" + r + "' method")), v;
 					var a = h(i, e.iterator, n.arg);
 					if ("throw" === a.type) return n.method = "throw", n.arg = a.arg, n.delegate = null, v;
 					var o = a.arg;
@@ -12357,7 +12343,7 @@
 
 				function f(t, e, n, r) {
 					var a = e && e.prototype instanceof b ? e : b, o = Object.create(a.prototype), s = new I(r || []);
-					return i(o, "_invoke", {value: S(t, n, s)}), o
+					return i(o, "_invoke", {value: N(t, n, s)}), o
 				}
 
 				function h(t, e, n) {
@@ -12428,7 +12414,7 @@
 					})
 				}
 
-				function S(e, n, r) {
+				function N(e, n, r) {
 					var i = p;
 					return function (a, o) {
 						if (i === g) throw Error("Generator is already running");
@@ -12439,7 +12425,7 @@
 						for (r.method = a, r.arg = o; ;) {
 							var s = r.delegate;
 							if (s) {
-								var c = N(s, r);
+								var c = S(s, r);
 								if (c) {
 									if (c === v) continue;
 									return c
@@ -12460,9 +12446,9 @@
 					}
 				}
 
-				function N(e, n) {
+				function S(e, n) {
 					var r = n.method, i = e.iterator[r];
-					if (i === t) return n.delegate = null, "throw" === r && e.iterator.return && (n.method = "return", n.arg = t, N(e, n), "throw" === n.method) || "return" !== r && (n.method = "throw", n.arg = new TypeError("The iterator does not provide a '" + r + "' method")), v;
+					if (i === t) return n.delegate = null, "throw" === r && e.iterator.return && (n.method = "return", n.arg = t, S(e, n), "throw" === n.method) || "return" !== r && (n.method = "throw", n.arg = new TypeError("The iterator does not provide a '" + r + "' method")), v;
 					var a = h(i, e.iterator, n.arg);
 					if ("throw" === a.type) return n.method = "throw", n.arg = a.arg, n.delegate = null, v;
 					var o = a.arg;
@@ -12768,168 +12754,6 @@
 					}
 				},
 				template: '\n        <template>\n            <div>\n                <send-pdf\n                    ref="sendPdf"\n                    :calc-name="pdfName"\n                    :static-texts="sendEmailTexts"\n                    :from-name="sendPdfFromname"\n                    @send-invoice-action="sendInvoice"\n                />\n                <div slot="pdf-content" ref="invoice" :class="{\'contact\': getFormFields.length}">\n                    <div class="ccb-invoice" style="display: none" :class="{\'show-unit\': showUnit}">\n                        <div class="ccb-invoice-container">\n                            <div class="ccb-invoice-header">\n                                <div class="ccb-invoice-logo">\n                                    <span v-if="!companyLogo">{{ companyName }}</span>\n                                    <img v-if="companyLogo" :src="companyLogo" alt="Invoice logo">\n                                </div>\n                                <div class="ccb-invoice-date">\n                                    <span>{{ this.getCurrentDate }}</span>\n                                </div>\n                            </div>\n                            <div class="ccb-invoice-company">\n                                <span>\n                                    {{ companyInfo }}\n                                </span>\n                            </div>\n                            <div class="ccb-invoice-table">\n                                <div class="ccb-invoice-table__header">\n                                    <span>{{ getText.order }}: </span>\n                                    <span v-if="getOrderId">{{ getOrderId }}</span>\n                                </div>\n                                <div class="ccb-invoice-table__body">\n                                    <div class="ccb-invoice-table__summary">\n                                        <span class="ccb-invoice-table__title">{{ getText.total_title }}</span>\n                                        <div class="calc-subtotal-list-header">\n                                            <span class="calc-subtotal-list-header__name">{{ getText.total_header.name }}</span>\n                                            <span class="calc-subtotal-list-header__value">{{ getText.total_header.total }}</span>\n                                        </div>\n                                        \n                                        <ul>\n                                          <template v-for="field in getSummaryFields">\n                                            <template v-if="!field.hidden && !field.alias.includes(\'repeater\') && !field.alias.includes(\'group\')">\n                                              <li>\n                                                  <span class="ccb-invoice-row">\n                                                      <span class="ccb-invoice-row__label" style="text-align: left;">{{ field.label }}</span>\n                                                      <span v-if="[\'website_url\', \'email\'].includes(field.field_type)" class="ccb-invoice-row__value">\n                                                          <a target="_blank" :href="ensureValidUrl(field.converted)">{{field.converted}}</a>\n                                                      </span>\n                                                      <span v-if="!field.summary_view || field.summary_view === \'show_value\'" class="ccb-invoice-row__value">{{ field.converted }}</span>\n                                                      <span v-if="field.summary_view !== \'show_value\' && field.extraView" class="ccb-invoice-row__value"> {{ field.extraView }} </span>\n                                                      <span class="sub-item-value" v-if="field.summary_view !== \'show_value\' && field.extraViewMultiple">\n                                                        <template v-for="label in field.extraViewMultiple">\n                                                          {{ label }}<br>\n                                                        </template> \n                                                      </span>\n                                                  </span>\n                                                  <span class="ccb-invoice-row ccb-invoice-sub-item" v-if="field.option_unit && !field.alias.includes(\'geolocation\')">\n                                                      <span v-if="showUnit" class="ccb-invoice-row__unit">{{ field.option_unit }}</span>\n                                                  </span>\n                                                  <span v-for="subItem in field.options" class="ccb-invoice-row ccb-invoice-sub-item" v-if="field.summary_view===\'show_value\'&& field.options && field.options.length && [\'checkbox\', \'toggle\', \'checkbox_with_img\'].includes(field.alias.replace(/\\_field_id.*/,\'\'))">\n                                                      <span class="ccb-invoice-row__sub-label">{{ subItem.label }}</span>\n                                                      <span class="ccb-invoice-row__sub-value" v-if="field.options.length > 1">{{ subItem.converted }}</span>\n                                                  </span>\n                                                  <span class="ccb-invoice-row ccb-invoice-sub-item" v-if="field.userSelectedOptions">\n                                                      <span style="width: 100%; text-align: left;" v-if="!field.userSelectedOptions.twoPoints">\n                                                        <span class="ccb-invoice-row__sub-label"><a :href="field.userSelectedOptions.addressLink" target="_blank">{{ field.userSelectedOptions.addressName }}</a></span>\n                                                      </span>\n                                                      <span style="width: 100%; text-align: left;" v-if="field.userSelectedOptions.twoPoints">\n                                                        <span class="ccb-invoice-row__sub-label" style="width: 100%; text-align: left; display: block;">\n                                                          From: \n                                                          <a :href="field.userSelectedOptions.twoPoints.from.addressLink" target="_blank">{{ field.userSelectedOptions.twoPoints.from.addressName }}</a>\n                                                        </span>\n                                                        <span class="ccb-invoice-row__sub-label" style="width: 100%; text-align: left; display: block;">\n                                                          To: \n                                                          <a :href="field.userSelectedOptions.twoPoints.to.addressLink" target="_blank">{{ field.userSelectedOptions.twoPoints.to.addressName }}</a>\n                                                        </span>\n                                                      </span>\n                                                      <span style="width: 100%; text-align: left;" v-if="field.userSelectedOptions.distance">\n                                                        <span class="ccb-invoice-row__sub-label">Distance:</span>\n                                                        <span class="ccb-invoice-row__sub-value" style="margin-left: -5px;">{{ field.userSelectedOptions.distance_view }}</span>\n                                                      </span>\n                                                  </span>\n                                              </li>\n                                            </template>\n\n                                            <template v-if="field.alias.includes(\'repeater\') && field.groupElements.length">\n                                              <template>\n                                                <span class="ccb-invoice-group-title">{{ field.label }}</span>\n                                                <li v-for="(innerField) in field.groupElements" class="ccb-invoice-group-row" style="padding-left: 10px;">\n                                                  <span class="ccb-invoice-row">\n                                                      <span class="ccb-invoice-row__label" style="text-align: left;">{{ innerField.label }}</span>\n                                                      <span v-if="[\'website_url\', \'email\'].includes(innerField.field_type)" class="ccb-invoice-row__value">\n                                                          <a target="_blank" :href="ensureValidUrl(innerField.converted)">{{innerField.converted}}</a>\n                                                      </span>\n                                                      <span v-if="!innerField.summary_view || innerField.summary_view === \'show_value\'" class="ccb-invoice-row__value">{{ innerField.converted }}</span>\n                                                      <span v-if="innerField.summary_view !== \'show_value\' && innerField.extraView" class="ccb-invoice-row__value"> {{ innerField.extraView }} </span>\n                                                      <span class="sub-item-value" v-if="innerField.summary_view !== \'show_value\' && innerField.extraViewMultiple">\n                                                        <template v-for="label in innerField.extraViewMultiple">\n                                                          {{ label }}<br>\n                                                        </template> \n                                                      </span>\n                                                  </span>\n                                                  <span class="ccb-invoice-row ccb-invoice-sub-item" v-if="innerField.option_unit && !innerField.alias.includes(\'geolocation\')">\n                                                      <span v-if="showUnit" class="ccb-invoice-row__unit">{{ innerField.option_unit }}</span>\n                                                  </span>\n                                                  <span v-for="subItem in innerField.options" class="ccb-invoice-row ccb-invoice-sub-item" v-if="innerField.summary_view===\'show_value\'&& innerField.options && innerField.options.length && [\'checkbox\', \'toggle\', \'checkbox_with_img\'].includes(innerField.alias.replace(/\\_field_id.*/,\'\'))">\n                                                      <span class="ccb-invoice-row__sub-label">{{ subItem.label }}</span>\n                                                      <span class="ccb-invoice-row__sub-value" v-if="innerField.options.length > 1">{{ subItem.converted }}</span>\n                                                  </span>\n                                                  <span class="ccb-invoice-row ccb-invoice-sub-item" v-if="innerField.userSelectedOptions">\n                                                      <span style="width: 100%; text-align: left; display: block;" v-if="!innerField.userSelectedOptions.twoPoints">\n                                                        <span class="ccb-invoice-row__sub-label">\n                                                          <a :href="innerField.userSelectedOptions.addressLink" target="_blank">{{ innerField.userSelectedOptions.addressName }}</a>\n                                                        </span>\n                                                      </span>\n                                                      <span style="width: 100%; text-align: left;" v-if="innerField.userSelectedOptions.twoPoints">\n                                                        <span class="ccb-invoice-row__sub-label" style="width: 100%; text-align: left; display: block;">\n                                                          From: \n                                                          <a :href="innerField.userSelectedOptions.twoPoints.from.addressLink" target="_blank">{{ innerField.userSelectedOptions.twoPoints.from.addressName }}</a>\n                                                        </span>\n                                                        <span class="ccb-invoice-row__sub-label" style="width: 100%; text-align: left; display: block;">\n                                                          To: \n                                                          <a :href="innerField.userSelectedOptions.twoPoints.to.addressLink" target="_blank">{{ innerField.userSelectedOptions.twoPoints.to.addressName }}</a>\n                                                        </span>\n                                                      </span>\n                                                      <span style="width: 100%; text-align: left;" v-if="innerField.userSelectedOptions.distance">\n                                                        <span class="ccb-invoice-row__sub-label">Distance:</span>\n                                                        <span class="ccb-invoice-row__sub-value" style="margin-left: -5px;">{{ innerField.userSelectedOptions.distance_view }}</span>\n                                                      </span>\n                                                  </span>\n                                                </li>\n                                              </template>\n                                            </template>\n                                          </template>\n                                        </ul>\n                                      \n                                        <span class="ccb-invoice-table__total" v-for="total in totalSummary">\n                                          <span class="ccb-left">{{ total.title }} </span>\n                                          <span class="ccb-right">\n                                             <template v-if="total.hasDiscount && total.discount">\n                                                <span style="text-decoration: line-through;">\n                                                   {{ total.discount.original_converted }}                                                                                                  \n                                                </span>\n                                                <span>\n                                                   {{ total.value }}                                                  \n                                                </span>\n                                             </template>\n                                             <template v-else>\n                                               {{ total.value }}\n                                             </template>\n                                          </span>\n                                        </span>\n                                      \n                                        <div class="ccb-invoice-table__payment" v-if="showPayment">\n                                            <div>{{ getText.payment_method }}</div>\n                                            <div>{{ paymentMethodType }}</div>\n                                        </div>\n                                    </div>\n                                    <div class="ccb-invoice-table__contact" v-if="getFormFields.length">\n                                        <span class="ccb-invoice-table__title">{{ getText.contact_title }}</span>\n                                        <ul>\n                                            <li v-for="field in getFormFields">\n                                                <span class="name">{{ field.name }}:</span>\n                                                <span class="value">{{ field.value }}</span>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n               \n            </div>\n        </template>\n\n    '
-			}
-		}, 8271: (t, e, n) => {
-			"use strict";
-			n.d(e, {A: () => r});
-			const r = {
-				data: function () {
-					return {settings: {}}
-				},
-				components: {
-					progress_with_bar: {
-						data: function () {
-							return {}
-						},
-						props: ["calcTitle", "step", "count", "progress"],
-						computed: {
-							calculatorTitle: function () {
-								return this.calcTitle ? this.calcTitle : this.$store.getters.getTitle
-							}, calculateProgressWith: function () {
-								return "width: ".concat(this.progress, "%")
-							}, pageBreakSettings: function () {
-								return this.$store.getters.getSettings.page_break
-							}
-						},
-						template: '\n    \n        <div class="progress-with-bar">\n            <div class="progress-with-bar__title">\n                {{ calculatorTitle.length > 25 ? calculatorTitle.slice(0, 22) + \'...\' : calculatorTitle }}\n            </div>\n            <div class="progress-with-bar__bar">\n                <div class="count">\n                    Step  {{ step }}/ {{ pageBreakSettings.summary_after_last_page ? count + 1 : count }}\n                </div>\n                <div class="bar">\n                    <span :style="calculateProgressWith"></span>\n                </div>\n            </div>\n        </div>\n    \n    '
-					}, progress_with_circle: {
-						data: function () {
-							return {}
-						},
-						props: ["calcTitle", "step", "count", "progress"],
-						computed: {
-							calculatorTitle: function () {
-								return this.calcTitle ? this.calcTitle : this.$store.getters.getTitle
-							}, progressPercent: function () {
-								return "--progress: ".concat(this.progress)
-							}, radius: function () {
-								return 8
-							}, circumference: function () {
-								return 2 * Math.PI * this.radius
-							}, offset: function () {
-								return this.circumference - this.progress / 100 * this.circumference
-							}, pageBreakSettings: function () {
-								return this.$store.getters.getSettings.page_break
-							}
-						},
-						template: '\n    \n        <div class="progress-with-circle" >\n            <div class="progress-with-bar__title">\n                {{ calculatorTitle.length > 25 ? calculatorTitle.slice(0, 22) + \'...\' : calculatorTitle }}\n            </div>\n            <div class="progress-with-bar__circle">\n                <div class="progress-ring">\n                  <svg>\n                    <circle class="background" cx="10" cy="10" r="8"></circle>\n                    <circle \n                      class="progress" \n                      cx="10" \n                      cy="10" \n                      r="8" \n                      :stroke-dasharray="circumference"\n                      :stroke-dashoffset="offset"\n                    >\n                      </circle>\n                  </svg>\n                </div>\n                <div class="count">\n                    Step  {{ step }}/ {{ pageBreakSettings.summary_after_last_page ? count + 1 : count }}\n                </div>\n            </div>\n        </div>\n    \n    '
-					}, rectangle_tabs: {
-						data: function () {
-							return {}
-						},
-						props: ["calcTitle", "step", "count", "progress", "pages", "showPageTitle"],
-						mounted: function () {
-						},
-						computed: {
-							getPages: function () {
-								var t = [];
-								return this.pages.forEach((function (e, n) {
-									var r = {id: n + 1, title: e.label.length > 10 ? e.label.substring(0, 10) + "..." : e.label, label: e.label};
-									t.push(r)
-								})), t
-							}
-						},
-						template: '\n\n      <div class="rectangle-tab" :class="{\'hide-title\': showPageTitle}">\n        <div class="tabs">\n          <div class="tab" :class="[{active: step === page.id}, {done: step > page.id}]" v-for="page in getPages">\n            <span class="tab__item">\n              <span class="count">{{ page.id }}</span>\n              <span class="complete">\n                <i class="ccb-icon-radius-check" style="font-size: 12px;"></i>\n              </span>\n            </span>\n            <span class="tab__title" :title="page.label">\n              {{ page.title }}\n            </span>\n          </div>\n        </div>\n      </div>\n\n    '
-					}, circle_tabs: {
-						data: function () {
-							return {}
-						},
-						props: ["calcTitle", "step", "count", "progress", "pages", "showPageTitle"],
-						mounted: function () {
-						},
-						computed: {
-							getPages: function () {
-								var t = [];
-								return this.pages.forEach((function (e, n) {
-									var r = {id: n + 1, title: e.label.length > 10 ? e.label.substring(0, 10) + "..." : e.label, label: e.label};
-									t.push(r)
-								})), t
-							}
-						},
-						template: '\n\n      <div class="circle-tab" :class="{\'hide-title\': showPageTitle}">\n        <div class="tabs">\n          <div class="tab" :class="[{active: step === page.id}, {done: step > page.id}]" v-for="page in getPages">\n            <span class="tab__item">\n              <span class="count">{{ page.id }}</span>\n              <span class="complete">\n                <i class="ccb-icon-radius-check" style="font-size: 12px;"></i>\n              </span>\n            </span>\n            <span class="tab__title" :title="page.label">\n              {{ page.title }}\n            </span>\n          </div>\n        </div>\n      </div>\n\n    '
-					}, circle_with_line: {
-						data: function () {
-							return {total: 0}
-						},
-						props: ["calcTitle", "step", "count", "progress", "pages", "showPageTitle"],
-						mounted: function () {
-							this.total = this.count
-						},
-						computed: {
-							getPages: function () {
-								var t = [];
-								return this.pages.forEach((function (e, n) {
-									var r = {id: n + 1, title: e.label.length > 10 ? e.label.substring(0, 10) + "..." : e.label, label: e.label};
-									t.push(r)
-								})), t
-							}, progressBarWidth: function () {
-								var t = 101 * (this.count - 1), e = (this.step - 1) / (this.count - 1) * t;
-								return e > this.overLayBarWidth ? this.overLayBarWidth : e
-							}, overLayBarWidth: function () {
-								var t = 101 * (this.count - 1);
-								return (this.count - 1) / (this.count - 1) * t
-							}
-						},
-						methods: {
-							setCurrentStep: function (t) {
-								this.step = t
-							}
-						},
-						template: '\n\n      <template>\n        <div class="circle-with-line" :class="{\'hide-title\': showPageTitle}">\n          <div class="tabs">\n            <span class="bar-progress" :style="{ width: progressBarWidth + \'px\' }"></span>\n            <div class="bar-overlay" :style="{ width: overLayBarWidth + \'px\' }"></div>\n            <div\n              class="tab"\n              :class="[{active: step === page.id}, {done: step > page.id}]"\n              v-for="page in getPages"\n              :key="page.id"\n            >\n              <span class="tab__item">\n                <span class="count">{{ page.id }}</span>\n                <span class="complete">\n                  <i class="ccb-icon-radius-check" style="font-size: 12px;"></i>\n                </span>\n              </span>\n              <span class="tab__title" :title="page.label">\n                {{ page.title }}\n              </span>\n            </div>\n          </div>\n        </div>\n      </template>\n\n    '
-					}, rectangle_steps_with_line: {
-						data: function () {
-							return {}
-						},
-						props: ["calcTitle", "step", "count", "progress", "pages", "showPageTitle"],
-						mounted: function () {
-						},
-						computed: {
-							getPages: function () {
-								var t = [];
-								return this.pages.forEach((function (e, n) {
-									var r = {id: n + 1, title: e.label.length > 10 ? e.label.substring(0, 10) + "..." : e.label, label: e.label};
-									t.push(r)
-								})), t
-							}, progressBarWidth: function () {
-								var t = 101 * (this.count - 1), e = (this.step - 1) / (this.count - 1) * t;
-								return e > this.overLayBarWidth ? this.overLayBarWidth : e
-							}, overLayBarWidth: function () {
-								var t = 101 * (this.count - 1);
-								return (this.count - 1) / (this.count - 1) * t
-							}
-						},
-						methods: {
-							setCurrentStep: function (t) {
-								this.step = t
-							}
-						},
-						template: '\n\n      <div class="circle-with-line  rectangle-steps-with-line" :class="{\'hide-title\': showPageTitle}">\n        <div class="tabs">\n            <span class="bar-progress" :style="{ width: progressBarWidth + \'px\' }"></span>\n            <div class="bar-overlay" :style="{ width: overLayBarWidth + \'px\' }"></div>\n            <div class="tab" :class="[{active: step === page.id}, {done: step > page.id}]" v-for="page in getPages">\n                <span class="tab__item">\n                    <span class="count">{{ page.id }}</span>\n                    <span class="complete">\n                        <i class="ccb-icon-radius-check" style="font-size: 12px;"></i>\n                    </span>\n                </span>\n                <span class="tab__title" :title="page.label">\n                    {{ page.title }}\n                </span>\n            </div>\n        </div>\n      </div>\n\n    '
-					}
-				},
-				props: ["count", "index", "pages"],
-				mounted: function () {
-					var t = this;
-					setTimeout((function () {
-						t.settings = t.$store.getters.getSettings
-					}), 100)
-				},
-				computed: {
-					calculatorTitle: function () {
-						return this.settings.title
-					}, calculateProgressWith: function () {
-						return (this.index + 1) / this.count * 100
-					}, paginationType: function () {
-						var t;
-						return null === (t = this.settings.page_break) || void 0 === t ? void 0 : t.pagination_type
-					}, showPageTitle: function () {
-						var t;
-						return null === (t = this.settings.page_break) || void 0 === t ? void 0 : t.hide_pagination_title
-					}, paginationSteps: function () {
-						var t;
-						return null !== (t = this.settings.page_break) && void 0 !== t && t.summary_after_last_page ? this.count - 1 : this.count
-					}
-				},
-				template: '\n    \n        <div class="calc-pagination border"  v-if="\'hidden\' !== paginationType">\n                <component\n                    :is="paginationType"\n                    :step="index + 1"\n                    :count="paginationSteps"\n                    :progress="calculateProgressWith"\n                    :calcTitle="calculatorTitle"\n                    :pages="pages"\n                    :showPageTitle="showPageTitle"\n                >\n                </component>\n        </div>\n    '
 			}
 		}, 4671: (t, e, n) => {
 			"use strict";
@@ -13581,273 +13405,6 @@
 					}
 				}
 			}
-		}, 2969: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-			"use strict";
-
-			function _toConsumableArray(t) {
-				return _arrayWithoutHoles(t) || _iterableToArray(t) || _unsupportedIterableToArray(t) || _nonIterableSpread()
-			}
-
-			function _nonIterableSpread() {
-				throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
-			}
-
-			function _unsupportedIterableToArray(t, e) {
-				if (t) {
-					if ("string" == typeof t) return _arrayLikeToArray(t, e);
-					var n = {}.toString.call(t).slice(8, -1);
-					return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? _arrayLikeToArray(t, e) : void 0
-				}
-			}
-
-			function _iterableToArray(t) {
-				if ("undefined" != typeof Symbol && null != t[Symbol.iterator] || null != t["@@iterator"]) return Array.from(t)
-			}
-
-			function _arrayWithoutHoles(t) {
-				if (Array.isArray(t)) return _arrayLikeToArray(t)
-			}
-
-			function _arrayLikeToArray(t, e) {
-				(null == e || e > t.length) && (e = t.length);
-				for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
-				return r
-			}
-
-			__webpack_require__.d(__webpack_exports__, {A: () => __WEBPACK_DEFAULT_EXPORT__});
-			const __WEBPACK_DEFAULT_EXPORT__ = {
-				data: function () {
-					return {activePageIndex: 0, prevPageIndex: null, nextPageIndex: null, settings: {}, popupStatus: !1, activeClass: !1, pageConditionResult: !0}
-				}, mounted: function () {
-					var t = this;
-					setTimeout((function () {
-						t.settings = t.$store.getters.getSettings
-					}), 100)
-				}, methods: {
-					showSummaryPopup: function () {
-						this.popupStatus = !0
-					}, closeSummaryPopup: function () {
-						this.popupStatus = !1
-					}, checkRequiredFields: function () {
-						var t = [];
-						return this.getPages[this.activePageIndex].groupElements.forEach((function (e) {
-							t.push(e.alias)
-						})), this.$store.getters.hasUsedPageFields(t)
-					}, nextPage: function () {
-						var t = this;
-						if (!this.checkRequiredFields()) {
-							var e = this.totalPages - 1;
-							this.activePageIndex < e && (null !== this.nextPageIndex ? (this.activePageIndex = this.nextPageIndex, this.nextPageIndex = null) : (this.prevPageIndex = null, this.activePageIndex++))
-						}
-						setTimeout((function () {
-							t.ccbSyncCalcWithSticky()
-						}), 500)
-					}, prevPage: function () {
-						var t = this;
-						0 !== this.activePageIndex && null === this.prevPageIndex && (this.nextPageIndex = null, this.activePageIndex--), null !== this.prevPageIndex && 0 !== this.activePageIndex && (this.nextPageIndex = null, this.activePageIndex = this.prevPageIndex), setTimeout((function () {
-							t.ccbSyncCalcWithSticky()
-						}), 500)
-					}, checkConditions: function () {
-						var t = this, e = this.getPages[this.activePageIndex].groupElements, n = [];
-						if (this.getPageConditions.length) {
-							var r;
-							this.getPageConditions.forEach((function (r) {
-								var i = Object.values(t.calcStore).find((function (t) {
-									return t && t.alias === r.field
-								})), a = t.checkFieldCondition(i, r, e);
-								n.push(a)
-							}));
-							var i = this.getPages[this.activePageIndex], a = i.action;
-							if ("and" === i.condition ? r = n.every((function (t) {
-								return !0 === t
-							})) : "any" === i.condition && (r = n.some((function (t) {
-								return !0 === t
-							}))), this.pageConditionResult = "not_skip" !== a || !r, "jump_to" === a && r) {
-								var o = i.pageTo, s = this.getPages.findIndex((function (t) {
-									return t.alias === o
-								}));
-								this.prevPageIndex = this.activePageIndex, this.nextPageIndex = s
-							}
-						}
-					}, checkFieldCondition: function checkFieldCondition(fromElement, condition, groupElements) {
-						var result = !1, fieldNameFrom = condition.field.replace(/\_field_id.*/, ""), conditionStr = "", optionsFrom = groupElements.find((function (t) {
-							return t.alias === fromElement.alias
-						}));
-						if ((optionsFrom.options || []).forEach((function (t, e) {
-							"any" === condition.key || e !== +condition.key || ["toggle", "checkbox", "checkbox_with_img"].includes(fieldNameFrom) || (condition.originalValue = condition.originalValue ? condition.originalValue : +condition.value, ["!=", "=="].includes(condition.condition) && (condition.value = +t.optionValue))
-						})), "total" === fieldNameFrom) {
-							var formulaItem = this.formulaConst.find((function (t) {
-								return t.alias === fromElement.alias
-							}));
-							formulaItem || (formulaItem = {data: {total: 0}}), conditionStr += eval(formulaItem.data.total + condition.condition + +condition.value + "")
-						} else {
-							if (["toggle", "checkbox", "checkbox_with_img"].includes(fieldNameFrom) && "any" === condition.key) {
-								var option = fromElement.options[0], fieldData = this.calc_data.fields.find((function (t) {
-									return t.alias === fromElement.alias
-								}));
-								if (null != fieldData && fieldData.options) {
-									var values = fieldData.options.map((function (t) {
-										return +t.optionValue
-									}));
-									return conditionStr = values.includes(null == option ? void 0 : option.value), !0
-								}
-								return conditionStr = "", !1
-							}
-							if (["toggle", "checkbox", "checkbox_with_img"].includes(fieldNameFrom) && ["in", "not in", "contains"].includes(condition.condition)) {
-								if ("in" === condition.condition) {
-									var _condition$checkedVal, sorted = null === (_condition$checkedVal = condition.checkedValues) || void 0 === _condition$checkedVal ? void 0 : _condition$checkedVal.sort(),
-										elementSelectedIdx = fromElement.options.map((function (t) {
-											return +t.temp.split("_")[1]
-										})).sort();
-									conditionStr += this.arraysEqual(sorted, elementSelectedIdx)
-								}
-								if ("not in" === condition.condition) {
-									var _condition$checkedVal2, _sorted = null === (_condition$checkedVal2 = condition.checkedValues) || void 0 === _condition$checkedVal2 ? void 0 : _condition$checkedVal2.sort(),
-										_elementSelectedIdx = fromElement.options.map((function (t) {
-											return +t.temp.split("_")[1]
-										})).sort();
-									conditionStr += _sorted.every((function (t) {
-										return !_elementSelectedIdx.includes(t)
-									}))
-								}
-								if ("contains" === condition.condition) if ("" === condition.key) conditionStr += "false"; else {
-									var _elementSelectedIdx2 = fromElement.options.map((function (t) {
-										return +t.temp.split("_")[1]
-									}));
-									conditionStr += "".concat(_elementSelectedIdx2.includes(+condition.key))
-								}
-							} else if (["toggle", "checkbox", "checkbox_with_img"].includes(fieldNameFrom) && ["==", ">=", "<=", "!="].includes(condition.condition)) result = +fromElement.value == +condition.value, ["!=", "=="].includes(condition.condition) ? conditionStr += "!=" === condition.condition ? "".concat(!result) : "".concat(result) : [">=", "<="].includes(condition.condition) && (result = +fromElement.value >= +condition.originalValue, conditionStr += ">=" === condition.condition ? "".concat(+fromElement.value >= +condition.value) : "".concat(+fromElement.value <= +condition.value)); else if (["radio", "radio_with_img", "dropDown", "dropDown_with_img"].includes(fieldNameFrom)) {
-								var conditionListForCurrentField = [conditionListForCurrentField], productPrice = 0, settings = this.$store.getters.getSettings;
-								if (settings.woo_products) {
-									var _settings$woo_product, wooLinks = (null === (_settings$woo_product = settings.woo_products) || void 0 === _settings$woo_product ? void 0 : _settings$woo_product.meta_links) || [],
-										linkList = wooLinks.map((function (t) {
-											return t.calc_field
-										}));
-									productPrice = linkList.includes(fromElement.alias) ? this.$store.getters.getWooProductPrice : 0
-								}
-								var conditionValue = +condition.value + productPrice;
-								if ("any" === condition.key) {
-									var _option = fromElement.options[0], _fieldData = this.calc_data.fields.find((function (t) {
-										return t.alias === fromElement.alias
-									}));
-									if (null != _fieldData && _fieldData.options && fromElement.checked) {
-										var _values = _fieldData.options.map((function (t) {
-											return +t.optionValue
-										}));
-										return conditionStr = _values.includes(null == _option ? void 0 : _option.value), !0
-									}
-									return conditionStr = "", !1
-								}
-								["!=", "=="].includes(condition.condition) ? conditionListForCurrentField.length > 1 ? (result = conditionListForCurrentField.some((function (c) {
-									return eval(fromElement.summary_value + c.condition + +c.value + "")
-								})), conditionStr += result) : (result = fromElement.options.some((function (t) {
-									var e = t.temp.split("_");
-									return +e[0] === conditionValue && +e[1] == +condition.key
-								})), conditionStr += "!=" === condition.condition && fromElement.checked ? "".concat(!result) : "".concat(result)) : conditionListForCurrentField.length > 1 ? (result = conditionListForCurrentField.some((function (c) {
-									return eval(fromElement.summary_value + c.condition + +c.value + "")
-								})), conditionStr += "".concat(result)) : (result = fromElement.options.some((function (t) {
-									return +t.temp.split("_")[0] >= +condition.originalValue
-								})), conditionStr += ">=" === condition.condition ? "".concat(result) : "".concat(!result))
-							} else if (["quantity", "range", "multi_range"].includes(fieldNameFrom)) {
-								var v = fromElement.multiply ? fromElement.value / fromElement.unit : fromElement.value;
-								conditionStr += eval("".concat(v, " ").concat(condition.condition, " ").concat(+condition.value))
-							} else if (["geolocation"].includes(fieldNameFrom) && !["=="].includes(condition.condition)) if (condition.condition.includes("&")) {
-								var str = condition.condition, parts = str.split("&"), cond = parts[0].trim(), distance = void 0 !== fromElement.userSelectedOptions ? fromElement.userSelectedOptions.distance : 0;
-								conditionStr += eval("".concat(distance, " ").concat(cond, " ").concat(+condition.value))
-							} else {
-								var value = fromElement.value ? fromElement.value : 0;
-								conditionStr += eval("".concat(value, " ").concat(condition.condition, " ").concat(+condition.value))
-							} else if (["geolocation"].includes(fieldNameFrom) && ["=="].includes(condition.condition)) if ("any" === condition.key) conditionStr = !0; else {
-								var selectedOption = fromElement.userSelectedOptions, multiplyLocations = this.calc_data.fields.find((function (t) {
-									return t.alias === condition.optionFrom
-								})).multiplyLocations, indexOfFoundObject = multiplyLocations.findIndex((function (t) {
-									return t.addressName === selectedOption.addressName
-								}));
-								conditionStr += eval("".concat(indexOfFoundObject, " ").concat(condition.condition, " ").concat(+condition.key))
-							} else conditionStr += eval("".concat(fromElement.value, " ").concat(condition.condition, " ").concat(+condition.value))
-						}
-						return "boolean" == typeof conditionStr ? conditionStr : !!conditionStr.trim() && eval(conditionStr)
-					}
-				}, computed: {
-					isLastPage: function () {
-						return this.getPages.length - 1 === this.activePageIndex
-					}, currentPageTitle: function () {
-						return this.getPages[this.activePageIndex] ? this.getPages[this.activePageIndex].label : ""
-					}, showMultiStepCalcTitle: function () {
-						var t, e = null === (t = this.settings.page_break) || void 0 === t ? void 0 : t.pagination_type;
-						return !["progress_with_bar", "progress_with_circle"].includes(e)
-					}, currentPageNextBtn: function () {
-						var t = this.getPages[this.activePageIndex].nextBtnLabel;
-						return t.length > 10 ? t.slice(0, 7) + "..." : t
-					}, currentPagePrevBtn: function () {
-						var t = this.getPages[this.activePageIndex] ? this.getPages[this.activePageIndex].previousBtnLabel : this.getPages[this.activePageIndex - 1].previousBtnLabel;
-						return t.length > 10 ? t.slice(0, 7) + "..." : t
-					}, getPageTotalSummaryFields: function () {
-						var t = this.getTotalSummaryFields, e = this.getAliasesToActivePage;
-						return t.filter((function (t) {
-							return e.includes(t.alias)
-						}))
-					}, getPageConditions: function () {
-						var t = this.getPages[this.activePageIndex];
-						return t.conditions ? t.conditions : []
-					}, getAliasesToActivePage: function () {
-						var t = this, e = this.getPages, n = [];
-						return e.forEach((function (e, r) {
-							r <= t.activePageIndex && (n = [].concat(_toConsumableArray(n), _toConsumableArray(e.groupElements)))
-						})), n.map((function (t) {
-							return t.alias
-						}))
-					}, getPages: function () {
-						return this.calc_data.fields ? this.calc_data.fields.filter((function (t) {
-							return t.alias.includes("page_break")
-						})) : []
-					}, totalPages: function () {
-						if (this.calc_data.fields) {
-							var t = this.calc_data.fields.filter((function (t) {
-								return t.alias.includes("page_break")
-							})).length;
-							return this.summaryInLastPage ? t + 1 : t
-						}
-					}, totalsInPages: function () {
-						var t;
-						return null === (t = this.settings.page_break) || void 0 === t ? void 0 : t.total_in_page
-					}, pageBreakFormulas: function () {
-						return this.settings.page_break ? this.settings.page_break.formulas : []
-					}, pageBreakRepeaterFormula: function () {
-						var t = this.pageBreakFormulas.map((function (t) {
-							return t.alias
-						}));
-						return this.getRepeaterTotals.filter((function (e) {
-							return t.includes(e.alias)
-						}))
-					}, pageBreakTotals: function () {
-						var t = this.pageBreakFormulas.map((function (t) {
-							return t.alias
-						}));
-						return this.formulaConst.filter((function (e) {
-							return t.includes(e.alias)
-						}))
-					}, pageNavigationStyle: function () {
-						var t, e = " border-bottom-color: transparent !important; border-bottom-left-radius: 0px !important; border-bottom-right-radius: 0px !important; ";
-						return null !== (t = this.settings.page_break) && void 0 !== t && t.pagination_type && "hidden" !== this.settings.page_break.pagination_type && (e = "".concat(e, " border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;")), e
-					}, showSummaryPage: function () {
-						return this.activePageIndex + 1 === this.totalPages
-					}, summaryInLastPage: function () {
-						return !(!this.settings.page_break || !this.$store.getters.getProActive) && this.settings.page_break.summary_after_last_page
-					}, pageBreakEnabled: function () {
-						return 0 !== this.getPages.length && this.$store.getters.getProActive
-					}, fullWithStepCalc: function () {
-						if (this.summaryInLastPage && this.$store.getters.getProActive && this.pageBreakEnabled) return "grid-template-columns: none"
-					}
-				}, watch: {
-					popupStatus: function (t) {
-						var e = this;
-						t ? setTimeout((function () {
-							e.activeClass = !0
-						}), 100) : this.activeClass = !1
-					}
-				}
-			}
 		}, 8836: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 			"use strict";
 			__webpack_require__.d(__webpack_exports__, {A: () => __WEBPACK_DEFAULT_EXPORT__});
@@ -14420,15 +13977,15 @@
 									return {type: i, width: "".concat(a, "px"), radius: "".concat(o, "px")}[n]
 								}
 								return null
-							}), k = o.field_and_buttons_height, D = o.container_vertical_max_width, L = o.container_horizontal_max_width, j = o.container_two_column_max_width, S = d.container_shadow, N = n.accent_color, T = n.container,
+							}), k = o.field_and_buttons_height, D = o.container_vertical_max_width, L = o.container_horizontal_max_width, j = o.container_two_column_max_width, N = d.container_shadow, S = n.accent_color, T = n.container,
 							O = n.error_color, I = n.primary_color, A = n.secondary_color, z = n.svg_color, Y = l.container_margin, $ = l.container_padding, E = l.description_position, C = l.field_side_indents, P = l.field_spacing,
 							F = a.description_font_size, U = a.description_font_weight, H = a.summary_header_size, R = a.summary_header_font_weight, V = a.fields_btn_font_size, Q = a.fields_btn_font_weight, W = a.header_font_size,
 							q = a.header_font_weight, B = a.label_font_size, G = a.label_font_weight, J = a.total_field_font_size, K = a.total_field_font_weight, Z = a.total_font_size, X = a.total_font_weight, tt = a.total_text_transform;
-						M += "\n    \n    \t\t".concat(g, " .sticky-calculator-banner.top {\n    \t\t   border-bottom: 1px solid !important;\n\t \t\t   border-color: ").concat(v(I, "1A"), " !important;\n    \t\t}\n    \t\t    \t\t\n\t\t\t").concat(g, " .sticky-calculator-banner.bottom {\n    \t\t   border-top: 1px solid !important;\n   \t \t\t   border-color: ").concat(v(I, "1A"), " !important;\n    \t\t}\n    \t\t\n    \t\t").concat(g, " .sticky-calculator-banner,\n    \t\t").concat(g, " .sticky-calculator-btn {\n\t\t\t\tbackground-color: ").concat(T.color, " !important;\n    \t\t}\n    \t\t\n    \t\t").concat(g, " .sticky-calculator-banner .sticky-bar-totals span,\n    \t\t").concat(g, " .sticky-calculator-banner .sticky-bar-text__title,\n    \t\t").concat(g, " .sticky-calculator-btn--text__title {\n\t\t\t\tcolor: ").concat(I, " !important;\n    \t\t}\n    \t\t\n    \t\t").concat(g, " .sticky-calculator-banner .sticky-bar-text__description,\n    \t\t").concat(g, " .sticky-calculator-btn--text__description {\n\t    \t\tcolor: ").concat(v(I, "80"), " !important;\n    \t\t}\n    \t\t\n    \t\t").concat(g, " .sticky-calculator-banner .sticky-bar-icon i,\n    \t\t").concat(g, " .ccb-icon-arrow i,\n    \t\t").concat(g, " .sticky-calculator-btn--icon i {\n\t\t\t\tcolor: ").concat(N, " !important;\n    \t\t}\n    \t\t\n\t\t\t").concat(g, " .sticky-calculator-btn--icon img {\n\t\t\t\t").concat((0, c.A)(N), "\n\t\t\t}\n    \t\t\n    \t\t").concat(y, " .modal-content {\n\t\t\t\tbackground: linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.12) 100%), var(--white, ").concat(T.color, ");\n\t\t        border-radius: ").concat(x("container_border", "radius"), " !important;\n    \t\t}\n    \t\t\n    \t\t").concat(y, " .calculator-settings.ccb-front {\n\t\t\t\tmargin: 10px auto;\n    \t\t}\n    \t\t\n    \t\t").concat(y, " .ccb-calc-edit {\n\t\t\t\tdisplay: none !important;\n    \t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-pagination {\n\t\t\t\tborder-color: ").concat(v(I, "1A"), " !important;\n\t\t\t\tbackground-color: ").concat(T.color, " !important;\n\t\t\t\tborder-top-right-radius: ").concat(x("container_border", "radius"), ";\n\t\t\t\tborder-top-left-radius: ").concat(x("container_border", "radius"), ";\n\t\t\t\tborder: ").concat(x("container_border", "width"), " ").concat(x("container_border", "type"), "  ").concat(v(I, "1A"), " !important;\n\t\t\t\tborder-bottom-color: transparent !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-pagination .progress-with-bar,\n\t\t\t").concat(m, " .calc-container .calc-pagination .progress-with-circle,\n\t\t\t").concat(m, " .calc-container .calc-pagination .rectangle-tab,\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-tab {\n\t\t\t\tcolor: ").concat(v(I, "80"), " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-pagination .progress-with-bar .bar,\n\t\t\t").concat(m, " .calc-container .calc-pagination .rectangle-tab .tab__item,\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-tab .tab__item,\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-with-line .bar-overlay {\n\t\t\t\tbackground-color: ").concat(v(I, "1A"), " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-pagination .progress-with-bar .bar span,\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-with-line .bar-progress {\n\t\t\t\tbackground-color: ").concat(N, " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-pagination .progress-with-circle .circle {\n\t\t\t\tbackground: conic-gradient(\n\t\t\t\t\t").concat(N, " calc(var(--progress) * 1%),\n\t\t\t\t\t").concat(v(I, "1A"), " 0\n\t\t\t\t);\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-pagination .progress-with-circle .circle:before {\n\t\t\t\tbackground-color: ").concat(T.color, " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-pagination .rectangle-tab .active .tab__item,\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-tab .active .tab__item {\n\t\t\t\tbackground-color: ").concat(N, " !important;\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-pagination .rectangle-tab .tabs .done .tab__item,\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-tab .tabs .done .tab__item {\n\t\t\t\tbackground-color: ").concat(v(N, "30"), " !important;\n\t\t\t\tcolor: ").concat(N, " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-pagination .rectangle-tab .done .tab__title,\n\t\t\t").concat(m, " .calc-container .calc-pagination .rectangle-tab .active .tab__title,\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-tab .done .tab__title,\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-tab .active .tab__title,\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-with-line .active .tab__title,\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-with-line .done .tab__title {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-with-line .tab__item {\n\t\t\t\tbackground-color: ").concat(T.color, ";\n\t\t\t\tborder: 2px solid ").concat(v(I, "1A"), ";\n\t\t\t\tcolor: ").concat(v(I, "5A"), ";\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-with-line .done .tab__item,\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-with-line .active .tab__item {\n\t\t\t\tbackground-color: ").concat(T.color, ";\n\t\t\t\tborder: 2px solid ").concat(N, ";\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-with-line .done .tab__item {\n\t\t\t\tbackground-color: ").concat(T.color, " !important;\n\t\t\t\tcolor: ").concat(N, " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-with-line .active .tab__item {\n\t\t\t\tbackground-color: ").concat(N, " !important;\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-pagination .circle-with-line .tab__title {\n\t\t\t\tcolor: ").concat(v(I, "5A"), ";\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-page-navigation {\n\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t\tborder-bottom-left-radius: ").concat(x("container_border", "radius"), " !important;\n\t\t\t\tborder-bottom-right-radius: ").concat(x("container_border", "radius"), " !important;\n\t\t\t\tborder: ").concat(x("container_border", "width"), " ").concat(x("container_border", "type"), "  ").concat(v(I, "1A"), " !important;\n\t\t\t\tborder-top-color: transparent !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-page-navigation .summary {\n\t\t\t\tcolor: ").concat(N, " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-page-navigation button {\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t\tfont-size: ").concat(V, " !important;\n\t\t\t\tfont-weight: ").concat(Q, " !important;\n\t\t\t\tborder-radius: ").concat(x("button_border", "radius"), " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-page-navigation .back {\n\t\t\t\tbackground-color: transparent !important;\n\t\t\t\tcolor: ").concat(N, " !important;\n\t\t\t\tborder: 1px solid ").concat(N, " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-page-navigation .next {\n\t\t\t\tbackground: ").concat(N, " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-summary-popup-window {\n\t\t\t\tbackground: ").concat(T.color, " !important;\n\t\t\t\tcolor: ").concat(I, ";\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-summary-popup-window .calc-summary-popup__header {\n\t\t\t\tborder-color: ").concat(v(I, "1A"), " !important;\n\t\t\t}\n\n\t\t\t").concat(m, " .calc-container .calc-summary-popup-window .calc-summary-popup__close span {\n\t\t\t\tbackground: ").concat(v(I, "1A"), " !important;\n\t\t\t}\n\t\t\t\n    \n\t\t  ").concat(m, " .calc-container .ccb-calc-edit {\n\t\t\tbackground-color: ").concat(v(T.color, _(parseInt(T.opacity))), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tborder-color: ").concat(v(I, "1A"), " !important;\n\t\t\t\tborder: ").concat(x("container_border", "width"), " ").concat(x("container_border", "type"), "\n\t\t\t  }\n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .calc-subtotal-list-accordion,\n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list {\n\t\t\t\trow-gap: calc(").concat(P, " / 2) !important;\n\t\t\t\toverflow: hidden;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-fields-container {\n\t\t\t\trow-gap: ").concat(P, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-container .calc-pages .calc-page {\n\t\t\t\trow-gap: ").concat(P, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-fields-container .calc-repeater-wrapper .calc-repeater-fields {\n\t\t\t\trow-gap: calc(").concat(P, " - 8px) !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  \n\t\t\t  ").concat(m, " .calc-thank-you-page-container.vertical,\n\t\t\t  ").concat(m, " .calc-container.vertical {\n\t\t\t\tmax-width: ").concat(D, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-thank-you-page-container.horizontal,\n\t\t\t  ").concat(m, " .calc-container.horizontal {\n\t\t\t\tmax-width: ").concat(L, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-thank-you-page-container.two_column,\n\t\t\t  ").concat(m, " .calc-container.two_column {\n\t\t\t\tmax-width: ").concat(j, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  #ccb-desktop-preview .calc-thank-you-page-container.two_column,\n\t\t\t  #ccb-desktop-preview .calc-container.two_column {\n\t\t\t\tmax-width: calc(").concat(j, " - 176px) !important;\n\t\t\t  }\n\t\t\n\t\t\t  ").concat(m, " .calc-list-inner {\n\t\t\t\t padding: ").concat($.join("px "), "px !important;\n\t\t\t\t margin: ").concat(Y.join("px "), "px !important;\n\t\t\t\t border-radius: ").concat(x("container_border", "radius"), " !important;\n\t\t\t\t border: ").concat(x("container_border", "width"), " ").concat(x("container_border", "type"), "  ").concat(v(I, "1A"), " !important;\n\t\t\t\t \n\t\t\t\t -webkit-box-shadow: ").concat(w(S), ";\n\t\t\t\t -moz-box-shadow: ").concat(w(S), " !important;\n\t\t\t\t  box-shadow: ").concat(w(S), " !important;\n\t\t\t\t  \n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .country-selector.has-value .country-selector__input,\n\t\t\t  ").concat(m, " .input-tel__input,\n\t\t\t  ").concat(m, " .ccb-datetime div .calc-date-picker-select,\n\t\t\t  ").concat(m, " .calc-drop-down-with-image-list > ul,\n\t\t\t  ").concat(m, " .calc-toggle-item .calc-toggle-wrapper label:after,\n\t\t\t  ").concat(m, " .calc-checkbox-item label::before,\n\t\t\t  ").concat(m, " .ccb-appearance-field,\n\t\t\t  ").concat(m, " .ccb-location-popup-sidebar input,\n\t\t\t  ").concat(m, " .ccb-location-popup__search input,\n\t\t\t  ").concat(m, " .ccb-location-popup-sidebar span {\n\t\t\t\t background: ").concat(A, " !important;\n\t\t\t\t border-color: ").concat(v(I, "1A"), " !important;\n\t\t\t\t color: ").concat(I, " !important;\n\t\t\t\t font-size: ").concat(V, " !important;\n\t\t\t\t font-weight: ").concat(Q, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .input-tel.has-hint .input-tel__label, \n\t\t\t  ").concat(m, " .input-tel.has-value .input-tel__label,\n\t\t\t  ").concat(m, " .country-selector__label {\n\t\t\t    color: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .input-tel.is-valid .input-tel__input {\n\t\t\t    caret-color: ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .invalid-phone-number .input-tel.has-hint .input-tel__input,\n\t\t\t  ").concat(m, " .required .input-tel .input-tel__input {\n\t\t\t\tborder-color: ").concat(O, " !important;\n\t\t\t\tbox-shadow: none !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .input-tel.is-valid .input-tel__input, \n\t\t\t  ").concat(m, " .input-tel.is-valid .input-tel__input:hover {\n\t\t\t  \tborder-color: ").concat(N, " !important;\n\t\t\t  \tcaret-color: unset !important;\n\t\t\t  \tbox-shadow: none !important;\n\t\t\t  }\n\t\t\t  \n\t\t      ").concat(m, " .country-selector.has-value .country-selector__input {\n\t\t\t\tbox-shadow: none !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-file-upload .calc-uploaded-files .ccb-uploaded-file-list-info > i:first-child {\n\t\t\t\tcolor: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-time-picker-wrapper  {\n\t\t\t   background: ").concat(A, " !important;\n\t\t\t\t border: ").concat(x("fields_border", "width"), " ").concat(x("fields_border", "type"), "  ").concat(v(I, "1A"), " !important;\n\t\t\t\t border-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, "  .ccb-time-picker-wrapper .vue__time-picker input.display-time {\n\t\t\t  \t border-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t\t background: ").concat(A, " !important;\n\t\t\t\t color: ").concat(I, " !important;\n\t\t\t\t font-size: ").concat(V, " !important;\n\t\t\t\t font-weight: ").concat(Q, " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-time-picker-wrapper .vue__time-picker .controls .char {\n\t\t\t  \tcolor: ").concat(v(I, "B3"), " !important;\n\t\t\t  }\n\t\t\t    ").concat(m, "  .ccb-time-picker-wrapper .start .vue__time-picker input.display-time {\n\t\t\t  \t border-radius: ").concat(x("fields_border", "radius"), " 0 0 ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t   ").concat(m, "  .ccb-time-picker-wrapper .end .vue__time-picker input.display-time {\n\t\t\t  \t border-radius: 0 ").concat(x("fields_border", "radius"), " ").concat(x("fields_border", "radius"), " 0 !important;\n\t\t\t  }\n\t\t\t   ").concat(m, " .ccb-time-picker-wrapper  .separator {\n\t\t\t\t font-size: ").concat(V, " !important;\n\t\t\t\t font-weight: ").concat(Q, " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-time-picker-wrapper .vue__time-picker input {\n\t\t\t   padding: 12px ").concat(C, " 11px ").concat(C, " !important;\n\t\t\t   height: ").concat(b(parseInt(x("fields_border", "width")), parseInt(k)), "px !important;\n\t\t\t   min-height: ").concat(b(parseInt(x("fields_border", "width")), parseInt(k)), "px !important;\n\t\t\t   width: 100%;\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-time-picker .ccb-time-picker-wrapper .ccb-time-picker-range .separator {\n\t\t\t  height: ").concat(b(parseInt(x("fields_border", "width")), parseInt(k)), "px !important;\n\t\t\t  min-height: ").concat(b(parseInt(x("fields_border", "width")), parseInt(k)), "px !important;\n\t\t\t  background:  ").concat(v(A, "bf"), " !important;\n\t\t\t  color: ").concat(I, " !important;\n\t\t\t  border-color: ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-time-picker-wrapper .vue__time-picker input.display-time::placeholder,  ").concat(m, " .ccb-time-picker-wrapper .vue__time-picker-dropdown ul li, .vue__time-picker .dropdown ul li  {\n\t\t\t  color: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-time-picker-wrapper .vue__time-picker .dropdown ul li.active  {\n\t\t\t  color: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, " .vue__time-picker-dropdown, .vue__time-picker .dropdown  {\n\t\t\t\t background-color: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action,\n\t\t\t  ").concat(m, " .ccb-appearance-field:not(textarea) {\n\t\t\t\t min-height: ").concat(k, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div .calc-date-picker-select {\n\t\t\t\t min-height: ").concat(k, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-repeater-wrapper {\n\t\t\t  \tborder-color: ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t\n\t\t\t  ").concat(m, " .ccb-datetime div .calc-date-picker-select,\n\t\t\t  ").concat(m, " .ccb-appearance-field {\n\t\t\t\t padding: 12px ").concat(C, " !important;\n\t\t\t\t border-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t\t border: ").concat(x("fields_border", "width"), " ").concat(x("fields_border", "type"), "  ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-appearance-field.calc-drop-down {\n\t\t\t\t padding: 12px ").concat(parseInt(C) + 10, "px 12px ").concat(C, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " textarea {\n\t\t\t\theight: ").concat(C, ";\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-input-wrapper .input-number-counter {\n\t\t\t\tright: ").concat(parseInt(x("fields_border", "radius")) > 11 ? parseInt(x("fields_border", "radius")) > 20 ? "15px" : "10px" : "5px", " !important;\n\t\t\t\tborder-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox .calc-checkbox-item label::after {\n\t\t\t\tborder-left-color: ").concat(A, " !important;\n\t\t\t\tborder-bottom-color: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-radio-wrapper input[type=radio] {\n\t\t\t\t background: ").concat(A, " !important;\n\t\t\t\t border-color: ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  .calc-radio-wrapper input[type=radio]:checked:before {\n\t\t\t\t background: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div .calc-date-picker-select i,\n\t\t\t  ").concat(m, " .ccb-time-picker-wrapper .ccb-icon-timepicker-light-clock,\n\t\t\t  ").concat(m, " .calc-drop-down-with-image .ccb-select-arrow,\n\t\t\t  ").concat(m, " .calc-item .calc-drop-down-box .ccb-select-arrow {\n\t\t\t\tcolor: ").concat(v(I, "B3"), " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, " .calc-item .ccb-time-picker-wrapper input:focus ").concat(m, " .calc-item .ccb-time-picker-wrapper {\n\t\t\t        border-color: ").concat(N, " !important;\n\t\t\t    }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item textarea:focus,\n\t\t\t  ").concat(m, " .calc-item .calc-drop-down-with-image-current.calc-dd-selected,\n\t\t\t  ").concat(m, " .calc-item .ccb-datetime div .calc-date-picker-select.open,\n\t\t\t  ").concat(m, " .calc-item .calc-input-wrapper .calc-input:focus,\n\t\t\t  ").concat(m, " .calc-item .calc-drop-down-box .calc-drop-down:focus {\n\t\t\t\tborder-color: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-drop-down-with-image-list-items li span.calc-list-wrapper .calc-list-price,\n\t\t\t  ").concat(m, " .calc-drop-down-with-image-list-items li span.calc-list-wrapper .calc-list-title {\n\t\t\t\t color: ").concat(I, " !important;\n\t\t\t\t font-weight: ").concat(Q, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-checkbox-item input[type=checkbox]:checked ~ label:before {\n\t\t\t\t border-color: ").concat(N, " !important;\n\t\t\t\t background-color: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-toggle-wrapper label {\n\t\t\t\tbackground: ").concat(v(I, "33"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-toggle-wrapper input:checked + label,\n\t\t\t  ").concat(m, " .calc-item .calc-radio-wrapper input[type=radio]:checked {\n\t\t\t\tbackground: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-radio-wrapper input[type=radio]:checked {\n\t\t\t\tborder-color: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-range-slider__progress {\n\t\t\t\t background: ").concat(I, "40 !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-range-slider > input:nth-of-type(2) + output,\n\t\t\t  ").concat(m, " .calc-range-slider > input:nth-of-type(1) + output {\n\t\t\t\t color: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.calc-checkbox-image .calc-checkbox-info .calc-checkbox-label,\n\t\t\t  ").concat(m, " .calc-radio-wrapper.calc-radio-image .calc-radio-info .calc-radio-label {\n\t\t\t\tfont-size: ").concat(V, " !important;\n\t\t\t\tfont-weight: ").concat(Q, " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tword-break: break-word;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.calc-checkbox-image .calc-checkbox-info .calc-checkbox-price,\n\t\t\t  ").concat(m, " .calc-radio-wrapper.calc-radio-image .calc-radio-info .calc-radio-price {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: calc(").concat(J, " - 2px) !important;\n\t\t\t\tcolor: ").concat(v(I, "80"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-applied-title {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-promocode {\n\t\t\t    background: ").concat(v(I, "1A"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(g, " .sticky-bar-action button,\n\t\t\t  ").concat(m, " .ccb-discount-off,\n\t\t\t  ").concat(m, " .calc-promocode-container button {\n\t\t\t  \tcolor: ").concat(A, " !important;\n\t\t\t  \tbackground-color: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(g, " .sticky-bar-action button,\n\t\t\t   ").concat(m, " .calc-promocode-container button:hover {\n\t\t\t\tbackground: ").concat(s(-.15, N), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  \n\t\t\t  ").concat(m, " .calc-range-slider::before,\n\t\t\t  ").concat(m, " .calc-range-slider::after {\n\t\t\t\t opacity: 0 !important;\n\t\t\t  }\n\t\t\t   \n\t\t   \t  ").concat(m, " .ccb-promocode-hint,\n\t\t   \t  ").concat(m, " .calc-have-promocode {\n\t\t\t\t color: ").concat(N, " !important;;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-range-slider-min-max span {\n\t\t\t\t color: ").concat(v(I, "80"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .e-control-wrapper.e-slider-container.e-material-slider .e-slider .e-handle.e-handle-first,\n\t\t\t  ").concat(m, " .e-slider-tooltip.e-tooltip-wrap.e-popup,\n\t\t\t  ").concat(m, " .e-control-wrapper.e-slider-container .e-slider .e-handle,\n\t\t\t  ").concat(m, " .e-control-wrapper.e-slider-container .e-slider .e-range {\n\t\t\t\tbackground: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .e-slider-tooltip.e-tooltip-wrap.e-popup:after {\n\t\t\t\tborder-color: ").concat(N, " transparent transparent transparent !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.calc-checkbox-image .calc-checkbox-image-wrapper,\n\t\t\t  ").concat(m, " .calc-radio-wrapper.calc-radio-image .calc-radio-image-wrapper {\n\t\t\t\tborder-color: ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.calc-checkbox-image .calc-checkbox-image-wrapper.calc-checkbox-image-selected,\n\t\t\t  ").concat(m, " .calc-radio-wrapper.calc-radio-image .calc-radio-image-wrapper.calc-radio-image-selected {\n\t\t\t\tborder-color: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  .e-slider-tooltip.e-tooltip-wrap.e-popup.calc_id_").concat(e, ":after {\n\t\t\t\t  border-color: ").concat(N, " transparent transparent transparent !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  .e-slider-tooltip.e-tooltip-wrap.e-popup.calc_id_").concat(e, " {\n\t\t\t\tbackground: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-list .calc-item-title {\n\t\t\t\t margin-bottom: 20px;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-list .calc-item-title .ccb-calc-heading {\n\t\t\t\tfont-size: ").concat(W, " !important;\n\t\t\t\tfont-weight: ").concat(q, " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\ttext-transform: ").concat(tt, " !important;\n\t\t\t\tword-break: break-all;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item__title, .ccb-location-popup-sidebar {\n\t\t\t\tfont-size: ").concat(B, " !important;\n\t\t\t\tfont-weight: ").concat(G, " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tmargin-bottom: 4px;\n\t\t\t\tword-break: break-word;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-geolocation__info {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .ccb-terms-text a {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\ttext-decoration:none\n\t\t\t  }\n\t\t\t  \t\t\t  \n\t\t\t  ").concat(m, " .calc-item__title.ccb-repeater-field {\n\t\t\t\tfont-size: calc(").concat(B, " + 2px) !important;\n\t\t\t\tmargin-top: 4px;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .calc-notice.success,\n\t\t\t  ").concat(m, " .calc-notice.success {\n\t\t\t  \tbackground: ").concat(v(N, "33"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, "  .calc-notice.success .calc-notice-icon-wrapper,\n\t\t\t  ").concat(m, " .calc-notice.success .calc-notice-icon-wrapper {\n\t\t\t  \tbackground-color: ").concat(v(N, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .calc-notice.success .calc-notice-icon-content,\n\t\t\t  ").concat(m, " .calc-notice.success .calc-notice-icon-content {\n\t\t\t\tbackground-color: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .calc-notice.success .calc-notice-icon-content,\n\t\t\t  ").concat(m, " .calc-notice.success .calc-notice-icon-content {\n\t\t\t\tbackground-color: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t ").concat(p, " .calc-notice.success .calc-notice-icon-content i,\n\t\t\t ").concat(m, " .calc-notice.success .calc-notice-icon-content i {\n\t\t\t  color: #fff;\n\t\t\t }\n\t\t\t  \n\t\t\t  ").concat(p, " .calc-notice.success .calc-notice-title,\n\t\t\t  ").concat(m, " .calc-notice.success .calc-notice-title {\n\t\t\t  \tcolor: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-toggle-container .calc-toggle-item .calc-toggle-label-wrap .calc-toggle-label,\n\t\t\t  ").concat(m, " .calc-item .calc-radio-wrapper label .calc-radio-label,\n\t\t\t  ").concat(m, " .calc-item .calc-checkbox-item label .calc-checkbox-title {\n\t\t\t\tfont-size: ").concat(V, " !important;\n\t\t\t\tfont-weight: ").concat(Q, " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tword-break: break-word;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action,\n\t\t\t  ").concat(m, " .ccb-location-popup__footer button {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-weight: ").concat(Q, " !important;\n\t\t\t\tfont-size: calc(").concat(V, " - 2px) !important;\n\t\t\t\tborder-radius: ").concat(x("button_border", "radius"), " !important;\n\t\t\t\tborder: ").concat(x("button_border", "width"), " ").concat(x("button_border", "type"), " ").concat(v(I, "0D"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.is-bold {\n\t\t\t\t  font-weight: 700 !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action:hover {\n\t\t\t\tbackground: ").concat(s(-.4, v(I, "26")), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.success,\n\t\t\t  ").concat(m, " .ccb-location-popup__footer .success {\n\t\t\t\tbackground: ").concat(N, " !important;\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-terms-link {\n\t\t\t\tcolor: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.success:hover {\n\t\t\t\tbackground: ").concat(s(-.15, N), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.success-with-border,\n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.default-with-border {\n\t\t\t\theight: 40px !important;\n\t\t\t\tmin-height: 40px !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.success-with-border {\n\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t\tcolor: ").concat(N, " !important;\n\t\t\t\tborder: 2px solid ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.success-with-border:hover {\n\t\t\t\tbackground: ").concat(N, " !important;\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.success-with-border i::before {\n\t\t\t  \ttransition: color 200ms linear;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.success-with-border:hover i::before {\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.default-with-border {\n\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t\tcolor: ").concat(v(I, "99"), " !important;\n\t\t\t\tborder: 2px solid ").concat(v(I, "4D"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.default-with-border:hover {\n\t\t\t\tcolor: ").concat(v(I, "80"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.default-with-border.danger {\n\t\t\t\tcolor: ").concat(O, " !important;\n\t\t\t\tborder: 1px solid ").concat(O, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.default-with-border.danger:hover {\n\t\t\t\tcolor: ").concat(O, " !important;\n\t\t\t\tbackground: ").concat(v(O, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-input-wrapper .input-number-counter {\n\t\t\t\tbackground: ").concat(v(I, "1D"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\ttransition: 200ms ease-in-out;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-stripe-wrapper {\n\t\t\t\twidth: 100%;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-accordion-btn {\n\t\t\t\t background: ").concat(v(I, "1a"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-accordion-btn > i {\n\t\t\t\t color: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-input-wrapper .input-number-counter:hover {\n\t\t\t\tbackground: ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: ").concat(J, " !important;\n\t\t\t\tfont-weight: ").concat(K, " !important;\n\t\t\t\ttext-transform: ").concat(tt, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-item-unit,\n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item .sub-inner {\n\t\t\t\tcolor: ").concat(v(I, "B3"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .calc-subtotal-list-header {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tbackground-color: ").concat(v(I, "1A"), " !important;\n\t\t\t\ttext-transform: ").concat(tt, " !important;\n\t\t\t\tborder-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .calc-subtotal-list-header span {\n\t\t\t  \tfont-size: ").concat(H, " !important;\n\t\t\t\tfont-weight: ").concat(R, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-container .show-unit .sub-inner .sub-item-value {\n\t\t\t\tpadding-right: 5px;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item.total {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: ").concat(Z, " !important;\n\t\t\t\tfont-weight: ").concat(X, " !important;\n\t\t\t\ttext-transform: ").concat(tt, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item.total .ccb-discount {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: calc(").concat(Z, " - 4px) !important;\n\t\t\t\tfont-weight: 500 !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item.total .ccb-discounts-inner-label {\n\t\t\t \tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: calc(").concat(Z, " - 4px) !important;\n\t\t\t\tfont-weight: 500 !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item.total .ccb-discount-title {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: calc(").concat(Z, " - 4px) !important;\n\t\t\t\tfont-weight: ").concat(X, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list.totals {\n\t\t\t\tborder-bottom: 1px solid ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item.total .sub-item-title {\n\t\t\t\ttext-transform: ").concat(tt, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select {\n\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .day-list .week .day {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .month-slide-control > div {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .month-slide-control div i,\n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .day-list .week-titles .title {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .slider-title > div {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\t&:hover{\n\t\t\t\t\tcolor:").concat(N, " !important;\n\t\t\t\t}\n\t\t\t  }\n            \t\t\n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .decade-title, .year-title, .month-title{\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\t&:hover{\n\t\t\t\t\tbackground:").concat(v(I, "0D"), ";\n\t\t\t\t\tcolor:").concat(N, " !important;\n\t\t\t\t}\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .decade, .year, .month{\n\t\t\t\t.selected{\n\t\t\t\t\tcolor: white!important;\n\t\t\t\t\tbackground: ").concat(N, ";\n\t\t\t\t\t&:hover{\n\t\t\t\t\t\tbackground: ").concat(N, "!important;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .current-year, .current-month, .current-decade{\n\t\t\t\tcolor: ").concat(N, ";\n              \tborder: 2px solid ").concat(N, ";\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .current-year.selected, .current-month.selected, .current-decade.selected{\n\t\t\t\tcolor: white;\n\t\t\t   }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .day-list .week .day:hover{\n\t\t\t\tbackground: ").concat(v(N, "26"), " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .day-list .week .day.today {\n\t\t\t  \tborder:2px solid ").concat(N, " !important;\n\t\t\t\tcolor: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .day-list .week .day:hover {\n\t\t\t\tborder: 2px solid ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .day-list .week .day.selected {\n\t\t\t\tbackground: ").concat(N, " !important;\n\t\t\t\tcolor: white !important;\n\t\t\t\tborder: 2px solid ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .day-list .week .day.selected.not-allowed {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tborder-color: transparent !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .month-slide-control div.slider-title {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-drop-down-with-image-list-items li {\n\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t\tborder-bottom: 1px solid ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-drop-down-with-image-list-items li:hover {\n\t\t\t\tbackground: ").concat(v(I, "1a"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-drop-down-with-image-list-items li:last-child {\n\t\t\t\tborder-bottom: none !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-file-upload .calc-uploaded-files .file-name {\n\t\t\t\tbackground: ").concat(v(I, "1A"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item__description span {\n\t\t\t\tfont-size: ").concat(F, " !important;\n\t\t\t\tfont-weight: ").concat(U, " !important;\n\t\t\t\tcolor: ").concat(v(I, "80"), " !important;\n\t\t\t\tword-break: break-word;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-payments .calc-radio-wrapper label > div.calc-payment-body .ccb-payment-description,\n\t\t\t  ").concat(m, " .calc-item__description span {\n\t\t\t\tfont-size: ").concat(F, " !important;\n\t\t\t\tfont-weight: ").concat(U, " !important;\n\t\t\t\tcolor: ").concat(v(I, "80"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item__description.").concat(E, " {\n\t\t\t\tdisplay: block !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-field.required .calc-required-field .ccb-field-required-tooltip,\n\t\t\t  ").concat(m, " .ccb-error-tip.front {\n\t\t\t\t color: #ffffff !important;\n\t\t\t\t background: ").concat(O, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-field.required .calc-required-field .ccb-field-required-tooltip-text::after {\n\t\t\t\tborder: 7px solid ").concat(O, " !important;\n\t\t\t\tborder-color: ").concat(O, " transparent transparent transparent !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-error-tip.front::after {\n\t\t\t\tborder-top: 10px solid ").concat(O, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-loader {\n\t\t\t\tborder: 6px solid ").concat(v(A, "26"), " !important;\n\t\t\t\tborder-top: 6px solid ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-loader-1 div {\n\t\t\t\tbackground: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-loader-3 div:after,\n\t\t\t  ").concat(m, " .ccb-loader-2 div:after {\n\t\t\t\tbackground: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-loader-4 circle,\n\t\t\t  ").concat(m, " .ccb-loader-4 path {\n\t\t\t\tfill: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-checkbox-hint {\n\t\t\t\tcolor: ").concat(I, " !important\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-file-upload .info-tip-block .info-icon {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-list-inner .calc-item-title-description {\n\t\t\t\tcolor: ").concat(v(I, "80"), " !important;\n\t\t\t\tfont-size: calc(").concat(V, " - 2px) !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-field.required .ccb-datetime div .calc-date-picker-select,\n\t\t\t  ").concat(m, " .ccb-field.required .calc-drop-down-with-image-list > ul,\n\t\t\t  ").concat(m, " .ccb-field.required .calc-toggle-item .calc-toggle-wrapper label:after,\n\t\t\t  ").concat(m, " .ccb-field.required .calc-checkbox-item label::before,\n\t\t\t  ").concat(m, " .ccb-field.required .ccb-appearance-field,\n\t\t\t  ").concat(m, " .ccb-field.required .ccb-appearance-field:hover,\n\t\t\t  ").concat(m, " .ccb-field.required .ccb-appearance-field:focus,\n\t\t\t  ").concat(m, " .ccb-field.required .ccb-appearance-field:active,\n\t\t\t  ").concat(m, " .ccb-field.required .calc-drop-down-with-image-current,\n\t\t\t  ").concat(m, " .ccb-field.required input[type=text],\n\t\t\t  ").concat(m, " .ccb-field.required input[type=radio],\n\t\t\t  ").concat(m, " .ccb-field.required input[type=number],\n\t\t\t  ").concat(m, " .ccb-field.required textarea,\n\t\t\t  ").concat(m, " .ccb-field.required select {\n\t\t\t\t border-color: ").concat(O, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-item.required .ccb-required-mark,\n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-item.required .calc-item__title {\n\t\t\t\t color: ").concat(O, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-file-upload .calc-uploaded-files .ccb-uploaded-file-list-info .ccb-select-anchor,\n\t\t\t  ").concat(m, " .calc-item .calc-file-upload .calc-uploaded-files .ccb-uploaded-file-list-info span {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .ccb-cf-wrap .wpcf7-submit {\n\t\t\t\tbackground-color: ").concat(N, " !important;\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-list-inner .calc-subtotal-list .calc-woo-product {\n\t\t\t\tborder-color: ").concat(N, ";\n\t\t\t\tbackground-color: ").concat(v(N, "0d"), ";\n\t\t\t\tcolor: ").concat(I, ";\n\t\t\t  }\n\t\t\t\t\n\t\t\t  ").concat(m, " .calc-list-inner .calc-subtotal-list .calc-woo-product .calc-woo-product__btn a {\n\t\t\t\tborder-radius: ").concat(x("button_border", "radius"), " !important;\n\t\t\t\tbackground-color: ").concat(N, ";\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t\tfont-size: calc(").concat(V, " - 2px) !important;\n\t\t\t\tfont-weight: ").concat(Q, " !important;\n\t\t\t\tmin-height: ").concat(k, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox-and-description .calc-checkbox-item label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-description .calc-checkbox-item label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox .calc-checkbox-item label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed .calc-checkbox-item label {\n\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t\tborder: 1px solid ").concat(v(I, "33"), " !important;\n\t\t\t\tborder-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox-and-description .calc-checkbox-item input:checked + label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-description .calc-checkbox-item input:checked + label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox .calc-checkbox-item input:checked + label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed .calc-checkbox-item input:checked + label {\n\t\t\t\t background: ").concat(N, " !important;\n\t\t\t\t border: 1px solid ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox-and-description .calc-checkbox-item input:checked + label .calc-checkbox-title,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-description .calc-checkbox-item input:checked + label .calc-checkbox-title,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox .calc-checkbox-item input:checked + label .calc-checkbox-title,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed .calc-checkbox-item input:checked + label .calc-checkbox-title {\n\t\t\t\t color: ").concat(A, ";\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox-and-description .calc-checkbox-item input:checked ~ label:before,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-description .calc-checkbox-item input:checked ~ label:before,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox .calc-checkbox-item input:checked ~ label:before,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed .calc-checkbox-item input:checked ~ label:before {\n\t\t\t\t border: 1px solid ").concat(N, " !important;\n\t\t\t\t background-color: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox-and-description .calc-checkbox-item input:checked + label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-description .calc-checkbox-item input:checked + label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox .calc-checkbox-item input:checked + label {\n\t\t\t\tbackground: ").concat(v(N, "1A"), " !important;\n\t\t\t\tborder: 1px solid ").concat(N, ";\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox-and-description .calc-checkbox-item input:checked + label .calc-checkbox-title,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-description .calc-checkbox-item input:checked + label .calc-checkbox-title,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox .calc-checkbox-item input:checked + label .calc-checkbox-title {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox-and-description .calc-checkbox-item .calc-checkbox-description,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-description .calc-checkbox-item .calc-checkbox-description,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox .calc-checkbox-item .calc-checkbox-description {\n\t\t\t\tcolor: ").concat(v(I, "B3"), " !important;\n\t\t\t\tfont-size: calc(").concat(J, " - 2px) !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-radio-wrapper.boxed-with-radio .calc-radio-item label,\n\t\t\t  ").concat(m, " .calc-radio-wrapper.boxed .calc-radio-item label {\n\t\t\t\t background: ").concat(A, " !important;\n\t\t\t\t border: 1px solid ").concat(v(I, "33"), " !important;\n\t\t\t\t border-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t   \n\t\t\t  ").concat(m, " .calc-radio-wrapper.boxed-with-radio .calc-radio-item input:checked + label,\n\t\t\t  ").concat(m, " .calc-radio-wrapper.boxed .calc-radio-item input:checked + label {\n\t\t\t\t  background: ").concat(N, " !important;\n\t\t\t\t  border: 1px solid ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-radio-wrapper.boxed .calc-radio-item input:checked + label {\n\t\t\t\t  background: ").concat(N, " !important;\n\t\t\t\t  border: 1px solid ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-radio-wrapper.boxed-with-radio .calc-radio-item input:checked + label {\n\t\t\t\t background: ").concat(v(N, "1A"), " !important;\n\t\t\t\t border: 1px solid ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-radio-wrapper.boxed-with-radio .calc-radio-item input:checked + label .calc-radio-label {\n\t\t\t\t color: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-toggle-container.boxed-with-toggle-and-description .calc-toggle-item {\n\t\t\t\t background: ").concat(A, " !important;\n\t\t\t\t border: 1px solid ").concat(v(I, "33"), " !important;\n\t\t\t\t border-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  {prefix} .calc-toggle-container.boxed-with-toggle-and-description .calc-toggle-item.calc-is-checked {\n\t\t\t\tborder: 1px solid ").concat(N, " !important;\n\t\t\t\tbackground: ").concat(v(N, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-toggle-container.boxed-with-toggle-and-description .calc-toggle-item .calc-toggle-label-wrap .calc-toggle-description {\n\t\t\t\t color: ").concat(v(I, "B3"), " !important;\n\t\t\t\t font-size: calc(").concat(J, " - 2px) !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-checkbox.calc-checkbox-image.with-icon .calc-checkbox-image-wrapper img,\n\t\t\t  ").concat(m, " .calc-radio-wrapper.calc-radio-image.with-icon .calc-radio-image-wrapper img {\n\t\t\t\t").concat(z ? (0, c.A)(N) : "", "\n\t\t\t  }\n\t\t\t\t\n\t\t\t  ").concat(m, " .calc-radio-wrapper.calc-radio-image.with-icon .calc-radio-image-wrapper,\n\t\t\t  ").concat(m, " .calc-checkbox.calc-checkbox-image.with-icon .calc-checkbox-image-wrapper { \n\t\t\t\t  background: ").concat(A, " !important;\n\t\t\t\t  border: 1px solid ").concat(v(I, "33"), " !important;\n\t\t\t\t  border-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t\n\t\t\t  ").concat(m, " .calc-radio-wrapper.calc-radio-image.with-icon .calc-radio-image-wrapper.calc-radio-image-selected,\n\t\t\t  ").concat(m, " .calc-checkbox.calc-checkbox-image.with-icon .calc-checkbox-image-wrapper.calc-checkbox-image-selected { \n\t\t\t\t  border: 1px solid ").concat(N, " !important;\n\t\t\t\t  background: ").concat(v(N, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-repeater-subtotal-header i {\n\t\t\t  font-size: calc(").concat(J, " - 4px) !important;\n\t\t\t  \tcolor: ").concat(v(I, "80"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-repeater-subtotal-header span {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: calc(").concat(J, " - 2px) !important;\n\t\t\t\tfont-weight: 700 !important;\n\t\t\t\ttext-transform: ").concat(tt, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .calc-repeater-subtotal .sub-list-item {\n\t\t\t\tfont-size: calc(").concat(J, " - 2px) !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page {\n\t\t\t\t border-color: ").concat(v(I, "1A"), " !important;\n\t\t\t\t  background-color: ").concat(v(T.color, _(parseInt(T.opacity))), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__title-box-title {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: ").concat(Z, " !important;\n\t\t\t\tfont-weight: ").concat(X, " !important;\n\t\t\t\tword-break: break-word;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page-close {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t\tcolor: ").concat(v(I, "66"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page-close:hover {\n\t\t\t\tbackground: ").concat(s(-.4, v(I, "26")), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__order span span,\n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__title-box-desc {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: calc(").concat(J, " - 2px) !important;\n\t\t\t\tfont-weight: ").concat(K, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t   ").concat(p, " .thank-you-page .thank-you-page__title-box-desc {\n\t\t\t  \tword-break: break-word;\n\t\t\t  }\n\t\t\t  \n\t\t\t ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a,\n\t\t\t ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tborder-radius: ").concat(x("button_border", "radius"), " !important;\n\t\t\t\tborder: ").concat(x("button_border", "width"), " ").concat(x("button_border", "type"), " ").concat(v(I, "0D"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t  \t").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a span,\n\t\t  \t").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button span {\n\t\t\t\tfont-weight: ").concat(X, " !important;\n\t\t\t\tfont-size: calc(").concat(Z, " - 2px) !important;\n\t\t  \t}\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a:hover,\n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button:hover {\n\t\t\t\tbackground: ").concat(s(-.4, v(I, "26")), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a.calc-success,\n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button.calc-success {\n\t\t\t\tbackground: ").concat(N, " !important;\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a.calc-success:hover,\n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button.calc-success:hover {\n\t\t\t\tbackground: ").concat(s(-.15, N), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a.calc-secondary,\n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button.calc-secondary {\n\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t\tcolor: ").concat(N, " !important;\n\t\t\t\tborder-color: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a.calc-secondary:hover,\n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button.calc-secondary:hover {\n\t\t\t\tbackground: ").concat(s(-.15, N), " !important;\n\t\t\t\tborder-color: transparent !important;\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n              ").concat(p, " .thank-you-page .thank-you-page__icon-box .icon-wrapper {\n\t\t\t  \tbackground-color: ").concat(v(N, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__icon-box .icon-wrapper .icon-content {\n\t\t\t\tbackground-color: ").concat(N, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t ").concat(p, " .thank-you-page .thank-you-page__icon-box .icon-wrapper .icon-content i {\n\t\t\t  color: ").concat(A, " !important;\n\t\t\t }\n\n\t\t\t").concat(m, " .calc-container .calc-list .ccb-pro-feature-header {\n\t\t\t\tfont-size: ").concat(B, " !important;\n\t\t\t\tfont-weight: ").concat(G, " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t}\n\t\t\t\n\t\t\t").concat(m, " .calc-payments .calc-radio-wrapper label > div.calc-payment-header .calc-payment-header--label .calc-radio-label {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size:  calc(").concat(Z, " - 2px) !important;\n\t\t\t\tfont-weight: ").concat(X, " !important;\n\t\t\t}\n\t\t\t\n\t\t\t").concat(m, " .calc-payments .calc-radio-wrapper label {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t}\n\t\t");
+						M += "\n    \n    \t\t".concat(g, " .sticky-calculator-banner.top {\n    \t\t   border-bottom: 1px solid !important;\n\t \t\t   border-color: ").concat(v(I, "1A"), " !important;\n    \t\t}\n    \t\t    \t\t\n\t\t\t").concat(g, " .sticky-calculator-banner.bottom {\n    \t\t   border-top: 1px solid !important;\n   \t \t\t   border-color: ").concat(v(I, "1A"), " !important;\n    \t\t}\n    \t\t\n    \t\t").concat(g, " .sticky-calculator-banner,\n    \t\t").concat(g, " .sticky-calculator-btn {\n\t\t\t\tbackground-color: ").concat(T.color, " !important;\n    \t\t}\n    \t\t\n    \t\t").concat(g, " .sticky-calculator-banner .sticky-bar-totals span,\n    \t\t").concat(g, " .sticky-calculator-banner .sticky-bar-text__title,\n    \t\t").concat(g, " .sticky-calculator-btn--text__title {\n\t\t\t\tcolor: ").concat(I, " !important;\n    \t\t}\n    \t\t\n    \t\t").concat(g, " .sticky-calculator-banner .sticky-bar-text__description,\n    \t\t").concat(g, " .sticky-calculator-btn--text__description {\n\t    \t\tcolor: ").concat(v(I, "80"), " !important;\n    \t\t}\n    \t\t\n    \t\t").concat(g, " .sticky-calculator-banner .sticky-bar-icon i,\n    \t\t").concat(g, " .ccb-icon-arrow i,\n    \t\t").concat(g, " .sticky-calculator-btn--icon i {\n\t\t\t\tcolor: ").concat(S, " !important;\n    \t\t}\n    \t\t\n\t\t\t").concat(g, " .sticky-calculator-btn--icon img {\n\t\t\t\t").concat((0, c.A)(S), "\n\t\t\t}\n    \t\t\n    \t\t").concat(y, " .modal-content {\n\t\t\t\tbackground: linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.12) 100%), var(--white, ").concat(T.color, ");\n\t\t        border-radius: ").concat(x("container_border", "radius"), " !important;\n    \t\t}\n    \t\t\n    \t\t").concat(y, " .calculator-settings.ccb-front {\n\t\t\t\tmargin: 10px auto;\n    \t\t}\n    \t\t\n    \t\t").concat(y, " .ccb-calc-edit {\n\t\t\t\tdisplay: none !important;\n    \t\t}\n    \n\t\t  ").concat(m, " .calc-container .ccb-calc-edit {\n\t\t\tbackground-color: ").concat(v(T.color, _(parseInt(T.opacity))), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tborder-color: ").concat(v(I, "1A"), " !important;\n\t\t\t\tborder: ").concat(x("container_border", "width"), " ").concat(x("container_border", "type"), "\n\t\t\t  }\n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .calc-subtotal-list-accordion,\n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list {\n\t\t\t\trow-gap: calc(").concat(P, " / 2) !important;\n\t\t\t\toverflow: hidden;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-fields-container {\n\t\t\t\trow-gap: ").concat(P, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-fields-container .calc-repeater-wrapper .calc-repeater-fields {\n\t\t\t\trow-gap: calc(").concat(P, " - 8px) !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  \n\t\t\t  ").concat(m, " .calc-thank-you-page-container.vertical,\n\t\t\t  ").concat(m, " .calc-container.vertical {\n\t\t\t\tmax-width: ").concat(D, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-thank-you-page-container.horizontal,\n\t\t\t  ").concat(m, " .calc-container.horizontal {\n\t\t\t\tmax-width: ").concat(L, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-thank-you-page-container.two_column,\n\t\t\t  ").concat(m, " .calc-container.two_column {\n\t\t\t\tmax-width: ").concat(j, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  #ccb-desktop-preview .calc-thank-you-page-container.two_column,\n\t\t\t  #ccb-desktop-preview .calc-container.two_column {\n\t\t\t\tmax-width: calc(").concat(j, " - 176px) !important;\n\t\t\t  }\n\t\t\n\t\t\t  ").concat(m, " .calc-list-inner {\n\t\t\t\t padding: ").concat($.join("px "), "px !important;\n\t\t\t\t margin: ").concat(Y.join("px "), "px !important;\n\t\t\t\t border-radius: ").concat(x("container_border", "radius"), " !important;\n\t\t\t\t border: ").concat(x("container_border", "width"), " ").concat(x("container_border", "type"), "  ").concat(v(I, "1A"), " !important;\n\t\t\t\t \n\t\t\t\t -webkit-box-shadow: ").concat(w(N), ";\n\t\t\t\t -moz-box-shadow: ").concat(w(N), " !important;\n\t\t\t\t  box-shadow: ").concat(w(N), " !important;\n\t\t\t\t  \n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .country-selector.has-value .country-selector__input,\n\t\t\t  ").concat(m, " .input-tel__input,\n\t\t\t  ").concat(m, " .ccb-datetime div .calc-date-picker-select,\n\t\t\t  ").concat(m, " .calc-drop-down-with-image-list > ul,\n\t\t\t  ").concat(m, " .calc-toggle-item .calc-toggle-wrapper label:after,\n\t\t\t  ").concat(m, " .calc-checkbox-item label::before,\n\t\t\t  ").concat(m, " .ccb-appearance-field,\n\t\t\t  ").concat(m, " .ccb-location-popup-sidebar input,\n\t\t\t  ").concat(m, " .ccb-location-popup__search input,\n\t\t\t  ").concat(m, " .ccb-location-popup-sidebar span {\n\t\t\t\t background: ").concat(A, " !important;\n\t\t\t\t border-color: ").concat(v(I, "1A"), " !important;\n\t\t\t\t color: ").concat(I, " !important;\n\t\t\t\t font-size: ").concat(V, " !important;\n\t\t\t\t font-weight: ").concat(Q, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .input-tel.has-hint .input-tel__label, \n\t\t\t  ").concat(m, " .input-tel.has-value .input-tel__label,\n\t\t\t  ").concat(m, " .country-selector__label {\n\t\t\t    color: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .input-tel.is-valid .input-tel__input {\n\t\t\t    caret-color: ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .invalid-phone-number .input-tel.has-hint .input-tel__input,\n\t\t\t  ").concat(m, " .required .input-tel .input-tel__input {\n\t\t\t\tborder-color: ").concat(O, " !important;\n\t\t\t\tbox-shadow: none !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .input-tel.is-valid .input-tel__input, \n\t\t\t  ").concat(m, " .input-tel.is-valid .input-tel__input:hover {\n\t\t\t  \tborder-color: ").concat(S, " !important;\n\t\t\t  \tcaret-color: unset !important;\n\t\t\t  \tbox-shadow: none !important;\n\t\t\t  }\n\t\t\t  \n\t\t      ").concat(m, " .country-selector.has-value .country-selector__input {\n\t\t\t\tbox-shadow: none !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-file-upload .calc-uploaded-files .ccb-uploaded-file-list-info > i:first-child {\n\t\t\t\tcolor: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-time-picker-wrapper  {\n\t\t\t   background: ").concat(A, " !important;\n\t\t\t\t border: ").concat(x("fields_border", "width"), " ").concat(x("fields_border", "type"), "  ").concat(v(I, "1A"), " !important;\n\t\t\t\t border-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, "  .ccb-time-picker-wrapper .vue__time-picker input.display-time {\n\t\t\t  \t border-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t\t background: ").concat(A, " !important;\n\t\t\t\t color: ").concat(I, " !important;\n\t\t\t\t font-size: ").concat(V, " !important;\n\t\t\t\t font-weight: ").concat(Q, " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-time-picker-wrapper .vue__time-picker .controls .char {\n\t\t\t  \tcolor: ").concat(v(I, "B3"), " !important;\n\t\t\t  }\n\t\t\t    ").concat(m, "  .ccb-time-picker-wrapper .start .vue__time-picker input.display-time {\n\t\t\t  \t border-radius: ").concat(x("fields_border", "radius"), " 0 0 ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t   ").concat(m, "  .ccb-time-picker-wrapper .end .vue__time-picker input.display-time {\n\t\t\t  \t border-radius: 0 ").concat(x("fields_border", "radius"), " ").concat(x("fields_border", "radius"), " 0 !important;\n\t\t\t  }\n\t\t\t   ").concat(m, " .ccb-time-picker-wrapper  .separator {\n\t\t\t\t font-size: ").concat(V, " !important;\n\t\t\t\t font-weight: ").concat(Q, " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-time-picker-wrapper .vue__time-picker input {\n\t\t\t   padding: 12px ").concat(C, " 11px ").concat(C, " !important;\n\t\t\t   height: ").concat(b(parseInt(x("fields_border", "width")), parseInt(k)), "px !important;\n\t\t\t   min-height: ").concat(b(parseInt(x("fields_border", "width")), parseInt(k)), "px !important;\n\t\t\t   width: 100%;\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-time-picker .ccb-time-picker-wrapper .ccb-time-picker-range .separator {\n\t\t\t  height: ").concat(b(parseInt(x("fields_border", "width")), parseInt(k)), "px !important;\n\t\t\t  min-height: ").concat(b(parseInt(x("fields_border", "width")), parseInt(k)), "px !important;\n\t\t\t  background:  ").concat(v(A, "bf"), " !important;\n\t\t\t  color: ").concat(I, " !important;\n\t\t\t  border-color: ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-time-picker-wrapper .vue__time-picker input.display-time::placeholder,  ").concat(m, " .ccb-time-picker-wrapper .vue__time-picker-dropdown ul li, .vue__time-picker .dropdown ul li  {\n\t\t\t  color: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-time-picker-wrapper .vue__time-picker .dropdown ul li.active  {\n\t\t\t  color: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, " .vue__time-picker-dropdown, .vue__time-picker .dropdown  {\n\t\t\t\t background-color: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action,\n\t\t\t  ").concat(m, " .ccb-appearance-field:not(textarea) {\n\t\t\t\t min-height: ").concat(k, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div .calc-date-picker-select {\n\t\t\t\t min-height: ").concat(k, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-repeater-wrapper {\n\t\t\t  \tborder-color: ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t\n\t\t\t  ").concat(m, " .ccb-datetime div .calc-date-picker-select,\n\t\t\t  ").concat(m, " .ccb-appearance-field {\n\t\t\t\t padding: 12px ").concat(C, " !important;\n\t\t\t\t border-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t\t border: ").concat(x("fields_border", "width"), " ").concat(x("fields_border", "type"), "  ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-appearance-field.calc-drop-down {\n\t\t\t\t padding: 12px ").concat(parseInt(C) + 10, "px 12px ").concat(C, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " textarea {\n\t\t\t\theight: ").concat(C, ";\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-input-wrapper .input-number-counter {\n\t\t\t\tright: ").concat(parseInt(x("fields_border", "radius")) > 11 ? parseInt(x("fields_border", "radius")) > 20 ? "15px" : "10px" : "5px", " !important;\n\t\t\t\tborder-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox .calc-checkbox-item label::after {\n\t\t\t\tborder-left-color: ").concat(A, " !important;\n\t\t\t\tborder-bottom-color: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-radio-wrapper input[type=radio] {\n\t\t\t\t background: ").concat(A, " !important;\n\t\t\t\t border-color: ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  .calc-radio-wrapper input[type=radio]:checked:before {\n\t\t\t\t background: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div .calc-date-picker-select i,\n\t\t\t  ").concat(m, " .ccb-time-picker-wrapper .ccb-icon-timepicker-light-clock,\n\t\t\t  ").concat(m, " .calc-drop-down-with-image .ccb-select-arrow,\n\t\t\t  ").concat(m, " .calc-item .calc-drop-down-box .ccb-select-arrow {\n\t\t\t\tcolor: ").concat(v(I, "B3"), " !important;\n\t\t\t  }\n\t\t\t  ").concat(m, " .calc-item .ccb-time-picker-wrapper input:focus ").concat(m, " .calc-item .ccb-time-picker-wrapper {\n\t\t\t        border-color: ").concat(S, " !important;\n\t\t\t    }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item textarea:focus,\n\t\t\t  ").concat(m, " .calc-item .calc-drop-down-with-image-current.calc-dd-selected,\n\t\t\t  ").concat(m, " .calc-item .ccb-datetime div .calc-date-picker-select.open,\n\t\t\t  ").concat(m, " .calc-item .calc-input-wrapper .calc-input:focus,\n\t\t\t  ").concat(m, " .calc-item .calc-drop-down-box .calc-drop-down:focus {\n\t\t\t\tborder-color: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-drop-down-with-image-list-items li span.calc-list-wrapper .calc-list-price,\n\t\t\t  ").concat(m, " .calc-drop-down-with-image-list-items li span.calc-list-wrapper .calc-list-title {\n\t\t\t\t color: ").concat(I, " !important;\n\t\t\t\t font-weight: ").concat(Q, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-checkbox-item input[type=checkbox]:checked ~ label:before {\n\t\t\t\t border-color: ").concat(S, " !important;\n\t\t\t\t background-color: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-toggle-wrapper label {\n\t\t\t\tbackground: ").concat(v(I, "33"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-toggle-wrapper input:checked + label,\n\t\t\t  ").concat(m, " .calc-item .calc-radio-wrapper input[type=radio]:checked {\n\t\t\t\tbackground: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-radio-wrapper input[type=radio]:checked {\n\t\t\t\tborder-color: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-range-slider__progress {\n\t\t\t\t background: ").concat(I, "40 !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-range-slider > input:nth-of-type(2) + output,\n\t\t\t  ").concat(m, " .calc-range-slider > input:nth-of-type(1) + output {\n\t\t\t\t color: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.calc-checkbox-image .calc-checkbox-info .calc-checkbox-label,\n\t\t\t  ").concat(m, " .calc-radio-wrapper.calc-radio-image .calc-radio-info .calc-radio-label {\n\t\t\t\tfont-size: ").concat(V, " !important;\n\t\t\t\tfont-weight: ").concat(Q, " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tword-break: break-word;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.calc-checkbox-image .calc-checkbox-info .calc-checkbox-price,\n\t\t\t  ").concat(m, " .calc-radio-wrapper.calc-radio-image .calc-radio-info .calc-radio-price {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: calc(").concat(J, " - 2px) !important;\n\t\t\t\tcolor: ").concat(v(I, "80"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-applied-title {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-promocode {\n\t\t\t    background: ").concat(v(I, "1A"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(g, " .sticky-bar-action button,\n\t\t\t  ").concat(m, " .ccb-discount-off,\n\t\t\t  ").concat(m, " .calc-promocode-container button {\n\t\t\t  \tcolor: ").concat(A, " !important;\n\t\t\t  \tbackground-color: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(g, " .sticky-bar-action button,\n\t\t\t   ").concat(m, " .calc-promocode-container button:hover {\n\t\t\t\tbackground: ").concat(s(-.15, S), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  \n\t\t\t  ").concat(m, " .calc-range-slider::before,\n\t\t\t  ").concat(m, " .calc-range-slider::after {\n\t\t\t\t opacity: 0 !important;\n\t\t\t  }\n\t\t\t   \n\t\t   \t  ").concat(m, " .ccb-promocode-hint,\n\t\t   \t  ").concat(m, " .calc-have-promocode {\n\t\t\t\t color: ").concat(S, " !important;;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-range-slider-min-max span {\n\t\t\t\t color: ").concat(v(I, "80"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .e-control-wrapper.e-slider-container.e-material-slider .e-slider .e-handle.e-handle-first,\n\t\t\t  ").concat(m, " .e-slider-tooltip.e-tooltip-wrap.e-popup,\n\t\t\t  ").concat(m, " .e-control-wrapper.e-slider-container .e-slider .e-handle,\n\t\t\t  ").concat(m, " .e-control-wrapper.e-slider-container .e-slider .e-range {\n\t\t\t\tbackground: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .e-slider-tooltip.e-tooltip-wrap.e-popup:after {\n\t\t\t\tborder-color: ").concat(S, " transparent transparent transparent !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.calc-checkbox-image .calc-checkbox-image-wrapper,\n\t\t\t  ").concat(m, " .calc-radio-wrapper.calc-radio-image .calc-radio-image-wrapper {\n\t\t\t\tborder-color: ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.calc-checkbox-image .calc-checkbox-image-wrapper.calc-checkbox-image-selected,\n\t\t\t  ").concat(m, " .calc-radio-wrapper.calc-radio-image .calc-radio-image-wrapper.calc-radio-image-selected {\n\t\t\t\tborder-color: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  .e-slider-tooltip.e-tooltip-wrap.e-popup.calc_id_").concat(e, ":after {\n\t\t\t\t  border-color: ").concat(S, " transparent transparent transparent !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  .e-slider-tooltip.e-tooltip-wrap.e-popup.calc_id_").concat(e, " {\n\t\t\t\tbackground: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-list .calc-item-title {\n\t\t\t\t margin-bottom: 20px;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-list .calc-item-title .ccb-calc-heading {\n\t\t\t\tfont-size: ").concat(W, " !important;\n\t\t\t\tfont-weight: ").concat(q, " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\ttext-transform: ").concat(tt, " !important;\n\t\t\t\tword-break: break-all;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item__title, .ccb-location-popup-sidebar {\n\t\t\t\tfont-size: ").concat(B, " !important;\n\t\t\t\tfont-weight: ").concat(G, " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tmargin-bottom: 4px;\n\t\t\t\tword-break: break-word;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-geolocation__info {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .ccb-terms-text a {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\ttext-decoration:none\n\t\t\t  }\n\t\t\t  \t\t\t  \n\t\t\t  ").concat(m, " .calc-item__title.ccb-repeater-field {\n\t\t\t\tfont-size: calc(").concat(B, " + 2px) !important;\n\t\t\t\tmargin-top: 4px;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .calc-notice.success,\n\t\t\t  ").concat(m, " .calc-notice.success {\n\t\t\t  \tbackground: ").concat(v(S, "33"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, "  .calc-notice.success .calc-notice-icon-wrapper,\n\t\t\t  ").concat(m, " .calc-notice.success .calc-notice-icon-wrapper {\n\t\t\t  \tbackground-color: ").concat(v(S, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .calc-notice.success .calc-notice-icon-content,\n\t\t\t  ").concat(m, " .calc-notice.success .calc-notice-icon-content {\n\t\t\t\tbackground-color: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .calc-notice.success .calc-notice-icon-content,\n\t\t\t  ").concat(m, " .calc-notice.success .calc-notice-icon-content {\n\t\t\t\tbackground-color: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t ").concat(p, " .calc-notice.success .calc-notice-icon-content i,\n\t\t\t ").concat(m, " .calc-notice.success .calc-notice-icon-content i {\n\t\t\t  color: #fff;\n\t\t\t }\n\t\t\t  \n\t\t\t  ").concat(p, " .calc-notice.success .calc-notice-title,\n\t\t\t  ").concat(m, " .calc-notice.success .calc-notice-title {\n\t\t\t  \tcolor: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-toggle-container .calc-toggle-item .calc-toggle-label-wrap .calc-toggle-label,\n\t\t\t  ").concat(m, " .calc-item .calc-radio-wrapper label .calc-radio-label,\n\t\t\t  ").concat(m, " .calc-item .calc-checkbox-item label .calc-checkbox-title {\n\t\t\t\tfont-size: ").concat(V, " !important;\n\t\t\t\tfont-weight: ").concat(Q, " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tword-break: break-word;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action,\n\t\t\t  ").concat(m, " .ccb-location-popup__footer button {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-weight: ").concat(Q, " !important;\n\t\t\t\tfont-size: calc(").concat(V, " - 2px) !important;\n\t\t\t\tborder-radius: ").concat(x("button_border", "radius"), " !important;\n\t\t\t\tborder: ").concat(x("button_border", "width"), " ").concat(x("button_border", "type"), " ").concat(v(I, "0D"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.is-bold {\n\t\t\t\t  font-weight: 700 !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action:hover {\n\t\t\t\tbackground: ").concat(s(-.4, v(I, "26")), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.success,\n\t\t\t  ").concat(m, " .ccb-location-popup__footer .success {\n\t\t\t\tbackground: ").concat(S, " !important;\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-terms-link {\n\t\t\t\tcolor: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.success:hover {\n\t\t\t\tbackground: ").concat(s(-.15, S), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.success-with-border,\n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.default-with-border {\n\t\t\t\theight: 40px !important;\n\t\t\t\tmin-height: 40px !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.success-with-border {\n\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t\tcolor: ").concat(S, " !important;\n\t\t\t\tborder: 2px solid ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.success-with-border:hover {\n\t\t\t\tbackground: ").concat(S, " !important;\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.success-with-border i::before {\n\t\t\t  \ttransition: color 200ms linear;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.success-with-border:hover i::before {\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.default-with-border {\n\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t\tcolor: ").concat(v(I, "99"), " !important;\n\t\t\t\tborder: 2px solid ").concat(v(I, "4D"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.default-with-border:hover {\n\t\t\t\tcolor: ").concat(v(I, "80"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.default-with-border.danger {\n\t\t\t\tcolor: ").concat(O, " !important;\n\t\t\t\tborder: 1px solid ").concat(O, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-buttons .calc-btn-action.default-with-border.danger:hover {\n\t\t\t\tcolor: ").concat(O, " !important;\n\t\t\t\tbackground: ").concat(v(O, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-input-wrapper .input-number-counter {\n\t\t\t\tbackground: ").concat(v(I, "1D"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\ttransition: 200ms ease-in-out;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-stripe-wrapper {\n\t\t\t\twidth: 100%;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-accordion-btn {\n\t\t\t\t background: ").concat(v(I, "1a"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-accordion-btn > i {\n\t\t\t\t color: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-input-wrapper .input-number-counter:hover {\n\t\t\t\tbackground: ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: ").concat(J, " !important;\n\t\t\t\tfont-weight: ").concat(K, " !important;\n\t\t\t\ttext-transform: ").concat(tt, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-item-unit,\n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item .sub-inner {\n\t\t\t\tcolor: ").concat(v(I, "B3"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .calc-subtotal-list-header {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tbackground-color: ").concat(v(I, "1A"), " !important;\n\t\t\t\ttext-transform: ").concat(tt, " !important;\n\t\t\t\tborder-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .calc-subtotal-list-header span {\n\t\t\t  \tfont-size: ").concat(H, " !important;\n\t\t\t\tfont-weight: ").concat(R, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-container .show-unit .sub-inner .sub-item-value {\n\t\t\t\tpadding-right: 5px;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item.total {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: ").concat(Z, " !important;\n\t\t\t\tfont-weight: ").concat(X, " !important;\n\t\t\t\ttext-transform: ").concat(tt, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item.total .ccb-discount {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: calc(").concat(Z, " - 4px) !important;\n\t\t\t\tfont-weight: 500 !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item.total .ccb-discounts-inner-label {\n\t\t\t \tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: calc(").concat(Z, " - 4px) !important;\n\t\t\t\tfont-weight: 500 !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item.total .ccb-discount-title {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: calc(").concat(Z, " - 4px) !important;\n\t\t\t\tfont-weight: ").concat(X, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list.totals {\n\t\t\t\tborder-bottom: 1px solid ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item.total .sub-item-title {\n\t\t\t\ttext-transform: ").concat(tt, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select {\n\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .day-list .week .day {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .month-slide-control > div {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .month-slide-control div i,\n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .day-list .week-titles .title {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .slider-title > div {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\t&:hover{\n\t\t\t\t\tcolor:").concat(S, " !important;\n\t\t\t\t}\n\t\t\t  }\n            \t\t\n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .decade-title, .year-title, .month-title{\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\t&:hover{\n\t\t\t\t\tbackground:").concat(v(I, "0D"), ";\n\t\t\t\t\tcolor:").concat(S, " !important;\n\t\t\t\t}\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .decade, .year, .month{\n\t\t\t\t.selected{\n\t\t\t\t\tcolor: white!important;\n\t\t\t\t\tbackground: ").concat(S, ";\n\t\t\t\t\t&:hover{\n\t\t\t\t\t\tbackground: ").concat(S, "!important;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t  }\n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .current-year, .current-month, .current-decade{\n\t\t\t\tcolor: ").concat(S, ";\n              \tborder: 2px solid ").concat(S, ";\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .current-year.selected, .current-month.selected, .current-decade.selected{\n\t\t\t\tcolor: white;\n\t\t\t   }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .day-list .week .day:hover{\n\t\t\t\tbackground: ").concat(v(S, "26"), " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .day-list .week .day.today {\n\t\t\t  \tborder:2px solid ").concat(S, " !important;\n\t\t\t\tcolor: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .day-list .week .day:hover {\n\t\t\t\tborder: 2px solid ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .day-list .week .day.selected {\n\t\t\t\tbackground: ").concat(S, " !important;\n\t\t\t\tcolor: white !important;\n\t\t\t\tborder: 2px solid ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .day-list .week .day.selected.not-allowed {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tborder-color: transparent !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-datetime div.date .calendar-select .month-slide-control div.slider-title {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-drop-down-with-image-list-items li {\n\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t\tborder-bottom: 1px solid ").concat(v(I, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-drop-down-with-image-list-items li:hover {\n\t\t\t\tbackground: ").concat(v(I, "1a"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-drop-down-with-image-list-items li:last-child {\n\t\t\t\tborder-bottom: none !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-file-upload .calc-uploaded-files .file-name {\n\t\t\t\tbackground: ").concat(v(I, "1A"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item__description span {\n\t\t\t\tfont-size: ").concat(F, " !important;\n\t\t\t\tfont-weight: ").concat(U, " !important;\n\t\t\t\tcolor: ").concat(v(I, "80"), " !important;\n\t\t\t\tword-break: break-word;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-payments .calc-radio-wrapper label > div.calc-payment-body .ccb-payment-description,\n\t\t\t  ").concat(m, " .calc-item__description span {\n\t\t\t\tfont-size: ").concat(F, " !important;\n\t\t\t\tfont-weight: ").concat(U, " !important;\n\t\t\t\tcolor: ").concat(v(I, "80"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item__description.").concat(E, " {\n\t\t\t\tdisplay: block !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-field.required .calc-required-field .ccb-field-required-tooltip,\n\t\t\t  ").concat(m, " .ccb-error-tip.front {\n\t\t\t\t color: #ffffff !important;\n\t\t\t\t background: ").concat(O, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-field.required .calc-required-field .ccb-field-required-tooltip-text::after {\n\t\t\t\tborder: 7px solid ").concat(O, " !important;\n\t\t\t\tborder-color: ").concat(O, " transparent transparent transparent !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-error-tip.front::after {\n\t\t\t\tborder-top: 10px solid ").concat(O, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-loader {\n\t\t\t\tborder: 6px solid ").concat(v(A, "26"), " !important;\n\t\t\t\tborder-top: 6px solid ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-loader-1 div {\n\t\t\t\tbackground: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-loader-3 div:after,\n\t\t\t  ").concat(m, " .ccb-loader-2 div:after {\n\t\t\t\tbackground: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-loader-4 circle,\n\t\t\t  ").concat(m, " .ccb-loader-4 path {\n\t\t\t\tfill: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-checkbox-hint {\n\t\t\t\tcolor: ").concat(I, " !important\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-file-upload .info-tip-block .info-icon {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-list-inner .calc-item-title-description {\n\t\t\t\tcolor: ").concat(v(I, "80"), " !important;\n\t\t\t\tfont-size: calc(").concat(V, " - 2px) !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  \n\t\t\t  ").concat(m, " .ccb-field.required .ccb-datetime div .calc-date-picker-select,\n\t\t\t  ").concat(m, " .ccb-field.required .calc-drop-down-with-image-list > ul,\n\t\t\t  ").concat(m, " .ccb-field.required .calc-toggle-item .calc-toggle-wrapper label:after,\n\t\t\t  ").concat(m, " .ccb-field.required .calc-checkbox-item label::before,\n\t\t\t  ").concat(m, " .ccb-field.required .ccb-appearance-field,\n\t\t\t  ").concat(m, " .ccb-field.required .ccb-appearance-field:hover,\n\t\t\t  ").concat(m, " .ccb-field.required .ccb-appearance-field:focus,\n\t\t\t  ").concat(m, " .ccb-field.required .ccb-appearance-field:active,\n\t\t\t  ").concat(m, " .ccb-field.required .calc-drop-down-with-image-current,\n\t\t\t  ").concat(m, " .ccb-field.required input[type=text],\n\t\t\t  ").concat(m, " .ccb-field.required input[type=radio],\n\t\t\t  ").concat(m, " .ccb-field.required input[type=number],\n\t\t\t  ").concat(m, " .ccb-field.required textarea,\n\t\t\t  ").concat(m, " .ccb-field.required select {\n\t\t\t\t border-color: ").concat(O, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-item.required .ccb-required-mark,\n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-item.required .calc-item__title {\n\t\t\t\t color: ").concat(O, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-item .calc-file-upload .calc-uploaded-files .ccb-uploaded-file-list-info .ccb-select-anchor,\n\t\t\t  ").concat(m, " .calc-item .calc-file-upload .calc-uploaded-files .ccb-uploaded-file-list-info span {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .ccb-cf-wrap .wpcf7-submit {\n\t\t\t\tbackground-color: ").concat(S, " !important;\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-list-inner .calc-subtotal-list .calc-woo-product {\n\t\t\t\tborder-color: ").concat(S, ";\n\t\t\t\tbackground-color: ").concat(v(S, "0d"), ";\n\t\t\t\tcolor: ").concat(I, ";\n\t\t\t  }\n\t\t\t\t\n\t\t\t  ").concat(m, " .calc-list-inner .calc-subtotal-list .calc-woo-product .calc-woo-product__btn a {\n\t\t\t\tborder-radius: ").concat(x("button_border", "radius"), " !important;\n\t\t\t\tbackground-color: ").concat(S, ";\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t\tfont-size: calc(").concat(V, " - 2px) !important;\n\t\t\t\tfont-weight: ").concat(Q, " !important;\n\t\t\t\tmin-height: ").concat(k, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox-and-description .calc-checkbox-item label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-description .calc-checkbox-item label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox .calc-checkbox-item label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed .calc-checkbox-item label {\n\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t\tborder: 1px solid ").concat(v(I, "33"), " !important;\n\t\t\t\tborder-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox-and-description .calc-checkbox-item input:checked + label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-description .calc-checkbox-item input:checked + label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox .calc-checkbox-item input:checked + label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed .calc-checkbox-item input:checked + label {\n\t\t\t\t background: ").concat(S, " !important;\n\t\t\t\t border: 1px solid ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox-and-description .calc-checkbox-item input:checked + label .calc-checkbox-title,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-description .calc-checkbox-item input:checked + label .calc-checkbox-title,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox .calc-checkbox-item input:checked + label .calc-checkbox-title,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed .calc-checkbox-item input:checked + label .calc-checkbox-title {\n\t\t\t\t color: ").concat(A, ";\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox-and-description .calc-checkbox-item input:checked ~ label:before,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-description .calc-checkbox-item input:checked ~ label:before,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox .calc-checkbox-item input:checked ~ label:before,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed .calc-checkbox-item input:checked ~ label:before {\n\t\t\t\t border: 1px solid ").concat(S, " !important;\n\t\t\t\t background-color: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox-and-description .calc-checkbox-item input:checked + label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-description .calc-checkbox-item input:checked + label,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox .calc-checkbox-item input:checked + label {\n\t\t\t\tbackground: ").concat(v(S, "1A"), " !important;\n\t\t\t\tborder: 1px solid ").concat(S, ";\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox-and-description .calc-checkbox-item input:checked + label .calc-checkbox-title,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-description .calc-checkbox-item input:checked + label .calc-checkbox-title,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox .calc-checkbox-item input:checked + label .calc-checkbox-title {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t\t\t\t  \n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox-and-description .calc-checkbox-item .calc-checkbox-description,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-description .calc-checkbox-item .calc-checkbox-description,\n\t\t\t  ").concat(m, " .calc-checkbox.boxed-with-checkbox .calc-checkbox-item .calc-checkbox-description {\n\t\t\t\tcolor: ").concat(v(I, "B3"), " !important;\n\t\t\t\tfont-size: calc(").concat(J, " - 2px) !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-radio-wrapper.boxed-with-radio .calc-radio-item label,\n\t\t\t  ").concat(m, " .calc-radio-wrapper.boxed .calc-radio-item label {\n\t\t\t\t background: ").concat(A, " !important;\n\t\t\t\t border: 1px solid ").concat(v(I, "33"), " !important;\n\t\t\t\t border-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t   \n\t\t\t  ").concat(m, " .calc-radio-wrapper.boxed-with-radio .calc-radio-item input:checked + label,\n\t\t\t  ").concat(m, " .calc-radio-wrapper.boxed .calc-radio-item input:checked + label {\n\t\t\t\t  background: ").concat(S, " !important;\n\t\t\t\t  border: 1px solid ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-radio-wrapper.boxed .calc-radio-item input:checked + label {\n\t\t\t\t  background: ").concat(S, " !important;\n\t\t\t\t  border: 1px solid ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-radio-wrapper.boxed-with-radio .calc-radio-item input:checked + label {\n\t\t\t\t background: ").concat(v(S, "1A"), " !important;\n\t\t\t\t border: 1px solid ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-radio-wrapper.boxed-with-radio .calc-radio-item input:checked + label .calc-radio-label {\n\t\t\t\t color: ").concat(I, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-toggle-container.boxed-with-toggle-and-description .calc-toggle-item {\n\t\t\t\t background: ").concat(A, " !important;\n\t\t\t\t border: 1px solid ").concat(v(I, "33"), " !important;\n\t\t\t\t border-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  {prefix} .calc-toggle-container.boxed-with-toggle-and-description .calc-toggle-item.calc-is-checked {\n\t\t\t\tborder: 1px solid ").concat(S, " !important;\n\t\t\t\tbackground: ").concat(v(S, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-toggle-container.boxed-with-toggle-and-description .calc-toggle-item .calc-toggle-label-wrap .calc-toggle-description {\n\t\t\t\t color: ").concat(v(I, "B3"), " !important;\n\t\t\t\t font-size: calc(").concat(J, " - 2px) !important;\n\t\t\t  }\n\n\t\t\t  ").concat(m, " .calc-checkbox.calc-checkbox-image.with-icon .calc-checkbox-image-wrapper img,\n\t\t\t  ").concat(m, " .calc-radio-wrapper.calc-radio-image.with-icon .calc-radio-image-wrapper img {\n\t\t\t\t").concat(z ? (0, c.A)(S) : "", "\n\t\t\t  }\n\t\t\t\t\n\t\t\t  ").concat(m, " .calc-radio-wrapper.calc-radio-image.with-icon .calc-radio-image-wrapper,\n\t\t\t  ").concat(m, " .calc-checkbox.calc-checkbox-image.with-icon .calc-checkbox-image-wrapper { \n\t\t\t\t  background: ").concat(A, " !important;\n\t\t\t\t  border: 1px solid ").concat(v(I, "33"), " !important;\n\t\t\t\t  border-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t  }\n\t\t\t\n\t\t\t  ").concat(m, " .calc-radio-wrapper.calc-radio-image.with-icon .calc-radio-image-wrapper.calc-radio-image-selected,\n\t\t\t  ").concat(m, " .calc-checkbox.calc-checkbox-image.with-icon .calc-checkbox-image-wrapper.calc-checkbox-image-selected { \n\t\t\t\t  border: 1px solid ").concat(S, " !important;\n\t\t\t\t  background: ").concat(v(S, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-repeater-subtotal-header i {\n\t\t\t  font-size: calc(").concat(J, " - 4px) !important;\n\t\t\t  \tcolor: ").concat(v(I, "80"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-repeater-subtotal-header span {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: calc(").concat(J, " - 2px) !important;\n\t\t\t\tfont-weight: 700 !important;\n\t\t\t\ttext-transform: ").concat(tt, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(m, " .calc-container .calc-list .calc-subtotal-list .calc-repeater-subtotal .sub-list-item {\n\t\t\t\tfont-size: calc(").concat(J, " - 2px) !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page {\n\t\t\t\t border-color: ").concat(v(I, "1A"), " !important;\n\t\t\t\t  background-color: ").concat(v(T.color, _(parseInt(T.opacity))), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__title-box-title {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: ").concat(Z, " !important;\n\t\t\t\tfont-weight: ").concat(X, " !important;\n\t\t\t\tword-break: break-word;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page-close {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t\tcolor: ").concat(v(I, "66"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page-close:hover {\n\t\t\t\tbackground: ").concat(s(-.4, v(I, "26")), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__order span span,\n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__title-box-desc {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size: calc(").concat(J, " - 2px) !important;\n\t\t\t\tfont-weight: ").concat(K, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t   ").concat(p, " .thank-you-page .thank-you-page__title-box-desc {\n\t\t\t  \tword-break: break-word;\n\t\t\t  }\n\t\t\t  \n\t\t\t ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a,\n\t\t\t ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tborder-radius: ").concat(x("button_border", "radius"), " !important;\n\t\t\t\tborder: ").concat(x("button_border", "width"), " ").concat(x("button_border", "type"), " ").concat(v(I, "0D"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t  \t").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a span,\n\t\t  \t").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button span {\n\t\t\t\tfont-weight: ").concat(X, " !important;\n\t\t\t\tfont-size: calc(").concat(Z, " - 2px) !important;\n\t\t  \t}\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a:hover,\n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button:hover {\n\t\t\t\tbackground: ").concat(s(-.4, v(I, "26")), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a.calc-success,\n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button.calc-success {\n\t\t\t\tbackground: ").concat(S, " !important;\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a.calc-success:hover,\n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button.calc-success:hover {\n\t\t\t\tbackground: ").concat(s(-.15, S), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a.calc-secondary,\n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button.calc-secondary {\n\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t\tcolor: ").concat(S, " !important;\n\t\t\t\tborder-color: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a.calc-secondary:hover,\n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button.calc-secondary:hover {\n\t\t\t\tbackground: ").concat(s(-.15, S), " !important;\n\t\t\t\tborder-color: transparent !important;\n\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t  }\n\t\t\t  \n              ").concat(p, " .thank-you-page .thank-you-page__icon-box .icon-wrapper {\n\t\t\t  \tbackground-color: ").concat(v(S, "1A"), " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(p, " .thank-you-page .thank-you-page__icon-box .icon-wrapper .icon-content {\n\t\t\t\tbackground-color: ").concat(S, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t ").concat(p, " .thank-you-page .thank-you-page__icon-box .icon-wrapper .icon-content i {\n\t\t\t  color: ").concat(A, " !important;\n\t\t\t }\n\n\t\t\t").concat(m, " .calc-container .calc-list .ccb-pro-feature-header {\n\t\t\t\tfont-size: ").concat(B, " !important;\n\t\t\t\tfont-weight: ").concat(G, " !important;\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t}\n\t\t\t\n\t\t\t").concat(m, " .calc-payments .calc-radio-wrapper label > div.calc-payment-header .calc-payment-header--label .calc-radio-label {\n\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\tfont-size:  calc(").concat(Z, " - 2px) !important;\n\t\t\t\tfont-weight: ").concat(X, " !important;\n\t\t\t}\n\t\t\t\n\t\t\t").concat(m, " .calc-payments .calc-radio-wrapper label {\n\t\t\t\tbackground: ").concat(v(I, "0D"), " !important;\n\t\t\t}\n\t\t");
 						var et = +T.blur;
 						M += et ? "\n\t\t ".concat(m, " .calc-list-inner {\n            -webkit-backdrop-filter: invert(").concat(T.blur, "%);\n\t\t     backdrop-filter: invert(").concat(T.blur, "%);\n\t   \t }\n\t\t") : "\n\t\t ".concat(m, " .calc-list-inner, \n\t\t ").concat(m, " .ccb-location-popup__footer {\n            background-color: ").concat(v(T.color, _(parseInt(T.opacity))), " !important;\n\t\t}\n\n\t\t").concat(m, " .ccb-location-popup-sidebar {\n\t\t\tbackground-color: ").concat(v(T.color, _(parseInt(T.opacity))), " !important;\n\t\t\topacity: 0.8;\n\t\t}\n\t\t");
 						var nt = function (t) {
-							return "\n\t\t\t\t".concat(t, " ").concat(m, " .calc-list-inner {\n\t\t\t\t   padding: ").concat(h.container_padding.join("px "), "px !important;\n\t\t\t\t   margin: ").concat(h.container_margin.join("px "), "px !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .calc-buttons .calc-btn-action,\n\t\t\t\t").concat(t, " ").concat(m, " .ccb-appearance-field:not(textarea) {\n\t\t\t\t   min-height: ").concat(f.field_and_buttons_height, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .ccb-datetime div .calc-date-picker-select {\n\t\t\t\t   min-height: ").concat(f.field_and_buttons_height, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .calc-buttons .calc-btn-action,\n\t\t\t\t").concat(t, " ").concat(m, " .ccb-datetime div .calc-date-picker-select,\n\t\t\t\t").concat(t, " ").concat(m, " .ccb-appearance-field {\n\t\t\t\t   padding: 12px ").concat(h.field_side_indents, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .calc-buttons .calc-file-upload-actions .calc-btn-action {\n\t\t\t\t\tpadding: 12px 0 !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " textarea {\n\t\t\t\t   height: ").concat(h.field_side_indents, ";\n\t\t\t\t}\n\t\t\t  \n\t\t\t\t").concat(t, " ").concat(m, " .calc-container .calc-list .calc-subtotal-list .calc-subtotal-list-accordion,\n\t\t\t\t").concat(t, " ").concat(m, " .calc-container .calc-list .calc-subtotal-list {\n\t\t\t\t  row-gap: calc(").concat(h.field_spacing, " / 2) !important;\n\t\t\t\t}\n\t\t\t\t  \n\t\t\t\t").concat(t, " ").concat(m, " .calc-container .calc-list .calc-fields-container {\n\t\t\t\t  row-gap: ").concat(h.field_spacing, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .ccb-datetime div .calc-date-picker-select,\n\t\t\t\t").concat(t, " ").concat(m, " calc-drop-down-with-image-list > ul,\n\t\t\t\t").concat(t, " ").concat(m, " .calc-toggle-item .calc-toggle-wrapper label:after,\n\t\t\t\t").concat(t, " ").concat(m, " .calc-checkbox-item label::before,\n\t\t\t\t").concat(t, " ").concat(m, " .ccb-appearance-field {\n\t\t\t\t   font-size: ").concat(u.fields_btn_font_size, " !important;\n\t\t\t\t   font-weight: ").concat(u.fields_btn_font_weight, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .calc-item__description span {\n\t\t\t\t\tfont-size: ").concat(u.description_font_size, " !important;\n\t\t\t\t\tfont-weight: ").concat(u.description_font_weight, " !important;\n\t\t\t\t }\n\t\t\t  \n\t\t\t  \n\t\t\t\t").concat(t, " ").concat(m, " .calc-toggle-container .calc-toggle-item .calc-toggle-label-wrap .calc-toggle-label,\n\t\t\t\t").concat(t, " ").concat(m, " .calc-item .calc-radio-wrapper label .calc-radio-label,\n\t\t\t\t").concat(t, " ").concat(m, " .calc-item .calc-checkbox-item label .calc-checkbox-title {\n\t\t\t\t  font-size: ").concat(u.fields_btn_font_size, " !important;\n\t\t\t\t  font-weight: ").concat(u.fields_btn_font_weight, " !important;\n\t\t\t\t}\n\t\t\t  \n\t\t\t\t").concat(t, " ").concat(m, " .calc-buttons .calc-btn-action {\n\t\t\t\t  font-weight: ").concat(u.fields_btn_font_weight, " !important;\n\t\t\t\t  font-size: calc(").concat(u.fields_btn_font_size, " - 2px) !important;\n\t\t\t\t}\n\t\t\t \n\t\t\t\t").concat(t, " ").concat(m, " .calc-list .calc-item-title .ccb-calc-heading {\n\t\t\t\t  font-size: ").concat(u.header_font_size, " !important;\n\t\t\t\t  font-weight: ").concat(u.header_font_weight, " !important;\n\t\t\t\t}\n\n\t\t\t\t").concat(t, " ").concat(m, " .calc-container .calc-list .calc-subtotal-list .calc-subtotal-list-header span {\n\t\t\t\t\tfont-size: ").concat(u.summary_header_size, " !important;\n\t\t\t\t\tfont-weight: ").concat(u.summary_header_font_weight, " !important;\n\t\t\t\t}\n\n\t\t\t\t").concat(t, " ").concat(m, " .calc-item__title {\n\t\t\t\t  font-size: ").concat(u.label_font_size, " !important;\n\t\t\t\t  font-weight: ").concat(u.label_font_weight, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item {\n\t\t\t\t  font-size: ").concat(u.total_field_font_size, " !important;\n\t\t\t\t  font-weight: ").concat(u.total_field_font_weight, " !important;\n\t\t\t\t  text-transform: ").concat(u.total_text_transform, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item.total {\n\t\t\t\t  color: ").concat(I, " !important;\n\t\t\t\t  font-size: ").concat(u.total_font_size, " !important;\n\t\t\t\t  font-weight: ").concat(u.total_font_weight, " !important;\n\t\t\t\t}\n\t\t\t\t\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item.total .ccb-discount {\n\t\t\t\t  \tcolor: ").concat(I, " !important;\n\t\t\t\t\tfont-size: calc(").concat(u.total_font_size, " - 2px) !important;\n\t\t\t\t\tfont-weight: 500 !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(m, " .ccb-send-quote__wrapper {\n\t\t\t\t\tbackground-color: ").concat(T.color, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(m, " .ccb-send-quote__wrapper .ccb-send-quote__title,\n\t\t\t\t").concat(m, " .ccb-send-quote__wrapper label {\n\t\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\t}\n\n\t\t\t\t").concat(m, " .ccb-send-quote__wrapper .ccb-send-quote__submit button,\n\t\t\t\t").concat(m, " .ccb-send-quote__success .ccb-send-quote__success-btn {\n\t\t\t\t\tbackground: ").concat(N, " !important;\n\t\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t\t\tborder-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(m, " .ccb-send-quote__success .ccb-send-quote__success-icon {\n\t\t\t\t\tcolor: ").concat(N, " !important;\n\t\t\t\t\tbackground: ").concat(v(N, "1A"), " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(m, " .ccb-send-quote__success .ccb-send-quote__success-text {\n\t\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(m, " .ccb-send-quote__wrapper .ccb-send-quote__file {\n\t\t\t\t\tborder-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t\t}\n\n\t\t\t\t").concat(m, " .ccb-send-quote__wrapper .ccb-send-quote__input input,\n\t\t\t\t").concat(m, " .ccb-send-quote__wrapper .ccb-send-quote__textarea textarea {\n\t\t\t\t\tborder-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t\t\tborder: ").concat(x("fields_border", "width"), " ").concat(x("fields_border", "type"), "  ").concat(v(I, "1A"), " !important;\n\t\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\t}\n\t\t\t   \n\t\t\t   ").concat(t, " ").concat(p, " .thank-you-page .thank-you-page__title-box-title {\n\t\t\t \tfont-size: ").concat(u.total_font_size, " !important;\n\t\t\t  \tfont-weight: ").concat(u.total_font_weight, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(t, " ").concat(p, " .thank-you-page .thank-you-page__order span span,\n\t\t\t  ").concat(t, " ").concat(p, " .thank-you-page .thank-you-page__title-box-desc {\n\t\t\t  \tfont-size: calc(").concat(u.total_field_font_size, " - 2px) !important;\n\t\t\t  \tfont-weight: ").concat(u.total_field_font_weight, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(t, " ").concat(p, " .thank-you-page .thank-you-page__title-box-desc {\n\t\t\t  \tword-break: break-word;\n\t\t\t  }\n\t\t\t \n\t\t\t ").concat(t, " ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a span,\n\t\t\t ").concat(t, " ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button span {\n\t\t\t \tfont-weight: ").concat(u.total_font_weight, " !important;\n\t\t\t  \tfont-size: calc(").concat(u.total_font_size, " - 2px) !important;\n\t\t\t  }\n\t\t")
+							return "\n\t\t\t\t".concat(t, " ").concat(m, " .calc-list-inner {\n\t\t\t\t   padding: ").concat(h.container_padding.join("px "), "px !important;\n\t\t\t\t   margin: ").concat(h.container_margin.join("px "), "px !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .calc-buttons .calc-btn-action,\n\t\t\t\t").concat(t, " ").concat(m, " .ccb-appearance-field:not(textarea) {\n\t\t\t\t   min-height: ").concat(f.field_and_buttons_height, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .ccb-datetime div .calc-date-picker-select {\n\t\t\t\t   min-height: ").concat(f.field_and_buttons_height, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .calc-buttons .calc-btn-action,\n\t\t\t\t").concat(t, " ").concat(m, " .ccb-datetime div .calc-date-picker-select,\n\t\t\t\t").concat(t, " ").concat(m, " .ccb-appearance-field {\n\t\t\t\t   padding: 12px ").concat(h.field_side_indents, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .calc-buttons .calc-file-upload-actions .calc-btn-action {\n\t\t\t\t\tpadding: 12px 0 !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " textarea {\n\t\t\t\t   height: ").concat(h.field_side_indents, ";\n\t\t\t\t}\n\t\t\t  \n\t\t\t\t").concat(t, " ").concat(m, " .calc-container .calc-list .calc-subtotal-list .calc-subtotal-list-accordion,\n\t\t\t\t").concat(t, " ").concat(m, " .calc-container .calc-list .calc-subtotal-list {\n\t\t\t\t  row-gap: calc(").concat(h.field_spacing, " / 2) !important;\n\t\t\t\t}\n\t\t\t\t  \n\t\t\t\t").concat(t, " ").concat(m, " .calc-container .calc-list .calc-fields-container {\n\t\t\t\t  row-gap: ").concat(h.field_spacing, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .ccb-datetime div .calc-date-picker-select,\n\t\t\t\t").concat(t, " ").concat(m, " calc-drop-down-with-image-list > ul,\n\t\t\t\t").concat(t, " ").concat(m, " .calc-toggle-item .calc-toggle-wrapper label:after,\n\t\t\t\t").concat(t, " ").concat(m, " .calc-checkbox-item label::before,\n\t\t\t\t").concat(t, " ").concat(m, " .ccb-appearance-field {\n\t\t\t\t   font-size: ").concat(u.fields_btn_font_size, " !important;\n\t\t\t\t   font-weight: ").concat(u.fields_btn_font_weight, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .calc-item__description span {\n\t\t\t\t\tfont-size: ").concat(u.description_font_size, " !important;\n\t\t\t\t\tfont-weight: ").concat(u.description_font_weight, " !important;\n\t\t\t\t }\n\t\t\t  \n\t\t\t  \n\t\t\t\t").concat(t, " ").concat(m, " .calc-toggle-container .calc-toggle-item .calc-toggle-label-wrap .calc-toggle-label,\n\t\t\t\t").concat(t, " ").concat(m, " .calc-item .calc-radio-wrapper label .calc-radio-label,\n\t\t\t\t").concat(t, " ").concat(m, " .calc-item .calc-checkbox-item label .calc-checkbox-title {\n\t\t\t\t  font-size: ").concat(u.fields_btn_font_size, " !important;\n\t\t\t\t  font-weight: ").concat(u.fields_btn_font_weight, " !important;\n\t\t\t\t}\n\t\t\t  \n\t\t\t\t").concat(t, " ").concat(m, " .calc-buttons .calc-btn-action {\n\t\t\t\t  font-weight: ").concat(u.fields_btn_font_weight, " !important;\n\t\t\t\t  font-size: calc(").concat(u.fields_btn_font_size, " - 2px) !important;\n\t\t\t\t}\n\t\t\t \n\t\t\t\t").concat(t, " ").concat(m, " .calc-list .calc-item-title .ccb-calc-heading {\n\t\t\t\t  font-size: ").concat(u.header_font_size, " !important;\n\t\t\t\t  font-weight: ").concat(u.header_font_weight, " !important;\n\t\t\t\t}\n\n\t\t\t\t").concat(t, " ").concat(m, " .calc-container .calc-list .calc-subtotal-list .calc-subtotal-list-header span {\n\t\t\t\t\tfont-size: ").concat(u.summary_header_size, " !important;\n\t\t\t\t\tfont-weight: ").concat(u.summary_header_font_weight, " !important;\n\t\t\t\t}\n\n\t\t\t\t").concat(t, " ").concat(m, " .calc-item__title {\n\t\t\t\t  font-size: ").concat(u.label_font_size, " !important;\n\t\t\t\t  font-weight: ").concat(u.label_font_weight, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item {\n\t\t\t\t  font-size: ").concat(u.total_field_font_size, " !important;\n\t\t\t\t  font-weight: ").concat(u.total_field_font_weight, " !important;\n\t\t\t\t  text-transform: ").concat(u.total_text_transform, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item.total {\n\t\t\t\t  color: ").concat(I, " !important;\n\t\t\t\t  font-size: ").concat(u.total_font_size, " !important;\n\t\t\t\t  font-weight: ").concat(u.total_font_weight, " !important;\n\t\t\t\t}\n\t\t\t\t\t\t\t\t\n\t\t\t\t").concat(t, " ").concat(m, " .calc-container .calc-list .calc-subtotal-list .sub-list-item.total .ccb-discount {\n\t\t\t\t  \tcolor: ").concat(I, " !important;\n\t\t\t\t\tfont-size: calc(").concat(u.total_font_size, " - 2px) !important;\n\t\t\t\t\tfont-weight: 500 !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(m, " .ccb-send-quote__wrapper {\n\t\t\t\t\tbackground-color: ").concat(T.color, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(m, " .ccb-send-quote__wrapper .ccb-send-quote__title,\n\t\t\t\t").concat(m, " .ccb-send-quote__wrapper label {\n\t\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\t}\n\n\t\t\t\t").concat(m, " .ccb-send-quote__wrapper .ccb-send-quote__submit button,\n\t\t\t\t").concat(m, " .ccb-send-quote__success .ccb-send-quote__success-btn {\n\t\t\t\t\tbackground: ").concat(S, " !important;\n\t\t\t\t\tcolor: ").concat(A, " !important;\n\t\t\t\t\tborder-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(m, " .ccb-send-quote__success .ccb-send-quote__success-icon {\n\t\t\t\t\tcolor: ").concat(S, " !important;\n\t\t\t\t\tbackground: ").concat(v(S, "1A"), " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(m, " .ccb-send-quote__success .ccb-send-quote__success-text {\n\t\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t").concat(m, " .ccb-send-quote__wrapper .ccb-send-quote__file {\n\t\t\t\t\tborder-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t\t}\n\n\t\t\t\t").concat(m, " .ccb-send-quote__wrapper .ccb-send-quote__input input,\n\t\t\t\t").concat(m, " .ccb-send-quote__wrapper .ccb-send-quote__textarea textarea {\n\t\t\t\t\tborder-radius: ").concat(x("fields_border", "radius"), " !important;\n\t\t\t\t\tborder: ").concat(x("fields_border", "width"), " ").concat(x("fields_border", "type"), "  ").concat(v(I, "1A"), " !important;\n\t\t\t\t\tbackground: ").concat(A, " !important;\n\t\t\t\t\tcolor: ").concat(I, " !important;\n\t\t\t\t}\n\t\t\t   \n\t\t\t   ").concat(t, " ").concat(p, " .thank-you-page .thank-you-page__title-box-title {\n\t\t\t \tfont-size: ").concat(u.total_font_size, " !important;\n\t\t\t  \tfont-weight: ").concat(u.total_font_weight, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(t, " ").concat(p, " .thank-you-page .thank-you-page__order span span,\n\t\t\t  ").concat(t, " ").concat(p, " .thank-you-page .thank-you-page__title-box-desc {\n\t\t\t  \tfont-size: calc(").concat(u.total_field_font_size, " - 2px) !important;\n\t\t\t  \tfont-weight: ").concat(u.total_field_font_weight, " !important;\n\t\t\t  }\n\t\t\t  \n\t\t\t  ").concat(t, " ").concat(p, " .thank-you-page .thank-you-page__title-box-desc {\n\t\t\t  \tword-break: break-word;\n\t\t\t  }\n\t\t\t \n\t\t\t ").concat(t, " ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div a span,\n\t\t\t ").concat(t, " ").concat(p, " .thank-you-page .thank-you-page__actions-wrapper div button span {\n\t\t\t \tfont-weight: ").concat(u.total_font_weight, " !important;\n\t\t\t  \tfont-size: calc(").concat(u.total_font_size, " - 2px) !important;\n\t\t\t  }\n\t\t")
 						};
 						["#ccb-mobile-preview", "mobile"].forEach((function (t) {
 							M += "mobile" === t ? "\n\t\t\t@media only screen and (max-width: 480px) {\n\t\t\t\t".concat(nt(""), "\n\t\t\t}\n\t\t\t") : nt(t)
@@ -14800,7 +14357,7 @@
 				}), "function" == typeof Symbol && (D.fn[Symbol.iterator] = a[Symbol.iterator]), D.each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(" "), (function (t, e) {
 					u["[object " + e + "]"] = e.toLowerCase()
 				}));
-				var S = a.pop, N = a.sort, T = a.splice, O = "[\\x20\\t\\r\\n\\f]", I = new RegExp("^" + O + "+|((?:^|[^\\\\])(?:\\\\.)*)" + O + "+$", "g");
+				var N = a.pop, S = a.sort, T = a.splice, O = "[\\x20\\t\\r\\n\\f]", I = new RegExp("^" + O + "+|((?:^|[^\\\\])(?:\\\\.)*)" + O + "+$", "g");
 				D.contains = function (t, e) {
 					var n = e && e.parentNode;
 					return t === n || !(!n || 1 !== n.nodeType || !(t.contains ? t.contains(n) : t.compareDocumentPosition && 16 & t.compareDocumentPosition(n)))
@@ -15005,7 +14562,7 @@
 						throw new Error("Syntax error, unrecognized expression: " + t)
 					}, D.uniqueSort = function (t) {
 						var e, n = [], r = 0, a = 0;
-						if (o = !g.sortStable, i = !g.sortStable && s.call(t, 0), N.call(t, k), o) {
+						if (o = !g.sortStable, i = !g.sortStable && s.call(t, 0), S.call(t, k), o) {
 							for (; e = t[a++];) e === t[a] && (r = n.push(a));
 							for (; r--;) T.call(t, n[r], 1)
 						}
@@ -15264,7 +14821,7 @@
 									if (y += b, i && b !== y) {
 										for (p = 0; g = r[p++];) g(_, M, s, l);
 										if (o) {
-											if (y > 0) for (; b--;) _[b] || M[b] || (M[b] = S.call(d));
+											if (y > 0) for (; b--;) _[b] || M[b] || (M[b] = N.call(d));
 											M = pt(M)
 										}
 										m.apply(d, M), f && !o && M.length > 0 && y + r.length > 1 && D.uniqueSort(d)
@@ -15755,7 +15312,7 @@
 				});
 				var xt, kt, Dt = /^(?:checkbox|radio)$/i, Lt = /<([a-z][^\/\0>\x20\t\r\n\f]*)/i, jt = /^$|^module$|\/(?:java|ecma)script/i;
 				xt = b.createDocumentFragment().appendChild(b.createElement("div")), (kt = b.createElement("input")).setAttribute("type", "radio"), kt.setAttribute("checked", "checked"), kt.setAttribute("name", "t"), xt.appendChild(kt), g.checkClone = xt.cloneNode(!0).cloneNode(!0).lastChild.checked, xt.innerHTML = "<textarea>x</textarea>", g.noCloneChecked = !!xt.cloneNode(!0).lastChild.defaultValue, xt.innerHTML = "<option></option>", g.option = !!xt.lastChild;
-				var St = {
+				var Nt = {
 					thead: [1, "<table>", "</table>"],
 					col: [2, "<table><colgroup>", "</colgroup></table>"],
 					tr: [2, "<table><tbody>", "</tbody></table>"],
@@ -15763,7 +15320,7 @@
 					_default: [0, "", ""]
 				};
 
-				function Nt(t, e) {
+				function St(t, e) {
 					var n;
 					return n = void 0 !== t.getElementsByTagName ? t.getElementsByTagName(e || "*") : void 0 !== t.querySelectorAll ? t.querySelectorAll(e || "*") : [], void 0 === e || e && j(t, e) ? D.merge([t], n) : n
 				}
@@ -15772,15 +15329,15 @@
 					for (var n = 0, r = t.length; n < r; n++) st.set(t[n], "globalEval", !e || st.get(e[n], "globalEval"))
 				}
 
-				St.tbody = St.tfoot = St.colgroup = St.caption = St.thead, St.th = St.td, g.option || (St.optgroup = St.option = [1, "<select multiple='multiple'>", "</select>"]);
+				Nt.tbody = Nt.tfoot = Nt.colgroup = Nt.caption = Nt.thead, Nt.th = Nt.td, g.option || (Nt.optgroup = Nt.option = [1, "<select multiple='multiple'>", "</select>"]);
 				var Ot = /<|&#?\w+;/;
 
 				function It(t, e, n, r, i) {
 					for (var a, o, s, c, l, d, u = e.createDocumentFragment(), f = [], h = 0, p = t.length; h < p; h++) if ((a = t[h]) || 0 === a) if ("object" === w(a)) D.merge(f, a.nodeType ? [a] : a); else if (Ot.test(a)) {
-						for (o = o || u.appendChild(e.createElement("div")), s = (Lt.exec(a) || ["", ""])[1].toLowerCase(), c = St[s] || St._default, o.innerHTML = c[1] + D.htmlPrefilter(a) + c[2], d = c[0]; d--;) o = o.lastChild;
+						for (o = o || u.appendChild(e.createElement("div")), s = (Lt.exec(a) || ["", ""])[1].toLowerCase(), c = Nt[s] || Nt._default, o.innerHTML = c[1] + D.htmlPrefilter(a) + c[2], d = c[0]; d--;) o = o.lastChild;
 						D.merge(f, o.childNodes), (o = u.firstChild).textContent = ""
 					} else f.push(e.createTextNode(a));
-					for (u.textContent = "", h = 0; a = f[h++];) if (r && D.inArray(a, r) > -1) i && i.push(a); else if (l = gt(a), o = Nt(u.appendChild(a), "script"), l && Tt(o), n) for (d = 0; a = o[d++];) jt.test(a.type || "") && n.push(a);
+					for (u.textContent = "", h = 0; a = f[h++];) if (r && D.inArray(a, r) > -1) i && i.push(a); else if (l = gt(a), o = St(u.appendChild(a), "script"), l && Tt(o), n) for (d = 0; a = o[d++];) jt.test(a.type || "") && n.push(a);
 					return u
 				}
 
@@ -16025,14 +15582,14 @@
 						m && (e[0] = p.call(this, i, a.html())), Wt(a, e, n, r)
 					}));
 					if (f && (a = (i = It(e, t[0].ownerDocument, !1, t, r)).firstChild, 1 === i.childNodes.length && (i = a), a || r)) {
-						for (s = (o = D.map(Nt(i, "script"), Ht)).length; u < f; u++) l = i, u !== h && (l = D.clone(l, !0, !0), s && D.merge(o, Nt(l, "script"))), n.call(t[u], l, u);
+						for (s = (o = D.map(St(i, "script"), Ht)).length; u < f; u++) l = i, u !== h && (l = D.clone(l, !0, !0), s && D.merge(o, St(l, "script"))), n.call(t[u], l, u);
 						if (s) for (d = o[o.length - 1].ownerDocument, D.map(o, Rt), u = 0; u < s; u++) l = o[u], jt.test(l.type || "") && !st.access(l, "globalEval") && D.contains(d, l) && (l.src && "module" !== (l.type || "").toLowerCase() ? D._evalUrl && !l.noModule && D._evalUrl(l.src, {nonce: l.nonce || l.getAttribute("nonce")}, d) : M(l.textContent.replace(Ft, ""), l, d))
 					}
 					return t
 				}
 
 				function qt(t, e, n) {
-					for (var r, i = e ? D.filter(e, t) : t, a = 0; null != (r = i[a]); a++) n || 1 !== r.nodeType || D.cleanData(Nt(r)), r.parentNode && (n && gt(r) && Tt(Nt(r, "script")), r.parentNode.removeChild(r));
+					for (var r, i = e ? D.filter(e, t) : t, a = 0; null != (r = i[a]); a++) n || 1 !== r.nodeType || D.cleanData(St(r)), r.parentNode && (n && gt(r) && Tt(St(r, "script")), r.parentNode.removeChild(r));
 					return t
 				}
 
@@ -16041,9 +15598,9 @@
 						return t
 					}, clone: function (t, e, n) {
 						var r, i, a, o, s = t.cloneNode(!0), c = gt(t);
-						if (!(g.noCloneChecked || 1 !== t.nodeType && 11 !== t.nodeType || D.isXMLDoc(t))) for (o = Nt(s), r = 0, i = (a = Nt(t)).length; r < i; r++) Qt(a[r], o[r]);
-						if (e) if (n) for (a = a || Nt(t), o = o || Nt(s), r = 0, i = a.length; r < i; r++) Vt(a[r], o[r]); else Vt(t, s);
-						return (o = Nt(s, "script")).length > 0 && Tt(o, !c && Nt(t, "script")), s
+						if (!(g.noCloneChecked || 1 !== t.nodeType && 11 !== t.nodeType || D.isXMLDoc(t))) for (o = St(s), r = 0, i = (a = St(t)).length; r < i; r++) Qt(a[r], o[r]);
+						if (e) if (n) for (a = a || St(t), o = o || St(s), r = 0, i = a.length; r < i; r++) Vt(a[r], o[r]); else Vt(t, s);
+						return (o = St(s, "script")).length > 0 && Tt(o, !c && St(t, "script")), s
 					}, cleanData: function (t) {
 						for (var e, n, r, i = D.event.special, a = 0; void 0 !== (n = t[a]); a++) if (at(n)) {
 							if (e = n[st.expando]) {
@@ -16084,7 +15641,7 @@
 							this.parentNode && this.parentNode.insertBefore(t, this.nextSibling)
 						}))
 					}, empty: function () {
-						for (var t, e = 0; null != (t = this[e]); e++) 1 === t.nodeType && (D.cleanData(Nt(t, !1)), t.textContent = "");
+						for (var t, e = 0; null != (t = this[e]); e++) 1 === t.nodeType && (D.cleanData(St(t, !1)), t.textContent = "");
 						return this
 					}, clone: function (t, e) {
 						return t = null != t && t, e = null == e ? t : e, this.map((function () {
@@ -16094,10 +15651,10 @@
 						return tt(this, (function (t) {
 							var e = this[0] || {}, n = 0, r = this.length;
 							if (void 0 === t && 1 === e.nodeType) return e.innerHTML;
-							if ("string" == typeof t && !Ct.test(t) && !St[(Lt.exec(t) || ["", ""])[1].toLowerCase()]) {
+							if ("string" == typeof t && !Ct.test(t) && !Nt[(Lt.exec(t) || ["", ""])[1].toLowerCase()]) {
 								t = D.htmlPrefilter(t);
 								try {
-									for (; n < r; n++) 1 === (e = this[n] || {}).nodeType && (D.cleanData(Nt(e, !1)), e.innerHTML = t);
+									for (; n < r; n++) 1 === (e = this[n] || {}).nodeType && (D.cleanData(St(e, !1)), e.innerHTML = t);
 									e = 0
 								} catch (t) {
 								}
@@ -16108,7 +15665,7 @@
 						var t = [];
 						return Wt(this, arguments, (function (e) {
 							var n = this.parentNode;
-							D.inArray(this, t) < 0 && (D.cleanData(Nt(this)), n && n.replaceChild(e, this))
+							D.inArray(this, t) < 0 && (D.cleanData(St(this)), n && n.replaceChild(e, this))
 						}), t)
 					}
 				}), D.each({appendTo: "append", prependTo: "prepend", insertBefore: "before", insertAfter: "after", replaceAll: "replaceWith"}, (function (t, e) {
@@ -16595,7 +16152,7 @@
 						return !1
 					}
 				});
-				var Se = /\r/g;
+				var Ne = /\r/g;
 				D.fn.extend({
 					val: function (t) {
 						var e, n, r, i = this[0];
@@ -16604,7 +16161,7 @@
 							1 === this.nodeType && (null == (i = r ? t.call(this, n, D(this).val()) : t) ? i = "" : "number" == typeof i ? i += "" : Array.isArray(i) && (i = D.map(i, (function (t) {
 								return null == t ? "" : t + ""
 							}))), (e = D.valHooks[this.type] || D.valHooks[this.nodeName.toLowerCase()]) && "set" in e && void 0 !== e.set(this, i, "value") || (this.value = i))
-						}))) : i ? (e = D.valHooks[i.type] || D.valHooks[i.nodeName.toLowerCase()]) && "get" in e && void 0 !== (n = e.get(i, "value")) ? n : "string" == typeof (n = i.value) ? n.replace(Se, "") : null == n ? "" : n : void 0
+						}))) : i ? (e = D.valHooks[i.type] || D.valHooks[i.nodeName.toLowerCase()]) && "get" in e && void 0 !== (n = e.get(i, "value")) ? n : "string" == typeof (n = i.value) ? n.replace(Ne, "") : null == n ? "" : n : void 0
 					}
 				}), D.extend({
 					valHooks: {
@@ -16636,7 +16193,7 @@
 						return null === t.getAttribute("value") ? "on" : t.value
 					})
 				}));
-				var Ne = r.location, Te = {guid: Date.now()}, Oe = /\?/;
+				var Se = r.location, Te = {guid: Date.now()}, Oe = /\?/;
 				D.parseXML = function (t) {
 					var e, n;
 					if (!t || "string" != typeof t) return null;
@@ -16743,14 +16300,14 @@
 					return r && D.extend(!0, t, r), t
 				}
 
-				Be.href = Ne.href, D.extend({
+				Be.href = Se.href, D.extend({
 					active: 0,
 					lastModified: {},
 					etag: {},
 					ajaxSettings: {
-						url: Ne.href,
+						url: Se.href,
 						type: "GET",
-						isLocal: /^(?:about|app|app-storage|.+-extension|file|res|widget):$/.test(Ne.protocol),
+						isLocal: /^(?:about|app|app-storage|.+-extension|file|res|widget):$/.test(Se.protocol),
 						global: !0,
 						processData: !0,
 						async: !0,
@@ -16792,7 +16349,7 @@
 									return n && n.abort(e), k(0, e), this
 								}
 							};
-						if (g.promise(x), h.url = ((t || h.url || Ne.href) + "").replace(Ve, Ne.protocol + "//"), h.type = e.method || e.type || h.method || h.type, h.dataTypes = (h.dataType || "*").toLowerCase().match(q) || [""], null == h.crossDomain) {
+						if (g.promise(x), h.url = ((t || h.url || Se.href) + "").replace(Ve, Se.protocol + "//"), h.type = e.method || e.type || h.method || h.type, h.dataTypes = (h.dataType || "*").toLowerCase().match(q) || [""], null == h.crossDomain) {
 							c = b.createElement("a");
 							try {
 								c.href = h.url, c.href = c.href, h.crossDomain = Be.protocol + "//" + Be.host != c.protocol + "//" + c.host
@@ -17243,8 +16800,8 @@
 			var r = "__lodash_hash_undefined__", i = 9007199254740991, a = "[object Arguments]", o = "[object Boolean]", s = "[object Date]", c = "[object Function]", l = "[object GeneratorFunction]", d = "[object Map]",
 				u = "[object Number]", f = "[object Object]", h = "[object Promise]", p = "[object RegExp]", m = "[object Set]", g = "[object String]", y = "[object Symbol]", v = "[object WeakMap]", b = "[object ArrayBuffer]",
 				_ = "[object DataView]", M = "[object Float32Array]", w = "[object Float64Array]", x = "[object Int8Array]", k = "[object Int16Array]", D = "[object Int32Array]", L = "[object Uint8Array]", j = "[object Uint8ClampedArray]",
-				S = "[object Uint16Array]", N = "[object Uint32Array]", T = /\w*$/, O = /^\[object .+?Constructor\]$/, I = /^(?:0|[1-9]\d*)$/, A = {};
-			A[a] = A["[object Array]"] = A[b] = A[_] = A[o] = A[s] = A[M] = A[w] = A[x] = A[k] = A[D] = A[d] = A[u] = A[f] = A[p] = A[m] = A[g] = A[y] = A[L] = A[j] = A[S] = A[N] = !0, A["[object Error]"] = A[c] = A[v] = !1;
+				N = "[object Uint16Array]", S = "[object Uint32Array]", T = /\w*$/, O = /^\[object .+?Constructor\]$/, I = /^(?:0|[1-9]\d*)$/, A = {};
+			A[a] = A["[object Array]"] = A[b] = A[_] = A[o] = A[s] = A[M] = A[w] = A[x] = A[k] = A[D] = A[d] = A[u] = A[f] = A[p] = A[m] = A[g] = A[y] = A[L] = A[j] = A[N] = A[S] = !0, A["[object Error]"] = A[c] = A[v] = !1;
 			var z = "object" == typeof n.g && n.g && n.g.Object === Object && n.g, Y = "object" == typeof self && self && self.Object === Object && self, $ = z || Y || Function("return this")(), E = e && !e.nodeType && e,
 				C = E && t && !t.nodeType && t, P = C && C.exports === E;
 
@@ -17313,7 +16870,7 @@
 				}
 			}
 
-			function St(t) {
+			function Nt(t) {
 				var e = -1, n = t ? t.length : 0;
 				for (this.clear(); ++e < n;) {
 					var r = t[e];
@@ -17321,7 +16878,7 @@
 				}
 			}
 
-			function Nt(t) {
+			function St(t) {
 				this.__data__ = new jt(t)
 			}
 
@@ -17405,8 +16962,8 @@
 								case D:
 								case L:
 								case j:
-								case S:
 								case N:
+								case S:
 									return function (t, e) {
 										var n = e ? Yt(t.buffer) : t.buffer;
 										return new t.constructor(n, t.byteOffset, t.length)
@@ -17436,7 +16993,7 @@
 						}(t, z, At, e)
 					}
 				}
-				v || (v = new Nt);
+				v || (v = new St);
 				var $ = v.get(t);
 				if ($) return $;
 				if (v.set(t, O), !I) var E = n ? function (t) {
@@ -17515,30 +17072,30 @@
 			}, jt.prototype.set = function (t, e) {
 				var n = this.__data__, r = It(n, t);
 				return r < 0 ? n.push([t, e]) : n[r][1] = e, this
-			}, St.prototype.clear = function () {
-				this.__data__ = {hash: new Lt, map: new (pt || jt), string: new Lt}
-			}, St.prototype.delete = function (t) {
-				return Et(this, t).delete(t)
-			}, St.prototype.get = function (t) {
-				return Et(this, t).get(t)
-			}, St.prototype.has = function (t) {
-				return Et(this, t).has(t)
-			}, St.prototype.set = function (t, e) {
-				return Et(this, t).set(t, e), this
 			}, Nt.prototype.clear = function () {
-				this.__data__ = new jt
+				this.__data__ = {hash: new Lt, map: new (pt || jt), string: new Lt}
 			}, Nt.prototype.delete = function (t) {
-				return this.__data__.delete(t)
+				return Et(this, t).delete(t)
 			}, Nt.prototype.get = function (t) {
-				return this.__data__.get(t)
+				return Et(this, t).get(t)
 			}, Nt.prototype.has = function (t) {
-				return this.__data__.has(t)
+				return Et(this, t).has(t)
 			}, Nt.prototype.set = function (t, e) {
+				return Et(this, t).set(t, e), this
+			}, St.prototype.clear = function () {
+				this.__data__ = new jt
+			}, St.prototype.delete = function (t) {
+				return this.__data__.delete(t)
+			}, St.prototype.get = function (t) {
+				return this.__data__.get(t)
+			}, St.prototype.has = function (t) {
+				return this.__data__.has(t)
+			}, St.prototype.set = function (t, e) {
 				var n = this.__data__;
 				if (n instanceof jt) {
 					var r = n.__data__;
 					if (!pt || r.length < 199) return r.push([t, e]), this;
-					n = this.__data__ = new St(r)
+					n = this.__data__ = new Nt(r)
 				}
 				return n.set(t, e), this
 			};
@@ -24474,10 +24031,10 @@
 					}), e)
 				}
 
-				var j, S = {};
+				var j, N = {};
 
-				function N(t, e) {
-					null != i.deprecationHandler && i.deprecationHandler(t, e), S[t] || (D(e), S[t] = !0)
+				function S(t, e) {
+					null != i.deprecationHandler && i.deprecationHandler(t, e), N[t] || (D(e), N[t] = !0)
 				}
 
 				function T(t) {
@@ -24692,11 +24249,11 @@
 					}
 				}
 
-				function St(t, e) {
-					return c(st, t) ? st[t](e._strict, e._locale) : new RegExp(Nt(t))
+				function Nt(t, e) {
+					return c(st, t) ? st[t](e._strict, e._locale) : new RegExp(St(t))
 				}
 
-				function Nt(t) {
+				function St(t) {
 					return Tt(t.replace("\\", "").replace(/\\(\[)|\\(\])|\[([^\]\[]*)\]|\\(.)/g, (function (t, e, n, r, i) {
 						return e || n || r || i
 					})))
@@ -24964,11 +24521,11 @@
 					return this._week.dow
 				}
 
-				function Se() {
+				function Ne() {
 					return this._week.doy
 				}
 
-				function Ne(t) {
+				function Se(t) {
 					var e = this.localeData().week(this);
 					return null == t ? e : this.add(7 * (t - e), "d")
 				}
@@ -25187,7 +24744,7 @@
 				function yn(t, e) {
 					if (null !== e) {
 						var n, r = cn;
-						if (e.abbr = t, null != ln[t]) N("defineLocaleOverride", "use moment.updateLocale(localeName, config) to change an existing locale. moment.defineLocale(localeName, config) should only be used for creating a new locale See http://momentjs.com/guides/#/warnings/define-locale/ for more info."), r = ln[t]._config; else if (null != e.parentLocale) if (null != ln[e.parentLocale]) r = ln[e.parentLocale]._config; else {
+						if (e.abbr = t, null != ln[t]) S("defineLocaleOverride", "use moment.updateLocale(localeName, config) to change an existing locale. moment.defineLocale(localeName, config) should only be used for creating a new locale See http://momentjs.com/guides/#/warnings/define-locale/ for more info."), r = ln[t]._config; else if (null != e.parentLocale) if (null != ln[e.parentLocale]) r = ln[e.parentLocale]._config; else {
 							if (null == (n = mn(e.parentLocale))) return dn[e.parentLocale] || (dn[e.parentLocale] = []), dn[e.parentLocale].push({name: t, config: e}), null;
 							r = n._config
 						}
@@ -25229,8 +24786,8 @@
 					xn = /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d|))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([+-]\d\d(?::?\d\d)?|\s*Z)?)?$/, kn = /Z|[+-]\d\d(?::?\d\d)?/,
 					Dn = [["YYYYYY-MM-DD", /[+-]\d{6}-\d\d-\d\d/], ["YYYY-MM-DD", /\d{4}-\d\d-\d\d/], ["GGGG-[W]WW-E", /\d{4}-W\d\d-\d/], ["GGGG-[W]WW", /\d{4}-W\d\d/, !1], ["YYYY-DDD", /\d{4}-\d{3}/], ["YYYY-MM", /\d{4}-\d\d/, !1], ["YYYYYYMMDD", /[+-]\d{10}/], ["YYYYMMDD", /\d{8}/], ["GGGG[W]WWE", /\d{4}W\d{3}/], ["GGGG[W]WW", /\d{4}W\d{2}/, !1], ["YYYYDDD", /\d{7}/], ["YYYYMM", /\d{6}/, !1], ["YYYY", /\d{4}/, !1]],
 					Ln = [["HH:mm:ss.SSSS", /\d\d:\d\d:\d\d\.\d+/], ["HH:mm:ss,SSSS", /\d\d:\d\d:\d\d,\d+/], ["HH:mm:ss", /\d\d:\d\d:\d\d/], ["HH:mm", /\d\d:\d\d/], ["HHmmss.SSSS", /\d\d\d\d\d\d\.\d+/], ["HHmmss,SSSS", /\d\d\d\d\d\d,\d+/], ["HHmmss", /\d\d\d\d\d\d/], ["HHmm", /\d\d\d\d/], ["HH", /\d\d/]],
-					jn = /^\/?Date\((-?\d+)/i, Sn = /^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/,
-					Nn = {UT: 0, GMT: 0, EDT: -240, EST: -300, CDT: -300, CST: -360, MDT: -360, MST: -420, PDT: -420, PST: -480};
+					jn = /^\/?Date\((-?\d+)/i, Nn = /^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/,
+					Sn = {UT: 0, GMT: 0, EDT: -240, EST: -300, CDT: -300, CST: -360, MDT: -360, MST: -420, PDT: -420, PST: -480};
 
 				function Tn(t) {
 					var e, n, r, i, a, o, s = t._i, c = wn.exec(s) || xn.exec(s), l = Dn.length, d = Ln.length;
@@ -25275,14 +24832,14 @@
 				}
 
 				function Yn(t, e, n) {
-					if (t) return Nn[t];
+					if (t) return Sn[t];
 					if (e) return 0;
 					var r = parseInt(n, 10), i = r % 100;
 					return (r - i) / 100 * 60 + i
 				}
 
 				function $n(t) {
-					var e, n = Sn.exec(An(t._i));
+					var e, n = Nn.exec(An(t._i));
 					if (n) {
 						if (e = On(n[4], n[3], n[2], n[5], n[6], n[7]), !zn(n[1], e, t)) return;
 						t._a = e, t._tzm = Yn(n[8], n[9], n[10]), t._d = _e.apply(null, t._a), t._d.setUTCMinutes(t._d.getUTCMinutes() - t._tzm), y(t).rfc2822 = !0
@@ -25321,7 +24878,7 @@
 					if (t._f !== i.ISO_8601) if (t._f !== i.RFC_2822) {
 						t._a = [], y(t).empty = !0;
 						var e, n, r, a, o, s, c, l = "" + t._i, d = l.length, u = 0;
-						for (c = (r = Q(t._f, t._locale).match(E) || []).length, e = 0; e < c; e++) a = r[e], (n = (l.match(St(a, t)) || [])[0]) && ((o = l.substr(0, l.indexOf(n))).length > 0 && y(t).unusedInput.push(o), l = l.slice(l.indexOf(n) + n.length), u += n.length), F[a] ? (n ? y(t).empty = !1 : y(t).unusedTokens.push(a), $t(a, n, t)) : t._strict && !n && y(t).unusedTokens.push(a);
+						for (c = (r = Q(t._f, t._locale).match(E) || []).length, e = 0; e < c; e++) a = r[e], (n = (l.match(Nt(a, t)) || [])[0]) && ((o = l.substr(0, l.indexOf(n))).length > 0 && y(t).unusedInput.push(o), l = l.slice(l.indexOf(n) + n.length), u += n.length), F[a] ? (n ? y(t).empty = !1 : y(t).unusedTokens.push(a), $t(a, n, t)) : t._strict && !n && y(t).unusedTokens.push(a);
 						y(t).charsLeftOver = d - u, l.length > 0 && y(t).unusedInput.push(l), t._a[Ut] <= 12 && !0 === y(t).bigHour && t._a[Ut] > 0 && (y(t).bigHour = void 0), y(t).parsedDateParts = t._a.slice(0), y(t).meridiem = t._meridiem, t._a[Ut] = Rn(t._locale, t._a[Ut], t._meridiem), null !== (s = y(t).era) && (t._a[Ct] = t._locale.erasConvertYear(s, t._a[Ct])), Fn(t), Mn(t)
 					} else $n(t); else Tn(t)
 				}
@@ -25420,7 +24977,7 @@
 				}
 
 				function or() {
-					return Nr(NaN)
+					return Sr(NaN)
 				}
 
 				function sr(t) {
@@ -25475,7 +25032,7 @@
 						if ("string" == typeof t) {
 							if (null === (t = hr(wt, t))) return this
 						} else Math.abs(t) < 16 && !n && (t *= 60);
-						return !this._isUTC && e && (r = mr(this)), this._offset = t, this._isUTC = !0, null != r && this.add(r, "m"), a !== t && (!e || this._changeInProgress ? zr(this, Nr(t - a, "m"), 1, !1) : this._changeInProgress || (this._changeInProgress = !0, i.updateOffset(this, !0), this._changeInProgress = null)), this
+						return !this._isUTC && e && (r = mr(this)), this._offset = t, this._isUTC = !0, null != r && this.add(r, "m"), a !== t && (!e || this._changeInProgress ? zr(this, Sr(t - a, "m"), 1, !1) : this._changeInProgress || (this._changeInProgress = !0, i.updateOffset(this, !0), this._changeInProgress = null)), this
 					}
 					return this._isUTC ? a : mr(this)
 				}
@@ -25529,9 +25086,9 @@
 				i.updateOffset = function () {
 				};
 				var jr = /^(-|\+)?(?:(\d*)[. ])?(\d+):(\d+)(?::(\d+)(\.\d*)?)?$/,
-					Sr = /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/;
+					Nr = /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/;
 
-				function Nr(t, e) {
+				function Sr(t, e) {
 					var n, r, i, a = t, o = null;
 					return cr(t) ? a = {ms: t._milliseconds, d: t._days, M: t._months} : u(t) || !isNaN(+t) ? (a = {}, e ? a[e] = +t : a.milliseconds = +t) : (o = jr.exec(t)) ? (n = "-" === o[1] ? -1 : 1, a = {
 						y: 0,
@@ -25540,7 +25097,7 @@
 						m: It(o[Ht]) * n,
 						s: It(o[Rt]) * n,
 						ms: It(lr(1e3 * o[Vt])) * n
-					}) : (o = Sr.exec(t)) ? (n = "-" === o[1] ? -1 : 1, a = {
+					}) : (o = Nr.exec(t)) ? (n = "-" === o[1] ? -1 : 1, a = {
 						y: Tr(o[2], n),
 						M: Tr(o[3], n),
 						w: Tr(o[4], n),
@@ -25569,7 +25126,7 @@
 				function Ar(t, e) {
 					return function (n, r) {
 						var i;
-						return null === r || isNaN(+r) || (N(e, "moment()." + e + "(period, number) is deprecated. Please use moment()." + e + "(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info."), i = n, n = r, r = i), zr(this, Nr(n, r), t), this
+						return null === r || isNaN(+r) || (S(e, "moment()." + e + "(period, number) is deprecated. Please use moment()." + e + "(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info."), i = n, n = r, r = i), zr(this, Sr(n, r), t), this
 					}
 				}
 
@@ -25578,7 +25135,7 @@
 					t.isValid() && (r = null == r || r, s && he(t, Zt(t, "Month") + s * n), o && Xt(t, "Date", Zt(t, "Date") + o * n), a && t._d.setTime(t._d.valueOf() + a * n), r && i.updateOffset(t, o || s))
 				}
 
-				Nr.fn = sr.prototype, Nr.invalid = or;
+				Sr.fn = sr.prototype, Sr.invalid = or;
 				var Yr = Ar(1, "add"), $r = Ar(-1, "subtract");
 
 				function Er(t) {
@@ -25717,7 +25274,7 @@
 				}
 
 				function ri(t, e) {
-					return this.isValid() && (k(t) && t.isValid() || Jn(t).isValid()) ? Nr({to: this, from: t}).locale(this.locale()).humanize(!e) : this.localeData().invalidDate()
+					return this.isValid() && (k(t) && t.isValid() || Jn(t).isValid()) ? Sr({to: this, from: t}).locale(this.locale()).humanize(!e) : this.localeData().invalidDate()
 				}
 
 				function ii(t) {
@@ -25725,7 +25282,7 @@
 				}
 
 				function ai(t, e) {
-					return this.isValid() && (k(t) && t.isValid() || Jn(t).isValid()) ? Nr({from: this, to: t}).locale(this.locale()).humanize(!e) : this.localeData().invalidDate()
+					return this.isValid() && (k(t) && t.isValid() || Jn(t).isValid()) ? Sr({from: this, to: t}).locale(this.locale()).humanize(!e) : this.localeData().invalidDate()
 				}
 
 				function oi(t) {
@@ -25868,11 +25425,11 @@
 					return y(this).overflow
 				}
 
-				function Si() {
+				function Ni() {
 					return {input: this._i, format: this._f, locale: this._locale, isUTC: this._isUTC, strict: this._strict}
 				}
 
-				function Ni(t, e) {
+				function Si(t, e) {
 					var n, r, a, o = this._eras || bn("en")._eras;
 					for (n = 0, r = o.length; n < r; ++n) switch ("string" == typeof o[n].since && (a = i(o[n].since).startOf("day"), o[n].since = a.valueOf()), typeof o[n].until) {
 						case"undefined":
@@ -26099,7 +25656,7 @@
 
 				la.add = Yr, la.calendar = Rr, la.clone = Vr, la.diff = Kr, la.endOf = vi, la.format = ni, la.from = ri, la.fromNow = ii, la.to = ai, la.toNow = oi, la.get = te, la.invalidAt = ji, la.isAfter = Qr, la.isBefore = Wr, la.isBetween = qr, la.isSame = Br, la.isSameOrAfter = Gr, la.isSameOrBefore = Jr, la.isValid = Di, la.lang = ci, la.locale = si, la.localeData = li, la.max = Zn, la.min = Kn, la.parsingFlags = Li, la.set = ee, la.startOf = yi, la.subtract = $r, la.toArray = wi, la.toObject = xi, la.toDate = Mi, la.toISOString = ti, la.inspect = ei, "undefined" != typeof Symbol && null != Symbol.for && (la[Symbol.for("nodejs.util.inspect.custom")] = function () {
 					return "Moment<" + this.format() + ">"
-				}), la.toJSON = ki, la.toString = Xr, la.unix = _i, la.valueOf = bi, la.creationData = Si, la.eraName = Ii, la.eraNarrow = Ai, la.eraAbbr = zi, la.eraYear = Yi, la.year = Gt, la.isLeapYear = Jt, la.weekYear = Qi, la.isoWeekYear = Wi, la.quarter = la.quarters = Xi, la.month = pe, la.daysInMonth = me, la.week = la.weeks = Ne, la.isoWeek = la.isoWeeks = Te, la.weeksInYear = Gi, la.weeksInWeekYear = Ji, la.isoWeeksInYear = qi, la.isoWeeksInISOWeekYear = Bi, la.date = ta, la.day = la.days = Qe, la.weekday = We, la.isoWeekday = qe, la.dayOfYear = ea, la.hour = la.hours = an, la.minute = la.minutes = na, la.second = la.seconds = aa, la.millisecond = la.milliseconds = ia, la.utcOffset = gr, la.utc = vr, la.local = br, la.parseZone = _r, la.hasAlignedHourOffset = Mr, la.isDST = wr, la.isLocal = kr, la.isUtcOffset = Dr, la.isUtc = Lr, la.isUTC = Lr, la.zoneAbbr = sa, la.zoneName = ca, la.dates = L("dates accessor is deprecated. Use date instead.", ta), la.months = L("months accessor is deprecated. Use month instead", pe), la.years = L("years accessor is deprecated. Use year instead", Gt), la.zone = L("moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/", yr), la.isDSTShifted = L("isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information", xr);
+				}), la.toJSON = ki, la.toString = Xr, la.unix = _i, la.valueOf = bi, la.creationData = Ni, la.eraName = Ii, la.eraNarrow = Ai, la.eraAbbr = zi, la.eraYear = Yi, la.year = Gt, la.isLeapYear = Jt, la.weekYear = Qi, la.isoWeekYear = Wi, la.quarter = la.quarters = Xi, la.month = pe, la.daysInMonth = me, la.week = la.weeks = Se, la.isoWeek = la.isoWeeks = Te, la.weeksInYear = Gi, la.weeksInWeekYear = Ji, la.isoWeeksInYear = qi, la.isoWeeksInISOWeekYear = Bi, la.date = ta, la.day = la.days = Qe, la.weekday = We, la.isoWeekday = qe, la.dayOfYear = ea, la.hour = la.hours = an, la.minute = la.minutes = na, la.second = la.seconds = aa, la.millisecond = la.milliseconds = ia, la.utcOffset = gr, la.utc = vr, la.local = br, la.parseZone = _r, la.hasAlignedHourOffset = Mr, la.isDST = wr, la.isLocal = kr, la.isUtcOffset = Dr, la.isUtc = Lr, la.isUTC = Lr, la.zoneAbbr = sa, la.zoneName = ca, la.dates = L("dates accessor is deprecated. Use date instead.", ta), la.months = L("months accessor is deprecated. Use month instead", pe), la.years = L("years accessor is deprecated. Use year instead", Gt), la.zone = L("moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/", yr), la.isDSTShifted = L("isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information", xr);
 				var ha = A.prototype;
 
 				function pa(t, e, n, r) {
@@ -26142,7 +25699,7 @@
 					return ga(t, e, n, "weekdaysMin")
 				}
 
-				ha.calendar = Y, ha.longDateFormat = q, ha.invalidDate = G, ha.ordinal = Z, ha.preparse = fa, ha.postformat = fa, ha.relativeTime = tt, ha.pastFuture = et, ha.set = O, ha.eras = Ni, ha.erasParse = Ti, ha.erasConvertYear = Oi, ha.erasAbbrRegex = Ei, ha.erasNameRegex = $i, ha.erasNarrowRegex = Ci, ha.months = le, ha.monthsShort = de, ha.monthsParse = fe, ha.monthsRegex = ye, ha.monthsShortRegex = ge, ha.week = De, ha.firstDayOfYear = Se, ha.firstDayOfWeek = je, ha.weekdays = Fe, ha.weekdaysMin = He, ha.weekdaysShort = Ue, ha.weekdaysParse = Ve, ha.weekdaysRegex = Be, ha.weekdaysShortRegex = Ge, ha.weekdaysMinRegex = Je, ha.isPM = nn, ha.meridiem = on, gn("en", {
+				ha.calendar = Y, ha.longDateFormat = q, ha.invalidDate = G, ha.ordinal = Z, ha.preparse = fa, ha.postformat = fa, ha.relativeTime = tt, ha.pastFuture = et, ha.set = O, ha.eras = Si, ha.erasParse = Ti, ha.erasConvertYear = Oi, ha.erasAbbrRegex = Ei, ha.erasNameRegex = $i, ha.erasNarrowRegex = Ci, ha.months = le, ha.monthsShort = de, ha.monthsParse = fe, ha.monthsRegex = ye, ha.monthsShortRegex = ge, ha.week = De, ha.firstDayOfYear = Ne, ha.firstDayOfWeek = je, ha.weekdays = Fe, ha.weekdaysMin = He, ha.weekdaysShort = Ue, ha.weekdaysParse = Ve, ha.weekdaysRegex = Be, ha.weekdaysShortRegex = Ge, ha.weekdaysMinRegex = Je, ha.isPM = nn, ha.meridiem = on, gn("en", {
 					eras: [{
 						since: "0001-01-01",
 						until: 1 / 0,
@@ -26163,7 +25720,7 @@
 				}
 
 				function ka(t, e, n, r) {
-					var i = Nr(e, n);
+					var i = Sr(e, n);
 					return t._milliseconds += r * i._milliseconds, t._days += r * i._days, t._months += r * i._months, t._bubble()
 				}
 
@@ -26179,12 +25736,12 @@
 					return t < 0 ? Math.floor(t) : Math.ceil(t)
 				}
 
-				function Sa() {
+				function Na() {
 					var t, e, n, r, i, a = this._milliseconds, o = this._days, s = this._months, c = this._data;
-					return a >= 0 && o >= 0 && s >= 0 || a <= 0 && o <= 0 && s <= 0 || (a += 864e5 * ja(Ta(s) + o), o = 0, s = 0), c.milliseconds = a % 1e3, t = Ot(a / 1e3), c.seconds = t % 60, e = Ot(t / 60), c.minutes = e % 60, n = Ot(e / 60), c.hours = n % 24, o += Ot(n / 24), s += i = Ot(Na(o)), o -= ja(Ta(i)), r = Ot(s / 12), s %= 12, c.days = o, c.months = s, c.years = r, this
+					return a >= 0 && o >= 0 && s >= 0 || a <= 0 && o <= 0 && s <= 0 || (a += 864e5 * ja(Ta(s) + o), o = 0, s = 0), c.milliseconds = a % 1e3, t = Ot(a / 1e3), c.seconds = t % 60, e = Ot(t / 60), c.minutes = e % 60, n = Ot(e / 60), c.hours = n % 24, o += Ot(n / 24), s += i = Ot(Sa(o)), o -= ja(Ta(i)), r = Ot(s / 12), s %= 12, c.days = o, c.months = s, c.years = r, this
 				}
 
-				function Na(t) {
+				function Sa(t) {
 					return 4800 * t / 146097
 				}
 
@@ -26195,7 +25752,7 @@
 				function Oa(t) {
 					if (!this.isValid()) return NaN;
 					var e, n, r = this._milliseconds;
-					if ("month" === (t = rt(t)) || "quarter" === t || "year" === t) switch (e = this._days + r / 864e5, n = this._months + Na(e), t) {
+					if ("month" === (t = rt(t)) || "quarter" === t || "year" === t) switch (e = this._days + r / 864e5, n = this._months + Sa(e), t) {
 						case"month":
 							return n;
 						case"quarter":
@@ -26229,7 +25786,7 @@
 				var Aa = Ia("ms"), za = Ia("s"), Ya = Ia("m"), $a = Ia("h"), Ea = Ia("d"), Ca = Ia("w"), Pa = Ia("M"), Fa = Ia("Q"), Ua = Ia("y"), Ha = Aa;
 
 				function Ra() {
-					return Nr(this)
+					return Sr(this)
 				}
 
 				function Va(t) {
@@ -26255,7 +25812,7 @@
 				}
 
 				function ro(t, e, n, r) {
-					var i = Nr(t).abs(), a = to(i.as("s")), o = to(i.as("m")), s = to(i.as("h")), c = to(i.as("d")), l = to(i.as("M")), d = to(i.as("w")), u = to(i.as("y")),
+					var i = Sr(t).abs(), a = to(i.as("s")), o = to(i.as("m")), s = to(i.as("h")), c = to(i.as("d")), l = to(i.as("M")), d = to(i.as("w")), u = to(i.as("y")),
 						f = a <= n.ss && ["s", a] || a < n.s && ["ss", a] || o <= 1 && ["m"] || o < n.m && ["mm", o] || s <= 1 && ["h"] || s < n.h && ["hh", s] || c <= 1 && ["d"] || c < n.d && ["dd", c];
 					return null != n.w && (f = f || d <= 1 && ["w"] || d < n.w && ["ww", d]), (f = f || l <= 1 && ["M"] || l < n.M && ["MM", l] || u <= 1 && ["y"] || ["yy", u])[2] = e, f[3] = +t > 0, f[4] = r, no.apply(null, f)
 				}
@@ -26287,11 +25844,11 @@
 				}
 
 				var uo = sr.prototype;
-				return uo.isValid = ar, uo.abs = xa, uo.add = Da, uo.subtract = La, uo.as = Oa, uo.asMilliseconds = Aa, uo.asSeconds = za, uo.asMinutes = Ya, uo.asHours = $a, uo.asDays = Ea, uo.asWeeks = Ca, uo.asMonths = Pa, uo.asQuarters = Fa, uo.asYears = Ua, uo.valueOf = Ha, uo._bubble = Sa, uo.clone = Ra, uo.get = Va, uo.milliseconds = Wa, uo.seconds = qa, uo.minutes = Ba, uo.hours = Ga, uo.days = Ja, uo.weeks = Xa, uo.months = Ka, uo.years = Za, uo.humanize = oo, uo.toISOString = lo, uo.toString = lo, uo.toJSON = lo, uo.locale = si, uo.localeData = li, uo.toIsoString = L("toIsoString() is deprecated. Please use toISOString() instead (notice the capitals)", lo), uo.lang = ci, U("X", 0, 0, "unix"), U("x", 0, 0, "valueOf"), jt("x", _t), jt("X", xt), zt("X", (function (t, e, n) {
+				return uo.isValid = ar, uo.abs = xa, uo.add = Da, uo.subtract = La, uo.as = Oa, uo.asMilliseconds = Aa, uo.asSeconds = za, uo.asMinutes = Ya, uo.asHours = $a, uo.asDays = Ea, uo.asWeeks = Ca, uo.asMonths = Pa, uo.asQuarters = Fa, uo.asYears = Ua, uo.valueOf = Ha, uo._bubble = Na, uo.clone = Ra, uo.get = Va, uo.milliseconds = Wa, uo.seconds = qa, uo.minutes = Ba, uo.hours = Ga, uo.days = Ja, uo.weeks = Xa, uo.months = Ka, uo.years = Za, uo.humanize = oo, uo.toISOString = lo, uo.toString = lo, uo.toJSON = lo, uo.locale = si, uo.localeData = li, uo.toIsoString = L("toIsoString() is deprecated. Please use toISOString() instead (notice the capitals)", lo), uo.lang = ci, U("X", 0, 0, "unix"), U("x", 0, 0, "valueOf"), jt("x", _t), jt("X", xt), zt("X", (function (t, e, n) {
 					n._d = new Date(1e3 * parseFloat(t))
 				})), zt("x", (function (t, e, n) {
 					n._d = new Date(It(t))
-				})), i.version = "2.30.1", a(Jn), i.fn = la, i.min = tr, i.max = er, i.now = nr, i.utc = m, i.unix = da, i.months = ya, i.isDate = f, i.locale = gn, i.invalid = b, i.duration = Nr, i.isMoment = k, i.weekdays = ba, i.parseZone = ua, i.localeData = bn, i.isDuration = cr, i.monthsShort = va, i.weekdaysMin = Ma, i.defineLocale = yn, i.updateLocale = vn, i.locales = _n, i.weekdaysShort = _a, i.normalizeUnits = rt, i.relativeTimeRounding = io, i.relativeTimeThreshold = ao, i.calendarFormat = Hr, i.prototype = la, i.HTML5_FMT = {
+				})), i.version = "2.30.1", a(Jn), i.fn = la, i.min = tr, i.max = er, i.now = nr, i.utc = m, i.unix = da, i.months = ya, i.isDate = f, i.locale = gn, i.invalid = b, i.duration = Sr, i.isMoment = k, i.weekdays = ba, i.parseZone = ua, i.localeData = bn, i.isDuration = cr, i.monthsShort = va, i.weekdaysMin = Ma, i.defineLocale = yn, i.updateLocale = vn, i.locales = _n, i.weekdaysShort = _a, i.normalizeUnits = rt, i.relativeTimeRounding = io, i.relativeTimeThreshold = ao, i.calendarFormat = Hr, i.prototype = la, i.HTML5_FMT = {
 					DATETIME_LOCAL: "YYYY-MM-DDTHH:mm",
 					DATETIME_LOCAL_SECONDS: "YYYY-MM-DDTHH:mm:ss",
 					DATETIME_LOCAL_MS: "YYYY-MM-DDTHH:mm:ss.SSS",
@@ -27011,14 +26568,14 @@
 							}
 							for (var x, k = "", D = 0, L = 0; L < M.length; L++) {
 								w = M[L];
-								for (var j = String(w[0]), S = u(f(s(w.index), h.length), 0), N = [], T = 1; T < w.length; T++) N.push(void 0 === (x = w[T]) ? x : String(x));
+								for (var j = String(w[0]), N = u(f(s(w.index), h.length), 0), S = [], T = 1; T < w.length; T++) S.push(void 0 === (x = w[T]) ? x : String(x));
 								var O = w.groups;
 								if (p) {
-									var I = [j].concat(N, S, h);
+									var I = [j].concat(S, N, h);
 									void 0 !== O && I.push(O);
 									var A = String(r.apply(void 0, I))
-								} else A = b(j, h, S, N, O, r);
-								S >= D && (k += h.slice(D, S) + A, D = S + j.length)
+								} else A = b(j, h, N, S, O, r);
+								N >= D && (k += h.slice(D, N) + A, D = N + j.length)
 							}
 							return k + h.slice(D)
 						}];
@@ -27207,7 +26764,7 @@
 						i(n, e, d);
 						var x, k, D, L = function (t) {
 							if (t === h && O) return O;
-							if (!m && t in N) return N[t];
+							if (!m && t in S) return S[t];
 							switch (t) {
 								case y:
 								case v:
@@ -27219,13 +26776,13 @@
 							return function () {
 								return new n(this)
 							}
-						}, j = e + " Iterator", S = !1, N = t.prototype, T = N[g] || N["@@iterator"] || h && N[h], O = !m && T || L(h), I = "Array" == e && N.entries || T;
-						if (I && (x = a(I.call(new t)), p !== Object.prototype && x.next && (u || a(x) === p || (o ? o(x, p) : "function" != typeof x[g] && c(x, g, _)), s(x, j, !0, !0), u && (f[j] = _))), h == v && T && T.name !== v && (S = !0, O = function () {
+						}, j = e + " Iterator", N = !1, S = t.prototype, T = S[g] || S["@@iterator"] || h && S[h], O = !m && T || L(h), I = "Array" == e && S.entries || T;
+						if (I && (x = a(I.call(new t)), p !== Object.prototype && x.next && (u || a(x) === p || (o ? o(x, p) : "function" != typeof x[g] && c(x, g, _)), s(x, j, !0, !0), u && (f[j] = _))), h == v && T && T.name !== v && (N = !0, O = function () {
 							return T.call(this)
-						}), u && !w || N[g] === O || c(N, g, O), f[e] = O, h) if (k = {values: L(v), keys: M ? O : L(y), entries: L(b)}, w) for (D in k) (m || S || !(D in N)) && l(N, D, k[D]); else r({
+						}), u && !w || S[g] === O || c(S, g, O), f[e] = O, h) if (k = {values: L(v), keys: M ? O : L(y), entries: L(b)}, w) for (D in k) (m || N || !(D in S)) && l(S, D, k[D]); else r({
 							target: e,
 							proto: !0,
-							forced: m || S
+							forced: m || N
 						}, k);
 						return k
 					}
@@ -27417,10 +26974,10 @@
 				}, a4d3: function (t, e, n) {
 					"use strict";
 					var r = n("23e7"), i = n("da84"), a = n("d066"), o = n("c430"), s = n("83ab"), c = n("4930"), l = n("fdbf"), d = n("d039"), u = n("5135"), f = n("e8b5"), h = n("861d"), p = n("825a"), m = n("7b0b"), g = n("fc6a"),
-						y = n("c04e"), v = n("5c6c"), b = n("7c73"), _ = n("df75"), M = n("241c"), w = n("057f"), x = n("7418"), k = n("06cf"), D = n("9bf2"), L = n("d1e7"), j = n("9112"), S = n("6eeb"), N = n("5692"), T = n("f772"),
+						y = n("c04e"), v = n("5c6c"), b = n("7c73"), _ = n("df75"), M = n("241c"), w = n("057f"), x = n("7418"), k = n("06cf"), D = n("9bf2"), L = n("d1e7"), j = n("9112"), N = n("6eeb"), S = n("5692"), T = n("f772"),
 						O = n("d012"), I = n("90e3"), A = n("b622"), z = n("e538"), Y = n("746f"), $ = n("d44e"), E = n("69f3"), C = n("b727").forEach, P = T("hidden"), F = "Symbol", U = "prototype", H = A("toPrimitive"), R = E.set,
-						V = E.getterFor(F), Q = Object[U], W = i.Symbol, q = a("JSON", "stringify"), B = k.f, G = D.f, J = w.f, K = L.f, Z = N("symbols"), X = N("op-symbols"), tt = N("string-to-symbol-registry"),
-						et = N("symbol-to-string-registry"), nt = N("wks"), rt = i.QObject, it = !rt || !rt[U] || !rt[U].findChild, at = s && d((function () {
+						V = E.getterFor(F), Q = Object[U], W = i.Symbol, q = a("JSON", "stringify"), B = k.f, G = D.f, J = w.f, K = L.f, Z = S("symbols"), X = S("op-symbols"), tt = S("string-to-symbol-registry"),
+						et = S("symbol-to-string-registry"), nt = S("wks"), rt = i.QObject, it = !rt || !rt[U] || !rt[U].findChild, at = s && d((function () {
 							return 7 != b(G({}, "a", {
 								get: function () {
 									return G(this, "a", {value: 7}).a
@@ -27472,9 +27029,9 @@
 							this === Q && n.call(X, t), u(this, P) && u(this[P], e) && (this[P][e] = !1), at(this, e, v(1, t))
 						};
 						return s && it && at(Q, e, {configurable: !0, set: n}), ot(e, t)
-					}, S(W[U], "toString", (function () {
+					}, N(W[U], "toString", (function () {
 						return V(this).tag
-					})), S(W, "withoutSetter", (function (t) {
+					})), N(W, "withoutSetter", (function (t) {
 						return ot(I(t), t)
 					})), L.f = dt, D.f = ct, k.f = ut, M.f = w.f = ft, x.f = ht, z.f = function (t) {
 						return ot(A(t), t)
@@ -27482,7 +27039,7 @@
 						configurable: !0, get: function () {
 							return V(this).description
 						}
-					}), o || S(Q, "propertyIsEnumerable", dt, {unsafe: !0}))), r({global: !0, wrap: !0, forced: !c, sham: !c}, {Symbol: W}), C(_(nt), (function (t) {
+					}), o || N(Q, "propertyIsEnumerable", dt, {unsafe: !0}))), r({global: !0, wrap: !0, forced: !c, sham: !c}, {Symbol: W}), C(_(nt), (function (t) {
 						Y(t)
 					})), r({target: F, stat: !0, forced: !c}, {
 						for: function (t) {
@@ -29771,9 +29328,9 @@
 				}
 			}
 		};
-		var D = __webpack_require__(286), L = __webpack_require__.n(D), j = __webpack_require__(100), S = __webpack_require__.n(j), N = __webpack_require__(9362), T = {insert: "head", singleton: !1};
-		S()(N.A, T);
-		N.A.locals;
+		var D = __webpack_require__(286), L = __webpack_require__.n(D), j = __webpack_require__(100), N = __webpack_require__.n(j), S = __webpack_require__(9362), T = {insert: "head", singleton: !1};
+		N()(S.A, T);
+		S.A.locals;
 
 		function O(t, e) {
 			return function (t) {
@@ -30846,13 +30403,13 @@
 									break;
 								case"a":
 									w = !0;
-									var S = it() ? B("dayPeriods", i.dateObject) : B("dayPeriods.format.wide", i.dateObject);
-									o[x] = lt.reverseObject(S), l += "(" + Object.keys(o[x]).join("|") + ")";
+									var N = it() ? B("dayPeriods", i.dateObject) : B("dayPeriods.format.wide", i.dateObject);
+									o[x] = lt.reverseObject(N), l += "(" + Object.keys(o[x]).join("|") + ")";
 									break;
 								case"G":
 									w = !0;
-									var N = b <= 3 ? "eraAbbr" : 4 === b ? "eraNames" : "eraNarrow";
-									o[x] = lt.reverseObject(it() ? B("eras", i.dateObject) : B("eras." + N, i.dateObject)), l += "(" + Object.keys(o[x]).join("|") + "?)";
+									var S = b <= 3 ? "eraAbbr" : 4 === b ? "eraNames" : "eraNarrow";
+									o[x] = lt.reverseObject(it() ? B("eras", i.dateObject) : B("eras." + S, i.dateObject)), l += "(" + Object.keys(o[x]).join("|") + "?)";
 									break;
 								case"z":
 									w = 0 !== (new Date).getTimezoneOffset(), o[x] = B("dates.timeZoneNames", i.parserObject);
@@ -30969,7 +30526,7 @@
 					var i = t.split(".");
 					return i[1] && i[1].length > e.maximumFractionDigits && (n = +n.toFixed(e.custom ? r ? e.nData.maximumFractionDigits : e.pData.maximumFractionDigits : e.maximumFractionDigits)), n
 				}, t
-			}(), St = function () {
+			}(), Nt = function () {
 				function t(t) {
 					this.ranArray = [], this.boundedEvents = {}, tt(t) || (this.context = t)
 				}
@@ -31055,7 +30612,7 @@
 					}
 					return !1
 				}, t
-			}(), Nt = new St, Tt = !1, Ot = {}, It = "en-US", At = "USD";
+			}(), St = new Nt, Tt = !1, Ot = {}, It = "en-US", At = "USD";
 		!function () {
 			function t(t) {
 				t && (this.culture = t)
@@ -31820,7 +31377,7 @@
 		var se = new RegExp("]"), ce = function () {
 			function t(t, e) {
 				this.isRendered = !1, this.isComplexArraySetter = !1, this.isServerRendered = !1, this.allowServerDataBinding = !0, this.isProtectedOnChange = !0, this.properties = {}, this.changedProperties = {}, this.oldProperties = {}, this.bulkChanges = {}, this.refreshing = !1, this.ignoreCollectionWatch = !1, this.finalUpdate = function () {
-				}, this.childChangedProperties = {}, this.modelObserver = new St(this), et(e) || (this.element = "string" == typeof e ? document.querySelector(e) : e, tt(this.element) || (this.isProtectedOnChange = !1, this.addInstance())), et(t) || this.setProperties(t, !0), this.isDestroyed = !1
+				}, this.childChangedProperties = {}, this.modelObserver = new Nt(this), et(e) || (this.element = "string" == typeof e ? document.querySelector(e) : e, tt(this.element) || (this.isProtectedOnChange = !1, this.addInstance())), et(t) || this.setProperties(t, !0), this.isDestroyed = !1
 			}
 
 			return t.prototype.setProperties = function (t, e) {
@@ -32062,7 +31619,7 @@
 		!function (t) {
 			t.Default = "Default", t.Enable = "Enable", t.Disable = "Disable"
 		}(De || (De = {}));
-		var je, Se = function () {
+		var je, Ne = function () {
 				function t(t) {
 					this.loadedModules = [], this.parent = t
 				}
@@ -32104,7 +31661,7 @@
 					}
 					return !1
 				}, t
-			}(), Ne = function () {
+			}(), Se = function () {
 				function t(t, e, n, r) {
 					this.isComplexArraySetter = !1, this.properties = {}, this.changedProperties = {}, this.childChangedProperties = {}, this.oldProperties = {}, this.finalUpdate = function () {
 					}, this.callChildDataBind = B("callChildDataBind", ce), this.parentObj = t, this.controlParent = this.parentObj.controlParent || this.parentObj, this.propName = e, this.isParentArray = r, this.setProperties(n, !0)
@@ -32280,15 +31837,15 @@
 						var t = new Uint16Array(5);
 						return (window.msCrypto || window.crypto).getRandomValues(t)
 					}
-				}(), r.isStringTemplate = !1, r.needsID = !1, r.isReactHybrid = !1, tt(r.enableRtl) && r.setProperties({enableRtl: Tt}, !0), tt(r.locale) && r.setProperties({locale: It}, !0), r.moduleLoader = new Se(r), r.localObserver = new St(r), Nt.on("notifyExternalChange", r.detectFunction, r, r.randomId), "undefined" == typeof window || "undefined" == typeof document || $e() || -1 !== Te.indexOf(r.getModuleName()) && (Ue += 1) > 5 && (He = !1), et(n) || r.appendTo(), r
+				}(), r.isStringTemplate = !1, r.needsID = !1, r.isReactHybrid = !1, tt(r.enableRtl) && r.setProperties({enableRtl: Tt}, !0), tt(r.locale) && r.setProperties({locale: It}, !0), r.moduleLoader = new Ne(r), r.localObserver = new Nt(r), St.on("notifyExternalChange", r.detectFunction, r, r.randomId), "undefined" == typeof window || "undefined" == typeof document || $e() || -1 !== Te.indexOf(r.getModuleName()) && (Ue += 1) > 5 && (He = !1), et(n) || r.appendTo(), r
 			}
 
 			Ee(e, t), e.prototype.requiredModules = function () {
 				return []
 			}, e.prototype.destroy = function () {
-				this.isDestroyed || (this.enablePersistence && (this.setPersistData(), this.detachUnloadEvent()), this.localObserver.destroy(), this.refreshing || (Zt([this.element], ["e-control"]), this.trigger("destroyed", {cancel: !1}), t.prototype.destroy.call(this), this.moduleLoader.clean(), Nt.off("notifyExternalChange", this.detectFunction, this.randomId)))
+				this.isDestroyed || (this.enablePersistence && (this.setPersistData(), this.detachUnloadEvent()), this.localObserver.destroy(), this.refreshing || (Zt([this.element], ["e-control"]), this.trigger("destroyed", {cancel: !1}), t.prototype.destroy.call(this), this.moduleLoader.clean(), St.off("notifyExternalChange", this.detectFunction, this.randomId)))
 			}, e.prototype.refresh = function () {
-				this.refreshing = !0, this.moduleLoader.clean(), this.destroy(), this.clearChanges(), this.localObserver = new St(this), this.preRender(), this.injectModules(), this.render(), this.refreshing = !1
+				this.refreshing = !0, this.moduleLoader.clean(), this.destroy(), this.clearChanges(), this.localObserver = new Nt(this), this.preRender(), this.injectModules(), this.render(), this.refreshing = !1
 			}, e.prototype.accessMount = function () {
 				this.mount && !this.isReactHybrid && this.mount()
 			}, e.prototype.getRootElement = function () {
@@ -32377,7 +31934,7 @@
 					return e.getActualProperties(n)
 				}))
 			}, e.prototype.getActualProperties = function (t) {
-				return t instanceof Ne ? B("properties", t) : t
+				return t instanceof Se ? B("properties", t) : t
 			}, e.prototype.ignoreOnPersist = function (t) {
 				return JSON.stringify(this.iterateJsonProperties(this.properties, t))
 			}, e.prototype.iterateJsonProperties = function (t, e) {
@@ -32427,7 +31984,7 @@
 				}
 
 				return Qe(e, t), We([me(0)], e.prototype, "left", void 0), We([me(0)], e.prototype, "top", void 0), e
-			}(Ne), Je = (function (t) {
+			}(Se), Je = (function (t) {
 				function e(e, r) {
 					var i = t.call(this, r, e) || this;
 					return i.dragLimit = n.getDefaultPosition(), i.borderWidth = n.getDefaultPosition(), i.padding = n.getDefaultPosition(), i.diffX = 0, i.prevLeft = 0, i.prevTop = 0, i.dragProcessStarted = !1, i.eleTop = 0, i.tapHoldTimer = 0, i.externalInitialize = !1, i.diffY = 0, i.parentScrollX = 0, i.parentScrollY = 0, i.droppables = {}, i.bind(), i
@@ -32569,8 +32126,8 @@
 						var j = document.querySelectorAll(":hover");
 						if (this.enableAutoScroll && this.helperElement.classList.contains("e-treeview")) {
 							0 === j.length && (j = this.getPathElements(t));
-							var S = this.getScrollParent(j, !1);
-							this.elementInViewport(this.helperElement) ? this.getScrollPosition(S, b) : this.elementInViewport(this.helperElement) || (0 === (j = [].slice.call(document.querySelectorAll(":hover"))).length && (j = this.getPathElements(t)), S = this.getScrollParent(j, !0), this.getScrollPosition(S, b))
+							var N = this.getScrollParent(j, !1);
+							this.elementInViewport(this.helperElement) ? this.getScrollPosition(N, b) : this.elementInViewport(this.helperElement) || (0 === (j = [].slice.call(document.querySelectorAll(":hover"))).length && (j = this.getPathElements(t)), N = this.getScrollParent(j, !0), this.getScrollPosition(N, b))
 						}
 						this.dragProcessStarted = !0, this.prevLeft = e, this.prevTop = n, this.position.left = e, this.position.top = n, this.pageX = f, this.pageY = h
 					}
@@ -32853,7 +32410,7 @@
 				}
 
 				return en(e, t), nn([me(50)], e.prototype, "swipeThresholdDistance", void 0), e
-			}(Ne), an = /(Up|Down)/, on = (function (t) {
+			}(Se), an = /(Up|Down)/, on = (function (t) {
 				function e(e, n) {
 					var r = t.call(this, n, e) || this;
 					return r.touchAction = !0, r.tapCount = 0, r.startEvent = function (t) {
@@ -32968,7 +32525,7 @@
 						if (ln.test(o)) o = '";} ' + o.replace(d[1], u.replace(mn, (function (t) {
 							return Dn(t = t.trim(), !sn.test(t) && -1 === a.indexOf(t), e, a, r)
 						}))) + '{ \n str = str + "'; else if (cn.test(o)) o = '"; ' + o.replace(d[1], u.replace(yn, (function (t) {
-							return Sn(t, e, a, r)
+							return Nn(t, e, a, r)
 						}))) + '{ \n str = str + "'; else if (un.test(o)) {
 							var f = d[1].split(" of ");
 							o = '"; ' + o.replace(d[1], (function (t) {
@@ -32981,7 +32538,7 @@
 							0 === d[1].length || /data/.test(m[0]) || /window./.test(m[0]) || (d[1] = "global" === p ? e + "." + d[1] : d[1]);
 							var g = /@|\$|#/gm, y = /\]\./gm;
 							if (xn.test(o) && y.test(o) || g.test(o)) /@|\$|#|\]\./gm.test(o) && (o = '"+ ' + ("global" === p ? "" : p) + o.replace(d[1], u.replace(wn, (function (t) {
-								return Sn(t, e, a, r)
+								return Nn(t, e, a, r)
 							}))) + '+ "'); else o = '" + ' + ("global" === p ? "" : p) + o.replace(u, Dn(d[1].replace(/,( |)data.|,/gi, "," + e + ".").replace(/,( |)data.window/gi, ",window"), "global" !== p, e, a, r)) + '+"'
 						}
 					} else dn.test(o) ? o = '"; ' + o.replace(dn, '} else { \n str = str + "') : o.match(fn) ? o = o.replace(fn, '"; \n } \n str = str + "') : l.test(o) ? (o.match(_n) && (o = jn(o)), o = '"+' + Ln(o, -1 === a.indexOf(o), e, a) + '"]+"') : o = o.match(_n) ? '"+' + Ln(o = jn(o), -1 === a.indexOf(o), e, a) + '"]+"' : "" !== o ? '"+' + Dn(o.replace(/,/gi, "+" + e + "."), -1 === a.indexOf(o), e, a, r) + '+"' : "${}";
@@ -33003,7 +32560,7 @@
 			return t.match(Mn) || (t = t.replace(_n, "\\\\")), t
 		}
 
-		function Sn(t, e, n, r) {
+		function Nn(t, e, n, r) {
 			t = t.trim();
 			if (/\window\./gm.test(t)) return t;
 			var i = /'|"/gm;
@@ -33020,7 +32577,7 @@
 				return void 0 === e && (e = {}), kn(t, e)
 			}, t
 		}())).compile;
-		var Nn = ["script", "style", "iframe[src]", 'link[href*="javascript:"]', 'object[type="text/x-scriptlet"]', 'object[data^="data:text/html;base64"]', 'img[src^="data:text/html;base64"]', '[src^="javascript:"]', '[dynsrc^="javascript:"]', '[lowsrc^="javascript:"]', '[type^="application/x-shockwave-flash"]'],
+		var Sn = ["script", "style", "iframe[src]", 'link[href*="javascript:"]', 'object[type="text/x-scriptlet"]', 'object[data^="data:text/html;base64"]', 'img[src^="data:text/html;base64"]', '[src^="javascript:"]', '[dynsrc^="javascript:"]', '[lowsrc^="javascript:"]', '[type^="application/x-shockwave-flash"]'],
 			Tn = [{attribute: "href", selector: '[href*="javascript:"]'}, {attribute: "background", selector: '[background^="javascript:"]'}, {attribute: "style", selector: '[style*="javascript:"]'}, {
 				attribute: "style",
 				selector: '[style*="expression("]'
@@ -33031,7 +32588,7 @@
 			}
 
 			t.beforeSanitize = function () {
-				return {selectors: {tags: Nn, attributes: Tn}}
+				return {selectors: {tags: Sn, attributes: Tn}}
 			}, t.sanitize = function (t) {
 				var e = this.beforeSanitize();
 				return this.serializeValue(e, t)
@@ -33872,18 +33429,18 @@
 				return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 			}
 
-			function S(t) {
+			function N(t) {
 				var e = {tryLoc: t[0]};
 				1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 			}
 
-			function N(t) {
+			function S(t) {
 				var e = t.completion || {};
 				e.type = "normal", delete e.arg, t.completion = e
 			}
 
 			function T(t) {
-				this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+				this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 			}
 
 			function O(e) {
@@ -33933,7 +33490,7 @@
 				}
 			}, e.values = O, T.prototype = {
 				constructor: T, reset: function (e) {
-					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 				}, stop: function () {
 					this.done = !0;
 					var t = this.tryEntries[0].completion;
@@ -33980,7 +33537,7 @@
 				}, finish: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 						var n = this.tryEntries[e];
-						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 					}
 				}, catch: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -33989,7 +33546,7 @@
 							var r = n.completion;
 							if ("throw" === r.type) {
 								var i = r.arg;
-								N(n)
+								S(n)
 							}
 							return i
 						}
@@ -34559,7 +34116,7 @@
 				}
 			},
 			template: '\n        <div style="position: relative" :class="{\'invalid-phone-number\': !isValid}">\n          <vue-phone-number :required="field.required" @update="updatePhone" v-if="defaultCountry" :default-country-code="defaultCountry" v-model="phone" :translations="phoneNumberTranslations"/>\n          <span v-if="field.required" :class="{active: requiredActive}" class="ccb-error-tip front default">{{ getRequiredText }}</span>\n        </div>\n    '
-		}, Sr = {
+		}, Nr = {
 			props: ["field", "value", "repeater"],
 			data: function () {
 				return {errors: {}, urlValue: ""}
@@ -34591,7 +34148,7 @@
 				}
 			},
 			template: '\n        <div>\n            <div :class="[\'calc-input-wrapper ccb-field\', \'calc_\' + field.alias]">\n              <input name="emailField" type="text" v-model="urlValue" :placeholder="field.placeholder" class="calc-input text email ccb-field ccb-appearance-field">\n              <span v-if="field.required" :class="{active: requiredActive}" class="ccb-error-tip front default">{{ $store.getters.getSettings.texts.required_msg }}</span>\n              <span v-if="Object.keys(errors).length > 0" class="ccb-error-tip front default active" style="bottom: 47px">\n                 <span v-if="errors.hasOwnProperty(\'invalid_url\')">\n                    {{ translations.invalid_url }}\n                 </span>\n              </span>\n            </div>\n        </div>\n    '
-		}, Nr = {
+		}, Sr = {
 			mixins: [o.A], props: {field: [Object, String], index: [Number], value: [String], repeater: [void 0]}, components: {
 				"email-field": Lr, "phone-field": jr, "name-field": {
 					props: ["field", "value", "repeater"],
@@ -34620,7 +34177,7 @@
 						}
 					},
 					template: '\n        <div>\n            <div :class="[\'calc-input-wrapper ccb-field\', \'calc_\' + field.alias]">\n              <input name="emailField" type="text" v-model="nameValue" :placeholder="field.placeholder" class="calc-input text email ccb-field ccb-appearance-field">\n              <span v-if="field.required" :class="{active: requiredActive}" class="ccb-error-tip front default">{{ $store.getters.getSettings.texts.required_msg }}</span>\n            </div>\n        </div>\n    '
-				}, "website-url-field": Sr
+				}, "website-url-field": Nr
 			}, data: function () {
 				return {isAllowedLimit: !0, formElementValue: "", labelId: "", formElementField: null, errorsCount: 0}
 			}, created: function () {
@@ -34799,18 +34356,18 @@
 				return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 			}
 
-			function S(t) {
+			function N(t) {
 				var e = {tryLoc: t[0]};
 				1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 			}
 
-			function N(t) {
+			function S(t) {
 				var e = t.completion || {};
 				e.type = "normal", delete e.arg, t.completion = e
 			}
 
 			function T(t) {
-				this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+				this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 			}
 
 			function O(e) {
@@ -34860,7 +34417,7 @@
 				}
 			}, e.values = O, T.prototype = {
 				constructor: T, reset: function (e) {
-					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 				}, stop: function () {
 					this.done = !0;
 					var t = this.tryEntries[0].completion;
@@ -34907,7 +34464,7 @@
 				}, finish: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 						var n = this.tryEntries[e];
-						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 					}
 				}, catch: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -34916,7 +34473,7 @@
 							var r = n.completion;
 							if ("throw" === r.type) {
 								var i = r.arg;
-								N(n)
+								S(n)
 							}
 							return i
 						}
@@ -35465,18 +35022,18 @@
 				return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 			}
 
-			function S(t) {
+			function N(t) {
 				var e = {tryLoc: t[0]};
 				1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 			}
 
-			function N(t) {
+			function S(t) {
 				var e = t.completion || {};
 				e.type = "normal", delete e.arg, t.completion = e
 			}
 
 			function T(t) {
-				this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+				this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 			}
 
 			function O(e) {
@@ -35526,7 +35083,7 @@
 				}
 			}, e.values = O, T.prototype = {
 				constructor: T, reset: function (e) {
-					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 				}, stop: function () {
 					this.done = !0;
 					var t = this.tryEntries[0].completion;
@@ -35573,7 +35130,7 @@
 				}, finish: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 						var n = this.tryEntries[e];
-						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 					}
 				}, catch: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -35582,7 +35139,7 @@
 							var r = n.completion;
 							if ("throw" === r.type) {
 								var i = r.arg;
-								N(n)
+								S(n)
 							}
 							return i
 						}
@@ -35896,18 +35453,18 @@
 				return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 			}
 
-			function S(t) {
+			function N(t) {
 				var e = {tryLoc: t[0]};
 				1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 			}
 
-			function N(t) {
+			function S(t) {
 				var e = t.completion || {};
 				e.type = "normal", delete e.arg, t.completion = e
 			}
 
 			function T(t) {
-				this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+				this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 			}
 
 			function O(e) {
@@ -35957,7 +35514,7 @@
 				}
 			}, e.values = O, T.prototype = {
 				constructor: T, reset: function (e) {
-					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 				}, stop: function () {
 					this.done = !0;
 					var t = this.tryEntries[0].completion;
@@ -36004,7 +35561,7 @@
 				}, finish: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 						var n = this.tryEntries[e];
-						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 					}
 				}, catch: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -36013,7 +35570,7 @@
 							var r = n.completion;
 							if ("throw" === r.type) {
 								var i = r.arg;
-								N(n)
+								S(n)
 							}
 							return i
 						}
@@ -36343,28 +35900,23 @@
 			template_name: "repeater",
 			component_name: "cost-repeater"
 		}, {content: Dr, template_name: "group", component_name: "cost-group"}, {content: ti, template_name: "geolocation", component_name: "cost-geolocation"}, {
-			content: Nr,
+			content: Sr,
 			template_name: "validated-form",
 			component_name: "cost-validated-form"
 		}];
 		var ni = __webpack_require__(8411), ri = {insert: "head", singleton: !1};
-		S()(ni.A, ri);
+		N()(ni.A, ri);
 		ni.A.locals;
-		var ii = function (t) {
-			return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(t)
-		}, ai = function (t) {
-			return /^(http(s)?:\/\/)?(www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+(\.[a-zA-Z]{2,})?$/.test(t)
-		};
 
-		function oi(t) {
-			return oi = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function ii(t) {
+			return ii = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, oi(t)
+			}, ii(t)
 		}
 
-		function si(t, e) {
+		function ai(t, e) {
 			var n = Object.keys(t);
 			if (Object.getOwnPropertySymbols) {
 				var r = Object.getOwnPropertySymbols(t);
@@ -36375,48 +35927,48 @@
 			return n
 		}
 
-		function ci(t) {
+		function oi(t) {
 			for (var e = 1; e < arguments.length; e++) {
 				var n = null != arguments[e] ? arguments[e] : {};
-				e % 2 ? si(Object(n), !0).forEach((function (e) {
-					li(t, e, n[e])
-				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : si(Object(n)).forEach((function (e) {
+				e % 2 ? ai(Object(n), !0).forEach((function (e) {
+					si(t, e, n[e])
+				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : ai(Object(n)).forEach((function (e) {
 					Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e))
 				}))
 			}
 			return t
 		}
 
-		function li(t, e, n) {
+		function si(t, e, n) {
 			return (e = function (t) {
 				var e = function (t, e) {
-					if ("object" != oi(t) || !t) return t;
+					if ("object" != ii(t) || !t) return t;
 					var n = t[Symbol.toPrimitive];
 					if (void 0 !== n) {
 						var r = n.call(t, e || "default");
-						if ("object" != oi(r)) return r;
+						if ("object" != ii(r)) return r;
 						throw new TypeError("@@toPrimitive must return a primitive value.")
 					}
 					return ("string" === e ? String : Number)(t)
 				}(t, "string");
-				return "symbol" == oi(e) ? e : e + ""
+				return "symbol" == ii(e) ? e : e + ""
 			}(e)) in t ? Object.defineProperty(t, e, {value: n, enumerable: !0, configurable: !0, writable: !0}) : t[e] = n, t
 		}
 
-		function di(t) {
+		function ci(t) {
 			return function (t) {
-				if (Array.isArray(t)) return hi(t)
+				if (Array.isArray(t)) return ui(t)
 			}(t) || function (t) {
 				if ("undefined" != typeof Symbol && null != t[Symbol.iterator] || null != t["@@iterator"]) return Array.from(t)
-			}(t) || fi(t) || function () {
+			}(t) || di(t) || function () {
 				throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
 			}()
 		}
 
-		function ui(t, e) {
+		function li(t, e) {
 			var n = "undefined" != typeof Symbol && t[Symbol.iterator] || t["@@iterator"];
 			if (!n) {
-				if (Array.isArray(t) || (n = fi(t)) || e && t && "number" == typeof t.length) {
+				if (Array.isArray(t) || (n = di(t)) || e && t && "number" == typeof t.length) {
 					n && (t = n);
 					var r = 0, i = function () {
 					};
@@ -36449,33 +36001,26 @@
 			}
 		}
 
-		function fi(t, e) {
+		function di(t, e) {
 			if (t) {
-				if ("string" == typeof t) return hi(t, e);
+				if ("string" == typeof t) return ui(t, e);
 				var n = {}.toString.call(t).slice(8, -1);
-				return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? hi(t, e) : void 0
+				return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? ui(t, e) : void 0
 			}
 		}
 
-		function hi(t, e) {
+		function ui(t, e) {
 			(null == e || e > t.length) && (e = t.length);
 			for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
 			return r
 		}
 
-		var pi = function (t) {
-			return t.filter((function (t) {
-				return -1 !== t.alias.indexOf("quantity") && t.value <= 0 || -1 !== t.alias.indexOf("file_upload") && !t.checked || (-1 !== t.alias.indexOf("checkbox") || -1 !== t.alias.indexOf("toggle")) && t.options.length <= 0 || -1 !== t.alias.indexOf("checkbox") && t.options.length < t.minChecked || (-1 !== t.alias.indexOf("dropDown") || -1 !== t.alias.indexOf("radio")) && (!t.options[0].temp || 0 === t.options[0].temp.length) || -1 !== t.alias.indexOf("dropDown") && !t.checked || -1 !== t.alias.indexOf("datePicker") && t.converted.length <= 0 || -1 !== t.alias.indexOf("text_field") && (t.value.length <= 0 || 0 === t.value) || -1 !== t.alias.indexOf("multi_range_field") && 0 === t.value || -1 !== t.alias.indexOf("validated_form") && t.value.length <= 0 || -1 !== t.alias.indexOf("range_field") && 0 === t.value || -1 !== t.alias.indexOf("timePicker") && !t.range && t.converted.length <= 0 || -1 !== t.alias.indexOf("timePicker") && t.range && (!t.converted.split(" - ")[0] || !t.converted.split(" - ")[1]) || t.value < 0 || t.alias.includes("geolocation") && !t.extraView
-			}))
-		}, mi = function (t, e) {
+		var fi = function (t, e) {
 			return 0 === t.filter((function (t) {
 				return t.alias === e.alias
 			})).length
-		}, gi = function (t) {
-			var e = t.value;
-			return t.unit && t.multiply && (e /= t.unit), !(!1 !== t.min && t.min && parseFloat(e) < parseFloat(t.min)) && !(!1 !== t.max && t.max && parseFloat(e) > parseFloat(t.max))
 		};
-		const yi = {
+		const hi = {
 			state: {
 				id: null,
 				paymentType: "",
@@ -36603,7 +36148,7 @@
 										return !r.includes(n)
 									}));
 									i[e] = {};
-									var a, o = ui(n);
+									var a, o = li(n);
 									try {
 										for (o.s(); !(a = o.n()).done;) {
 											var s = a.value;
@@ -36622,8 +36167,6 @@
 								})), t.groupElements = n
 							}
 							var r, i
-						})), r = r.filter((function (t) {
-							return !t.alias.includes("page_break")
 						})), "showZero" === e ? r.filter((function (t) {
 							return t.addToSummary || -1 !== t.alias.indexOf("file")
 						})) : ((r = r.filter((function (t) {
@@ -36657,15 +36200,15 @@
 						})).length > 0
 					}
 				}, hasUnusedFields: function (t) {
-					var e = 0, n = di(Object.values(t.calcStore));
+					var e = 0, n = ci(Object.values(t.calcStore));
 					Object.values(t.calcStore).forEach((function (t) {
 						if (t.alias.includes("repeater")) {
-							var r, i = [], a = ui(t.resultGrouped);
+							var r, i = [], a = li(t.resultGrouped);
 							try {
 								for (a.s(); !(r = a.n()).done;) {
 									var o = r.value, s = Object.values(o);
-									i.push.apply(i, di(s.map((function (t) {
-										return ci(ci({}, t), {}, {inRepeater: !0, repeaterIdx: e})
+									i.push.apply(i, ci(s.map((function (t) {
+										return oi(oi({}, t), {}, {inRepeater: !0, repeaterIdx: e})
 									})))), e++
 								}
 							} catch (t) {
@@ -36673,75 +36216,35 @@
 							} finally {
 								a.f()
 							}
-							n = [].concat(di(n), i), e++
+							n = [].concat(ci(n), i), e++
 						}
 					}));
 					var r = n.filter((function (t) {
 						return t.required
 					})).filter((function (e) {
-						return mi(t.conditionBlocked, e)
+						return fi(t.conditionBlocked, e)
 					})), i = n.filter((function (t) {
-						return -1 !== t.alias.indexOf("quantity") && !1 === gi(t)
+						return -1 !== t.alias.indexOf("quantity") && !1 == (n = (e = t).value, e.unit && e.multiply && (n /= e.unit), !(!1 !== e.min && e.min && parseFloat(n) < parseFloat(e.min) || !1 !== e.max && e.max && parseFloat(n) > parseFloat(e.max)));
+						var e, n
 					})), a = n.filter((function (t) {
-						var e;
-						return "email" === t.field_type && (t.required || (null == t || null === (e = t.value) || void 0 === e ? void 0 : e.length)) && !ii(t.value)
+						var e, n;
+						return "email" === t.field_type && (t.required || (null == t || null === (e = t.value) || void 0 === e ? void 0 : e.length)) && (n = t.value, !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(n))
 					}));
 					window.$ccb_phones_list || (window.$ccb_phones_list = {});
 					var o = n.filter((function (t) {
 						var e;
 						return "phone" === t.field_type && (t.required || (null == t || null === (e = t.value) || void 0 === e ? void 0 : e.length)) && !window.$ccb_phones_list[void 0 !== (null == t ? void 0 : t.repeaterIdx) ? "".concat(t.alias, "_").concat(t.repeaterIdx) : t.alias]
 					})), s = n.filter((function (t) {
-						var e;
-						return "website_url" === t.field_type && (t.required || (null == t || null === (e = t.value) || void 0 === e ? void 0 : e.length)) && !ai(t.value)
+						var e, n;
+						return "website_url" === t.field_type && (t.required || (null == t || null === (e = t.value) || void 0 === e ? void 0 : e.length)) && (n = t.value, !/^(http(s)?:\/\/)?(www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+(\.[a-zA-Z]{2,})?$/.test(n))
 					}));
-					return t.unusedFields = pi(r), t.unusedFields = [].concat(di(t.unusedFields), di(i), di(a), di(s), di(o)), t.repeaterRequiredFields = t.unusedFields.filter((function (t) {
+					return t.unusedFields = function (t) {
+						return t.filter((function (t) {
+							return -1 !== t.alias.indexOf("quantity") && t.value <= 0 || -1 !== t.alias.indexOf("file_upload") && !t.checked || (-1 !== t.alias.indexOf("checkbox") || -1 !== t.alias.indexOf("toggle")) && t.options.length <= 0 || -1 !== t.alias.indexOf("checkbox") && t.options.length < t.minChecked || (-1 !== t.alias.indexOf("dropDown") || -1 !== t.alias.indexOf("radio")) && (!t.options[0].temp || 0 === t.options[0].temp.length) || -1 !== t.alias.indexOf("dropDown") && !t.checked || -1 !== t.alias.indexOf("datePicker") && t.converted.length <= 0 || -1 !== t.alias.indexOf("text_field") && (t.value.length <= 0 || 0 === t.value) || -1 !== t.alias.indexOf("multi_range_field") && 0 === t.value || -1 !== t.alias.indexOf("validated_form") && t.value.length <= 0 || -1 !== t.alias.indexOf("range_field") && 0 === t.value || -1 !== t.alias.indexOf("timePicker") && !t.range && t.converted.length <= 0 || -1 !== t.alias.indexOf("timePicker") && t.range && (!t.converted.split(" - ")[0] || !t.converted.split(" - ")[1]) || t.value < 0 || t.alias.includes("geolocation") && !t.extraView
+						}))
+					}(r), t.unusedFields = [].concat(ci(t.unusedFields), ci(i), ci(a), ci(s), ci(o)), t.repeaterRequiredFields = t.unusedFields.filter((function (t) {
 						return t.inRepeater
 					})), t.unusedFields.length && t.unusedFields.length > 0
-				}, hasUsedPageFields: function (t) {
-					return function (e) {
-						var n = 0, r = di(Object.values(t.calcStore));
-						Object.values(t.calcStore).forEach((function (t) {
-							if (t.alias.includes("repeater")) {
-								var e, i = [], a = ui(t.resultGrouped);
-								try {
-									for (a.s(); !(e = a.n()).done;) {
-										var o = e.value, s = Object.values(o);
-										i.push.apply(i, di(s.map((function (t) {
-											return ci(ci({}, t), {}, {inRepeater: !0, repeaterIdx: n})
-										})))), n++
-									}
-								} catch (t) {
-									a.e(t)
-								} finally {
-									a.f()
-								}
-								r = [].concat(di(r), i), n++
-							}
-						}));
-						var i = (r = r.filter((function (t) {
-							return e.includes(t.alias)
-						}))).filter((function (t) {
-							return t.required
-						})).filter((function (e) {
-							return mi(t.conditionBlocked, e)
-						})), a = r.filter((function (t) {
-							return -1 !== t.alias.indexOf("quantity") && !1 === gi(t)
-						})), o = r.filter((function (t) {
-							var e;
-							return "email" === t.field_type && (t.required || (null == t || null === (e = t.value) || void 0 === e ? void 0 : e.length)) && !ii(t.value)
-						}));
-						window.$ccb_phones_list || (window.$ccb_phones_list = {});
-						var s = r.filter((function (t) {
-							var e;
-							return "phone" === t.field_type && (t.required || (null == t || null === (e = t.value) || void 0 === e ? void 0 : e.length)) && !window.$ccb_phones_list[void 0 !== (null == t ? void 0 : t.repeaterIdx) ? "".concat(t.alias, "_").concat(t.repeaterIdx) : t.alias]
-						})), c = r.filter((function (t) {
-							var e;
-							return "website_url" === t.field_type && (t.required || (null == t || null === (e = t.value) || void 0 === e ? void 0 : e.length)) && !ai(t.value)
-						}));
-						return t.unusedFields = pi(i), t.unusedFields = [].concat(di(t.unusedFields), di(a), di(o), di(c), di(s)), t.repeaterRequiredFields = t.unusedFields.filter((function (t) {
-							return t.inRepeater
-						})), t.unusedFields.length && t.unusedFields.length > 0
-					}
 				}, filterUnused: function (t) {
 					return function (e, n) {
 						t.unusedFields = void 0 !== n ? t.unusedFields.filter((function (t) {
@@ -36776,7 +36279,7 @@
 					var n = t.activeConditions.findIndex((function (t) {
 						return t.optionFrom === e.optionFrom && t.optionTo === e.optionTo && t.sort === e.sort && t.action === e.action
 					}));
-					n >= 0 && (t.activeConditions = [].concat(di(t.activeConditions.slice(0, n)), di(t.activeConditions.slice(n + 1))))
+					n >= 0 && (t.activeConditions = [].concat(ci(t.activeConditions.slice(0, n)), ci(t.activeConditions.slice(n + 1))))
 				}, addActiveCondition: function (t, e) {
 					0 === t.activeConditions.filter((function (t) {
 						return t.optionFrom === e.optionFrom && t.optionTo === e.optionTo && t.sort === e.sort && t.action === e.action
@@ -36786,7 +36289,7 @@
 						return t.alias !== e.alias
 					}))
 				}, addConditionBlocked: function (t, e) {
-					mi(t.conditionBlocked, e) && t.conditionBlocked.push(e)
+					fi(t.conditionBlocked, e) && t.conditionBlocked.push(e)
 				}, setUnusedFields: function (t, e) {
 					t.unusedFields = e
 				}, setCalcStore: function (t, e) {
@@ -36846,20 +36349,20 @@
 				}
 			}
 		};
-		var vi = __webpack_require__(6857);
+		var pi = __webpack_require__(6857);
 
-		function bi(t) {
-			return bi = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function mi(t) {
+			return mi = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, bi(t)
+			}, mi(t)
 		}
 
-		function _i(t, e) {
+		function gi(t, e) {
 			var n = "undefined" != typeof Symbol && t[Symbol.iterator] || t["@@iterator"];
 			if (!n) {
-				if (Array.isArray(t) || (n = wi(t)) || e && t && "number" == typeof t.length) {
+				if (Array.isArray(t) || (n = vi(t)) || e && t && "number" == typeof t.length) {
 					n && (t = n);
 					var r = 0, i = function () {
 					};
@@ -36892,32 +36395,32 @@
 			}
 		}
 
-		function Mi(t) {
+		function yi(t) {
 			return function (t) {
-				if (Array.isArray(t)) return xi(t)
+				if (Array.isArray(t)) return bi(t)
 			}(t) || function (t) {
 				if ("undefined" != typeof Symbol && null != t[Symbol.iterator] || null != t["@@iterator"]) return Array.from(t)
-			}(t) || wi(t) || function () {
+			}(t) || vi(t) || function () {
 				throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
 			}()
 		}
 
-		function wi(t, e) {
+		function vi(t, e) {
 			if (t) {
-				if ("string" == typeof t) return xi(t, e);
+				if ("string" == typeof t) return bi(t, e);
 				var n = {}.toString.call(t).slice(8, -1);
-				return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? xi(t, e) : void 0
+				return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? bi(t, e) : void 0
 			}
 		}
 
-		function xi(t, e) {
+		function bi(t, e) {
 			(null == e || e > t.length) && (e = t.length);
 			for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
 			return r
 		}
 
-		function ki() {
-			ki = function () {
+		function _i() {
+			_i = function () {
 				return e
 			};
 			var t, e = {}, n = Object.prototype, r = n.hasOwnProperty, i = Object.defineProperty || function (t, e, n) {
@@ -36982,7 +36485,7 @@
 					var c = u(t[i], t, a);
 					if ("throw" !== c.type) {
 						var l = c.arg, d = l.value;
-						return d && "object" == bi(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
+						return d && "object" == mi(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
 							n("next", t, o, s)
 						}), (function (t) {
 							n("throw", t, o, s)
@@ -37050,18 +36553,18 @@
 				return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 			}
 
-			function S(t) {
+			function N(t) {
 				var e = {tryLoc: t[0]};
 				1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 			}
 
-			function N(t) {
+			function S(t) {
 				var e = t.completion || {};
 				e.type = "normal", delete e.arg, t.completion = e
 			}
 
 			function T(t) {
-				this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+				this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 			}
 
 			function O(e) {
@@ -37077,7 +36580,7 @@
 						return a.next = a
 					}
 				}
-				throw new TypeError(bi(e) + " is not iterable")
+				throw new TypeError(mi(e) + " is not iterable")
 			}
 
 			return v.prototype = b, i(x, "constructor", {value: b, configurable: !0}), i(b, "constructor", {value: v, configurable: !0}), v.displayName = l(b, c, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
@@ -37111,7 +36614,7 @@
 				}
 			}, e.values = O, T.prototype = {
 				constructor: T, reset: function (e) {
-					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 				}, stop: function () {
 					this.done = !0;
 					var t = this.tryEntries[0].completion;
@@ -37158,7 +36661,7 @@
 				}, finish: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 						var n = this.tryEntries[e];
-						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 					}
 				}, catch: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -37167,7 +36670,7 @@
 							var r = n.completion;
 							if ("throw" === r.type) {
 								var i = r.arg;
-								N(n)
+								S(n)
 							}
 							return i
 						}
@@ -37179,7 +36682,7 @@
 			}, e
 		}
 
-		function Di(t, e, n, r, i, a, o) {
+		function Mi(t, e, n, r, i, a, o) {
 			try {
 				var s = t[a](o), c = s.value
 			} catch (t) {
@@ -37188,18 +36691,18 @@
 			s.done ? e(c) : Promise.resolve(c).then(r, i)
 		}
 
-		function Li(t) {
+		function wi(t) {
 			return function () {
 				var e = this, n = arguments;
 				return new Promise((function (r, i) {
 					var a = t.apply(e, n);
 
 					function o(t) {
-						Di(a, r, i, o, s, "next", t)
+						Mi(a, r, i, o, s, "next", t)
 					}
 
 					function s(t) {
-						Di(a, r, i, o, s, "throw", t)
+						Mi(a, r, i, o, s, "throw", t)
 					}
 
 					o(void 0)
@@ -37207,7 +36710,7 @@
 			}
 		}
 
-		const ji = {
+		const xi = {
 			state: {paymentStep: "", paymentMethod: ""}, mutations: {
 				updateMethodCommit: function (t, e) {
 					t.paymentMethod = e
@@ -37216,12 +36719,12 @@
 				}
 			}, actions: {
 				razorpayPaymentReceived: function (t, e) {
-					return Li(ki().mark((function t() {
+					return wi(_i().mark((function t() {
 						var n, r;
-						return ki().wrap((function (t) {
+						return _i().wrap((function (t) {
 							for (; ;) switch (t.prev = t.next) {
 								case 0:
-									(n = new FormData).append("action", "ccb_razorpay_payment_received"), n.append("nonce", window.ccb_nonces.ccb_razorpay_receive), r = (0, vi.e)(e), n.append("data", r), fetch(window.ajax_window.ajax_url, {
+									(n = new FormData).append("action", "ccb_razorpay_payment_received"), n.append("nonce", window.ccb_nonces.ccb_razorpay_receive), r = (0, pi.e)(e), n.append("data", r), fetch(window.ajax_window.ajax_url, {
 										method: "POST",
 										body: n
 									});
@@ -37233,17 +36736,17 @@
 					})))()
 				}, fetchPayment: function (t, e) {
 					var n = this;
-					return Li(ki().mark((function r() {
+					return wi(_i().mark((function r() {
 						var i, a, o, s, c, l, d, u;
-						return ki().wrap((function (r) {
+						return _i().wrap((function (r) {
 							for (; ;) switch (r.prev = r.next) {
 								case 0:
-									if (i = t.state, a = t.commit, o = e.action, s = [], e.hasOwnProperty("files") && (s = Mi(e.files), delete e.files), !o) {
+									if (i = t.state, a = t.commit, o = e.action, s = [], e.hasOwnProperty("files") && (s = yi(e.files), delete e.files), !o) {
 										r.next = 20;
 										break
 									}
-									return (c = new FormData).append("action", o), l = (0, vi.e)(e), c.append("data", l), c.append("nonce", e.nonce), s.forEach((function (t) {
-										var e, n = _i(t.files);
+									return (c = new FormData).append("action", o), l = (0, pi.e)(e), c.append("data", l), c.append("nonce", e.nonce), s.forEach((function (t) {
+										var e, n = gi(t.files);
 										try {
 											for (n.s(); !(e = n.n()).done;) {
 												var r = e.value;
@@ -37283,16 +36786,16 @@
 			}
 		};
 
-		function Si(t) {
-			return Si = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function ki(t) {
+			return ki = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, Si(t)
+			}, ki(t)
 		}
 
-		function Ni() {
-			Ni = function () {
+		function Di() {
+			Di = function () {
 				return e
 			};
 			var t, e = {}, n = Object.prototype, r = n.hasOwnProperty, i = Object.defineProperty || function (t, e, n) {
@@ -37357,7 +36860,7 @@
 					var c = u(t[i], t, a);
 					if ("throw" !== c.type) {
 						var l = c.arg, d = l.value;
-						return d && "object" == Si(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
+						return d && "object" == ki(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
 							n("next", t, o, s)
 						}), (function (t) {
 							n("throw", t, o, s)
@@ -37425,18 +36928,18 @@
 				return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 			}
 
-			function S(t) {
+			function N(t) {
 				var e = {tryLoc: t[0]};
 				1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 			}
 
-			function N(t) {
+			function S(t) {
 				var e = t.completion || {};
 				e.type = "normal", delete e.arg, t.completion = e
 			}
 
 			function T(t) {
-				this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+				this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 			}
 
 			function O(e) {
@@ -37452,7 +36955,7 @@
 						return a.next = a
 					}
 				}
-				throw new TypeError(Si(e) + " is not iterable")
+				throw new TypeError(ki(e) + " is not iterable")
 			}
 
 			return v.prototype = b, i(x, "constructor", {value: b, configurable: !0}), i(b, "constructor", {value: v, configurable: !0}), v.displayName = l(b, c, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
@@ -37486,7 +36989,7 @@
 				}
 			}, e.values = O, T.prototype = {
 				constructor: T, reset: function (e) {
-					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 				}, stop: function () {
 					this.done = !0;
 					var t = this.tryEntries[0].completion;
@@ -37533,7 +37036,7 @@
 				}, finish: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 						var n = this.tryEntries[e];
-						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 					}
 				}, catch: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -37542,7 +37045,7 @@
 							var r = n.completion;
 							if ("throw" === r.type) {
 								var i = r.arg;
-								N(n)
+								S(n)
 							}
 							return i
 						}
@@ -37554,10 +37057,10 @@
 			}, e
 		}
 
-		function Ti(t, e) {
+		function Li(t, e) {
 			var n = "undefined" != typeof Symbol && t[Symbol.iterator] || t["@@iterator"];
 			if (!n) {
-				if (Array.isArray(t) || (n = Ai(t)) || e && t && "number" == typeof t.length) {
+				if (Array.isArray(t) || (n = Si(t)) || e && t && "number" == typeof t.length) {
 					n && (t = n);
 					var r = 0, i = function () {
 					};
@@ -37590,7 +37093,7 @@
 			}
 		}
 
-		function Oi(t, e, n, r, i, a, o) {
+		function ji(t, e, n, r, i, a, o) {
 			try {
 				var s = t[a](o), c = s.value
 			} catch (t) {
@@ -37599,52 +37102,52 @@
 			s.done ? e(c) : Promise.resolve(c).then(r, i)
 		}
 
-		function Ii(t) {
+		function Ni(t) {
 			return function (t) {
-				if (Array.isArray(t)) return zi(t)
+				if (Array.isArray(t)) return Ti(t)
 			}(t) || function (t) {
 				if ("undefined" != typeof Symbol && null != t[Symbol.iterator] || null != t["@@iterator"]) return Array.from(t)
-			}(t) || Ai(t) || function () {
+			}(t) || Si(t) || function () {
 				throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
 			}()
 		}
 
-		function Ai(t, e) {
+		function Si(t, e) {
 			if (t) {
-				if ("string" == typeof t) return zi(t, e);
+				if ("string" == typeof t) return Ti(t, e);
 				var n = {}.toString.call(t).slice(8, -1);
-				return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? zi(t, e) : void 0
+				return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? Ti(t, e) : void 0
 			}
 		}
 
-		function zi(t, e) {
+		function Ti(t, e) {
 			(null == e || e > t.length) && (e = t.length);
 			for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
 			return r
 		}
 
-		var Yi = function (t) {
+		var Oi = function (t) {
 			var e = [];
 			return t.forEach((function (t) {
-				t.alias.includes("repeater") ? (e.push({alias: t.alias, converted: " ", hidden: !1, label: t.label, value: ""}), t.groupElements.length && (e = [].concat(Ii(e), Ii(t.groupElements)))) : e.push(t)
+				t.alias.includes("repeater") ? (e.push({alias: t.alias, converted: " ", hidden: !1, label: t.label, value: ""}), t.groupElements.length && (e = [].concat(Ni(e), Ni(t.groupElements)))) : e.push(t)
 			})), e
 		};
-		const $i = {
+		const Ii = {
 			state: {productName: !1}, actions: {
 				applyWoo: function (t, e) {
-					return (n = Ni().mark((function n() {
+					return (n = Di().mark((function n() {
 						var r, i, a, o, s, c, l, d, u, f, h;
-						return Ni().wrap((function (n) {
+						return Di().wrap((function (n) {
 							for (; ;) switch (n.prev = n.next) {
 								case 0:
-									return r = t.getters, i = t.state, a = r.getSettings, o = window.ccb_nonces.ccb_woo_checkout, s = r.getSettings.general.hide_empty ? r.getDescriptions("showZero") : r.getDescriptions(), c = Yi(s), l = {
+									return r = t.getters, i = t.state, a = r.getSettings, o = window.ccb_nonces.ccb_woo_checkout, s = r.getSettings.general.hide_empty ? r.getDescriptions("showZero") : r.getDescriptions(), c = Oi(s), l = {
 										woo_info: a.woo_checkout,
 										item_name: a.title,
 										calcTotals: e.totals,
 										calcId: a.calc_id,
 										orderId: r.getOrderId
 									}, a.woo_products.enable && "current_product" === a.woo_checkout.product_id && (l.woo_info.product_id = e.post_id), (d = new FormData).append("action", "calc_woo_redirect"), d.append("nonce", o), void 0 !== e.files && e.files.forEach((function (t) {
-										var e, n = Ti(t.files);
+										var e, n = Li(t.files);
 										try {
 											for (n.s(); !(e = n.n()).done;) {
 												var i = e.value;
@@ -37663,9 +37166,9 @@
 										}
 									})), l.descriptions = c.filter((function (t) {
 										return !t.alias.includes("group")
-									})), l.descriptions = [].concat(Ii(l.descriptions), Ii(e.allTotals.map((function (t) {
+									})), l.descriptions = [].concat(Ni(l.descriptions), Ni(e.allTotals.map((function (t) {
 										return t.converted = t.summary_converted, t
-									})))), u = (0, vi.e)(l), d.append("data", u), n.next = 18, fetch(window.ajax_window.ajax_url, {method: "POST", body: d});
+									})))), u = (0, pi.e)(l), d.append("data", u), n.next = 18, fetch(window.ajax_window.ajax_url, {method: "POST", body: d});
 								case 18:
 									return f = n.sent, n.next = 21, f.json();
 								case 21:
@@ -37693,11 +37196,11 @@
 							var a = n.apply(t, e);
 
 							function o(t) {
-								Oi(a, r, i, o, s, "next", t)
+								ji(a, r, i, o, s, "next", t)
 							}
 
 							function s(t) {
-								Oi(a, r, i, o, s, "throw", t)
+								ji(a, r, i, o, s, "throw", t)
 							}
 
 							o(void 0)
@@ -37716,16 +37219,16 @@
 			}
 		};
 
-		function Ei(t) {
-			return Ei = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function Ai(t) {
+			return Ai = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, Ei(t)
+			}, Ai(t)
 		}
 
-		function Ci() {
-			Ci = function () {
+		function zi() {
+			zi = function () {
 				return e
 			};
 			var t, e = {}, n = Object.prototype, r = n.hasOwnProperty, i = Object.defineProperty || function (t, e, n) {
@@ -37790,7 +37293,7 @@
 					var c = u(t[i], t, a);
 					if ("throw" !== c.type) {
 						var l = c.arg, d = l.value;
-						return d && "object" == Ei(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
+						return d && "object" == Ai(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
 							n("next", t, o, s)
 						}), (function (t) {
 							n("throw", t, o, s)
@@ -37858,18 +37361,18 @@
 				return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 			}
 
-			function S(t) {
+			function N(t) {
 				var e = {tryLoc: t[0]};
 				1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 			}
 
-			function N(t) {
+			function S(t) {
 				var e = t.completion || {};
 				e.type = "normal", delete e.arg, t.completion = e
 			}
 
 			function T(t) {
-				this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+				this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 			}
 
 			function O(e) {
@@ -37885,7 +37388,7 @@
 						return a.next = a
 					}
 				}
-				throw new TypeError(Ei(e) + " is not iterable")
+				throw new TypeError(Ai(e) + " is not iterable")
 			}
 
 			return v.prototype = b, i(x, "constructor", {value: b, configurable: !0}), i(b, "constructor", {value: v, configurable: !0}), v.displayName = l(b, c, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
@@ -37919,7 +37422,7 @@
 				}
 			}, e.values = O, T.prototype = {
 				constructor: T, reset: function (e) {
-					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 				}, stop: function () {
 					this.done = !0;
 					var t = this.tryEntries[0].completion;
@@ -37966,7 +37469,7 @@
 				}, finish: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 						var n = this.tryEntries[e];
-						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 					}
 				}, catch: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -37975,7 +37478,7 @@
 							var r = n.completion;
 							if ("throw" === r.type) {
 								var i = r.arg;
-								N(n)
+								S(n)
 							}
 							return i
 						}
@@ -37987,10 +37490,10 @@
 			}, e
 		}
 
-		function Pi(t, e) {
+		function Yi(t, e) {
 			var n = "undefined" != typeof Symbol && t[Symbol.iterator] || t["@@iterator"];
 			if (!n) {
-				if (Array.isArray(t) || (n = Ui(t)) || e && t && "number" == typeof t.length) {
+				if (Array.isArray(t) || (n = Ei(t)) || e && t && "number" == typeof t.length) {
 					n && (t = n);
 					var r = 0, i = function () {
 					};
@@ -38023,31 +37526,31 @@
 			}
 		}
 
-		function Fi(t) {
+		function $i(t) {
 			return function (t) {
-				if (Array.isArray(t)) return Hi(t)
+				if (Array.isArray(t)) return Ci(t)
 			}(t) || function (t) {
 				if ("undefined" != typeof Symbol && null != t[Symbol.iterator] || null != t["@@iterator"]) return Array.from(t)
-			}(t) || Ui(t) || function () {
+			}(t) || Ei(t) || function () {
 				throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
 			}()
 		}
 
-		function Ui(t, e) {
+		function Ei(t, e) {
 			if (t) {
-				if ("string" == typeof t) return Hi(t, e);
+				if ("string" == typeof t) return Ci(t, e);
 				var n = {}.toString.call(t).slice(8, -1);
-				return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? Hi(t, e) : void 0
+				return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? Ci(t, e) : void 0
 			}
 		}
 
-		function Hi(t, e) {
+		function Ci(t, e) {
 			(null == e || e > t.length) && (e = t.length);
 			for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
 			return r
 		}
 
-		function Ri(t, e, n, r, i, a, o) {
+		function Pi(t, e, n, r, i, a, o) {
 			try {
 				var s = t[a](o), c = s.value
 			} catch (t) {
@@ -38056,7 +37559,7 @@
 			s.done ? e(c) : Promise.resolve(c).then(r, i)
 		}
 
-		const Vi = {
+		const Fi = {
 			state: {hideCalc: !1, loader: !1, showMessage: !1, showPayments: !1, formFields: []}, getters: {
 				getHideCalc: function (t) {
 					return t.hideCalc
@@ -38083,17 +37586,17 @@
 				}
 			}, actions: {
 				sendForm: function (t, e) {
-					return (n = Ci().mark((function t() {
+					return (n = zi().mark((function t() {
 						var n, r, i, a;
-						return Ci().wrap((function (t) {
+						return zi().wrap((function (t) {
 							for (; ;) switch (t.prev = t.next) {
 								case 0:
 									if (!e.action) {
 										t.next = 15;
 										break
 									}
-									return n = [], e.hasOwnProperty("files") && (n = Fi(e.files), delete e.files), (r = new FormData).append("action", e.action), i = (0, vi.e)(e), r.append("data", i), e.hasOwnProperty("nonce") && (r.append("nonce", e.nonce), delete e.nonce), n.forEach((function (t) {
-										var e, n = Pi(t.files);
+									return n = [], e.hasOwnProperty("files") && (n = $i(e.files), delete e.files), (r = new FormData).append("action", e.action), i = (0, pi.e)(e), r.append("data", i), e.hasOwnProperty("nonce") && (r.append("nonce", e.nonce), delete e.nonce), n.forEach((function (t) {
+										var e, n = Yi(t.files);
 										try {
 											for (n.s(); !(e = n.n()).done;) {
 												var i = e.value;
@@ -38120,11 +37623,11 @@
 							var a = n.apply(t, e);
 
 							function o(t) {
-								Ri(a, r, i, o, s, "next", t)
+								Pi(a, r, i, o, s, "next", t)
 							}
 
 							function s(t) {
-								Ri(a, r, i, o, s, "throw", t)
+								Pi(a, r, i, o, s, "throw", t)
 							}
 
 							o(void 0)
@@ -38135,29 +37638,29 @@
 			}
 		};
 
-		function Qi(t) {
+		function Ui(t) {
 			return function (t) {
-				if (Array.isArray(t)) return Wi(t)
+				if (Array.isArray(t)) return Hi(t)
 			}(t) || function (t) {
 				if ("undefined" != typeof Symbol && null != t[Symbol.iterator] || null != t["@@iterator"]) return Array.from(t)
 			}(t) || function (t, e) {
 				if (t) {
-					if ("string" == typeof t) return Wi(t, e);
+					if ("string" == typeof t) return Hi(t, e);
 					var n = {}.toString.call(t).slice(8, -1);
-					return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? Wi(t, e) : void 0
+					return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? Hi(t, e) : void 0
 				}
 			}(t) || function () {
 				throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
 			}()
 		}
 
-		function Wi(t, e) {
+		function Hi(t, e) {
 			(null == e || e > t.length) && (e = t.length);
 			for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
 			return r
 		}
 
-		const qi = {
+		const Ri = {
 			state: {
 				tab: "total-summary",
 				forms: [],
@@ -38384,7 +37887,6 @@
 					},
 					recaptcha: {enable: !1, type: "v2", v2: {siteKey: "", secretKey: ""}, v3: {siteKey: "", secretKey: ""}, options: {v2: "Google reCAPTCHA v2", v3: "Google reCAPTCHA v3"}},
 					notice: {requiredField: "This field is required"},
-					page_break: {total_in_page: !1, summary_after_last_page: !1, pagination_type: "hidden", hide_pagination_title: !0, formulas: [], has_page: !1},
 					title: "Untitled",
 					icon: "fas fa-cogs",
 					type: "Cost Calculator Settings"
@@ -38402,9 +37904,9 @@
 				}, updateCalcId: function (t, e) {
 					t.settings.calc_id = e
 				}, addWooMetaLink: function (t) {
-					t.woo_meta_links.push({woo_meta: "", action: "", calc_field: ""}), t.settings.woo_products.meta_links = Qi(t.woo_meta_links)
+					t.woo_meta_links.push({woo_meta: "", action: "", calc_field: ""}), t.settings.woo_products.meta_links = Ui(t.woo_meta_links)
 				}, updateWooMetaLinks: function (t, e) {
-					t.woo_meta_links = e, t.settings.woo_products.meta_links = Qi(t.woo_meta_links)
+					t.woo_meta_links = e, t.settings.woo_products.meta_links = Ui(t.woo_meta_links)
 				}, updateWooCategoryIds: function (t, e) {
 					t.settings.woo_products.category_ids = e
 				}, updateWooProductIds: function (t, e) {
@@ -38443,18 +37945,18 @@
 			}
 		};
 
-		function Bi(t) {
-			return Bi = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function Vi(t) {
+			return Vi = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, Bi(t)
+			}, Vi(t)
 		}
 
-		function Gi(t, e) {
+		function Qi(t, e) {
 			var n = "undefined" != typeof Symbol && t[Symbol.iterator] || t["@@iterator"];
 			if (!n) {
-				if (Array.isArray(t) || (n = Ki(t)) || e && t && "number" == typeof t.length) {
+				if (Array.isArray(t) || (n = qi(t)) || e && t && "number" == typeof t.length) {
 					n && (t = n);
 					var r = 0, i = function () {
 					};
@@ -38487,32 +37989,32 @@
 			}
 		}
 
-		function Ji(t) {
+		function Wi(t) {
 			return function (t) {
-				if (Array.isArray(t)) return Zi(t)
+				if (Array.isArray(t)) return Bi(t)
 			}(t) || function (t) {
 				if ("undefined" != typeof Symbol && null != t[Symbol.iterator] || null != t["@@iterator"]) return Array.from(t)
-			}(t) || Ki(t) || function () {
+			}(t) || qi(t) || function () {
 				throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
 			}()
 		}
 
-		function Ki(t, e) {
+		function qi(t, e) {
 			if (t) {
-				if ("string" == typeof t) return Zi(t, e);
+				if ("string" == typeof t) return Bi(t, e);
 				var n = {}.toString.call(t).slice(8, -1);
-				return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? Zi(t, e) : void 0
+				return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? Bi(t, e) : void 0
 			}
 		}
 
-		function Zi(t, e) {
+		function Bi(t, e) {
 			(null == e || e > t.length) && (e = t.length);
 			for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
 			return r
 		}
 
-		function Xi() {
-			Xi = function () {
+		function Gi() {
+			Gi = function () {
 				return e
 			};
 			var t, e = {}, n = Object.prototype, r = n.hasOwnProperty, i = Object.defineProperty || function (t, e, n) {
@@ -38577,7 +38079,7 @@
 					var c = u(t[i], t, a);
 					if ("throw" !== c.type) {
 						var l = c.arg, d = l.value;
-						return d && "object" == Bi(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
+						return d && "object" == Vi(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
 							n("next", t, o, s)
 						}), (function (t) {
 							n("throw", t, o, s)
@@ -38645,18 +38147,18 @@
 				return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 			}
 
-			function S(t) {
+			function N(t) {
 				var e = {tryLoc: t[0]};
 				1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 			}
 
-			function N(t) {
+			function S(t) {
 				var e = t.completion || {};
 				e.type = "normal", delete e.arg, t.completion = e
 			}
 
 			function T(t) {
-				this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+				this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 			}
 
 			function O(e) {
@@ -38672,7 +38174,7 @@
 						return a.next = a
 					}
 				}
-				throw new TypeError(Bi(e) + " is not iterable")
+				throw new TypeError(Vi(e) + " is not iterable")
 			}
 
 			return v.prototype = b, i(x, "constructor", {value: b, configurable: !0}), i(b, "constructor", {value: v, configurable: !0}), v.displayName = l(b, c, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
@@ -38706,7 +38208,7 @@
 				}
 			}, e.values = O, T.prototype = {
 				constructor: T, reset: function (e) {
-					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 				}, stop: function () {
 					this.done = !0;
 					var t = this.tryEntries[0].completion;
@@ -38753,7 +38255,7 @@
 				}, finish: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 						var n = this.tryEntries[e];
-						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 					}
 				}, catch: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -38762,7 +38264,7 @@
 							var r = n.completion;
 							if ("throw" === r.type) {
 								var i = r.arg;
-								N(n)
+								S(n)
 							}
 							return i
 						}
@@ -38774,7 +38276,7 @@
 			}, e
 		}
 
-		function ta(t, e, n, r, i, a, o) {
+		function Ji(t, e, n, r, i, a, o) {
 			try {
 				var s = t[a](o), c = s.value
 			} catch (t) {
@@ -38783,18 +38285,18 @@
 			s.done ? e(c) : Promise.resolve(c).then(r, i)
 		}
 
-		function ea(t) {
+		function Ki(t) {
 			return function () {
 				var e = this, n = arguments;
 				return new Promise((function (r, i) {
 					var a = t.apply(e, n);
 
 					function o(t) {
-						ta(a, r, i, o, s, "next", t)
+						Ji(a, r, i, o, s, "next", t)
 					}
 
 					function s(t) {
-						ta(a, r, i, o, s, "throw", t)
+						Ji(a, r, i, o, s, "throw", t)
 					}
 
 					o(void 0)
@@ -38802,9 +38304,9 @@
 			}
 		}
 
-		const na = {
+		const Zi = {
 			modules: {
-				main: yi, payments: ji, wooCheckout: $i, calcForm: Vi, settingsStore: qi, orderStore: {
+				main: hi, payments: xi, wooCheckout: Ii, calcForm: Fi, settingsStore: Ri, orderStore: {
 					state: {orderId: null, orderFiles: [], pdfStringFormat: "", lastOrder: null, orderLanguage: "", orderTranslations: {}}, getters: {
 						getOrderFiles: function (t) {
 							return t.orderFiles
@@ -38838,12 +38340,12 @@
 						}
 					}, actions: {
 						completeOrder: function (t, e) {
-							return ea(Xi().mark((function t() {
+							return Ki(Gi().mark((function t() {
 								var n, r;
-								return Xi().wrap((function (t) {
+								return Gi().wrap((function (t) {
 									for (; ;) switch (t.prev = t.next) {
 										case 0:
-											return n = (0, vi.e)({ids: e, status: "complete"}), t.next = 3, fetch(window.ajax_window.ajax_url, {
+											return n = (0, pi.e)({ids: e, status: "complete"}), t.next = 3, fetch(window.ajax_window.ajax_url, {
 												method: "POST",
 												headers: {"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"},
 												body: new URLSearchParams({data: n, action: "update_order_status", nonce: window.ccb_nonces.ccb_update_order})
@@ -38859,13 +38361,13 @@
 								}), t)
 							})))()
 						}, addOrder: function (t, e) {
-							return ea(Xi().mark((function n() {
+							return Ki(Gi().mark((function n() {
 								var r, i, a, o, s, c;
-								return Xi().wrap((function (n) {
+								return Gi().wrap((function (n) {
 									for (; ;) switch (n.prev = n.next) {
 										case 0:
-											return r = t.commit, i = t.getters, a = [], e && (e.promocodes = i.getUsedPromocodes || []), e && r("setLastOrder", e), e.hasOwnProperty("files") && (a = Ji(e.files), delete e.files), window.ccbResetOrderId && (e.orderId = null, e.status = "pending", window.ccbResetOrderId = !1), (o = new FormData).append("action", "create_cc_order"), s = (0, vi.e)(e), o.append("data", s), o.append("nonce", window.ccb_nonces.ccb_add_order), a.forEach((function (t) {
-												var e, n = Gi(t.files);
+											return r = t.commit, i = t.getters, a = [], e && (e.promocodes = i.getUsedPromocodes || []), e && r("setLastOrder", e), e.hasOwnProperty("files") && (a = Wi(e.files), delete e.files), window.ccbResetOrderId && (e.orderId = null, e.status = "pending", window.ccbResetOrderId = !1), (o = new FormData).append("action", "create_cc_order"), s = (0, pi.e)(e), o.append("data", s), o.append("nonce", window.ccb_nonces.ccb_add_order), a.forEach((function (t) {
+												var e, n = Qi(t.files);
 												try {
 													for (n.s(); !(e = n.n()).done;) {
 														var r = e.value;
@@ -38892,7 +38394,7 @@
 				}
 			}
 		};
-		const ra = function (t, e) {
+		const Xi = function (t, e) {
 			var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
 			if (e.sign && !e.currency) return e.multiply ? e.currency ? "".concat(e.sign, " ").concat(t) : "".concat(t) : "left" === e.unitPosition ? "".concat(e.sign, " ").concat(t) : "".concat(t, " ").concat(e.sign, " ");
 			if (!e.currency) return t;
@@ -38911,15 +38413,15 @@
 			}
 		};
 
-		function ia(t) {
-			return ia = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function ta(t) {
+			return ta = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, ia(t)
+			}, ta(t)
 		}
 
-		const aa = {
+		const ea = {
 			methods: {
 				isFloat: function (t) {
 					if (void 0 === t || (null == t ? void 0 : t.length) < 0) return !1;
@@ -38931,7 +38433,7 @@
 				}, randomID: function () {
 					return "_" + Math.random().toString(36).substr(2, 9)
 				}, currencyFormat: function (t, e) {
-					return ra(t, e, arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {})
+					return Xi(t, e, arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {})
 				}, hexToRgbA: function (t) {
 					var e, n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 1;
 					if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(t)) return 3 === (e = t.substring(1).split("")).length && (e = [e[0], e[0], e[1], e[1], e[2], e[2]]), "rgba(" + [(e = "0x" + e.join("")) >> 16 & 255, e >> 8 & 255, 255 & e].join(",") + "," + n + ")"
@@ -38947,7 +38449,7 @@
 					var n = e.shift();
 					return !!t.hasOwnProperty(n) && (0 === e.length || this.isObjectHasPath(t[n], e))
 				}, getObjByPath: function (t, e) {
-					if ("object" !== ia(t)) return {};
+					if ("object" !== ta(t)) return {};
 					var n = e.split(".");
 					return 1 === n.length ? t[n[0]] : this.getObjByPath(t[n[0]], n.slice(1).join("."))
 				}, checkIsPaymentOrFormEnabled: function (t) {
@@ -38999,26 +38501,26 @@
 			}
 		};
 
-		function oa(t) {
-			return oa = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function na(t) {
+			return na = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, oa(t)
+			}, na(t)
 		}
 
-		const sa = {
+		const ra = {
 			install: function (t) {
 				t.prototype.$validateData = function (t) {
 					var e = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "settings";
 					if ("settings" === e) for (var n in t) {
 						var r = t[n];
-						if ("object" === oa(r)) for (var i in r) {
+						if ("object" === na(r)) for (var i in r) {
 							-1 !== ["accessEmail", "allowContactForm", "enable", "payment", "hide_woo_cart"].indexOf(i) && -1 !== [0, "0", !1, "false", ""].indexOf(r[i]) && (t[n][i] = "")
 						}
 					}
 					return "builder" === e && t.forEach((function (e, n) {
-						if ("object" === oa(t[n])) {
+						if ("object" === na(t[n])) {
 							var r = ["allowCurrency", "allowRound"], i = [0, "0", !1, "false", ""];
 							for (var a in e) -1 !== r.indexOf(a) && -1 !== i.indexOf(e[a]) && (t[n][a] = "")
 						}
@@ -39027,7 +38529,7 @@
 			}
 		};
 
-		function ca(t, e) {
+		function ia(t, e) {
 			var n = Object.keys(t);
 			if (Object.getOwnPropertySymbols) {
 				var r = Object.getOwnPropertySymbols(t);
@@ -39038,49 +38540,49 @@
 			return n
 		}
 
-		function la(t) {
+		function aa(t) {
 			for (var e = 1; e < arguments.length; e++) {
 				var n = null != arguments[e] ? arguments[e] : {};
-				e % 2 ? ca(Object(n), !0).forEach((function (e) {
-					da(t, e, n[e])
-				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : ca(Object(n)).forEach((function (e) {
+				e % 2 ? ia(Object(n), !0).forEach((function (e) {
+					oa(t, e, n[e])
+				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : ia(Object(n)).forEach((function (e) {
 					Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e))
 				}))
 			}
 			return t
 		}
 
-		function da(t, e, n) {
+		function oa(t, e, n) {
 			return (e = function (t) {
 				var e = function (t, e) {
-					if ("object" != ua(t) || !t) return t;
+					if ("object" != sa(t) || !t) return t;
 					var n = t[Symbol.toPrimitive];
 					if (void 0 !== n) {
 						var r = n.call(t, e || "default");
-						if ("object" != ua(r)) return r;
+						if ("object" != sa(r)) return r;
 						throw new TypeError("@@toPrimitive must return a primitive value.")
 					}
 					return ("string" === e ? String : Number)(t)
 				}(t, "string");
-				return "symbol" == ua(e) ? e : e + ""
+				return "symbol" == sa(e) ? e : e + ""
 			}(e)) in t ? Object.defineProperty(t, e, {value: n, enumerable: !0, configurable: !0, writable: !0}) : t[e] = n, t
 		}
 
-		function ua(t) {
-			return ua = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function sa(t) {
+			return sa = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, ua(t)
+			}, sa(t)
 		}
 
-		const fa = {
+		const ca = {
 			install: function (t) {
 				t.prototype.$deepMerge = function (t, e) {
 					var n = arguments.length > 2 && void 0 !== arguments[2] && arguments[2], r = {};
 					for (var i in t) {
 						var a = e[i];
-						"object" === ua(t[i]) && (a = la(la({}, t[i]), e[i])), r[i] = a
+						"object" === sa(t[i]) && (a = aa(aa({}, t[i]), e[i])), r[i] = a
 					}
 					if (n) for (var o = 0, s = Object.keys(e); o < s.length; o++) {
 						var c = s[o];
@@ -39091,15 +38593,15 @@
 			}
 		};
 
-		function ha(t) {
-			return ha = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function la(t) {
+			return la = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, ha(t)
+			}, la(t)
 		}
 
-		function pa(t, e) {
+		function da(t, e) {
 			var n = Object.keys(t);
 			if (Object.getOwnPropertySymbols) {
 				var r = Object.getOwnPropertySymbols(t);
@@ -39110,40 +38612,40 @@
 			return n
 		}
 
-		function ma(t) {
+		function ua(t) {
 			for (var e = 1; e < arguments.length; e++) {
 				var n = null != arguments[e] ? arguments[e] : {};
-				e % 2 ? pa(Object(n), !0).forEach((function (e) {
-					ga(t, e, n[e])
-				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : pa(Object(n)).forEach((function (e) {
+				e % 2 ? da(Object(n), !0).forEach((function (e) {
+					fa(t, e, n[e])
+				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : da(Object(n)).forEach((function (e) {
 					Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e))
 				}))
 			}
 			return t
 		}
 
-		function ga(t, e, n) {
+		function fa(t, e, n) {
 			return (e = function (t) {
 				var e = function (t, e) {
-					if ("object" != ha(t) || !t) return t;
+					if ("object" != la(t) || !t) return t;
 					var n = t[Symbol.toPrimitive];
 					if (void 0 !== n) {
 						var r = n.call(t, e || "default");
-						if ("object" != ha(r)) return r;
+						if ("object" != la(r)) return r;
 						throw new TypeError("@@toPrimitive must return a primitive value.")
 					}
 					return ("string" === e ? String : Number)(t)
 				}(t, "string");
-				return "symbol" == ha(e) ? e : e + ""
+				return "symbol" == la(e) ? e : e + ""
 			}(e)) in t ? Object.defineProperty(t, e, {value: n, enumerable: !0, configurable: !0, writable: !0}) : t[e] = n, t
 		}
 
-		const ya = {
+		const ha = {
 			mixins: [o.A], props: {settings: {default: {}}}, data: function () {
 				return {type: ""}
 			}, mounted: function () {
 				var t = this.$store.getters.getRefs;
-				this.$store.commit("updateRefs", ma(ma({}, t), this.$refs))
+				this.$store.commit("updateRefs", ua(ua({}, t), this.$refs))
 			}, methods: {
 				submit: function () {
 					this.$emit("submit")
@@ -39165,7 +38667,7 @@
 					}));
 				c ? this.type = "form" : l && 1 === d.length ? this.type = "woo_checkout" : this.type = o ? "form" : d.length ? "payment" : "invoiceBtn"
 			}
-		}, va = {
+		}, pa = {
 			props: ["settings"], computed: {
 				calcId: function () {
 					return this.settings.calcId || this.$store.getters.getId
@@ -39173,7 +38675,7 @@
 					return "calc-thank-you-page-container ccb-thank-you-".concat(this.calcId, " ").concat(this.settings.boxStyle)
 				}
 			}, template: '\n        <div :class="getClass">\n            <slot></slot>\n        </div>\n    '
-		}, ba = {
+		}, ma = {
 			props: ["settings"], components: {
 				"calc-modal": {
 					computed: {
@@ -39184,21 +38686,21 @@
 						}
 					},
 					template: '\n      <div class="ccb-modal-wrapper" :class="{open: isOpen, hide: hide}">\n          <div class="ccb-modal-overlay">\n              <div class="ccb-modal-window">\n                  <div class="ccb-modal-window-content">\n                      <slot></slot>\n                  </div>\n              </div>\n          </div>\n      </div>\n    '
-				}, "default-wrapper": va
+				}, "default-wrapper": pa
 			}, mounted: function () {
 			}, template: '\n      <calc-modal>\n        <default-wrapper :settings="settings" style="width: 495px;">\n          <slot></slot>\n        </default-wrapper>\n      </calc-modal>\n    '
 		};
 
-		function _a(t) {
-			return _a = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function ga(t) {
+			return ga = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, _a(t)
+			}, ga(t)
 		}
 
-		function Ma() {
-			Ma = function () {
+		function ya() {
+			ya = function () {
 				return e
 			};
 			var t, e = {}, n = Object.prototype, r = n.hasOwnProperty, i = Object.defineProperty || function (t, e, n) {
@@ -39263,7 +38765,7 @@
 					var c = u(t[i], t, a);
 					if ("throw" !== c.type) {
 						var l = c.arg, d = l.value;
-						return d && "object" == _a(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
+						return d && "object" == ga(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
 							n("next", t, o, s)
 						}), (function (t) {
 							n("throw", t, o, s)
@@ -39331,18 +38833,18 @@
 				return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 			}
 
-			function S(t) {
+			function N(t) {
 				var e = {tryLoc: t[0]};
 				1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 			}
 
-			function N(t) {
+			function S(t) {
 				var e = t.completion || {};
 				e.type = "normal", delete e.arg, t.completion = e
 			}
 
 			function T(t) {
-				this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+				this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 			}
 
 			function O(e) {
@@ -39358,7 +38860,7 @@
 						return a.next = a
 					}
 				}
-				throw new TypeError(_a(e) + " is not iterable")
+				throw new TypeError(ga(e) + " is not iterable")
 			}
 
 			return v.prototype = b, i(x, "constructor", {value: b, configurable: !0}), i(b, "constructor", {value: v, configurable: !0}), v.displayName = l(b, c, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
@@ -39392,7 +38894,7 @@
 				}
 			}, e.values = O, T.prototype = {
 				constructor: T, reset: function (e) {
-					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 				}, stop: function () {
 					this.done = !0;
 					var t = this.tryEntries[0].completion;
@@ -39439,7 +38941,7 @@
 				}, finish: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 						var n = this.tryEntries[e];
-						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 					}
 				}, catch: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -39448,7 +38950,7 @@
 							var r = n.completion;
 							if ("throw" === r.type) {
 								var i = r.arg;
-								N(n)
+								S(n)
 							}
 							return i
 						}
@@ -39460,7 +38962,7 @@
 			}, e
 		}
 
-		function wa(t, e, n, r, i, a, o) {
+		function va(t, e, n, r, i, a, o) {
 			try {
 				var s = t[a](o), c = s.value
 			} catch (t) {
@@ -39469,8 +38971,8 @@
 			s.done ? e(c) : Promise.resolve(c).then(r, i)
 		}
 
-		const xa = {
-			mixins: [o.A], components: {"default-wrapper": va, "modal-wrapper": ba}, created: function () {
+		const ba = {
+			mixins: [o.A], components: {"default-wrapper": pa, "modal-wrapper": ma}, created: function () {
 				this.thankYouPage = this.settingsField.thankYouPage
 			}, data: function () {
 				return {showThankYouPage: !1, showDetails: !1, thankYouPage: null}
@@ -39505,9 +39007,9 @@
 				}, customButtonFunction: function () {
 					this.initializeHooks("ccb_confirmation_custom_button_action")
 				}, initializeHooks: function (t) {
-					return (e = Ma().mark((function e() {
+					return (e = ya().mark((function e() {
 						var n, r;
-						return Ma().wrap((function (e) {
+						return ya().wrap((function (e) {
 							for (; ;) switch (e.prev = e.next) {
 								case 0:
 									return e.prev = 0, (n = new URLSearchParams).append("action", t), n.append("nonce", window.ccb_nonces.ccb_wp_hook_nonce), e.next = 6, fetch(window.ajax_window.ajax_url, {
@@ -39538,11 +39040,11 @@
 							var a = e.apply(t, n);
 
 							function o(t) {
-								wa(a, r, i, o, s, "next", t)
+								va(a, r, i, o, s, "next", t)
 							}
 
 							function s(t) {
-								wa(a, r, i, o, s, "throw", t)
+								va(a, r, i, o, s, "throw", t)
 							}
 
 							o(void 0)
@@ -39554,40 +39056,40 @@
 				this.showThankYouPage = !0
 			}
 		};
-		var ka = __webpack_require__(3924);
+		var _a = __webpack_require__(3924);
 
-		function Da(t) {
-			return Da = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function Ma(t) {
+			return Ma = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, Da(t)
+			}, Ma(t)
 		}
 
-		function La(t) {
+		function wa(t) {
 			return function (t) {
-				if (Array.isArray(t)) return ja(t)
+				if (Array.isArray(t)) return xa(t)
 			}(t) || function (t) {
 				if ("undefined" != typeof Symbol && null != t[Symbol.iterator] || null != t["@@iterator"]) return Array.from(t)
 			}(t) || function (t, e) {
 				if (t) {
-					if ("string" == typeof t) return ja(t, e);
+					if ("string" == typeof t) return xa(t, e);
 					var n = {}.toString.call(t).slice(8, -1);
-					return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? ja(t, e) : void 0
+					return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? xa(t, e) : void 0
 				}
 			}(t) || function () {
 				throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
 			}()
 		}
 
-		function ja(t, e) {
+		function xa(t, e) {
 			(null == e || e > t.length) && (e = t.length);
 			for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
 			return r
 		}
 
-		function Sa() {
-			Sa = function () {
+		function ka() {
+			ka = function () {
 				return e
 			};
 			var t, e = {}, n = Object.prototype, r = n.hasOwnProperty, i = Object.defineProperty || function (t, e, n) {
@@ -39652,7 +39154,7 @@
 					var c = u(t[i], t, a);
 					if ("throw" !== c.type) {
 						var l = c.arg, d = l.value;
-						return d && "object" == Da(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
+						return d && "object" == Ma(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
 							n("next", t, o, s)
 						}), (function (t) {
 							n("throw", t, o, s)
@@ -39720,18 +39222,18 @@
 				return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 			}
 
-			function S(t) {
+			function N(t) {
 				var e = {tryLoc: t[0]};
 				1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 			}
 
-			function N(t) {
+			function S(t) {
 				var e = t.completion || {};
 				e.type = "normal", delete e.arg, t.completion = e
 			}
 
 			function T(t) {
-				this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+				this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 			}
 
 			function O(e) {
@@ -39747,7 +39249,7 @@
 						return a.next = a
 					}
 				}
-				throw new TypeError(Da(e) + " is not iterable")
+				throw new TypeError(Ma(e) + " is not iterable")
 			}
 
 			return v.prototype = b, i(x, "constructor", {value: b, configurable: !0}), i(b, "constructor", {value: v, configurable: !0}), v.displayName = l(b, c, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
@@ -39781,7 +39283,7 @@
 				}
 			}, e.values = O, T.prototype = {
 				constructor: T, reset: function (e) {
-					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 				}, stop: function () {
 					this.done = !0;
 					var t = this.tryEntries[0].completion;
@@ -39828,7 +39330,7 @@
 				}, finish: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 						var n = this.tryEntries[e];
-						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 					}
 				}, catch: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -39837,7 +39339,7 @@
 							var r = n.completion;
 							if ("throw" === r.type) {
 								var i = r.arg;
-								N(n)
+								S(n)
 							}
 							return i
 						}
@@ -39849,7 +39351,7 @@
 			}, e
 		}
 
-		function Na(t, e, n, r, i, a, o) {
+		function Da(t, e, n, r, i, a, o) {
 			try {
 				var s = t[a](o), c = s.value
 			} catch (t) {
@@ -39858,18 +39360,18 @@
 			s.done ? e(c) : Promise.resolve(c).then(r, i)
 		}
 
-		function Ta(t) {
+		function La(t) {
 			return function () {
 				var e = this, n = arguments;
 				return new Promise((function (r, i) {
 					var a = t.apply(e, n);
 
 					function o(t) {
-						Na(a, r, i, o, s, "next", t)
+						Da(a, r, i, o, s, "next", t)
 					}
 
 					function s(t) {
-						Na(a, r, i, o, s, "throw", t)
+						Da(a, r, i, o, s, "throw", t)
 					}
 
 					o(void 0)
@@ -39877,7 +39379,7 @@
 			}
 		}
 
-		function Oa(t, e) {
+		function ja(t, e) {
 			var n = Object.keys(t);
 			if (Object.getOwnPropertySymbols) {
 				var r = Object.getOwnPropertySymbols(t);
@@ -39888,35 +39390,35 @@
 			return n
 		}
 
-		function Ia(t) {
+		function Na(t) {
 			for (var e = 1; e < arguments.length; e++) {
 				var n = null != arguments[e] ? arguments[e] : {};
-				e % 2 ? Oa(Object(n), !0).forEach((function (e) {
-					Aa(t, e, n[e])
-				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : Oa(Object(n)).forEach((function (e) {
+				e % 2 ? ja(Object(n), !0).forEach((function (e) {
+					Sa(t, e, n[e])
+				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : ja(Object(n)).forEach((function (e) {
 					Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e))
 				}))
 			}
 			return t
 		}
 
-		function Aa(t, e, n) {
+		function Sa(t, e, n) {
 			return (e = function (t) {
 				var e = function (t, e) {
-					if ("object" != Da(t) || !t) return t;
+					if ("object" != Ma(t) || !t) return t;
 					var n = t[Symbol.toPrimitive];
 					if (void 0 !== n) {
 						var r = n.call(t, e || "default");
-						if ("object" != Da(r)) return r;
+						if ("object" != Ma(r)) return r;
 						throw new TypeError("@@toPrimitive must return a primitive value.")
 					}
 					return ("string" === e ? String : Number)(t)
 				}(t, "string");
-				return "symbol" == Da(e) ? e : e + ""
+				return "symbol" == Ma(e) ? e : e + ""
 			}(e)) in t ? Object.defineProperty(t, e, {value: n, enumerable: !0, configurable: !0, writable: !0}) : t[e] = n, t
 		}
 
-		var za = {
+		var Ta = {
 			isPaymentEnabled: function (t) {
 				var e = this.$store.getters.getSettings, n = this.getSettingsBySlug(t, e), r = [{slug: "paypal", name: "PayPal", requiredSettingFields: []}, {slug: "stripe", name: "Stripe", requiredSettingFields: ["publishKey"]}, {
 					slug: "razorpay",
@@ -39930,19 +39432,19 @@
 				}))), window["calc_form_".concat(e.calc_id)] && !i ? e.formFields.paymentMethods.includes(t) : !i)
 			}, getSettingsBySlug: function (t, e) {
 				var n, r, i, a, o, s = {
-					stripe: Ia({}, null == e || null === (n = e.payment_gateway) || void 0 === n || null === (n = n.cards) || void 0 === n || null === (n = n.card_payments) || void 0 === n ? void 0 : n.stripe),
-					twoCheckout: Ia({}, null == e || null === (r = e.payment_gateway) || void 0 === r || null === (r = r.cards) || void 0 === r || null === (r = r.card_payments) || void 0 === r ? void 0 : r.twoCheckout),
-					razorpay: Ia({}, null == e || null === (i = e.payment_gateway) || void 0 === i || null === (i = i.cards) || void 0 === i || null === (i = i.card_payments) || void 0 === i ? void 0 : i.razorpay),
+					stripe: Na({}, null == e || null === (n = e.payment_gateway) || void 0 === n || null === (n = n.cards) || void 0 === n || null === (n = n.card_payments) || void 0 === n ? void 0 : n.stripe),
+					twoCheckout: Na({}, null == e || null === (r = e.payment_gateway) || void 0 === r || null === (r = r.cards) || void 0 === r || null === (r = r.card_payments) || void 0 === r ? void 0 : r.twoCheckout),
+					razorpay: Na({}, null == e || null === (i = e.payment_gateway) || void 0 === i || null === (i = i.cards) || void 0 === i || null === (i = i.card_payments) || void 0 === i ? void 0 : i.razorpay),
 					paypal: null == e || null === (a = e.payment_gateway) || void 0 === a ? void 0 : a.paypal,
 					cash_payment: null == e || null === (o = e.payment_gateway) || void 0 === o ? void 0 : o.cash_payment
 				};
 				return s[t] ? s[t] : e[t]
 			}
 		};
-		za.twoCheckoutTokenSuccess = function () {
-			var t = Ta(Sa().mark((function t(e) {
+		Ta.twoCheckoutTokenSuccess = function () {
+			var t = La(ka().mark((function t(e) {
 				var n, r, i, a, o;
-				return Sa().wrap((function (t) {
+				return ka().wrap((function (t) {
 					for (; ;) switch (t.prev = t.next) {
 						case 0:
 							if (r = this.$store.getters.getSettings, null == e || null === (n = e.response) || void 0 === n || !n.token) {
@@ -39967,15 +39469,15 @@
 			return function (e) {
 				return t.apply(this, arguments)
 			}
-		}(), za.twoCheckoutTokenError = function (t) {
+		}(), Ta.twoCheckoutTokenError = function (t) {
 			this.getStep = "notice", this.noticeData = {type: "error", title: t.errorMsg}, this.showPaymentNotice("danger", t.errorMsg), this.loader = !1
-		}, za.generateTwoCheckoutToken = function () {
-		}, za.razorpayConfig = function () {
+		}, Ta.generateTwoCheckoutToken = function () {
+		}, Ta.razorpayConfig = function () {
 			return {display: {blocks: {banks: {name: "Methods with Offers", instruments: [{method: "wallet", wallets: ["olamoney"]}]}}, sequence: ["block.banks"], preferences: {show_default_blocks: !0}}}
-		}, za.activatedRazorpay = function () {
-			var t = Ta(Sa().mark((function t(e) {
+		}, Ta.activatedRazorpay = function () {
+			var t = La(ka().mark((function t(e) {
 				var n, r, i, a, o, s = this;
-				return Sa().wrap((function (t) {
+				return ka().wrap((function (t) {
 					for (; ;) switch (t.prev = t.next) {
 						case 0:
 							return r = this.$store.getters.getSettings, i = this.$store.getters.getGeneralSettings, a = r ? Object.assign({}, null == r || null === (n = r.payment_gateway) || void 0 === n || null === (n = n.cards) || void 0 === n || null === (n = n.card_payments) || void 0 === n ? void 0 : n.razorpay) : {}, o = this, t.next = 6, this.$store.dispatch("fetchPayment", e).then((function (t) {
@@ -40005,7 +39507,7 @@
 			return function (e) {
 				return t.apply(this, arguments)
 			}
-		}(), za.generateStripe = function () {
+		}(), Ta.generateStripe = function () {
 			var t, e = !(arguments.length > 0 && void 0 !== arguments[0]) || arguments[0], n = this.$store.getters.getSettings,
 				r = n ? Object.assign({}, null == n || null === (t = n.payment_gateway) || void 0 === t || null === (t = t.cards) || void 0 === t || null === (t = t.card_payments) || void 0 === t ? void 0 : t.stripe) : {}, i = this;
 			this.$nextTick((function () {
@@ -40017,16 +39519,16 @@
 					i.stripe.stripeComplete = t.complete
 				}))
 			}))
-		}, za.handleStripeCard = function () {
-			var t = Ta(Sa().mark((function t(e, n) {
+		}, Ta.handleStripeCard = function () {
+			var t = La(ka().mark((function t(e, n) {
 				var r, i, a;
-				return Sa().wrap((function (t) {
+				return ka().wrap((function (t) {
 					for (; ;) switch (t.prev = t.next) {
 						case 0:
 							return i = n.$store.getters.getSettings, a = i ? Object.assign({}, null == i || null === (r = i.payment_gateway) || void 0 === r || null === (r = r.cards) || void 0 === r || null === (r = r.card_payments) || void 0 === r ? void 0 : r.stripe) : {}, t.next = 4, n.stripe.stripe.handleCardAction(e.clientSecret).then(function () {
-								var t = Ta(Sa().mark((function t(r) {
+								var t = La(ka().mark((function t(r) {
 									var o;
-									return Sa().wrap((function (t) {
+									return ka().wrap((function (t) {
 										for (; ;) switch (t.prev = t.next) {
 											case 0:
 												if (!r.error) {
@@ -40071,10 +39573,10 @@
 			return function (e, n) {
 				return t.apply(this, arguments)
 			}
-		}(), za.wooApply = function () {
-			var t = Ta(Sa().mark((function t(e, n) {
+		}(), Ta.wooApply = function () {
+			var t = La(ka().mark((function t(e, n) {
 				var r, i, a, o;
-				return Sa().wrap((function (t) {
+				return ka().wrap((function (t) {
 					for (; ;) switch (t.prev = t.next) {
 						case 0:
 							if (!n.$store.getters.hasUnusedFields) {
@@ -40087,7 +39589,7 @@
 								post_id: e,
 								files: i,
 								totals: null == a ? void 0 : a.getFormTotals,
-								allTotals: [].concat(La(n.getOtherTotals), La(a.getFormTotals)),
+								allTotals: [].concat(wa(n.getOtherTotals), wa(a.getFormTotals)),
 								callback: function () {
 									n.loader = !1
 								}
@@ -40103,12 +39605,12 @@
 			return function (e, n) {
 				return t.apply(this, arguments)
 			}
-		}(), za.getAllOrderFiles = function () {
+		}(), Ta.getAllOrderFiles = function () {
 			var t = [];
 			return this.$store.getters.getFileFieldDescriptions().forEach((function (e) {
 				e.options.value.length > 0 && t.push({alias: e.alias, files: e.options.value})
 			})), t
-		}, za.parseOrderDetails = function (t) {
+		}, Ta.parseOrderDetails = function (t) {
 			var e = [], n = ["total", "html", "line"];
 			return t.forEach((function (t) {
 				var r = t.alias.replace(/\_field_id.*/, "");
@@ -40130,17 +39632,17 @@
 				}
 			})), e
 		};
-		const Ya = za;
+		const Oa = Ta;
 
-		function $a(t) {
-			return $a = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function Ia(t) {
+			return Ia = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, $a(t)
+			}, Ia(t)
 		}
 
-		function Ea(t, e) {
+		function Aa(t, e) {
 			return function (t) {
 				if (Array.isArray(t)) return t
 			}(t) || function (t, e) {
@@ -40165,23 +39667,23 @@
 				}
 			}(t, e) || function (t, e) {
 				if (t) {
-					if ("string" == typeof t) return Ca(t, e);
+					if ("string" == typeof t) return za(t, e);
 					var n = {}.toString.call(t).slice(8, -1);
-					return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? Ca(t, e) : void 0
+					return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? za(t, e) : void 0
 				}
 			}(t, e) || function () {
 				throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
 			}()
 		}
 
-		function Ca(t, e) {
+		function za(t, e) {
 			(null == e || e > t.length) && (e = t.length);
 			for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
 			return r
 		}
 
-		function Pa() {
-			Pa = function () {
+		function Ya() {
+			Ya = function () {
 				return e
 			};
 			var t, e = {}, n = Object.prototype, r = n.hasOwnProperty, i = Object.defineProperty || function (t, e, n) {
@@ -40246,7 +39748,7 @@
 					var c = u(t[i], t, a);
 					if ("throw" !== c.type) {
 						var l = c.arg, d = l.value;
-						return d && "object" == $a(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
+						return d && "object" == Ia(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
 							n("next", t, o, s)
 						}), (function (t) {
 							n("throw", t, o, s)
@@ -40314,18 +39816,18 @@
 				return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 			}
 
-			function S(t) {
+			function N(t) {
 				var e = {tryLoc: t[0]};
 				1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 			}
 
-			function N(t) {
+			function S(t) {
 				var e = t.completion || {};
 				e.type = "normal", delete e.arg, t.completion = e
 			}
 
 			function T(t) {
-				this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+				this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 			}
 
 			function O(e) {
@@ -40341,7 +39843,7 @@
 						return a.next = a
 					}
 				}
-				throw new TypeError($a(e) + " is not iterable")
+				throw new TypeError(Ia(e) + " is not iterable")
 			}
 
 			return v.prototype = b, i(x, "constructor", {value: b, configurable: !0}), i(b, "constructor", {value: v, configurable: !0}), v.displayName = l(b, c, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
@@ -40375,7 +39877,7 @@
 				}
 			}, e.values = O, T.prototype = {
 				constructor: T, reset: function (e) {
-					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 				}, stop: function () {
 					this.done = !0;
 					var t = this.tryEntries[0].completion;
@@ -40422,7 +39924,7 @@
 				}, finish: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 						var n = this.tryEntries[e];
-						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 					}
 				}, catch: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -40431,7 +39933,7 @@
 							var r = n.completion;
 							if ("throw" === r.type) {
 								var i = r.arg;
-								N(n)
+								S(n)
 							}
 							return i
 						}
@@ -40443,7 +39945,7 @@
 			}, e
 		}
 
-		function Fa(t, e, n, r, i, a, o) {
+		function $a(t, e, n, r, i, a, o) {
 			try {
 				var s = t[a](o), c = s.value
 			} catch (t) {
@@ -40452,18 +39954,18 @@
 			s.done ? e(c) : Promise.resolve(c).then(r, i)
 		}
 
-		function Ua(t) {
+		function Ea(t) {
 			return function () {
 				var e = this, n = arguments;
 				return new Promise((function (r, i) {
 					var a = t.apply(e, n);
 
 					function o(t) {
-						Fa(a, r, i, o, s, "next", t)
+						$a(a, r, i, o, s, "next", t)
 					}
 
 					function s(t) {
-						Fa(a, r, i, o, s, "throw", t)
+						$a(a, r, i, o, s, "throw", t)
 					}
 
 					o(void 0)
@@ -40471,7 +39973,7 @@
 			}
 		}
 
-		function Ha(t, e) {
+		function Ca(t, e) {
 			var n = Object.keys(t);
 			if (Object.getOwnPropertySymbols) {
 				var r = Object.getOwnPropertySymbols(t);
@@ -40482,35 +39984,35 @@
 			return n
 		}
 
-		function Ra(t) {
+		function Pa(t) {
 			for (var e = 1; e < arguments.length; e++) {
 				var n = null != arguments[e] ? arguments[e] : {};
-				e % 2 ? Ha(Object(n), !0).forEach((function (e) {
-					Va(t, e, n[e])
-				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : Ha(Object(n)).forEach((function (e) {
+				e % 2 ? Ca(Object(n), !0).forEach((function (e) {
+					Fa(t, e, n[e])
+				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : Ca(Object(n)).forEach((function (e) {
 					Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e))
 				}))
 			}
 			return t
 		}
 
-		function Va(t, e, n) {
+		function Fa(t, e, n) {
 			return (e = function (t) {
 				var e = function (t, e) {
-					if ("object" != $a(t) || !t) return t;
+					if ("object" != Ia(t) || !t) return t;
 					var n = t[Symbol.toPrimitive];
 					if (void 0 !== n) {
 						var r = n.call(t, e || "default");
-						if ("object" != $a(r)) return r;
+						if ("object" != Ia(r)) return r;
 						throw new TypeError("@@toPrimitive must return a primitive value.")
 					}
 					return ("string" === e ? String : Number)(t)
 				}(t, "string");
-				return "symbol" == $a(e) ? e : e + ""
+				return "symbol" == Ia(e) ? e : e + ""
 			}(e)) in t ? Object.defineProperty(t, e, {value: n, enumerable: !0, configurable: !0, writable: !0}) : t[e] = n, t
 		}
 
-		const Qa = {
+		const Ua = {
 			mixins: [o.A], props: {form: {default: !1}, after: {default: ""}}, data: function () {
 				return {
 					nonces: window.ccb_nonces,
@@ -40548,7 +40050,7 @@
 				}, btnStyles: function () {
 					var t = this.getElementAppearanceStyleByPath(this.appearance, "elements.primary_button.data"), e = {};
 					return e.padding = [0, t.field_side_indents].join("px "), Object.keys(t).forEach((function (n) {
-						"background" === n ? e = Ra(Ra({}, e), t[n]) : "shadow" === n ? e["box-shadow"] = t[n] : e[n] = t[n]
+						"background" === n ? e = Pa(Pa({}, e), t[n]) : "shadow" === n ? e["box-shadow"] = t[n] : e[n] = t[n]
 					})), e
 				}, getHideCalc: {
 					get: function () {
@@ -40589,7 +40091,7 @@
 				}
 			}, created: function () {
 				this.after && "stripe" === this.after && (this.getMethod = this.after, this.getHideCalc = !0)
-			}, methods: Ra(Ra({
+			}, methods: Pa(Pa({
 				formState: function () {
 					var t, e = this, n = this, r = !0;
 					this.formRequiredFields = [];
@@ -40622,9 +40124,9 @@
 					})), n
 				}, sendData: function () {
 					var t = this;
-					return Ua(Pa().mark((function e() {
+					return Ea(Ya().mark((function e() {
 						var n, r, i;
-						return Pa().wrap((function (e) {
+						return Ya().wrap((function (e) {
 							for (; ;) switch (e.prev = e.next) {
 								case 0:
 									return (n = t).loader = !0, (r = t.getOrderDetails).orderDetails = t.appendFileFieldsWithoutAddToSummary(r), t.$store.commit("setFormFields", n.paymentForm.sendFields), t.paymentForm.status && (r.status = "complete"), e.next = 8, t.$store.dispatch("addOrder", r);
@@ -40648,9 +40150,9 @@
 					}))
 				}, OrderPayment: function () {
 					var t = this;
-					return Ua(Pa().mark((function e() {
+					return Ea(Ya().mark((function e() {
 						var n, r, i;
-						return Pa().wrap((function (e) {
+						return Ya().wrap((function (e) {
 							for (; ;) switch (e.prev = e.next) {
 								case 0:
 									if (!t.$store.getters.getIsLiveDemoLocation) {
@@ -40680,9 +40182,9 @@
 					})))()
 				}, applyWoo: function (t) {
 					var e = this;
-					return Ua(Pa().mark((function n() {
+					return Ea(Ya().mark((function n() {
 						var r, i;
-						return Pa().wrap((function (n) {
+						return Ya().wrap((function (n) {
 							for (; ;) switch (n.prev = n.next) {
 								case 0:
 									if (!e.$store.getters.getIsLiveDemoLocation) {
@@ -40702,9 +40204,9 @@
 					})))()
 				}, applyPayment: function () {
 					var t = this;
-					return Ua(Pa().mark((function e() {
+					return Ea(Ya().mark((function e() {
 						var n, r, i, a, o, s, c, l, d, u, f;
-						return Pa().wrap((function (e) {
+						return Ya().wrap((function (e) {
 							for (; ;) switch (e.prev = e.next) {
 								case 0:
 									if (n = t, r = t.$store.getters.getSettings, t.getStep = "", !t.$store.getters.getIsLiveDemoLocation) {
@@ -40717,7 +40219,7 @@
 										e.next = 13;
 										break
 									}
-									return t.loader = !1, a = Ea(t.$store.getters.getUnusedFields, 1), null != (o = a[0]) && o.alias && t.scrollIntoRequired(o.alias, o.repeaterIdx), e.abrupt("return");
+									return t.loader = !1, a = Aa(t.$store.getters.getUnusedFields, 1), null != (o = a[0]) && o.alias && t.scrollIntoRequired(o.alias, o.repeaterIdx), e.abrupt("return");
 								case 13:
 									if (t.loader = !0, s = t.$store.getters.getSettings.general.hide_empty ? t.$store.getters.getDescriptions("showZero") : t.$store.getters.getDescriptions(), c = t.getFormTotals.map((function (t) {
 										return {title: t.label, value: t.converted}
@@ -40756,9 +40258,9 @@
 										break
 									}
 									return d = null, e.next = 32, t.stripe.stripe.createPaymentMethod("card", t.stripe.stripeCard).then(function () {
-										var e = Ua(Pa().mark((function e(i) {
+										var e = Ea(Ya().mark((function e(i) {
 											var a;
-											return Pa().wrap((function (e) {
+											return Ya().wrap((function (e) {
 												for (; ;) switch (e.prev = e.next) {
 													case 0:
 														if (void 0 === i.error || void 0 === i.error.message) {
@@ -40769,8 +40271,8 @@
 														break;
 													case 6:
 														return (a = Object.assign({}, l)).paymentMethodId = i.paymentMethod.id, a.action_type = "intent_payment", e.next = 11, t.$store.dispatch("fetchPayment", a).then(function () {
-															var e = Ua(Pa().mark((function e(r) {
-																return Pa().wrap((function (e) {
+															var e = Ea(Ya().mark((function e(r) {
+																return Ya().wrap((function (e) {
 																	for (; ;) switch (e.prev = e.next) {
 																		case 0:
 																			if (d = r, "success" !== r.status) {
@@ -40873,11 +40375,11 @@
 				}, cardFocusOut: function () {
 					19 === this.twoCheckout.cardNumber.length && (this.twoCheckout.hideCard = !1, this.twoCheckout.cardStyle.transform = "translateX(-".concat(this.twoCheckout.offsetWidth, "px)"))
 				}
-			}, ka.A), Ya), watch: {
+			}, _a.A), Oa), watch: {
 				getMethod: function (t) {
 					if (this.$store.getters.hasUnusedFields && t) {
 						this.loader = !1;
-						var e = Ea(this.$store.getters.getUnusedFields, 1)[0];
+						var e = Aa(this.$store.getters.getUnusedFields, 1)[0];
 						null != e && e.alias && this.scrollIntoRequired(e.alias, e.repeaterIdx)
 					}
 				}, "twoCheckout.cardNumber": {
@@ -40910,15 +40412,15 @@
 			}
 		};
 
-		function Wa(t) {
-			return Wa = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function Ha(t) {
+			return Ha = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, Wa(t)
+			}, Ha(t)
 		}
 
-		function qa(t, e) {
+		function Ra(t, e) {
 			return function (t) {
 				if (Array.isArray(t)) return t
 			}(t) || function (t, e) {
@@ -40943,23 +40445,23 @@
 				}
 			}(t, e) || function (t, e) {
 				if (t) {
-					if ("string" == typeof t) return Ba(t, e);
+					if ("string" == typeof t) return Va(t, e);
 					var n = {}.toString.call(t).slice(8, -1);
-					return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? Ba(t, e) : void 0
+					return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? Va(t, e) : void 0
 				}
 			}(t, e) || function () {
 				throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
 			}()
 		}
 
-		function Ba(t, e) {
+		function Va(t, e) {
 			(null == e || e > t.length) && (e = t.length);
 			for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
 			return r
 		}
 
-		function Ga() {
-			Ga = function () {
+		function Qa() {
+			Qa = function () {
 				return e
 			};
 			var t, e = {}, n = Object.prototype, r = n.hasOwnProperty, i = Object.defineProperty || function (t, e, n) {
@@ -41024,7 +40526,7 @@
 					var c = u(t[i], t, a);
 					if ("throw" !== c.type) {
 						var l = c.arg, d = l.value;
-						return d && "object" == Wa(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
+						return d && "object" == Ha(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
 							n("next", t, o, s)
 						}), (function (t) {
 							n("throw", t, o, s)
@@ -41092,18 +40594,18 @@
 				return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 			}
 
-			function S(t) {
+			function N(t) {
 				var e = {tryLoc: t[0]};
 				1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 			}
 
-			function N(t) {
+			function S(t) {
 				var e = t.completion || {};
 				e.type = "normal", delete e.arg, t.completion = e
 			}
 
 			function T(t) {
-				this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+				this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 			}
 
 			function O(e) {
@@ -41119,7 +40621,7 @@
 						return a.next = a
 					}
 				}
-				throw new TypeError(Wa(e) + " is not iterable")
+				throw new TypeError(Ha(e) + " is not iterable")
 			}
 
 			return v.prototype = b, i(x, "constructor", {value: b, configurable: !0}), i(b, "constructor", {value: v, configurable: !0}), v.displayName = l(b, c, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
@@ -41153,7 +40655,7 @@
 				}
 			}, e.values = O, T.prototype = {
 				constructor: T, reset: function (e) {
-					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 				}, stop: function () {
 					this.done = !0;
 					var t = this.tryEntries[0].completion;
@@ -41200,7 +40702,7 @@
 				}, finish: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 						var n = this.tryEntries[e];
-						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 					}
 				}, catch: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -41209,7 +40711,7 @@
 							var r = n.completion;
 							if ("throw" === r.type) {
 								var i = r.arg;
-								N(n)
+								S(n)
 							}
 							return i
 						}
@@ -41221,7 +40723,7 @@
 			}, e
 		}
 
-		function Ja(t, e, n, r, i, a, o) {
+		function Wa(t, e, n, r, i, a, o) {
 			try {
 				var s = t[a](o), c = s.value
 			} catch (t) {
@@ -41230,18 +40732,18 @@
 			s.done ? e(c) : Promise.resolve(c).then(r, i)
 		}
 
-		function Ka(t) {
+		function qa(t) {
 			return function () {
 				var e = this, n = arguments;
 				return new Promise((function (r, i) {
 					var a = t.apply(e, n);
 
 					function o(t) {
-						Ja(a, r, i, o, s, "next", t)
+						Wa(a, r, i, o, s, "next", t)
 					}
 
 					function s(t) {
-						Ja(a, r, i, o, s, "throw", t)
+						Wa(a, r, i, o, s, "throw", t)
 					}
 
 					o(void 0)
@@ -41249,7 +40751,7 @@
 			}
 		}
 
-		function Za(t, e) {
+		function Ba(t, e) {
 			var n = Object.keys(t);
 			if (Object.getOwnPropertySymbols) {
 				var r = Object.getOwnPropertySymbols(t);
@@ -41260,43 +40762,43 @@
 			return n
 		}
 
-		function Xa(t) {
+		function Ga(t) {
 			for (var e = 1; e < arguments.length; e++) {
 				var n = null != arguments[e] ? arguments[e] : {};
-				e % 2 ? Za(Object(n), !0).forEach((function (e) {
-					to(t, e, n[e])
-				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : Za(Object(n)).forEach((function (e) {
+				e % 2 ? Ba(Object(n), !0).forEach((function (e) {
+					Ja(t, e, n[e])
+				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : Ba(Object(n)).forEach((function (e) {
 					Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e))
 				}))
 			}
 			return t
 		}
 
-		function to(t, e, n) {
+		function Ja(t, e, n) {
 			return (e = function (t) {
 				var e = function (t, e) {
-					if ("object" != Wa(t) || !t) return t;
+					if ("object" != Ha(t) || !t) return t;
 					var n = t[Symbol.toPrimitive];
 					if (void 0 !== n) {
 						var r = n.call(t, e || "default");
-						if ("object" != Wa(r)) return r;
+						if ("object" != Ha(r)) return r;
 						throw new TypeError("@@toPrimitive must return a primitive value.")
 					}
 					return ("string" === e ? String : Number)(t)
 				}(t, "string");
-				return "symbol" == Wa(e) ? e : e + ""
+				return "symbol" == Ha(e) ? e : e + ""
 			}(e)) in t ? Object.defineProperty(t, e, {value: n, enumerable: !0, configurable: !0, writable: !0}) : t[e] = n, t
 		}
 
-		const eo = {
+		const Ka = {
 			mixins: [o.A], data: function () {
 				return {loader: !1, message: !1}
-			}, methods: Xa(Xa({
+			}, methods: Ga(Ga({
 				sendWooData: function () {
 					var t = this;
-					return Ka(Ga().mark((function e() {
+					return qa(Qa().mark((function e() {
 						var n, r;
-						return Ga().wrap((function (e) {
+						return Qa().wrap((function (e) {
 							for (; ;) switch (e.prev = e.next) {
 								case 0:
 									return t.loader = !0, (n = t.getOrderDetails).paymentMethod = "no_payments", n.orderDetails = t.appendFileFieldsWithoutAddToSummary(n), n.status = "pending", e.next = 7, t.$store.dispatch("addOrder", n);
@@ -41316,16 +40818,16 @@
 					})))()
 				}, applyWoo: function (t) {
 					var e = this;
-					return Ka(Ga().mark((function n() {
+					return qa(Qa().mark((function n() {
 						var r, i, a, o;
-						return Ga().wrap((function (n) {
+						return Qa().wrap((function (n) {
 							for (; ;) switch (n.prev = n.next) {
 								case 0:
 									if (!e.$store.getters.hasUnusedFields) {
 										n.next = 4;
 										break
 									}
-									return r = qa(e.$store.getters.getUnusedFields, 1), null != (i = r[0]) && i.alias && e.scrollIntoRequired(i.alias, i.repeaterIdx), n.abrupt("return");
+									return r = Ra(e.$store.getters.getUnusedFields, 1), null != (i = r[0]) && i.alias && e.scrollIntoRequired(i.alias, i.repeaterIdx), n.abrupt("return");
 								case 4:
 									if (!e.$store.getters.getIsLiveDemoLocation) {
 										n.next = 9;
@@ -41343,14 +40845,14 @@
 						}), n)
 					})))()
 				}
-			}, ka.A), Ya), computed: {
+			}, _a.A), Oa), computed: {
 				formulas: function () {
 					var t;
 					return null === (t = this.getWooCheckoutSettings) || void 0 === t ? void 0 : t.formulas
 				}, btnStyles: function () {
 					var t = this.$store.getters.getAppearance, e = this.getElementAppearanceStyleByPath(t, "elements.primary_button.data"), n = {};
 					return n.padding = [0, e.field_side_indents].join("px "), Object.keys(e).forEach((function (t) {
-						"background" === t ? n = Xa(Xa({}, n), e[t]) : "shadow" === t ? n["box-shadow"] = e[t] : n[t] = e[t]
+						"background" === t ? n = Ga(Ga({}, n), e[t]) : "shadow" === t ? n["box-shadow"] = e[t] : n[t] = e[t]
 					})), n
 				}, getSettings: function () {
 					return this.$store.getters.getSettings
@@ -41358,18 +40860,18 @@
 					return this.getSettings.woo_checkout
 				}
 			}
-		}, no = {mixins: [o.A]};
+		}, Za = {mixins: [o.A]};
 
-		function ro(t) {
-			return ro = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function Xa(t) {
+			return Xa = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, ro(t)
+			}, Xa(t)
 		}
 
-		function io() {
-			io = function () {
+		function to() {
+			to = function () {
 				return e
 			};
 			var t, e = {}, n = Object.prototype, r = n.hasOwnProperty, i = Object.defineProperty || function (t, e, n) {
@@ -41434,7 +40936,7 @@
 					var c = u(t[i], t, a);
 					if ("throw" !== c.type) {
 						var l = c.arg, d = l.value;
-						return d && "object" == ro(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
+						return d && "object" == Xa(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
 							n("next", t, o, s)
 						}), (function (t) {
 							n("throw", t, o, s)
@@ -41502,18 +41004,18 @@
 				return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 			}
 
-			function S(t) {
+			function N(t) {
 				var e = {tryLoc: t[0]};
 				1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 			}
 
-			function N(t) {
+			function S(t) {
 				var e = t.completion || {};
 				e.type = "normal", delete e.arg, t.completion = e
 			}
 
 			function T(t) {
-				this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+				this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 			}
 
 			function O(e) {
@@ -41529,7 +41031,7 @@
 						return a.next = a
 					}
 				}
-				throw new TypeError(ro(e) + " is not iterable")
+				throw new TypeError(Xa(e) + " is not iterable")
 			}
 
 			return v.prototype = b, i(x, "constructor", {value: b, configurable: !0}), i(b, "constructor", {value: v, configurable: !0}), v.displayName = l(b, c, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
@@ -41563,7 +41065,7 @@
 				}
 			}, e.values = O, T.prototype = {
 				constructor: T, reset: function (e) {
-					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 				}, stop: function () {
 					this.done = !0;
 					var t = this.tryEntries[0].completion;
@@ -41610,7 +41112,7 @@
 				}, finish: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 						var n = this.tryEntries[e];
-						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 					}
 				}, catch: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -41619,7 +41121,7 @@
 							var r = n.completion;
 							if ("throw" === r.type) {
 								var i = r.arg;
-								N(n)
+								S(n)
 							}
 							return i
 						}
@@ -41631,7 +41133,7 @@
 			}, e
 		}
 
-		function ao(t, e) {
+		function eo(t, e) {
 			return function (t) {
 				if (Array.isArray(t)) return t
 			}(t) || function (t, e) {
@@ -41654,12 +41156,12 @@
 					}
 					return s
 				}
-			}(t, e) || po(t, e) || function () {
+			}(t, e) || lo(t, e) || function () {
 				throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
 			}()
 		}
 
-		function oo(t, e, n, r, i, a, o) {
+		function no(t, e, n, r, i, a, o) {
 			try {
 				var s = t[a](o), c = s.value
 			} catch (t) {
@@ -41668,18 +41170,18 @@
 			s.done ? e(c) : Promise.resolve(c).then(r, i)
 		}
 
-		function so(t) {
+		function ro(t) {
 			return function () {
 				var e = this, n = arguments;
 				return new Promise((function (r, i) {
 					var a = t.apply(e, n);
 
 					function o(t) {
-						oo(a, r, i, o, s, "next", t)
+						no(a, r, i, o, s, "next", t)
 					}
 
 					function s(t) {
-						oo(a, r, i, o, s, "throw", t)
+						no(a, r, i, o, s, "throw", t)
 					}
 
 					o(void 0)
@@ -41687,7 +41189,7 @@
 			}
 		}
 
-		function co(t, e) {
+		function io(t, e) {
 			var n = Object.keys(t);
 			if (Object.getOwnPropertySymbols) {
 				var r = Object.getOwnPropertySymbols(t);
@@ -41698,38 +41200,38 @@
 			return n
 		}
 
-		function lo(t) {
+		function ao(t) {
 			for (var e = 1; e < arguments.length; e++) {
 				var n = null != arguments[e] ? arguments[e] : {};
-				e % 2 ? co(Object(n), !0).forEach((function (e) {
-					uo(t, e, n[e])
-				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : co(Object(n)).forEach((function (e) {
+				e % 2 ? io(Object(n), !0).forEach((function (e) {
+					oo(t, e, n[e])
+				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : io(Object(n)).forEach((function (e) {
 					Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e))
 				}))
 			}
 			return t
 		}
 
-		function uo(t, e, n) {
+		function oo(t, e, n) {
 			return (e = function (t) {
 				var e = function (t, e) {
-					if ("object" != ro(t) || !t) return t;
+					if ("object" != Xa(t) || !t) return t;
 					var n = t[Symbol.toPrimitive];
 					if (void 0 !== n) {
 						var r = n.call(t, e || "default");
-						if ("object" != ro(r)) return r;
+						if ("object" != Xa(r)) return r;
 						throw new TypeError("@@toPrimitive must return a primitive value.")
 					}
 					return ("string" === e ? String : Number)(t)
 				}(t, "string");
-				return "symbol" == ro(e) ? e : e + ""
+				return "symbol" == Xa(e) ? e : e + ""
 			}(e)) in t ? Object.defineProperty(t, e, {value: n, enumerable: !0, configurable: !0, writable: !0}) : t[e] = n, t
 		}
 
-		function fo(t, e) {
+		function so(t, e) {
 			var n = "undefined" != typeof Symbol && t[Symbol.iterator] || t["@@iterator"];
 			if (!n) {
-				if (Array.isArray(t) || (n = po(t)) || e && t && "number" == typeof t.length) {
+				if (Array.isArray(t) || (n = lo(t)) || e && t && "number" == typeof t.length) {
 					n && (t = n);
 					var r = 0, i = function () {
 					};
@@ -41762,31 +41264,31 @@
 			}
 		}
 
-		function ho(t) {
+		function co(t) {
 			return function (t) {
-				if (Array.isArray(t)) return mo(t)
+				if (Array.isArray(t)) return uo(t)
 			}(t) || function (t) {
 				if ("undefined" != typeof Symbol && null != t[Symbol.iterator] || null != t["@@iterator"]) return Array.from(t)
-			}(t) || po(t) || function () {
+			}(t) || lo(t) || function () {
 				throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
 			}()
 		}
 
-		function po(t, e) {
+		function lo(t, e) {
 			if (t) {
-				if ("string" == typeof t) return mo(t, e);
+				if ("string" == typeof t) return uo(t, e);
 				var n = {}.toString.call(t).slice(8, -1);
-				return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? mo(t, e) : void 0
+				return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? uo(t, e) : void 0
 			}
 		}
 
-		function mo(t, e) {
+		function uo(t, e) {
 			(null == e || e > t.length) && (e = t.length);
 			for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
 			return r
 		}
 
-		const go = {
+		const fo = {
 			mixins: [o.A], data: function () {
 				return {
 					nonces: window.ccb_nonces,
@@ -41809,12 +41311,12 @@
 				var t = this;
 				window["calc_form_".concat(this.settingsField.calc_id)] = !0, setTimeout((function () {
 					t.$current = t.$store.getters.getCurrent, t.initCaptcha(), t.$nextTick((function () {
-					})), document.addEventListener("ccb_field_changed", (function () {
-						t.firstLoad || setTimeout((function () {
-							t.cfInitContent()
-						}))
 					}))
-				}), 500)
+				}), 500), document.addEventListener("ccb_field_changed", (function () {
+					t.firstLoad || setTimeout((function () {
+						t.cfInitContent()
+					}))
+				}))
 			}, computed: {
 				getPaymentAfterFormulas: function () {
 					var t = this;
@@ -41826,9 +41328,9 @@
 						})), s = i[e].formulas, c = a || [], l = Object.values(r.getCalcStore).filter((function (t) {
 							return t.alias.includes("repeater")
 						}));
-						if (null !== (n = c = [].concat(ho(c), ho(l))) && void 0 !== n && n.length) {
+						if (null !== (n = c = [].concat(co(c), co(l))) && void 0 !== n && n.length) {
 							if (null == s || !s.length) return [c[0]];
-							var d, u = [], f = fo(s);
+							var d, u = [], f = so(s);
 							try {
 								var h = function () {
 									var t = d.value, e = c.find((function (e) {
@@ -41861,7 +41363,7 @@
 					if (0 === Object.keys(this.appearance).length) return t;
 					var e = this.getElementAppearanceStyleByPath(this.appearance, "elements.primary_button.data");
 					return t.padding = [0, e.field_side_indents].join("px "), Object.keys(e).forEach((function (n) {
-						"background" === n ? t = lo(lo({}, t), e[n]) : "shadow" === n ? t["box-shadow"] = e[n] : t[n] = e[n]
+						"background" === n ? t = ao(ao({}, t), e[n]) : "shadow" === n ? t["box-shadow"] = e[n] : t[n] = e[n]
 					})), t
 				}, orderId: {
 					get: function () {
@@ -41914,11 +41416,8 @@
 					}, set: function (t) {
 						this.$store.dispatch("updateOpenAction", t)
 					}
-				}, getCf7Content: function () {
-					var t, e = this.$store.getters.getCalcId, n = "ccb_front_template_".concat(e);
-					if (window[n]) return null === (t = window[n]) || void 0 === t ? void 0 : t.cf7_form
 				}
-			}, methods: lo(lo({
+			}, methods: ao(ao({
 				resetForm: function () {
 					var t = this, e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 1e3;
 					this.cleanFormData(), this.checkTermsLabel = this.randomID(), setTimeout((function () {
@@ -41929,7 +41428,7 @@
 				}, parseSubtotal: function (t, e) {
 					var n = this, r = ["total", "html", "line"], i = [];
 					if (Array.from(t).forEach((function (t) {
-						i.push(t), t.alias.includes("repeater") && (i = [].concat(ho(i), ho(t.groupElements.map((function (t) {
+						i.push(t), t.alias.includes("repeater") && (i = [].concat(co(i), co(t.groupElements.map((function (t) {
 							return t.innerElement = !0, t
 						})))))
 					})), "text" === e) {
@@ -41961,9 +41460,10 @@
 					t.parentNode.parentNode.after(e)
 				}, sendData: function (t) {
 					var n = this;
-					return so(io().mark((function r() {
+					console.log('send');
+					return ro(to().mark((function r() {
 						var i, a, o, s, c, l, d, u, f, h, p, m, g, y, v, b;
-						return io().wrap((function (r) {
+						return to().wrap((function (r) {
 							for (; ;) switch (r.prev = r.next) {
 								case 0:
 									if (!n.$store.getters.getIsLiveDemoLocation) {
@@ -41980,7 +41480,7 @@
 										r.next = 12;
 										break
 									}
-									return l = ao(n.$store.getters.getUnusedFields, 1), null != (d = l[0]) && d.alias && n.scrollIntoRequired(d.alias, d.repeaterIdx), r.abrupt("return");
+									return l = eo(n.$store.getters.getUnusedFields, 1), null != (d = l[0]) && d.alias && n.scrollIntoRequired(d.alias, d.repeaterIdx), r.abrupt("return");
 								case 12:
 									if (u = n.getSettings.recaptcha, f = !0, h = "", p = !0, void 0 === window.grecaptcha || !u.enable) {
 										r.next = 26;
@@ -42079,7 +41579,7 @@
 												if (!t.success) return n.getStep = "notice", n.noticeData = {type: "error", title: t.data.message}, void (n.loader = !1);
 												n.orderId = t.data.order_id, setTimeout((function () {
 													o.errorCaptcha = !1, o.errorMessage = !1, o.successMessage = !0;
-													var t, e = !1, r = s.payment_gateway, i = fo(n.formData.paymentMethods);
+													var t, e = !1, r = s.payment_gateway, i = so(n.formData.paymentMethods);
 													try {
 														for (i.s(); !(t = i.n()).done;) {
 															var a, l, d = t.value;
@@ -42151,13 +41651,13 @@
 					}))
 				}, hideContactForm: function () {
 					var t = this.$el.getElementsByClassName("ccb-contact-form7");
-					t.length <= 0 && t[0].getElementsByTagName("form").length <= 0 || ho(t[0].getElementsByTagName("form")[0].getElementsByTagName("p")).forEach((function (t) {
+					t.length <= 0 && t[0].getElementsByTagName("form").length <= 0 || co(t[0].getElementsByTagName("form")[0].getElementsByTagName("p")).forEach((function (t) {
 						"none" !== t.style.display && (t.classList.add("ccb-hidden"), t.style.display = "none")
 					}))
 				}, showContactForm: function () {
 					if (!(this.$el.getElementsByClassName("ccb-contact-form7").length <= 0 || this.$el.getElementsByClassName("ccb-contact-form7")[0].getElementsByTagName("form").length <= 0)) {
 						var t = this.$el.getElementsByClassName("ccb-contact-form7")[0].getElementsByTagName("form")[0];
-						ho(t.getElementsByTagName("p")).forEach((function (t) {
+						co(t.getElementsByTagName("p")).forEach((function (t) {
 							t.classList.contains("ccb-hidden") && (t.classList.remove("ccb-hidden"), t.style.display = "block")
 						})), t.getElementsByClassName("wpcf7-response-output").length > 0 && (t.getElementsByClassName("wpcf7-response-output")[0].innerHtml = "", t.getElementsByClassName("wpcf7-response-output")[0].innerText = "")
 					}
@@ -42190,7 +41690,7 @@
 					if (this.formData.contactFormId) {
 						var t, n, r = this.parseSubtotal(this.$store.getters.getDescriptions(), "text"), i = null === (t = this.$store.getters.getDescriptions()) || void 0 === t ? void 0 : t.filter((function (t) {
 							return t.alias.includes("repeater")
-						})), a = [].concat(ho(this.$store.getters.getFormula), ho(i)), o = this.formData.body;
+						})), a = [].concat(co(this.$store.getters.getFormula), co(i)), o = this.formData.body;
 						if (-1 !== o.indexOf("[ccb-subtotal]")) {
 							o = o.replaceAll("[ccb-subtotal]", r)
 						}
@@ -42203,19 +41703,20 @@
 							return l += "\n".concat(t.label, ": ").concat(t.converted)
 						}));
 						o = o.replaceAll(/\[ccb-total(?:-\d+)?\]/g, "".concat(l, "\n"));
-						var d, u, f = null === (n = this.$current) || void 0 === n ? void 0 : n.querySelector(".wpcf7-form"), h = null == f ? void 0 : f.querySelector("textarea");
-						if (h && (h.value = (p = o, (new DOMParser).parseFromString("<!doctype html><body>" + p, "text/html").body.textContent)), void 0 !== window.wpcf7 && this.initOnce) if (this.initOnce = !1, "function" == typeof (null === (d = window.wpcf7) || void 0 === d ? void 0 : d.init)) (null === (u = this.$current) || void 0 === u ? void 0 : u.querySelectorAll(".wpcf7 > form")).forEach((function (t) {
+						var d, u = null === (n = this.$current) || void 0 === n ? void 0 : n.querySelector(".wpcf7-form"), f = null == u ? void 0 : u.querySelector("textarea");
+						if (f && (f.value = (h = o, (new DOMParser).parseFromString("<!doctype html><body>" + h, "text/html").body.textContent)), void 0 !== window.wpcf7 && this.initOnce) if (this.initOnce = !1, "function" == typeof (null === (d = window.wpcf7) || void 0 === d ? void 0 : d.init)) document.querySelectorAll(".wpcf7 > form").forEach((function (t) {
 							return window.wpcf7.init(t)
 						})); else e()("div.wpcf7 > form").each((function () {
 							var t = e()(this);
 							window.wpcf7.initForm(t), window.wpcf7.cached && window.wpcf7.refill(t)
 						}))
 					}
-					var p
+					var h
 				}, toggleOpen: function (t) {
 					var e = this, n = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
 					if (this.getStep = "", this.noticeData = {}, n || !this.$store.getters.hasUnusedFields) {
 						if (this.cleanFormData(), this.showContactForm(), this.loader = !1, this.cfSentHandler(), this.open = !0, this.allowSend = !0, this.cfInitContent(), this.$store.getters.getIsLiveDemoLocation && null !== document.querySelector(".wpcf7-submit")) {
+
 							var r = document.querySelector(".wpcf7-submit");
 							return r.type = "button", r.onclick = function () {
 								return e.showDemoNotice(r)
@@ -42223,7 +41724,7 @@
 						}
 						this.cfLastSentHandler()
 					} else {
-						var i = ao(this.$store.getters.getUnusedFields, 1)[0];
+						var i = eo(this.$store.getters.getUnusedFields, 1)[0];
 						null != i && i.alias && this.scrollIntoRequired(i.alias, i.repeaterIdx)
 					}
 				}, resetFields: function () {
@@ -42245,9 +41746,9 @@
 						}))
 					})
 				}, renderCaptchaScript: function (t, e) {
-					return so(io().mark((function n() {
+					return ro(to().mark((function n() {
 						var r, i, a;
-						return io().wrap((function (n) {
+						return to().wrap((function (n) {
 							for (; ;) switch (n.prev = n.next) {
 								case 0:
 									r = {
@@ -42301,19 +41802,19 @@
 							a.method = t, r.loader = !1
 					}
 				}
-			}, ka.A), Ya)
+			}, _a.A), Oa)
 		};
 
-		function yo(t) {
-			return yo = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
+		function ho(t) {
+			return ho = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
 				return typeof t
 			} : function (t) {
 				return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-			}, yo(t)
+			}, ho(t)
 		}
 
-		function vo() {
-			vo = function () {
+		function po() {
+			po = function () {
 				return e
 			};
 			var t, e = {}, n = Object.prototype, r = n.hasOwnProperty, i = Object.defineProperty || function (t, e, n) {
@@ -42378,7 +41879,7 @@
 					var c = u(t[i], t, a);
 					if ("throw" !== c.type) {
 						var l = c.arg, d = l.value;
-						return d && "object" == yo(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
+						return d && "object" == ho(d) && r.call(d, "__await") ? e.resolve(d.__await).then((function (t) {
 							n("next", t, o, s)
 						}), (function (t) {
 							n("throw", t, o, s)
@@ -42446,18 +41947,18 @@
 				return o ? o.done ? (n[e.resultName] = o.value, n.next = e.nextLoc, "return" !== n.method && (n.method = "next", n.arg = t), n.delegate = null, g) : o : (n.method = "throw", n.arg = new TypeError("iterator result is not an object"), n.delegate = null, g)
 			}
 
-			function S(t) {
+			function N(t) {
 				var e = {tryLoc: t[0]};
 				1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e)
 			}
 
-			function N(t) {
+			function S(t) {
 				var e = t.completion || {};
 				e.type = "normal", delete e.arg, t.completion = e
 			}
 
 			function T(t) {
-				this.tryEntries = [{tryLoc: "root"}], t.forEach(S, this), this.reset(!0)
+				this.tryEntries = [{tryLoc: "root"}], t.forEach(N, this), this.reset(!0)
 			}
 
 			function O(e) {
@@ -42473,7 +41974,7 @@
 						return a.next = a
 					}
 				}
-				throw new TypeError(yo(e) + " is not iterable")
+				throw new TypeError(ho(e) + " is not iterable")
 			}
 
 			return v.prototype = b, i(x, "constructor", {value: b, configurable: !0}), i(b, "constructor", {value: v, configurable: !0}), v.displayName = l(b, c, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
@@ -42507,7 +42008,7 @@
 				}
 			}, e.values = O, T.prototype = {
 				constructor: T, reset: function (e) {
-					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(N), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
+					if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(S), !e) for (var n in this) "t" === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = t)
 				}, stop: function () {
 					this.done = !0;
 					var t = this.tryEntries[0].completion;
@@ -42554,7 +42055,7 @@
 				}, finish: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
 						var n = this.tryEntries[e];
-						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), N(n), g
+						if (n.finallyLoc === t) return this.complete(n.completion, n.afterLoc), S(n), g
 					}
 				}, catch: function (t) {
 					for (var e = this.tryEntries.length - 1; e >= 0; --e) {
@@ -42563,7 +42064,7 @@
 							var r = n.completion;
 							if ("throw" === r.type) {
 								var i = r.arg;
-								N(n)
+								S(n)
 							}
 							return i
 						}
@@ -42575,7 +42076,7 @@
 			}, e
 		}
 
-		function bo(t, e) {
+		function mo(t, e) {
 			return function (t) {
 				if (Array.isArray(t)) return t
 			}(t) || function (t, e) {
@@ -42600,22 +42101,22 @@
 				}
 			}(t, e) || function (t, e) {
 				if (t) {
-					if ("string" == typeof t) return _o(t, e);
+					if ("string" == typeof t) return go(t, e);
 					var n = {}.toString.call(t).slice(8, -1);
-					return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? _o(t, e) : void 0
+					return "Object" === n && t.constructor && (n = t.constructor.name), "Map" === n || "Set" === n ? Array.from(t) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? go(t, e) : void 0
 				}
 			}(t, e) || function () {
 				throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
 			}()
 		}
 
-		function _o(t, e) {
+		function go(t, e) {
 			(null == e || e > t.length) && (e = t.length);
 			for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
 			return r
 		}
 
-		function Mo(t, e, n, r, i, a, o) {
+		function yo(t, e, n, r, i, a, o) {
 			try {
 				var s = t[a](o), c = s.value
 			} catch (t) {
@@ -42624,18 +42125,18 @@
 			s.done ? e(c) : Promise.resolve(c).then(r, i)
 		}
 
-		function wo(t) {
+		function vo(t) {
 			return function () {
 				var e = this, n = arguments;
 				return new Promise((function (r, i) {
 					var a = t.apply(e, n);
 
 					function o(t) {
-						Mo(a, r, i, o, s, "next", t)
+						yo(a, r, i, o, s, "next", t)
 					}
 
 					function s(t) {
-						Mo(a, r, i, o, s, "throw", t)
+						yo(a, r, i, o, s, "throw", t)
 					}
 
 					o(void 0)
@@ -42643,7 +42144,7 @@
 			}
 		}
 
-		function xo(t, e) {
+		function bo(t, e) {
 			var n = Object.keys(t);
 			if (Object.getOwnPropertySymbols) {
 				var r = Object.getOwnPropertySymbols(t);
@@ -42654,35 +42155,35 @@
 			return n
 		}
 
-		function ko(t) {
+		function _o(t) {
 			for (var e = 1; e < arguments.length; e++) {
 				var n = null != arguments[e] ? arguments[e] : {};
-				e % 2 ? xo(Object(n), !0).forEach((function (e) {
-					Do(t, e, n[e])
-				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : xo(Object(n)).forEach((function (e) {
+				e % 2 ? bo(Object(n), !0).forEach((function (e) {
+					Mo(t, e, n[e])
+				})) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : bo(Object(n)).forEach((function (e) {
 					Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e))
 				}))
 			}
 			return t
 		}
 
-		function Do(t, e, n) {
+		function Mo(t, e, n) {
 			return (e = function (t) {
 				var e = function (t, e) {
-					if ("object" != yo(t) || !t) return t;
+					if ("object" != ho(t) || !t) return t;
 					var n = t[Symbol.toPrimitive];
 					if (void 0 !== n) {
 						var r = n.call(t, e || "default");
-						if ("object" != yo(r)) return r;
+						if ("object" != ho(r)) return r;
 						throw new TypeError("@@toPrimitive must return a primitive value.")
 					}
 					return ("string" === e ? String : Number)(t)
 				}(t, "string");
-				return "symbol" == yo(e) ? e : e + ""
+				return "symbol" == ho(e) ? e : e + ""
 			}(e)) in t ? Object.defineProperty(t, e, {value: n, enumerable: !0, configurable: !0, writable: !0}) : t[e] = n, t
 		}
 
-		const Lo = {
+		const wo = {
 			mixins: [o.A], data: function () {
 				return {
 					nonces: window.ccb_nonces,
@@ -42727,7 +42228,7 @@
 				}, btnStyles: function () {
 					var t = this.getElementAppearanceStyleByPath(this.appearance, "elements.primary_button.data"), e = {};
 					return e.padding = [0, t.field_side_indents].join("px "), Object.keys(t).forEach((function (n) {
-						"background" === n ? e = ko(ko({}, e), t[n]) : "shadow" === n ? e["box-shadow"] = t[n] : e[n] = t[n]
+						"background" === n ? e = _o(_o({}, e), t[n]) : "shadow" === n ? e["box-shadow"] = t[n] : e[n] = t[n]
 					})), e
 				}, orderId: function () {
 					return this.$store.getters.getOrderId
@@ -42749,19 +42250,19 @@
 					var t, e = this.settings.payment_gateway || {};
 					return this.settings ? Object.assign({}, null == e || null === (t = e.cards) || void 0 === t || null === (t = t.card_payments) || void 0 === t ? void 0 : t.stripe) : {}
 				}
-			}, methods: ko({
+			}, methods: _o({
 				applyPayment: function () {
 					var t = this;
-					return wo(vo().mark((function e() {
+					return vo(po().mark((function e() {
 						var n, r, i, a, o, s, c, l, d, u, f, h;
-						return vo().wrap((function (e) {
+						return po().wrap((function (e) {
 							for (; ;) switch (e.prev = e.next) {
 								case 0:
 									if (r = t.$store.getters.getSettings, !t.$store.getters.hasUnusedFields) {
 										e.next = 6;
 										break
 									}
-									return t.loader = !1, i = bo(t.$store.getters.getUnusedFields, 1), null != (a = i[0]) && a.alias && t.scrollIntoRequired(a.alias, a.repeaterIdx), e.abrupt("return");
+									return t.loader = !1, i = mo(t.$store.getters.getUnusedFields, 1), null != (a = i[0]) && a.alias && t.scrollIntoRequired(a.alias, a.repeaterIdx), e.abrupt("return");
 								case 6:
 									if (t.formRequiredFields = [], o = (null === (n = t.$store.getters.getSettings.texts) || void 0 === n ? void 0 : n.form_fields) || {}, s = !1, t.paymentForm.sendFields.forEach((function (e, n) {
 										var r = "".concat(e.name, "_field");
@@ -42793,9 +42294,9 @@
 										break
 									}
 									return e.next = 22, t.stripe.stripe.createPaymentMethod("card", t.stripe.stripeCard).then(function () {
-										var e = wo(vo().mark((function e(n) {
+										var e = vo(po().mark((function e(n) {
 											var i;
-											return vo().wrap((function (e) {
+											return po().wrap((function (e) {
 												for (; ;) switch (e.prev = e.next) {
 													case 0:
 														if (void 0 === n.error || void 0 === n.error.message) {
@@ -42806,8 +42307,8 @@
 														break;
 													case 4:
 														return (i = Object.assign({}, f)).paymentMethodId = n.paymentMethod.id, i.action_type = "intent_payment", e.next = 9, t.$store.dispatch("fetchPayment", i).then(function () {
-															var e = wo(vo().mark((function e(n) {
-																return vo().wrap((function (e) {
+															var e = vo(po().mark((function e(n) {
+																return po().wrap((function (e) {
 																	for (; ;) switch (e.prev = e.next) {
 																		case 0:
 																			if ("success" !== n.status) {
@@ -42891,8 +42392,8 @@
 					})))()
 				}, applyWoo: function (t) {
 					var e = this;
-					return wo(vo().mark((function n() {
-						return vo().wrap((function (n) {
+					return vo(po().mark((function n() {
+						return po().wrap((function (n) {
 							for (; ;) switch (n.prev = n.next) {
 								case 0:
 									e.wooApply(t, e);
@@ -42905,49 +42406,49 @@
 				}, showPaymentNotice: function (t, e) {
 					this.loader = !1, "finish" !== this.getStep && (this.getStep = "notice", this.noticeData = {type: t, title: e})
 				}
-			}, Ya)
+			}, Oa)
 		};
-		var jo = __webpack_require__(7193), So = __webpack_require__.n(jo), No = __webpack_require__(1426), To = __webpack_require__.n(No);
+		var xo = __webpack_require__(7193), ko = __webpack_require__.n(xo), Do = __webpack_require__(1426), Lo = __webpack_require__.n(Do);
 
-		function Oo() {
+		function jo() {
 			var t = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
 			e()(document).ready((function () {
 				e()(".calculator-settings").each((function () {
 					var n = e()(this)[0];
-					(null === n.closest(".elementor-location-popup") || t) && Io(n)
+					(null === n.closest(".elementor-location-popup") || t) && No(n)
 				}))
 			}))
 		}
 
-		function Io(t) {
+		function No(t) {
 			var n, a = e()(t).data("calc-id"), o = "ccb_front_template_".concat(a);
 			window[o] && (i.A.template = null === (n = window[o]) || void 0 === n ? void 0 : n.template);
 			var s = new (r())({
 				el: t, beforeCreate: function () {
 					this.$store = function (t) {
 						return new (V().Store)(t)
-					}(So()(na)), this.$store.commit("setCurrentLocation", window.location.origin), this.$store.commit("updateMainCalcId", a), this.$store.commit("updateCalcId", a), window.ajax_window.hasOwnProperty("language") && this.$store.commit("setLanguage", window.ajax_window.language), window.ajax_window.hasOwnProperty("payments") && this.$store.commit("setStaticPayments", window.ajax_window.payments), window.ajax_window.hasOwnProperty("general_settings") && this.$store.commit("setCalcGeneralSettings", window.ajax_window.general_settings), window.ajax_window.hasOwnProperty("dateFormat") && this.$store.commit("setDateFormat", window.ajax_window.dateFormat), window.ajax_window.hasOwnProperty("translations") && this.$store.commit("setTranslations", window.ajax_window.translations), _().updateLocale(window.ajax_window.language, {week: {dow: 1}})
+					}(ko()(Zi)), this.$store.commit("setCurrentLocation", window.location.origin), this.$store.commit("updateMainCalcId", a), this.$store.commit("updateCalcId", a), window.ajax_window.hasOwnProperty("language") && this.$store.commit("setLanguage", window.ajax_window.language), window.ajax_window.hasOwnProperty("payments") && this.$store.commit("setStaticPayments", window.ajax_window.payments), window.ajax_window.hasOwnProperty("general_settings") && this.$store.commit("setCalcGeneralSettings", window.ajax_window.general_settings), window.ajax_window.hasOwnProperty("dateFormat") && this.$store.commit("setDateFormat", window.ajax_window.dateFormat), window.ajax_window.hasOwnProperty("translations") && this.$store.commit("setTranslations", window.ajax_window.translations), _().updateLocale(window.ajax_window.language, {week: {dow: 1}})
 				}, components: {"calc-builder-front": i.A}
 			});
 			window.ccb_apps || (window.ccb_apps = {}), window.ccb_apps["ccb_app_".concat(a)] = s
 		}
 
-		r().component("vue-phone-number", To()), jQuery.noConflict(), window.addEventListener("load", (function () {
+		r().component("vue-phone-number", Lo()), jQuery.noConflict(), window.addEventListener("load", (function () {
 			window.elementorFrontend ? (jQuery(document).on("elementor/popup/show", (function () {
 				e()(".calculator-settings").each((function () {
 					var t = e()(this)[0];
-					t.closest(".elementor-location-popup") && Io(t)
+					t.closest(".elementor-location-popup") && No(t)
 				}))
-			})), e()(".calculator-settings").length > 0 && Oo(!0)) : Oo()
+			})), e()(".calculator-settings").length > 0 && jo(!0)) : jo()
 		})), r().filter("moment", (function (t, e) {
 			return _()(t).format(e)
-		})), r().use(V()), r().use(sa), r().use(fa), r().mixin(aa), r().component("loader", {
+		})), r().use(V()), r().use(ra), r().use(ca), r().mixin(ea), r().component("loader", {
 			props: {width: {default: "60px"}, height: {default: "60px"}, border: {default: "2px solid #00b163"}}, computed: {
 				generateStyle: function () {
 					return {width: this.width, height: this.height, border: this.borderColor}
 				}
 			}, template: '<div class="ccb-loader" :style="generateStyle"></div>'
-		}), r().component("loader-wrapper", a), window.ajax_window.templates && (ya.template = window.ajax_window.templates["ccb-pro-features"], xa.template = window.ajax_window.templates["ccb-thank-you-page"], Qa.template = window.ajax_window.templates["calc-payments"], eo.template = window.ajax_window.templates["calc-woo-checkout"], no.template = window.ajax_window.templates["invoice-btn"], go.template = window.ajax_window.templates["calc-form"], Lo.template = window.ajax_window.templates["form-payments"], r().component("cost-pro-features", ya), r().component("calc-thank-you-page", xa), r().component("calc-payments", Qa), r().component("calc-woo-checkout", eo), r().component("invoice-btn", no), r().component("calc-form", go), r().component("form-payments", Lo), ei.forEach((function (t) {
+		}), r().component("loader-wrapper", a), window.ajax_window.templates && (ha.template = window.ajax_window.templates["ccb-pro-features"], ba.template = window.ajax_window.templates["ccb-thank-you-page"], Ua.template = window.ajax_window.templates["calc-payments"], Ka.template = window.ajax_window.templates["calc-woo-checkout"], Za.template = window.ajax_window.templates["invoice-btn"], fo.template = window.ajax_window.templates["calc-form"], wo.template = window.ajax_window.templates["form-payments"], r().component("cost-pro-features", ha), r().component("calc-thank-you-page", ba), r().component("calc-payments", Ua), r().component("calc-woo-checkout", Ka), r().component("invoice-btn", Za), r().component("calc-form", fo), r().component("form-payments", wo), ei.forEach((function (t) {
 			t.content.template = window.ajax_window.templates[t.template_name], r().component(t.component_name, t.content)
 		})))
 	})()
