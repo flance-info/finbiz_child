@@ -37800,7 +37800,7 @@
 					sendFormRequires: [{required: !1}, {required: !1},
 						{required: !1}, {required: !1}, {required: !1},
 						{required: !1}, {required: !1}, {required: !1},
-						{required: !1}
+						{required: !1}, {required: !1}, {required: !1}
 					],
 					woo_products: {
 						tour_title: "Woo Products",

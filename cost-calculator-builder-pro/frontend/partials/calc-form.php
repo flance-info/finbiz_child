@@ -123,7 +123,7 @@ $general_settings = CCBSettingsData::get_calc_global_settings();
 							<span class="ccb-required-mark">*</span>
 						</div>
 						<div class="calc-input-wrapper ccb-field">
-							<input type="text" v-model="sendFields[8].value" @input="clearRequired('name_field')" :disabled="loader" class="calc-input ccb-field ccb-appearance-field">
+							<input type="text" v-model="sendFields[0].value" @input="clearRequired('name_field')" :disabled="loader" class="calc-input ccb-field ccb-appearance-field">
 						</div>
 					</div>
 
