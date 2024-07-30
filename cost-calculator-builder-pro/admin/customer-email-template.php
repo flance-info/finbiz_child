@@ -7,568 +7,485 @@
 	<meta name="x-apple-disable-message-reformatting">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="telephone=no" name="format-detection">
-	<link rel="preconnect" href="https://stijndv.com">
-	<link rel="stylesheet" href="https://stijndv.com/fonts/Eudoxus-Sans.css"> <?php // phpcs:ignore?>
 	<title>Order</title>
-
 	<style>
-		h1, p, span {
+		* {
 			margin: 0;
 			padding: 0;
+			text-indent: 0;
 		}
 
-		.text-right {
-			text-align: right;
-		}
-
-		.body {
-			margin:0;
-			font-family:-apple-system, 'Eudoxus Sans', Sans-serif;
-			color: <?php echo esc_attr( $email_settings['main_text_color']['value'] ); ?>;
-		}
-
-		.wrapper-email {
-			max-width: 800px;
-			margin: 0 auto;
-			background-color: <?php echo esc_attr( $email_settings['template_color']['value'] ); ?>;
-		}
-
-		.table-header {
-			background-color: #fff;
-		}
-
-		.table-body {
-			max-width: 600px;
-			margin: 0px auto;
-		}
-
-		.table-body-row {
-			max-width: 600px;
-		}
-
-		.table-body-wrapper {
-			max-width: 600px;
-			margin: 0 auto;
-		}
-
-		.header__logo {
-			padding: 20px 77px;
-			margin: 0 auto;
-			background-color: <?php echo esc_attr( $email_settings['content_bg']['value'] ); ?>;
-		}
-
-		.header__logo img {
-			max-height: 150px;
-			display: block;
-		}
-
-		.header__logo.right img {
-			margin-left: auto;
-			margin-right: 20px;
-		}
-
-		.header__logo.center img {
-			margin: 0px auto;
-		}
-
-		.header__logo.left img {
-			margin-left: 20px;
-			margin-right: auto;
-		}
-
-		.email-title {
-			font-family: 'Eudoxus Sans', Sans-serif;
+		.s1 {
+			color: black;
+			font-family: "Century Gothic", sans-serif;
 			font-style: normal;
-			font-weight: 700;
-			font-size: 24px;
-			line-height: 30px;
-			margin-top: 30px;
+			font-weight: normal;
+			text-decoration: none;
+			font-size: 32px; /* 21px * 1.5 */
 		}
 
-		.order {
-			width: 100%;
-		}
-
-		.order-item {
-			width: 49%;
-			font-weight: 500;
-			font-size: 16px;
-			display: inline-block;
-			line-height: 20px;
-		}
-
-		.summary {
-			margin: 0 auto;
-			max-width: 600px;
-			background: <?php echo esc_attr( $email_settings['content_bg']['value'] ); ?>;
-			margin-top: 30px;
-		}
-
-		.summary-container {
-			padding: 40px;
-			margin-bottom: 20px;
-		}
-
-		.summary-order {
-			font-size: 20px;
-			font-weight: 700;
-			margin-bottom: 20px;
-		}
-
-		.summary-title .date {
+		p {
+			color: black;
+			font-family: "Century Gothic", sans-serif;
 			font-style: normal;
-			font-weight: 500;
-			font-size: 16px;
-			line-height: 20px;
-			width: 34%;
-			display: inline-block;
-			text-align: right;
-			margin-top: 6px;
+			font-weight: normal;
+			text-decoration: none;
+			font-size: 11px; /* 7px * 1.5 */
+			margin: 0px;
 		}
 
-		.summary-title .title {
-			font-weight: 700;
-			font-size: 24px;
-			line-height: 30px;
-			width: 65%;
-			display: inline-block;
-		}
-
-		.summary-list-item {
-			padding: 15px 0;
+		.s2 {
+			color: black;
+			font-family: "Times New Roman", serif;
 			font-style: normal;
-			font-weight: 500;
-			font-size: 14px;
-			line-height: 18px;
-			border-bottom: 1px solid <?php echo esc_attr( $email_settings['border_color']['value'] ); ?>;
+			font-weight: normal;
+			text-decoration: none;
+			font-size: 11px; /* 7px * 1.5 */
 		}
 
-		.summary-list-group {
-			padding-left: 15px;
-			margin-bottom: 15px;
-			border-bottom: 1px solid <?php echo esc_attr( $email_settings['border_color']['value'] ); ?>;
-			padding-bottom: 5px;
-		}
-
-		.summary-list-group.break-border {
-			border: none;
-		}
-
-		.summary-list-group .summary-list-item {
-			padding: 5px 0 0 0 !important;
-			margin-bottom: 0 !important;
-			border: none !important;
-		}
-
-		.summary-list-group .summary-list-item .summary-list-item-name,
-		.summary-list-group .summary-list-item .summary-list-item-value {
-			font-weight: 500 !important;
-		}
-
-		.summary-list-group-title {
-			font-weight: 800;
-			font-size: 14px;
-		}
-
-		.summary-list-item.break-border {
-			border-bottom: none !important;
-		}
-
-		.summary-list-item-name {
-			width: 49%;
-			display: inline-block;
+		a {
+			color: #467785;
+			font-family: "Century Gothic", sans-serif;
 			font-style: normal;
-			font-weight: 500;
-			font-size: 14px;
-			line-height: 18px;
+			font-weight: normal;
+			text-decoration: underline;
+			font-size: 11px; /* 7px * 1.5 */
 		}
 
-		.summary-list-item-value {
-			width: 50%;
-			display: inline-block;
+		.s3 {
+			color: #467785;
+			font-family: "Century Gothic", sans-serif;
 			font-style: normal;
-			font-weight: 700;
-			font-size: 14px;
-			line-height: 18px;
-			text-align: right;
+			font-weight: normal;
+			text-decoration: none;
+			font-size: 11px; /* 7px * 1.5 */
 		}
 
-		.summary-list-sub-items li::marker {
-			color:  #00193180;
-			opacity: 0.1;
+		.s4 {
+			color: black;
+			font-family: "Century Gothic", sans-serif;
+			font-style: italic;
+			font-weight: normal;
+			text-decoration: none;
+			font-size: 8px; /* 5px * 1.5 */
 		}
 
-		.summary-list-sub-items li {
-			margin-bottom: 10px;
-		}
-
-		.summary-total {
-			max-width: 600px;
-			padding: 7px 0;
-			border-top: 2px solid  <?php echo esc_attr( $email_settings['border_color']['value'] ); ?>;
-		}
-
-		.summary-total-item {
-			display: inline-block;
+		.s5 {
+			color: #F00;
+			font-family: "Century Gothic", sans-serif;
 			font-style: normal;
-			font-weight: 700;
-			font-size: 18px;
-			line-height: 23px;
+			font-weight: normal;
+			text-decoration: none;
+			font-size: 12px; /* 8px * 1.5 */
 		}
 
-		.other-totals {
-			border-top: 1px dashed #ccc;
-			padding: 2px 0;
-		}
-
-		.other-totals .summary-total-item {
-			font-size: 14px;
-		}
-
-		.description {
-			max-width: 600px;
-			margin: 0px auto;
+		.s7 {
+			color: black;
+			font-family: "Century Gothic", sans-serif;
 			font-style: normal;
-			margin-bottom: 50px;
-
+			font-weight: normal;
+			text-decoration: none;
+			font-size: 11px; /* 7px * 1.5 */
 		}
 
-		.ql-editor .ql-align-right {
-			text-align: right;
-		}
-		.ql-editor .ql-align-justify {
-			text-align: justify;
-		}
-
-		.ql-editor .ql-align-center {
-			text-align: center;
+		.s8 {
+			color: black;
+			font-family: "Century Gothic", sans-serif;
+			font-style: italic;
+			font-weight: normal;
+			text-decoration: none;
+			font-size: 11px; /* 7px * 1.5 */
 		}
 
-		.ql-editor .ql-align-left {
+		.s9 {
+			color: black;
+			font-family: "Century Gothic", sans-serif;
+			font-style: italic;
+			font-weight: normal;
+			text-decoration: none;
+			font-size: 8px; /* 5px * 1.5 */
+		}
+
+		.s10 {
+			color: black;
+			font-family: "Century Gothic", sans-serif;
+			font-style: normal;
+			font-weight: normal;
+			text-decoration: none;
+			font-size: 11px; /* 7px * 1.5 */
+		}
+
+		.s11 {
+			color: black;
+			font-family: "Times New Roman", serif;
+			font-style: normal;
+			font-weight: normal;
+			text-decoration: none;
+			font-size: 11px; /* 7px * 1.5 */
+		}
+
+		.s12 {
+			color: black;
+			font-family: "Century Gothic", sans-serif;
+			font-style: normal;
+			font-weight: normal;
+			text-decoration: none;
+			font-size: 8px; /* 5px * 1.5 */
+		}
+
+		.s13 {
+			color: black;
+			font-family: "Century Gothic", sans-serif;
+			font-style: normal;
+			font-weight: normal;
+			text-decoration: none;
+			font-size: 13.5px; /* 9px * 1.5 */
+		}
+
+		.s14 {
+			color: black;
+			font-family: "Century Gothic", sans-serif;
+			font-style: normal;
+			font-weight: normal;
+			text-decoration: none;
+			font-size: 11px; /* 7px * 1.5 */
+		}
+
+		table, tbody {
+			vertical-align: top;
+			overflow: visible;
+		}
+
+		.sth_left {
+			padding-top: 1px;
+			padding-left: 1px;
+			text-indent: 0px;
 			text-align: left;
 		}
 
-		.ql-editor ol,
-		.ql-editor ul {
-			padding-left: 1.5em;
-			list-style-type: none;
-		}
-
-		.ql-editor ul {
-			list-style-type: none;
-			padding-left: 0;
-			margin-left: 0;
-		}
-
-		.ql-editor ul li::before {
-			content: '\2022';
-		}
-
-		.ql-editor ol {
-			list-style-type: number;
-		}
-
-		.ql-editor li::before {
-			display: inline-block;
-			margin-right: 0.3em;
+		.sth_right {
+			padding-top: 1px;
+			padding-right: 12px;
+			text-indent: 0px;
 			text-align: right;
-			white-space: nowrap;
-			width: 1.2em;
 		}
 
-		.summary-files-list {
-			list-style: none;
-			margin: 20px 0;
-			padding: 0;
+		.stl {
+			text-indent: 0px;
+			text-align: left;
 		}
 
-		.summary-files-list-item {
-			padding: 3px 10px;
-			border: 1px solid  <?php echo esc_attr( $email_settings['border_color']['value'] ); ?>;
-			border-radius: 4px;
-			margin-bottom: 10px;
+		.stb {
+			border-bottom-style: dotted;
+			border-bottom-width: 1px;
+			color: #000000;
 		}
 
-		.summary-files-icon {
-			display: inline-block;
-			margin-right: 15px;
+		.stbt {
+			border-top-width: 1px
 		}
 
-		.summary-files-icon img {
-			margin-bottom: 3px;
+		.stbtl {
+			padding-top: 1px;
+			padding-left: 17px;
+			text-indent: 0px;
+			text-align: left;
 		}
 
-		.summary-files-info {
-			display: inline-block;
+		.stbot {
+			border-bottom-style: solid;
+			border-bottom-width: 1px
 		}
 
-		.summary-files-info .title {
-			display: inline-block;
-			width: 100%;
-			font-style: normal;
-			font-weight: 700;
-			font-size: 12px;
-			line-height: 15px;
+		.stbold {
+			font-weight: bold;
 		}
 
-		.summary-files-info .filename {
-			display: inline-block;
-			font-style: normal;
-			font-weight: 500;
-			font-size: 14px;
-			line-height: 18px;
+		.stn {
+			font-weight: normal
 		}
 
-		.summary-files-link {
-			background-color:  <?php echo esc_attr( $email_settings['button_color']['value'] ); ?>;
-			padding: 9px 20px;
-			border-radius: 4px;
-			text-decoration: none;
-			text-transform: none;
-			font-style: normal;
-			font-weight: 700;
-			font-size: 14px;
-			line-height: 18px;
-			color: <?php echo esc_attr( $email_settings['main_text_color']['value'] ); ?>;
-			transition: 300ms ease;
-			float: right;
-			margin-top: 3px;
-		}
 
-		.summary-files-link:hover {
-			background-color: #dbdbdb;
-		}
-
-		.footer {
-			padding: 15px;
-			border-top: 2px solid #DDDDDD;
-			font-style: normal;
-			font-weight: 500;
-			font-size: 14px;
-			line-height: 18px;
-		}
-
-		.footer span {
-			vertical-align: text-bottom;
-		}
-
-		.footer-container {
-			max-width: 600px;
-			margin: 0 auto;
+		.cont {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 			text-align: center;
 		}
-		.footer-wrapper {
-			display: inline-block;
+
+		.col {
+			margin-bottom: 20px;
 		}
 
-		.footer-wrapper img {
-			max-height: 20px;
-			margin-left: 5px;
-			vertical-align: bottom;
+		.c4 {
+			flex: 1;
 		}
 
-		.show-unit .summary-list {
-			padding: 0 10px;
-		}
-
-		.show-unit .summary-list .summary-list-item {
-			padding: 5px 0 10px 0;
-			border: none;
-			border-bottom: 1px dashed <?php echo esc_attr( $email_settings['border_color']['value'] ); ?>;
-			margin-bottom: 5px;
-		}
-
-		.show-unit .summary-list .summary-list-item:last-child {
-			border: none;
-		}
-
-		.show-unit .summary-list .summary-list-item-name,
-		.show-unit .summary-list .summary-list-item-value {
-			font-style: normal;
-			font-weight: 700;
-			font-size: 14px;
-			line-height: 18px;
-			color: <?php echo esc_attr( $email_settings['main_text_color']['value'] ); ?>;
-		}
-
-		.show-unit .summary-list-item-name {
-			width: 49%;
-		}
-
-		.show-unit .summary-list-sub-items {
-			padding: 5px 0 5px 35px;
-			margin: 0px;
-			list-style: none;
-		}
-
-		.show-unit .summary-list-sub-items li div {
-			font-style: normal !important;
-			font-weight: 500 !important;
-			font-size: 12px !important;
-			line-height: 15px !important;
-			color: <?php echo esc_attr( $email_settings['main_text_color']['value'] ); ?> !important;
-			opacity: 0.7 !important;
-		}
-
-		.show-unit .summary-list-sub-items li {
-			margin-bottom: 5px;
-		}
-
-		.show-unit .summary-list-sub-items li .summary-list-item-value {
-			margin-left: 5px !important;
-		}
-
-		.show-unit .summary-list-item-value {
-			width: 49%;
-			display: inline-block;
-			text-align: right;
-			word-break: break-all;
-		}
-
-		.show-unit .summary-total {
-			width: 500px;
-			margin: 15px auto;
-		}
-
-		.summary-list-item-unit {
-			width: 100%;
-			display: none;
-			font-style: normal;
-			font-weight: 500;
-			font-size: 12px;
-			line-height: 18px;
-			color: <?php echo esc_attr( $email_settings['main_text_color']['value'] ); ?>;
-			opacity: 0.7;
-			padding-left: 35px;
-		}
-
-		.calc-subtotal-list-header {
+		.logo-col {
 			display: flex;
-			padding: 5px 10px;
-			background-color: <?php echo esc_attr( $email_settings['border_color']['value'] ); ?>;
-			margin-bottom: 5px;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.logo-col img {
+			max-width: 100px;
+			height: auto;
+		}
+
+		.comp-name {
 			margin-top: 10px;
-			color: <?php echo esc_attr( $email_settings['main_text_color']['value'] ); ?>;
-		}
-		.calc-subtotal-list-header span {
-			font-style: normal;
-			font-weight: 700;
-			font-size: 14px;
-			line-height: 18px;
-			display: inline-block;
 		}
 
-		.calc-subtotal-list-header__name {
-			width: 49%;
+		.content-col {
+			max-width: 600px;
 		}
 
-		.calc-subtotal-list-header__value {
-			width: 49%;
-			text-align: right;
+		.details {
+			display: flex;
+			justify-content: space-between;
+			margin: 20px 0;
 		}
 
-		.show-unit .summary-list-item-unit {
-			display: inline-block !important;
+		.details p {
+			margin: 0;
 		}
 
-		.show-unit .summary-list-item-space {
-			display: block;
+
+		.cont {
+			flex-direction: row;
+			justify-content: space-between;
+			text-align: center;
 		}
 
-		.show-unit .summary-list-sub-items .summary-list-item-name,
-		.show-unit .summary-list-sub-items .summary-list-item-value {
-			width: auto !important;
+		.logo-col {
+			flex: 1;
 		}
 
-		@media screen and (max-width: 540px) {
-			.email-title {
-				font-size: 20px;
-			}
-
-			.order-item {
-				font-size: 14px;
-			}
-
-			.summary-container {
-				padding: 20px 10px;
-			}
-
-			.summary-title {
-				font-size: 20px;
-			}
-
-			.summary-list-item {
-				padding: 10px 0;
-			}
-
-			.summary-list-item-name {
-				font-size: 12px;
-				line-height: 14px;
-				width: 48%;
-			}
-
-			.summary-list-item-value {
-				font-size: 12px;
-				line-height: 14px;
-			}
-
-			.summary-list-sub-items {
-				padding: 0 0 0 28px;
-				margin: 4px 0;
-			}
-
-			.summary-list-sub-items li {
-				margin-bottom: 6px;
-			}
-
-			.summary-total-item {
-				font-size: 16px;
-			}
-
-			.summary-files-link {
-				display: block;
-				float: none;
-				text-align: center;
-				margin-top: 10px;
-			}
-
-			.description {
-				font-size: 12px;
-			}
-
-			.footer-wrapper span {
-				font-size: 12px;
-			}
+		.content-col {
+			flex: 3;
+			max-width: 100%;
 		}
 
-		.ccb-discount-wrapper {
-			display: inline-block;
-			width: 49%;
+		.details p {
+			margin-right: 20px;
 		}
 
-		.ccb-discount-wrapper-right {
-			text-align: right;
-			width: 50%;
+		.cn {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+			text-align: left;
 		}
 
-		.ccb-discount-off {
-			font-size: 10px !important;
-			font-weight: 500;
-			color: <?php echo esc_attr( $email_settings['content_bg']['value'] ); ?>;
-			background: <?php echo esc_attr( $email_settings['button_color']['value'] ); ?>;
-			padding: 2px 4px;
-			border-radius: 4px;
-			vertical-align: middle;
-			display: inline !important;
-			line-height: 1.1 !important;
+		.cl {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+
+
+		.cn {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.cl {
+			width: 45%;
+		}
+
+		a {
+			color: #007bff;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
 		}
 
 	</style>
-
 </head>
 
 <body width="100%" class="body">
-	<div class="wrapper-email">ddddddddddddddddddddddd
+	<div class="cont">
+	<div class="col logo-col">
+
+		<?php
+			if ( ! empty( $email_settings['logo'] ) ) {
+				$header_logo = '<div class="header__logo ' . esc_attr( $email_settings['logo_position'] ) . '">
+					<img style="' . apply_filters( 'ccb_email_logo_style', $calc_id ) . '" src="' . esc_url( $email_settings['logo'] ) . '" alt="Email Logo">
+				</div>';
+				echo wp_kses_post( apply_filters( 'ccb_email_logo_html', $header_logo, $calc_id ) );
+			}
+			?>
+	</div>
+	<div class="col content-col">
+		<h2>OFFERT</h2>
+		<div class="details">
+			<p><strong>Utförd av:</strong> Anställd: Johan Ekman</p>
+			<p><strong>Datum:</strong> 2024-07-22</p>
+		</div>
+		<p>
+			Detta dokument utgör en offert för de specificerade tjänster och behov som anges nedan,
+			Detaljspecifikation. Om behov av ytterligare tjänster tillkommer vid ett senare tillfälle,
+			eller om behovet av de angivna tjänsterna förändras,
+			kan priset justeras i enlighet med dessa ändringar.</p>
+	</div>
+	<div class="col c4"></div>
+</div>
+
+<div class="cont">
+	<div class="col c4"></div>
+	<div class="cn content-col">
+		<div class="cl">
+			<p><strong>KUND (Uppdragsgivare)</strong></p>
+			<p>Företag: NELIA Partner AB<br>
+				Org.nr: 559487-5303<br>
+				Kontakt person: Nermin Imamovic<br>
+				Telefon: +46739901073<br>
+				E-post: <a href="mailto:nermin@neliapartner.se">nermin@neliapartner.se</a></p>
+		</div>
+		<div class="cl">
+			<p><strong>Leverantör (Uppdragstagare)</strong></p>
+			<p>Företag: BokföringsKompaniet Sverige AB<br>
+				Org.nummer: 559475-9366<br>
+				Kontakt person: Johan Ekman<br>
+				Telefon: 010 280 48 90<br>
+				E-post: <a href="mailto:support@bokforingskompaniet.se">support@bokforingskompaniet.se</a></p>
+		</div>
+	</div>
+	<div class="col c4"></div>
+</div>
+
+<p style="text-indent: 0px;text-align: left;"><br/></p>
+<p class="s4" style="padding-bottom: 1px;padding-left: 1px;text-indent: 0px;text-align: left;">(Exklusive moms)</p>
+<div class="textbox" style="border:1px solid #000000;display:block;left:0px;min-height:14px;top:0px;width:auto;"><p style="text-indent: 0px;text-align: center;">
+	<span style="color: black; font-family:'Century Gothic', sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10px;">
+	PROGNOSTISERAD MÅNATLIG KOSTNAD:</span>
+</p>
+</div>
+<div class="textbox" style="background:#DAF2CF;border:1px solid #000000;display:block;left:13px;min-height:16px;top:0px;width:auto;">
+	<p class="s13 stbold" style="padding-top: 1px;text-indent: 0px;text-align: center;">1625 SEK</p></div>
+
+<p style="padding-left: 6px;text-indent: 0px;text-align: left;"/>
+<p style="text-indent: 0px;text-align: left;"><br/></p>
+<p class="s5 stb" style="padding-bottom: 1px;padding-left: 1px;text-indent: 0px;text-align: center;">*<span style="color: #000;">PRISPLANER</span></p>
+<table style="border-collapse:collapse;margin-left:8px; width: 100%;" cellspacing="0">
+	<tr style="height:12px">
+		<td colspan="4" class="stbt">
+			<p class="s7 stbold">Vid val av rörligt pris:</p>
+			<p class="s8">Fakturering sker endast för de tjänster och den omfattning</p>
+			<p class="s8" style="padding-left: 1px;text-indent: 0px;text-align: left;">som faktiskt utförs under den aktuella månaden.</p>
+		</td>
+		<td colspan="2" class="stbt"><p class="s7 stbold">Vid val av fast pris:</p>
+			<p class="s8">Låses det månatliga snittet, ovan, i 12 månader.</p></td>
+	</tr>
+
+	<tr style="height:13px;border:solid 2px #000">
+		<td colspan="6" style="width:auto; " class="stbot">
+			<p class="s7" style="text-indent: 0px;text-align: center;">DETALJSPECIFIKATION</p>
+		</td>
+	</tr>
+	<tr style="height:23px">
+		<td colspan="6" style="border-top-style:solid;border-top-width:1px"><p style="text-indent: 0px;text-align: left;"><br/></p>
+			<p class="s9" style="padding-left: 1px;text-indent: 0px;text-align: left;">(Exklusive moms)</p></td>
+
+	</tr>
+</table>
+
+<table style="border-collapse:collapse;margin-left:8px;  width: 100%;" cellspacing="0">
+	<tr style="height:12px">
+		<td style="width:20%" bgcolor="#CAEDFB"><p class="s7 sth_left stbold">Tjänst </p></td>
+		<td style="width:20%" bgcolor="#CAEDFB"><p class="s7 sth_left stbold">Innehåll per enhet</p></td>
+		<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold">Enhet </p></td>
+		<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"> Enhetspris </p></td>
+		<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold">Antal enheter</p></td>
+		<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold">Total kostnad</p></td>
+		<td style="width:7.5%" bgcolor="#CAEDFB"><p><br/></p></td>
+	</tr>
+
+	<tr style="height:12px">
+		<td style="width:20%"><p class="s8 sth_left"></p></td>
+		<td style="width:20%"><p class="s8 sth_left stl">(Upp till)</p></td>
+		<td style="width:17.5%"><p class="s8 sth_right"></p></td>
+		<td style="width:17.5%"><p class="s8 sth_right "> (SEK) </p></td>
+		<td style="width:17.5%"><p class="s8 sth_right"></p></td>
+		<td style="width:17.5%"><p class="s8 sth_right"></p></td>
+		<td style="width:7.5%"><p style=""><br/></p></td>
+	</tr>
+	<tr style="height:12px">
+		<td style="width:20%" class="stb"><p class="s7 sth_left stbold">REDOVISNING </p></td>
+		<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
+		<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+		<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
+		<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+		<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> 375 <span class="s8 stn">SEK</span></p></td>
+		<td style="width:7.5%" class="stb"><p class="s10"><br/></p></td>
+	</tr>
+
+	<tr style="height:12px">
+		<td style="width:20%" class="stbt"><p class="s7  stbtl">Löpande Bokföring </p></td>
+		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">15 Verifikat (affärshändelser)</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s8 sth_right "> 250</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">1</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s10 sth_right">250</p></td>
+		<td style="width:7.5%" class="stbt"><p class="s10"><br/></p></td>
+	</tr>
+
+	<tr style="height:12px">
+		<td style="width:20%" class="stbt"><p class="s7  stbtl">SKV: Momsdeklaration </p></td>
+		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s8 sth_right "> 250</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">0.5</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s10 sth_right">125</p></td>
+		<td style="width:7.5%" class="stbt"><p class="s10"><br/></p></td>
+	</tr>
+
+	<tr style="height:12px">
+		<td style="width:20%" class="stbt"><p class="s7  stbtl">SKV: Punktskattedeklaration </p></td>
+		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s8 sth_right "> 250</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">0</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s10 sth_right">0</p></td>
+		<td style="width:7.5%" class="stbt"><p class="s10"><br/></p></td>
+	</tr>
+
+	<tr style="height:12px">
+		<td style="width:20%" class="stbt"><p class="s7  stbtl">Rapporter &amp; Uppföljning </p></td>
+		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s8 sth_right "> 250</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">0</p></td>
+		<td style="width:17.5%" class="stbt"><p class="s10 sth_right">0</p></td>
+		<td style="width:7.5%" class="stbt"><p class="s10"><br/></p></td>
+	</tr>
+
+	<tr style="height:13px">
+		<td style="width:20%" class="stbot"><p class="s7 " style="padding-top: 6px;padding-left: 1px;text-indent: 0px;text-align: left;">PROGNOSTISERAD TOTAL ÅRSKOSTNAD</p></td>
+		<td style="width:20%" class="stbot"><p class="s7 sth_left stl"></p></td>
+		<td style="width:17.5%" class="stbot"><p class="s8 sth_right"></p></td>
+		<td style="width:17.5%" class="stbot"><p class="s8 sth_right "></p></td>
+		<td style="width:17.5%" class="stbot"><p class="s8 sth_right"></p></td>
+		<td style="width:17.5%" class="stbot"><p class="s10 sth_right">19 500 SEK</p></td>
+		<td style="width:7.5%" class="stbot"><p class="s10"><br/></p></td>
+	</tr>
+
+	<tr style="height:15px" bgcolor="#DAF2CF">
+		<td style="width:20%;border-top-style:solid;border-top-width:1px;border-left-style:solid;border-left-width:1px;" class="stbot">
+			<p class="s7 stbold" style="padding-top: 6px;padding-left: 1px;text-indent: 0px;text-align: left;">PROGNOSTISERAD TOTAL ÅRSKOSTNAD</p>
+		</td>
+		<td style="width:20%;" class="stbot"><p class="s7 sth_left stl"></p></td>
+		<td style="width:17.5%;" class="stbot"><p class="s8 sth_right"></p></td>
+		<td style="width:17.5%;" class="stbot"><p class="s8 sth_right "></p></td>
+		<td style="width:17.5%;" class="stbot"><p class="s8 sth_right"></p></td>
+		<td style="width:17.5%;" class="stbot"><p class="s13 sth_right stbold">1625 <span class="s14 stbold">SEK</span></p></td>
+		<td style="width:7.5%;" class="stbot"><p class="s10"><br/></p></td>
+	</tr>
+
+</table>
+	<div class="wrapper-email">
 		<div class="table-header">
 			<?php
 			if ( ! empty( $email_settings['logo'] ) ) {
@@ -612,7 +529,7 @@
 									<span class="calc-subtotal-list-header__value"><?php esc_html_e( 'Total', 'cost-calculator-builder-pro' ); ?></span>
 								</div>
 							<?php endif; ?>
-							<div class="summary-list">rrrrrrrrrrrrrrrrr
+							<div class="summary-list">
 								<?php
 								if ( isset( $fields ) && count( $fields ) > 0 ) {
 
