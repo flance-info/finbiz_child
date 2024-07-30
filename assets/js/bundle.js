@@ -37785,8 +37785,8 @@
 						summary_display: {enable: !1, form_title: "You will get a quote and invoice after submitting the form", submit_btn_text: "Get a quote", action_after_submit: "send_to_email"}
 					},
 					emailOptions: [{adminEmailAddress: "", emailDescription: ""}],
-					sendFormFields: [{name: "name", required: !0, value: ""}, {name: "email", required: !0, value: ""}, {name: "phone", required: !0, value: ""}, {name: "message", required: !1, value: ""}],
-					sendFormRequires: [{required: !1}, {required: !1}, {required: !1}, {required: !1}],
+					sendFormFields: [{name: "name", required: !0, value: ""}, {name: "email", required: !0, value: ""}, {name: "phone", required: !0, value: ""}, {name: "message", required: !1, value: ""}, {name: "staff", required: !1, value: ""}, {name: "company_name", required: !1, value: ""}, {name: "org_number", required: !1, value: ""}, {name: "last_name", required: !1, value: ""}],
+					sendFormRequires: [{required: !1}, {required: !1}, {required: !1}, {required: !1}, {required: !1}, {required: !1}, {required: !1}, {required: !1}],
 					woo_products: {
 						tour_title: "Woo Products",
 						tour_description: "Enables Calculator on the product page.",
@@ -41445,6 +41445,7 @@
 					t.parentNode.parentNode.after(e)
 				}, sendData: function (t) {
 					var n = this;
+					console.log('send');
 					return ro(to().mark((function r() {
 						var i, a, o, s, c, l, d, u, f, h, p, m, g, y, v, b;
 						return to().wrap((function (r) {
