@@ -314,7 +314,6 @@
 				$header_logo = '<div class="header__logo ' . esc_attr( $email_settings['logo_position'] ) . '">
 					<img style="' . apply_filters( 'ccb_email_logo_style', $calc_id ) . '" src="' . esc_url( $email_settings['logo'] ) . '" alt="Email Logo">
 				</div>';
-				echo wp_kses_post( apply_filters( 'ccb_email_logo_html', $header_logo, $calc_id ) );
 			}
 			?>
 	</div>
@@ -322,7 +321,7 @@
 		<h2>OFFERT</h2>
 		<div class="details">
 			<p><strong>Utförd av:</strong> Anställd: Johan Ekman</p>
-			<p><strong>Datum:</strong> 2024-07-22</p>
+			<p><strong>Datum:</strong> <?php echo date('F j, Y'); ?></p>
 		</div>
 		<p>
 			Detta dokument utgör en offert för de specificerade tjänster och behov som anges nedan,
@@ -330,7 +329,7 @@
 			eller om behovet av de angivna tjänsterna förändras,
 			kan priset justeras i enlighet med dessa ändringar.</p>
 	</div>
-	<div class="col c4"></div>
+	<div class="col c4">Offertnummer: <?php if ( ! empty( $order_id ) )  echo esc_html( $order_id ); ?></div>
 </div>
 
 <div class="cont">
@@ -391,7 +390,7 @@
 
 	</tr>
 </table>
-
+<?php print_r($totals ) ?>
 <table style="border-collapse:collapse;margin-left:8px;  width: 100%;" cellspacing="0">
 	<tr style="height:12px">
 		<td style="width:20%" bgcolor="#CAEDFB"><p class="s7 sth_left stbold">Tjänst </p></td>
@@ -870,70 +869,13 @@
 									<?php endforeach; ?>
 								<?php endif; ?>
 							</div>
-							<?php if ( ! empty( $files ) ) : ?>
-								<div class="summary-files">
-									<ul class="summary-files-list">
-										<?php foreach ( $files as $file ) : ?>
-											<?php if ( ! empty( $file ) ) : ?>
-												<?php foreach ( $file as $item ) : ?>
-													<li class="summary-files-list-item">
-														<div class="summary-files-icon">
-															<img src="<?php echo esc_attr( esc_url( CALC_URL . '/frontend/dist/img/file-text.png' ) ); ?>" width="20" alt="Email icon">
-														</div>
-														<div class="summary-files-info">
-															<span class="title">Attach file:</span>
-															<span class="filename">
-																<?php
-																$fileName = strlen( $item['filename'] ) > 25 ? substr( $item['filename'], 0, 25 ) . '...' : $item['filename'];
-																echo esc_html( $fileName );
-																?>
-															</span>
-														</div>
-														<a href="<?php echo esc_url( $item['url'] ); ?>" class="summary-files-link"><?php esc_html_e( 'Download', 'cost-calculator-builder-pro' ); ?></a>
-													</li>
-												<?php endforeach; ?>
-											<?php endif; ?>
-										<?php endforeach; ?>
-									</ul>
-								</div>
-							<?php endif; ?>
+
 						</div>
 					</div>
 				</td>
 			</tr>
-			<tr class="table-body-row">
-				<td>
-					<div class="description ql-editor">
-						<?php
-						echo apply_filters( 'ccb_email_rich_text', $email_settings['description'], $calc_id );// phpcs:ignore
-						?>
-					</div>
-				</td>
-			</tr>
-			<?php if ( $email_settings['footer'] ) : ?>
-				<?php
-				$footer_content = '
-				<tr class="table-body-row">
-					<td>
-						<div class="footer">
-							<div class="footer-container">
-								<div class="footer-wrapper">
-									<span>
-										' . esc_html__( 'This service working on:', 'cost-calculator-builder-pro' ) . ' 
-									</span>
-									<a href="https://stylemixthemes.com/cost-calculator-plugin/">
-										<img src="' . esc_attr( CALC_URL . '/frontend/dist/img/email_footer_logo.png' ) . '">
-									</a>
-								</div>
-							</div>
-						</div>
-					</td>
-				</tr>
-				';
-				$footer_content = apply_filters( 'ccb_email_footer', $footer_content, $calc_id );
-				echo wp_kses_post( $footer_content );
-				?>
-			<?php endif; ?>
+
+
 			</tbody>
 		</table>
 	</div>

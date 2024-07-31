@@ -12,5 +12,5 @@ function finbiz_child_enqueue_styles() {
 }
 
 add_action( 'wp_enqueue_scripts', 'finbiz_child_enqueue_styles' );
-
+require_once 'inc/helpers.php';
 require_once 'cost-calculator-builder/includes/classes/CCBFrontControllerChild.php';
