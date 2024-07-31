@@ -7,3 +7,6 @@ Version: 1.0.0
 Text Domain:  finbiz-child
 */
 
+.stm-hidden{
+	display: none !important;
+}
