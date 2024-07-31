@@ -21,15 +21,24 @@ function getValueByName( $array, $name ) {
 	return null; // Return null if the name is not found
 }
 
-function getValueAndSlideValueByLabel( $array, $label ) {
+function getValueAndSlideValueByLabel( $array, $label, $key = 'slideValue' ) {
 	foreach ( $array as $item ) {
 		if ( isset( $item['label'] ) && $item['label'] === $label ) {
-			$value      = $item['value'] ?? null;
-			$slideValue = $item['slideValue'] ?? null;
+			$specificValue = $item[ $key ] ?? 'null';
 
-			return [ 'value' => $value, 'slideValue' => $slideValue ];
+			return $specificValue;
 		}
 	}
 
 	return null; // Return null if the label is not found
+}
+
+function dsp($totals, $other_totals, $fields){
+		?>
+	total: <pre><?php // print_r($totals ) ?> </pre>
+
+	other total:  <pre><?php // print_r($other_totals  ) ?> </pre>
+
+		$fields:  <pre><?php  print_r(	$fields  ) ?> </pre>	<hr />
+<?php
 }
