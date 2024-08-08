@@ -951,7 +951,7 @@
 	<tbody>
 	<tr style="height:15px" bgcolor="#DAF2CF">
 		<td style="width:20%;border-top-style:solid;border-top-width:1px;border-left-style:solid;border-left-width:1px;" class="stbot">
-			<p class="s7 stbold" style="padding-top: 6px;padding-left: 1px;text-indent: 0px;text-align: left;">PROGNOSTISERAD MÅNADS KOSTNAD:</p>
+			<p class="s7 stbold" style="padding-top: 6px;padding-left: 1px;text-indent: 0px;text-align: left;">* PROGNOSTISERAD MÅNADS KOSTNAD:</p>
 		</td>
 		<td style="width:20%;" class="stbot"><p class="s7 sth_left stl"></p></td>
 		<td style="width:17.5%;" class="stbot"><p class="s8 sth_right"></p></td>
@@ -961,18 +961,24 @@
 		<td style="width:17.5%" class="stbot"><p class="s10 sth_right stbold"><?php echo getValueByTitle( $other_totals, 'PROGNOSTISERAD TOTAL ÅRSKOSTNAD' ); ?> SEK</p></td>
 	</tr>
 	<tr style="height:13px">
-		<td style="width:20%" class="stbot"><p class="s7 " style="padding-top: 6px;padding-left: 1px;text-indent: 0px;text-align: left;">PROGNOSTISERAD TOTAL ÅRSKOSTNAD</p></td>
+		<td style="width:20%" class="stbot"><p class="s7 " style="padding-top: 6px;padding-left: 1px;text-indent: 0px;text-align: left;">** PROGNOSTISERAD TOTAL ÅRSKOSTNAD</p></td>
 		<td style="width:20%" class="stbot"><p class="s7 sth_left stl"></p></td>
 		<td style="width:17.5%" class="stbot"><p class="s8 sth_right"></p></td>
 		<td style="width:17.5%" class="stbot"><p class="s8 sth_right "></p></td>
 		<td style="width:17.5%" class="stbot"><p class="s8 sth_right"></p></td>
 		<td style="width:7.5%" class="stbot"><p class="s10"></p></td>
 		<td style="width:17.5%" class="stbot"><p class="s10 sth_right stbold"><?php echo getValueByTitle( $other_totals, 'PROGNOSTISERAD TOTAL ÅRSKOSTNAD' ); ?> SEK</p></td>
-
 	</tr>
 	</tbody>
 
 </table>
+
+<div class="s8">Kostnaderna är preliminära uppskattningar.</div>
+<div class="s8">Den slutliga kostnaden kan bli lägre om vissa redovisningstjänster inte behövs varje månad eller om omfattningen av vissa tjänster minskar.</div>
+<div class="stbold">Använd gärna denna offert som underlag i kommande möte med oss eller vid jämförelse med konkurrenter!
+Vi har prisgaranti som minst matchar priset!
+Boka möte?
+Kontakta: Support@Bokforingskompaniet.se		</div>
 <?php
 //dsp($totals, $other_totals, $fields)
 ?>
