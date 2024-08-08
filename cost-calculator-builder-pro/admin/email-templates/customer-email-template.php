@@ -438,7 +438,7 @@
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'REDOVISNING' ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'REDOVISNING' ); ?> <span class="s8 stn"></span></p></td>
 			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'REDOVISNING (Annual)' ); ?> <span class="s8 stn">SEK</span></p></td>
 
 		</tr>
@@ -516,7 +516,7 @@
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'ANSTÄLLDA' ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'ANSTÄLLDA' ); ?> <span class="s8 stn"></span></p></td>
 			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'ANSTÄLLDA (Annual)' ); ?> <span class="s8 stn">SEK</span></p></td>
 
 		</tr>
@@ -571,7 +571,7 @@
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn"></span></p></td>
 			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
 
 		</tr>
@@ -595,7 +595,7 @@
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'IMPORT & EXPORT (Försäljning Utomlands)' ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'IMPORT & EXPORT (Försäljning Utomlands)' ); ?> <span class="s8 stn"></span></p></td>
 			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'IMPORT & EXPORT (Försäljning Utomlands) (Annual)' ); ?> <span class="s8 stn">SEK</span></p></td>
 
 		</tr>
@@ -630,7 +630,7 @@
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn"></span></p></td>
 			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
 		</tr>
 
@@ -653,7 +653,7 @@
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'KUNDFAKTORERING' ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'KUNDFAKTORERING' ); ?> <span class="s8 stn"></span></p></td>
 			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'KUNDFAKTORERING' ); ?> <span class="s8 stn">SEK</span></p></td>
 		</tr>
 
@@ -709,7 +709,7 @@
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn"></span></p></td>
 			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
 		</tr>
 
@@ -768,7 +768,7 @@
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
+				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn"></span></p></td>
 				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, "$field_name(Annual)" ); ?> <span class="s8 stn">SEK</span></p></td>
 
 			</tr>
@@ -814,7 +814,7 @@
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
+				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn"></span></p></td>
 				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, "$field_name(Annual)" ); ?> <span class="s8 stn">SEK</span></p></td>
 
 			</tr>
@@ -855,7 +855,7 @@
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
+				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn"></span></p></td>
 				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, "$field_name(Annual)" ); ?> <span class="s8 stn">SEK</span></p></td>
 
 			</tr>
@@ -881,7 +881,7 @@
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
+				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn"></span></p></td>
 				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, "$field_name(Annual)" ); ?> <span class="s8 stn">SEK</span></p></td>
 
 			</tr>
@@ -933,7 +933,7 @@
 			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
 			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
 		</tr>
-		
+
 		<tr style="height:12px">
 			<?php $field_name = 'Support (Telefon/Mail/Möte)' ?>
 			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
@@ -956,7 +956,7 @@
 		<td style="width:17.5%;" class="stbot"><p class="s8 sth_right"></p></td>
 		<td style="width:17.5%;" class="stbot"><p class="s8 sth_right "></p></td>
 		<td style="width:17.5%;" class="stbot"><p class="s8 sth_right"></p></td>
-		<td style="width:17.5%;" class="stbot"><p class="s13 sth_right stbold"><?php echo getValueByTitle( $other_totals, 'PROGNOSTISERAD MÅNADS KOSTNAD: (Inklusive Årsavslutet)' ); ?> <span class="s14 stbold">SEK</span></p></td>
+		<td style="width:17.5%;" class="stbot"><p class="s13 sth_right stbold"><?php echo getValueByTitle( $other_totals, 'PROGNOSTISERAD MÅNADS KOSTNAD: (Inklusive Årsavslutet)' ); ?> <span class="s14 stbold"></span></p></td>
 		<td style="width:17.5%" class="stbot"><p class="s10 sth_right stbold"><?php echo getValueByTitle( $other_totals, 'PROGNOSTISERAD TOTAL ÅRSKOSTNAD' ); ?> SEK</p></td>
 	</tr>
 	<tr style="height:13px">
