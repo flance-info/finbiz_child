@@ -714,7 +714,8 @@
 				<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
 				<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
 			</tr>
-		<? endif; ?>
+		<?php endif; ?>
+
 		<?php $field_name = 'Kund- & Kreditfakturering (Projekt)' ?>
 		<?php $field_value = getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?>
 		<?php if ( $field_value > 0 ) : ?>
@@ -727,7 +728,7 @@
 				<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
 				<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
 			</tr>
-		<? endif; ?>
+		<?php endif; ?>
 
 		<?php $field_name = 'SKV: Rot & Rut-arbete' ?>
 		<?php $field_value = getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?>
