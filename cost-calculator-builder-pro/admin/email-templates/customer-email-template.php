@@ -781,7 +781,7 @@
 				<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
 				<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
 				<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-				<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+				<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, "$field_name (Annual)", 'value' ); ?></p></td>
 			</tr>
 
 			<tr style="height:12px">
@@ -792,7 +792,7 @@
 				<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
 				<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
 				<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-				<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+				<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, "$field_name (Annual)", 'value' ); ?></p></td>
 			</tr>
 			<tr style="height:12px">
 				<?php $field_name = 'Hållbarhetsrapport' ?>
@@ -802,7 +802,7 @@
 				<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
 				<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
 				<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-				<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+				<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, "$field_name (Annual)", 'value' ); ?></p></td>
 			</tr>
 		</RaKENSKAPSaR>
 		<!-- BUDGET & PROGNOS !-->
