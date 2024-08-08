@@ -6,7 +6,7 @@ Template: finbiz
 Version: 1.0.0
 Text Domain:  finbiz-child
 */
-
+.calc-subtotal-list
 .stm-hidden{
 	display: none !important;
 }
