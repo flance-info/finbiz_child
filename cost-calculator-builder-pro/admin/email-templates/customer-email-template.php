@@ -925,16 +925,15 @@
 
 		<tr style="height:12px">
 			<?php $field_name = '100 Mallar & protokoll' ?>
-			<td style="width:20%" class="stb"><p class="s7 sth_left stbold"><?php echo $field_name ?> </p></td>
-			<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
-			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
-			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
-			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, "$field_name(Annual)" ); ?> <span class="s8 stn">SEK</span></p></td>
-
+			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl"></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right "></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
 		</tr>
-
+		
 		<tr style="height:12px">
 			<?php $field_name = 'Support (Telefon/Mail/Möte)' ?>
 			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
