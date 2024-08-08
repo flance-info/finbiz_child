@@ -37,7 +37,7 @@ function dsp($totals, $other_totals, $fields){
 		?>
 	total: <pre><?php // print_r($totals ) ?> </pre>
 
-	other total:  <pre><?php // print_r($other_totals  ) ?> </pre>
+	other total:  <pre><?php  print_r($other_totals  ) ?> </pre>
 
 		$fields:  <pre><?php  print_r(	$fields  ) ?> </pre>	<hr />
 <?php
