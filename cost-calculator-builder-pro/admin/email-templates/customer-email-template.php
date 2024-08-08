@@ -443,40 +443,52 @@
 
 		</tr>
 
-		<tr style="height:12px">
-			<td style="width:20%" class="stbt"><p class="s7  stbtl">Löpande Bokföring </p></td>
-			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">15 Verifikat (affärshändelser)</p></td>
-			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Löpande Bokföring' ); ?></p></td>
-			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo $fv = getValueAndSlideValueByLabel( $fields, 'Löpande Bokföring', 'value' ); ?></p></td>
-			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo $fv * 12; ?></p></td>
-		</tr>
+		<?php $field_value =getValueAndSlideValueByLabel( $fields, 'Löpande Bokföring', 'value' ); ?>
+		<?php if ( $field_value > 0 ) : ?>
+			<tr style="height:12px">
+				<td style="width:20%" class="stbt"><p class="s7  stbtl">Löpande Bokföring </p></td>
+				<td style="width:20%" class="stbt"><p class="s7 sth_left stl">15 Verifikat (affärshändelser)</p></td>
+				<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+				<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+				<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Löpande Bokföring' ); ?></p></td>
+				<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo $fv = getValueAndSlideValueByLabel( $fields, 'Löpande Bokföring', 'value' ); ?></p></td>
+				<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo $fv * 12; ?></p></td>
+			</tr>
+		<?php endif; ?>
 
+		<?php $field_name = 'SKV: Momsdeklaration (Månadsvis)' ?>
+		<?php $field_value = getValueAndSlideValueByLabel( $fields, $field_name, 'value' );; ?>
+		<?php if ( $field_value > 0 ) : ?>
+			<tr style="height:12px">
+
+				<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+				<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
+				<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+				<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+				<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+				<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+				<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+			</tr>
+		<?php endif; ?>
+
+		<?php $field_name = 'SKV: Momsdeklaration (Kvartalsvis)' ?>
+		<?php $field_value = getValueAndSlideValueByLabel( $fields, $field_name, 'value' );; ?>
+		<?php if ( $field_value > 0 ) : ?>
+			<tr style="height:12px">
+
+				<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+				<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
+				<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+				<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+				<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+				<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+				<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+			</tr>
+		<?php endif; ?>
+		<?php $field_name = 'SKV: Momsdeklaration (Årsvis)' ?>
 
 		<tr style="height:12px">
-			<?php $field_name = 'SKV: Momsdeklaration (Månadsvis)' ?>
-			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
-			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
-			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
-			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
-		</tr>
 
-		<tr style="height:12px">
-			<?php $field_name = 'SKV: Momsdeklaration (Kvartalsvis)' ?>
-			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
-			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
-			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
-			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
-		</tr>
-		<tr style="height:12px">
-			<?php $field_name = 'SKV: Momsdeklaration (Årsvis)' ?>
 			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
 			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
 			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
@@ -976,9 +988,10 @@
 <div class="s8">Kostnaderna är preliminära uppskattningar.</div>
 <div class="s8">Den slutliga kostnaden kan bli lägre om vissa redovisningstjänster inte behövs varje månad eller om omfattningen av vissa tjänster minskar.</div>
 <div class="stbold">Använd gärna denna offert som underlag i kommande möte med oss eller vid jämförelse med konkurrenter!
-Vi har prisgaranti som minst matchar priset!
-Boka möte?
-Kontakta: Support@Bokforingskompaniet.se		</div>
+	Vi har prisgaranti som minst matchar priset!
+	Boka möte?
+	Kontakta: Support@Bokforingskompaniet.se
+</div>
 <?php
 //dsp($totals, $other_totals, $fields)
 ?>
