@@ -419,279 +419,349 @@
 		<td style="width:17.5%"><p class="s8 sth_right"></p></td>
 		<td style="width:7.5%"><p style=""><br/></p></td>
 	</tr>
-	<tr style="height:12px" class="stbot">
-		<td style="width:20%" bgcolor="#CAEDFB"><p class="s7 sth_left stbold">MÅNADSVIS </p></td>
-		<td style="width:20%" bgcolor="#CAEDFB"><p class="s7 sth_left stbold"></p></td>
-		<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
-		<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
-		<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
-		<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
-		<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
-	</tr>
-	<tr style="height:12px">
-		<td style="width:20%" class="stb"><p class="s7 sth_left stbold">REDOVISNING </p></td>
-		<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'REDOVISNING' ); ?> <span class="s8 stn">SEK</span></p></td>
-		<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'REDOVISNING (Annual)' ); ?> <span class="s8 stn">SEK</span></p></td>
+	<!-- MÅNADSVIS  !-->
+	<manadsvis>
+		<tr style="height:12px" class="stbot">
+			<td style="width:20%" bgcolor="#CAEDFB"><p class="s7 sth_left stbold">MÅNADSVIS </p></td>
+			<td style="width:20%" bgcolor="#CAEDFB"><p class="s7 sth_left stbold"></p></td>
+			<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
+			<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
+			<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
+			<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
+			<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
+		</tr>
+		<!-- REDOVISNING !-->
+		<tbody>
+		<tr style="height:12px">
+			<td style="width:20%" class="stb"><p class="s7 sth_left stbold">REDOVISNING </p></td>
+			<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'REDOVISNING' ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'REDOVISNING (Annual)' ); ?> <span class="s8 stn">SEK</span></p></td>
 
-	</tr>
+		</tr>
 
-	<tr style="height:12px">
-		<td style="width:20%" class="stbt"><p class="s7  stbtl">Löpande Bokföring </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">15 Verifikat (affärshändelser)</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Löpande Bokföring' ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Löpande Bokföring', 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'Löpande Bokföring (Annual)' ); ?></p></td>
-	</tr>
-
-
-	<tr style="height:12px">
-		<?php $field_name = 'SKV: Momsdeklaration (Månadsvis)' ?>
-		<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
-	</tr>
-
-	<tr style="height:12px">
-		<?php $field_name = 'SKV: Momsdeklaration (Kvartalsvis)' ?>
-		<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
-	</tr>
-	<tr style="height:12px">
-		<?php $field_name = 'SKV: Momsdeklaration (Årsvis)' ?>
-		<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
-	</tr>
+		<tr style="height:12px">
+			<td style="width:20%" class="stbt"><p class="s7  stbtl">Löpande Bokföring </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">15 Verifikat (affärshändelser)</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Löpande Bokföring' ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Löpande Bokföring', 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'Löpande Bokföring (Annual)' ); ?></p></td>
+		</tr>
 
 
-	<tr style="height:12px">
-		<td style="width:20%" class="stbt"><p class="s7  stbtl">SKV: Punktskattedeklaration </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right "> 250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'SKV: Punktskattedeklaration' ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'SKV: Punktskattedeklaration', 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'SKV: Punktskattedeklaration (Annual)' ); ?></p></td>
-	</tr>
+		<tr style="height:12px">
+			<?php $field_name = 'SKV: Momsdeklaration (Månadsvis)' ?>
+			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+		</tr>
 
-	<tr style="height:12px">
-		<td style="width:20%" class="stbt"><p class="s7  stbtl">Rapporter &amp; Uppföljning </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right "> 250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Rapporter & Uppföljning' ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Rapporter & Uppföljning', 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'Rapporter & Uppföljning (Annual)' ); ?></p></td>
-	</tr>
-
-
-	<!-- anstallte !-->
-	<tr style="height:12px">
-		<td style="width:20%" class="stb"><p class="s7 sth_left stbold">ANSTÄLLDA </p></td>
-		<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'ANSTÄLLDA' ); ?> <span class="s8 stn">SEK</span></p></td>
-		<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'ANSTÄLLDA (Annual)' ); ?> <span class="s8 stn">SEK</span></p></td>
-
-	</tr>
-
-	<tr style="height:12px">
-		<td style="width:20%" class="stbt"><p class="s7  stbtl">Lönehantering </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">2 Anställda</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Lönehantering' ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Lönehantering', 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'Lönehantering (Annual)' ); ?></p></td>
-	</tr>
-
-	<tr style="height:12px">
-		<td style="width:20%" class="stbt"><p class="s7  stbtl">Utlägg & Förmåner </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">4 Utlägg</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right "> 250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Utlägg & Förmåner' ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Utlägg & Förmåner', 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'Utlägg & Förmåner (Annual)' ); ?></p></td>
-	</tr>
-
-	<tr style="height:12px">
-		<?php $field_name = 'Hantering: Tjänstepension' ?>
-		<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">2 Anställda</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
-	</tr>
-
-	<tr style="height:12px">
-		<td style="width:20%" class="stbt"><p class="s7  stbtl">SKV: Arbetsgivardeklaration </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">2 Anställda</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'SKV: Arbetsgivardeklaration' ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'SKV: Arbetsgivardeklaration', 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'SKV: Arbetsgivardeklaration' ); ?></p></td>
-	</tr>
-
-	<!-- Bank -->
-	<tr style="height:12px">
-		<?php $field_name = 'BANK' ?>
-		<td style="width:20%" class="stb"><p class="s7 sth_left stbold"><?php echo $field_name ?></p></td>
-		<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
-		<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
-
-	</tr>
-
-	<tr style="height:12px">
-		<?php $field_name = 'Bank: Utbetalningar' ?>
-		<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">5 Utbetalningar</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
-	</tr>
-	<!-- IMPORT & EXPORT (Försäljning Utomlands) !-->
-
-	<tr style="height:12px">
-		<td style="width:20%" class="stb"><p class="s7 sth_left stbold">IMPORT & EXPORT (Försäljning Utomlands) </p></td>
-		<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'IMPORT & EXPORT (Försäljning Utomlands)' ); ?> <span class="s8 stn">SEK</span></p></td>
-		<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'IMPORT & EXPORT (Försäljning Utomlands) (Annual)' ); ?> <span class="s8 stn">SEK</span></p></td>
-
-	</tr>
-
-	<tr style="height:12px">
-		<td style="width:20%" class="stbt"><p class="s7  stbtl">Tulldeklaration </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Tulldeklaration' ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Tulldeklaration', 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'Tulldeklaration (Annual)' ); ?></p></td>
-	</tr>
-
-	<tr style="height:12px">
-		<td style="width:20%" class="stbt"><p class="s7  stbtl">SKV: Periodiskavstämning </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right "> 250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'SKV: Periodiskavstämning' ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'SKV: Periodiskavstämning', 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'SKV: Periodiskavstämning' ); ?></p></td>
-	</tr>
-	<!-- LAGERHÅLLNING !-->
-	<?php $field_name = 'LAGERHÅLLNING'; ?>
-	<tr style="height:12px">
-		<td style="width:20%" class="stb"><p class="s7 sth_left stbold"><?php echo $field_name ?> </p></td>
-		<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
-		<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
-	</tr>
-
-	<tr style="height:12px">
-		<?php $field_name = 'Lagersaldon' ?>
-		<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl"></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right "></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php //echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php // echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php //echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
-	</tr>
-
-	<!-- KUNDFAKTORERING -->
-
-	<tr style="height:12px">
-		<td style="width:20%" class="stb"><p class="s7 sth_left stbold">KUNDFAKTORERING </p></td>
-		<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
-		<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-		<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'KUNDFAKTORERING' ); ?> <span class="s8 stn">SEK</span></p></td>
-		<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'KUNDFAKTORERING' ); ?> <span class="s8 stn">SEK</span></p></td>
-	</tr>
-
-	<tr style="height:12px">
-		<?php $field_name = 'Regelbunda' ?>
-		<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">10 Kunder</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
-	</tr>
-
-	<tr style="height:12px">
-		<?php $field_name = 'Projekt' ?>
-		<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">1 Kunder</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
-	</tr>
-
-	<tr style="height:12px">
-		<?php $field_name = 'SKV: Rot & Rut-kundansökan' ?>
-		<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">2 Kunder</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
-	</tr>
-	
-	<tr style="height:12px">
-		<?php $field_name = 'SKV: Grönteknik-kundansökan' ?>
-		<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
-		<td style="width:20%" class="stbt"><p class="s7 sth_left stl">2 Kunder</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
-		<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
-		<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-		<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
-	</tr>
+		<tr style="height:12px">
+			<?php $field_name = 'SKV: Momsdeklaration (Kvartalsvis)' ?>
+			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+		</tr>
+		<tr style="height:12px">
+			<?php $field_name = 'SKV: Momsdeklaration (Årsvis)' ?>
+			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+		</tr>
 
 
+		<tr style="height:12px">
+			<td style="width:20%" class="stbt"><p class="s7  stbtl">SKV: Punktskattedeklaration </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right "> 250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'SKV: Punktskattedeklaration' ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'SKV: Punktskattedeklaration', 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'SKV: Punktskattedeklaration (Annual)' ); ?></p></td>
+		</tr>
+
+		<tr style="height:12px">
+			<td style="width:20%" class="stbt"><p class="s7  stbtl">Rapporter &amp; Uppföljning </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right "> 250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Rapporter & Uppföljning' ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Rapporter & Uppföljning', 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'Rapporter & Uppföljning (Annual)' ); ?></p></td>
+		</tr>
+
+		</tbody>
+		<!-- anstallte !-->
+		<tbody>
+		<tr style="height:12px">
+			<td style="width:20%" class="stb"><p class="s7 sth_left stbold">ANSTÄLLDA </p></td>
+			<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'ANSTÄLLDA' ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'ANSTÄLLDA (Annual)' ); ?> <span class="s8 stn">SEK</span></p></td>
+
+		</tr>
+
+		<tr style="height:12px">
+			<td style="width:20%" class="stbt"><p class="s7  stbtl">Lönehantering </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">2 Anställda</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Lönehantering' ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Lönehantering', 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'Lönehantering (Annual)' ); ?></p></td>
+		</tr>
+
+		<tr style="height:12px">
+			<td style="width:20%" class="stbt"><p class="s7  stbtl">Utlägg & Förmåner </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">4 Utlägg</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right "> 250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Utlägg & Förmåner' ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Utlägg & Förmåner', 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'Utlägg & Förmåner (Annual)' ); ?></p></td>
+		</tr>
+
+		<tr style="height:12px">
+			<?php $field_name = 'Hantering: Tjänstepension' ?>
+			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">2 Anställda</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+		</tr>
+
+		<tr style="height:12px">
+			<td style="width:20%" class="stbt"><p class="s7  stbtl">SKV: Arbetsgivardeklaration </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">2 Anställda</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'SKV: Arbetsgivardeklaration' ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'SKV: Arbetsgivardeklaration', 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'SKV: Arbetsgivardeklaration' ); ?></p></td>
+		</tr>
+		</tbody>
+		<!-- Bank -->
+		<tbody>
+		<tr style="height:12px">
+			<?php $field_name = 'BANK' ?>
+			<td style="width:20%" class="stb"><p class="s7 sth_left stbold"><?php echo $field_name ?></p></td>
+			<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
+
+		</tr>
+
+		<tr style="height:12px">
+			<?php $field_name = 'Bank: Utbetalningar' ?>
+			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">5 Utbetalningar</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+		</tr>
+		</tbody>
+		<!-- IMPORT & EXPORT (Försäljning Utomlands) !-->
+		<tbody>
+		<tr style="height:12px">
+			<td style="width:20%" class="stb"><p class="s7 sth_left stbold">IMPORT & EXPORT (Försäljning Utomlands) </p></td>
+			<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'IMPORT & EXPORT (Försäljning Utomlands)' ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'IMPORT & EXPORT (Försäljning Utomlands) (Annual)' ); ?> <span class="s8 stn">SEK</span></p></td>
+
+		</tr>
+
+		<tr style="height:12px">
+			<td style="width:20%" class="stbt"><p class="s7  stbtl">Tulldeklaration </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Tulldeklaration' ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Tulldeklaration', 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'Tulldeklaration (Annual)' ); ?></p></td>
+		</tr>
+
+		<tr style="height:12px">
+			<td style="width:20%" class="stbt"><p class="s7  stbtl">SKV: Periodiskavstämning </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right "> 250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'SKV: Periodiskavstämning' ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'SKV: Periodiskavstämning', 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'SKV: Periodiskavstämning' ); ?></p></td>
+		</tr>
+		</tbody>
+		<!-- LAGERHÅLLNING !-->
+
+		<tbody>
+		<?php $field_name = 'LAGERHÅLLNING'; ?>
+		<tr style="height:12px">
+			<td style="width:20%" class="stb"><p class="s7 sth_left stbold"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
+		</tr>
+
+		<tr style="height:12px">
+			<?php $field_name = 'Lagersaldon' ?>
+			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl"></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right "></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php //echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php // echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php //echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+		</tr>
+		</tbody>
+		<!-- KUNDFAKTORERING -->
+		<tbody>
+		<tr style="height:12px">
+			<td style="width:20%" class="stb"><p class="s7 sth_left stbold">KUNDFAKTORERING </p></td>
+			<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'KUNDFAKTORERING' ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'KUNDFAKTORERING' ); ?> <span class="s8 stn">SEK</span></p></td>
+		</tr>
+
+		<tr style="height:12px">
+			<?php $field_name = 'Regelbunda' ?>
+			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">10 Kunder</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+		</tr>
+
+		<tr style="height:12px">
+			<?php $field_name = 'Projekt' ?>
+			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">1 Kunder</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+		</tr>
+
+		<tr style="height:12px">
+			<?php $field_name = 'SKV: Rot & Rut-kundansökan' ?>
+			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">2 Kunder</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+		</tr>
+		<tr style="height:12px">
+			<?php $field_name = 'SKV: Grönteknik-kundansökan' ?>
+			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">2 Kunder</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+		</tr>
+		</tbody>
+		<!-- KUNDFODRAN SERVICE -->
+		<tbody>
+		<tr style="height:12px">
+			<?php $field_name = 'KUNDFODRAN SERVICE'; ?>
+			<td style="width:20%" class="stb"><p class="s7 sth_left stbold"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
+			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn">SEK</span></p></td>
+		</tr>
+
+		<tr style="height:12px">
+			<?php $field_name = 'Kundkreditkontroller' ?>
+			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 Minuter</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+		</tr>
+		<tr style="height:12px">
+			<?php $field_name = 'Kundpåminnelser' ?>
+			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 Minuter</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+		</tr>
+		<tr style="height:12px">
+			<?php $field_name = 'Inkasso' ?>
+			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
+			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 Minuter</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
+			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+		</tr>
+		</tbody>
+
+	</manadsvis>
+
+	<!-- ÅRSVIS !-->
+	<arsvis>
+		<tr style="height:12px" class="stbot">
+			<td style="width:20%" bgcolor="#CAEDFB"><p class="s7 sth_left stbold">ÅRSVIS </p></td>
+			<td style="width:20%" bgcolor="#CAEDFB"><p class="s7 sth_left stbold"></p></td>
+			<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
+			<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
+			<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
+			<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
+			<td style="width:17.5%" bgcolor="#CAEDFB"><p class="s7 sth_right stbold"></p></td>
+		</tr>
+
+	</arsvis>
+	<!-- >PROGNOSTISERAD MÅNADS KOSTNAD !-->
+	<tbody>
 	<tr style="height:15px" bgcolor="#DAF2CF">
 		<td style="width:20%;border-top-style:solid;border-top-width:1px;border-left-style:solid;border-left-width:1px;" class="stbot">
 			<p class="s7 stbold" style="padding-top: 6px;padding-left: 1px;text-indent: 0px;text-align: left;">PROGNOSTISERAD MÅNADS KOSTNAD:</p>
@@ -713,7 +783,7 @@
 		<td style="width:17.5%" class="stbot"><p class="s10 sth_right stbold"><?php echo getValueByTitle( $other_totals, 'PROGNOSTISERAD TOTAL ÅRSKOSTNAD' ); ?> SEK</p></td>
 
 	</tr>
-
+	</tbody>
 
 </table>
 <?php
