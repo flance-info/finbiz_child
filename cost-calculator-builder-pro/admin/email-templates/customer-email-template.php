@@ -449,8 +449,8 @@
 			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
 			<td style="width:17.5%" class="stbt"><p class="s8 sth_right ">250</p></td>
 			<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Löpande Bokföring' ); ?></p></td>
-			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, 'Löpande Bokföring', 'value' ); ?></p></td>
-			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, 'Löpande Bokföring (Annual)' ); ?></p></td>
+			<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo $fv = getValueAndSlideValueByLabel( $fields, 'Löpande Bokföring', 'value' ); ?></p></td>
+			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo $fv * 12; ?></p></td>
 		</tr>
 
 
@@ -645,16 +645,17 @@
 			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php //echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
 		</tr>
 		</tbody>
-		<!-- KUNDFAKTORERING -->
+		<!-- KUNDFAKTURERING -->
 		<tbody>
 		<tr style="height:12px">
-			<td style="width:20%" class="stb"><p class="s7 sth_left stbold">KUNDFAKTORERING </p></td>
+			<?php $field_name = 'KUNDFAKTURERING' ?>
+			<td style="width:20%" class="stb"><p class="s7 sth_left stbold"> <?php echo $field_name ?> </p></td>
 			<td style="width:20%" class="stb"><p class="s8 sth_left stl"></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
 			<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
-			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'KUNDFAKTORERING' ); ?> <span class="s8 stn"></span></p></td>
-			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, 'KUNDFAKTORERING' ); ?> <span class="s8 stn">SEK</span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn"></span></p></td>
+			<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?> <span class="s8 stn">SEK</span></p></td>
 		</tr>
 
 		<tr style="height:12px">
@@ -856,7 +857,7 @@
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
 				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn"></span></p></td>
-				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, "$field_name(Annual)" ); ?> <span class="s8 stn">SEK</span></p></td>
+				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?> <span class="s8 stn">SEK</span></p></td>
 
 			</tr>
 
@@ -868,7 +869,7 @@
 				<td style="width:17.5%" class="stbt"><p class="s8 sth_right "></p></td>
 				<td style="width:17.5%" class="stbt"><p class="s8 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name ); ?></p></td>
 				<td style="width:17.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, $field_name, 'value' ); ?></p></td>
-				<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
+				<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueAndSlideValueByLabel( $fields, "$field_name (Annual)", 'value' ); ?></p></td>
 			</tr>
 
 		</DEKLARATION>
@@ -882,7 +883,7 @@
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right "></p></td>
 				<td style="width:17.5%" class="stb"><p class="s8 sth_right"></p></td>
 				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, $field_name ); ?> <span class="s8 stn"></span></p></td>
-				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, "$field_name(Annual)" ); ?> <span class="s8 stn">SEK</span></p></td>
+				<td style="width:17.5%" class="stb"><p class="s10 sth_right stbold"> <?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?> <span class="s8 stn">SEK</span></p></td>
 
 			</tr>
 
@@ -979,7 +980,7 @@ Vi har prisgaranti som minst matchar priset!
 Boka möte?
 Kontakta: Support@Bokforingskompaniet.se		</div>
 <?php
-//dsp($totals, $other_totals, $fields)
+dsp($totals, $other_totals, $fields)
 ?>
 </body>
 
