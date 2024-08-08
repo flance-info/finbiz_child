@@ -1,52 +1,54 @@
 <?php
-
 $invoice_texts = array(
-		'order'          => esc_html__( 'Order', 'cost-calculator-builder' ),
-		'total_title'    => esc_html__( 'Total Summary', 'cost-calculator-builder' ),
-		'payment_method' => esc_html__( 'Payment method:', 'cost-calculator-builder' ),
-		'contact_title'  => esc_html__( 'Contact Information', 'cost-calculator-builder' ),
-		'contact_form'   => array(
-				'name'    => esc_html__( 'Name', 'cost-calculator-builder' ),
-				'email'   => esc_html__( 'Email', 'cost-calculator-builder' ),
-				'phone'   => esc_html__( 'Phone', 'cost-calculator-builder' ),
-				'message' => esc_html__( 'Message', 'cost-calculator-builder' ),
-		),
-		'total_header'   => array(
-				'name'  => esc_html__( 'Name', 'cost-calculator-builder' ),
-				'unit'  => esc_html__( 'Composition', 'cost-calculator-builder' ),
-				'total' => esc_html__( 'Total', 'cost-calculator-builder' ),
-		),
+	'order'          => esc_html__( 'Order', 'cost-calculator-builder' ),
+	'total_title'    => esc_html__( 'Total Summary', 'cost-calculator-builder' ),
+	'payment_method' => esc_html__( 'Payment method:', 'cost-calculator-builder' ),
+	'contact_title'  => esc_html__( 'Contact Information', 'cost-calculator-builder' ),
+	'contact_form'   => array(
+		'name'    => esc_html__( 'Name', 'cost-calculator-builder' ),
+		'email'   => esc_html__( 'Email', 'cost-calculator-builder' ),
+		'phone'   => esc_html__( 'Phone', 'cost-calculator-builder' ),
+		'message' => esc_html__( 'Message', 'cost-calculator-builder' ),
+	),
+	'total_header'   => array(
+		'name'  => esc_html__( 'Name', 'cost-calculator-builder' ),
+		'unit'  => esc_html__( 'Composition', 'cost-calculator-builder' ),
+		'total' => esc_html__( 'Total', 'cost-calculator-builder' ),
+	),
 );
+
 $send_pdf_texts = array(
-		'title'          => esc_html__( 'Email Quote', 'cost-calculator-builder' ),
-		'name'           => esc_html__( 'Name', 'cost-calculator-builder' ),
-		'name_holder'    => esc_html__( 'Enter name', 'cost-calculator-builder' ),
-		'email'          => esc_html__( 'Email', 'cost-calculator-builder' ),
-		'email_holder'   => esc_html__( 'Enter Email', 'cost-calculator-builder' ),
-		'message'        => esc_html__( 'Message', 'cost-calculator-builder' ),
-		'message_holder' => esc_html__( 'Enter message', 'cost-calculator-builder' ),
-		'submit'         => isset( $general_settings['invoice']['submitBtnText'] ) ? $general_settings['invoice']['submitBtnText'] : esc_html__( 'Send', 'cost-calculator-builder' ),
-		'close'          => isset( $general_settings['invoice']['closeBtn'] ) ? $general_settings['invoice']['closeBtn'] : esc_html__( 'Close', 'cost-calculator-builder' ),
-		'success_text'   => isset( $general_settings['invoice']['successText'] ) ? $general_settings['invoice']['successText'] : esc_html__( 'Email Quote Successfully Sent!', 'cost-calculator-builder' ),
-		'error_message'  => isset( $general_settings['invoice']['errorText'] ) ? $general_settings['invoice']['errorText'] : esc_html__( 'Fill in the required fields correctly.', 'cost-calculator-builder' ),
+	'title'          => esc_html__( 'Email Quote', 'cost-calculator-builder' ),
+	'name'           => esc_html__( 'Name', 'cost-calculator-builder' ),
+	'name_holder'    => esc_html__( 'Enter name', 'cost-calculator-builder' ),
+	'email'          => esc_html__( 'Email', 'cost-calculator-builder' ),
+	'email_holder'   => esc_html__( 'Enter Email', 'cost-calculator-builder' ),
+	'message'        => esc_html__( 'Message', 'cost-calculator-builder' ),
+	'message_holder' => esc_html__( 'Enter message', 'cost-calculator-builder' ),
+	'submit'         => isset( $general_settings['invoice']['submitBtnText'] ) ? $general_settings['invoice']['submitBtnText'] : esc_html__( 'Send', 'cost-calculator-builder' ),
+	'close'          => isset( $general_settings['invoice']['closeBtn'] ) ? $general_settings['invoice']['closeBtn'] : esc_html__( 'Close', 'cost-calculator-builder' ),
+	'success_text'   => isset( $general_settings['invoice']['successText'] ) ? $general_settings['invoice']['successText'] : esc_html__( 'Email Quote Successfully Sent!', 'cost-calculator-builder' ),
+	'error_message'  => isset( $general_settings['invoice']['errorText'] ) ? $general_settings['invoice']['errorText'] : esc_html__( 'Fill in the required fields correctly.', 'cost-calculator-builder' ),
 );
+
 $styles = array(
-		array(
-				'label' => __( 'Two columns', 'cost-calculator-builder' ),
-				'icon'  => 'ccb-icon-Union-27',
-				'key'   => 'two_column',
-		),
-		array(
-				'label' => __( 'Vertical', 'cost-calculator-builder' ),
-				'icon'  => 'ccb-icon-Union-26',
-				'key'   => 'vertical',
-		),
-		array(
-				'label' => __( 'Horizontal', 'cost-calculator-builder' ),
-				'icon'  => 'ccb-icon-Union-25',
-				'key'   => 'horizontal',
-		),
+	array(
+		'label' => __( 'Two columns', 'cost-calculator-builder' ),
+		'icon'  => 'ccb-icon-Union-27',
+		'key'   => 'two_column',
+	),
+	array(
+		'label' => __( 'Vertical', 'cost-calculator-builder' ),
+		'icon'  => 'ccb-icon-Union-26',
+		'key'   => 'vertical',
+	),
+	array(
+		'label' => __( 'Horizontal', 'cost-calculator-builder' ),
+		'icon'  => 'ccb-icon-Union-25',
+		'key'   => 'horizontal',
+	),
 );
+
 $get_date_format = get_option( 'date_format' );
 ?>
 
@@ -73,16 +75,16 @@ $get_date_format = get_option( 'date_format' );
 		<div class="calc-fields calc-list calc-list__indexed" :class="{loaded: !loader, 'payment' : getHideCalc}">
 			<?php if ( is_user_logged_in() && current_user_can( 'administrator' ) ) : ?>
 				<a href="<?php echo htmlspecialchars_decode( esc_url( admin_url( 'admin.php?page=cost_calculator_builder&action=edit&id=' . $calc_id ) ) ); //phpcs:ignore ?>"
-				   target="_blank" class="ccb-calc-edit">
+				target="_blank" class="ccb-calc-edit">
 					<span><i class="ccb-icon-Path-3483"></i></span>
 					<span class="ccb-calc-edit__text"><?php esc_html_e( 'Edit', 'cost-calculator-builder' ); ?></span>
 				</a>
 			<?php endif; ?>
 			<calc-page-navigation
-					:count="totalPages"
-					:index="activePageIndex"
-					:pages="getPages"
-					v-if="pageBreakEnabled"
+				:count="totalPages"
+				:index="activePageIndex"
+				:pages="getPages"
+				v-if="pageBreakEnabled"
 			>
 			</calc-page-navigation>
 
@@ -129,6 +131,7 @@ $get_date_format = get_option( 'date_format' );
 		<div class="calc-subtotal calc-list" :id="getTotalStickyId" :class="{loaded: !loader}" v-if="!summaryInLastPage || !pageBreakEnabled">
 			<div class="calc-subtotal-wrapper" :class="{ 'calc-page-break-subtotal-wrapper': !checkLastPage && pageBreakEnabled}">
 				<div class="calc-list-inner">
+					<!--
 					<div class="calc-item-title calc-accordion" v-show="!summaryDisplay || showAfterSubmit">
 						<div class="ccb-calc-heading">
 							<?php echo isset( $settings['general']['header_title'] ) ? esc_html( $settings['general']['header_title'] ) : ''; ?>
@@ -140,11 +143,11 @@ $get_date_format = get_option( 'date_format' );
 						<?php endif; ?>
 					</div>
 
-					<div class="calc-item-title calc-accordion" style="margin: 0 !important;" v-show="summaryDisplay && !showAfterSubmit">
+					<div style="display: none;" class="calc-item-title calc-accordion" style="margin: 0 !important;" v-show="summaryDisplay && !showAfterSubmit">
 						<div class="ccb-calc-heading" style="text-transform: none !important; padding-bottom: 15px; word-break: break-word;" v-text="summaryDisplaySettings?.form_title"></div>
 					</div>
 
-					<div class="calc-subtotal-list" :class="{ 'show-unit': showUnitInSummary }" v-show="!summaryDisplay || showAfterSubmit">
+					<div style="display: none;" class="calc-subtotal-list" :class="{ 'show-unit': showUnitInSummary }" v-show="!summaryDisplay || showAfterSubmit">
 						<transition>
 							<div :class="{close: !accordionState}" class="calc-subtotal-list-accordion">
 								<div class="calc-subtotal-list-header" v-if="showUnitInSummary">
@@ -187,7 +190,7 @@ $get_date_format = get_option( 'date_format' );
 							</div>
 						</transition>
 					</div>
-
+!-->
 					<div class="calc-subtotal-list totals" style="margin-top: 20px; padding-top: 10px;" ref="calcTotals" :class="{'unit-enable': showUnitInSummary}" v-show="!summaryDisplay || showAfterSubmit">
 						<template v-for="item in getRepeaterTotals">
 							<cost-total :value="item.total" :discount="item.discount" :field="item.data" :id="calc_data.id" @condition-apply="renderCondition"></cost-total>
@@ -199,23 +202,24 @@ $get_date_format = get_option( 'date_format' );
 								<span class="sub-item-value" style="white-space: nowrap">{{ item.data.converted }}</span>
 							</div>
 							{{ item.discount }}
-							<cost-total v-else :value="item.total" :discount="item.discount" :field="item.data" :id="calc_data.id" @condition-apply="renderCondition"></cost-total>
+							<cost-total v-else-if="item.total > 0" :value="item.total" :discount="item.discount" :field="item.data" :id="calc_data.id" @condition-apply="renderCondition"></cost-total>
+
 							<template v-for="(field) in getTotalSummaryFields" v-if="(!field.inRepeater || field.alias.includes('repeater')) && field.alias.indexOf('total') === -1 && settings && settings.general.descriptions  &&
-             item.label.replace('(Annual)', '').trim() === field.label"
-							">
-							<template>
-								<calc-total-summary :field="field"></calc-total-summary>
-								<template v-if="field.option_unit">
-									<template v-if="field.hasOwnProperty('allowPrice')">
-										<calc-total-summary :field="field" :unit="true" v-if="field.allowPrice"></calc-total-summary>
-									</template>
-									<template v-else>
-										<calc-total-summary :field="field" :unit="true"></calc-total-summary>
+             item.label.replace('(Annual)', '').trim() === field.label">
+									<template>
+										<calc-total-summary :field="field"></calc-total-summary>
+										<template v-if="field.option_unit">
+											<template v-if="field.hasOwnProperty('allowPrice')">
+												<calc-total-summary :field="field" :unit="true" v-if="field.allowPrice"></calc-total-summary>
+											</template>
+											<template v-else>
+												<calc-total-summary :field="field" :unit="true"></calc-total-summary>
+											</template>
+										</template>
+										<calc-total-summary :field="field" :multi="true" v-if="['checkbox', 'toggle', 'checkbox_with_img'].includes(field.alias.replace(/\_field_id.*/,'')) && field.options?.length"></calc-total-summary>
 									</template>
 								</template>
-								<calc-total-summary :field="field" :multi="true" v-if="['checkbox', 'toggle', 'checkbox_with_img'].includes(field.alias.replace(/\_field_id.*/,'')) && field.options?.length"></calc-total-summary>
-							</template>
-						</template>
+
 
 						</template>
 					</div>
@@ -285,17 +289,17 @@ $get_date_format = get_option( 'date_format' );
 			</div>
 		</div>
 		<calc-invoice
-				ref="invoice"
-				company-name="<?php echo isset( $general_settings['invoice']['companyName'] ) ? esc_attr( $general_settings['invoice']['companyName'] ) : ''; ?>"
-				company-info="<?php echo isset( $general_settings['invoice']['companyInfo'] ) ? esc_attr( $general_settings['invoice']['companyInfo'] ) : ''; ?>"
-				company-logo='<?php echo esc_attr( $general_settings['invoice']['companyLogo'] ); ?>'
-				date-format="<?php echo isset( $general_settings['invoice']['dateFormat'] ) ? esc_attr( $general_settings['invoice']['dateFormat'] ) : ''; ?>"
-				static-texts='<?php echo esc_attr( wp_json_encode( $invoice_texts ) ); ?>'
-				send-email-texts='<?php echo esc_attr( wp_json_encode( $send_pdf_texts ) ); ?>'
-				send-pdf-from="<?php echo isset( $general_settings['invoice']['fromEmail'] ) ? esc_attr( $general_settings['invoice']['fromEmail'] ) : ''; ?>"
-				send-pdf-fromname="<?php echo isset( $general_settings['invoice']['fromName'] ) ? esc_attr( $general_settings['invoice']['fromName'] ) : ''; ?>"
-				:summary-fields="getTotalSummaryFields"
-				site-lang="<?php echo esc_attr( get_bloginfo( 'language' ) ); ?>"
-		/>
+					ref="invoice"
+					company-name="<?php echo isset( $general_settings['invoice']['companyName'] ) ? esc_attr( $general_settings['invoice']['companyName'] ) : ''; ?>"
+					company-info="<?php echo isset( $general_settings['invoice']['companyInfo'] ) ? esc_attr( $general_settings['invoice']['companyInfo'] ) : ''; ?>"
+					company-logo='<?php echo esc_attr( $general_settings['invoice']['companyLogo'] ); ?>'
+					date-format="<?php echo isset( $general_settings['invoice']['dateFormat'] ) ? esc_attr( $general_settings['invoice']['dateFormat'] ) : ''; ?>"
+					static-texts='<?php echo esc_attr( wp_json_encode( $invoice_texts ) ); ?>'
+					send-email-texts='<?php echo esc_attr( wp_json_encode( $send_pdf_texts ) ); ?>'
+					send-pdf-from="<?php echo isset( $general_settings['invoice']['fromEmail'] ) ? esc_attr( $general_settings['invoice']['fromEmail'] ) : ''; ?>"
+					send-pdf-fromname="<?php echo isset( $general_settings['invoice']['fromName'] ) ? esc_attr( $general_settings['invoice']['fromName'] ) : ''; ?>"
+					:summary-fields="getTotalSummaryFields"
+					site-lang="<?php echo esc_attr( get_bloginfo( 'language' ) ); ?>"
+			/>
 	</div>
 </div>
