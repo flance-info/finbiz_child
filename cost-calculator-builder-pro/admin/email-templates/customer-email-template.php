@@ -577,7 +577,7 @@
 		</tr>
 
 		<tr style="height:12px">
-			<?php $field_name = 'Bank: Utbetalningar' ?>
+			<?php $field_name = 'Utbetalningar & Avstämningar' ?>
 			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
 			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">5 Utbetalningar</p></td>
 			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
@@ -658,7 +658,7 @@
 		</tr>
 
 		<tr style="height:12px">
-			<?php $field_name = 'Regelbunda' ?>
+			<?php $field_name = 'Kund- & Kreditfakturering (Regelbundna)' ?>
 			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
 			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">10 Kunder</p></td>
 			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
@@ -669,7 +669,7 @@
 		</tr>
 
 		<tr style="height:12px">
-			<?php $field_name = 'Projekt' ?>
+			<?php $field_name = 'Kund- & Kreditfakturering (Projekt)' ?>
 			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
 			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">1 Kunder</p></td>
 			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
@@ -680,7 +680,7 @@
 		</tr>
 
 		<tr style="height:12px">
-			<?php $field_name = 'SKV: Rot & Rut-kundansökan' ?>
+			<?php $field_name = 'SKV: Rot & Rut-arbete' ?>
 			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
 			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">2 Kunder</p></td>
 			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
@@ -690,7 +690,7 @@
 			<td style="width:7.5%" class="stbt"><p class="s10 sth_right"><?php echo getValueByTitle( $other_totals, "$field_name (Annual)" ); ?></p></td>
 		</tr>
 		<tr style="height:12px">
-			<?php $field_name = 'SKV: Grönteknik-kundansökan' ?>
+			<?php $field_name = 'SKV: Grönteknik-arbete' ?>
 			<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
 			<td style="width:20%" class="stbt"><p class="s7 sth_left stl">2 Kunder</p></td>
 			<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
@@ -898,7 +898,7 @@
 			</tr>
 
 			<tr style="height:12px">
-				<?php $field_name = 'Strategisk Rådgivning' ?>
+				<?php $field_name = 'Strategisk Affärsrådgivning' ?>
 				<td style="width:20%" class="stbt"><p class="s7  stbtl"><?php echo $field_name ?> </p></td>
 				<td style="width:20%" class="stbt"><p class="s7 sth_left stl">30 minuter</p></td>
 				<td style="width:17.5%" class="stbt"><p class="s8 sth_right">Halvtimme</p></td>
