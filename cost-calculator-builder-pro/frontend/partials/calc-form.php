@@ -95,20 +95,20 @@ $general_settings = CCBSettingsData::get_calc_global_settings();
 					<div class="calc-item ccb-field ccb-field-quantity" :class="{required: getRequiredMessage('staff_field'), 'calc-disabled': ['finish', 'show_summary'].includes(getStep)}">
 						<span :class="{active: getRequiredMessage('staff_field')}" class="ccb-error-tip front default" v-text="getRequiredMessage('staff_field')"></span>
 						<div class="calc-item__title">
-							<span><?php esc_html_e( 'Anstald type', 'cost-calculator-builder-pro' ); ?></span>
+							<span><?php esc_html_e( 'Utfärdare', 'cost-calculator-builder-pro' ); ?></span>
 							<span class="ccb-required-mark"></span>
 						</div>
 						<div class="calc-input-wrapper ccb-field">
 							<select name="select_filed" v-model="sendFields[4].value" :disabled="loader" class="calc-input ccb-field ccb-appearance-field">
-								<option value="staff"> Staff</option>
-								<option value="customer"> Customer</option>
+								<option selected value="customer"> Kunde</option>
+								<option value="staff"> Anställd</option>
 							</select>
 						</div>
 					</div>
 					<div v-if="sendFields[4].value == 'staff'" class="calc-item ccb-field ccb-field-quantity" :class="{required: getRequiredMessage('staffname_field'), 'calc-disabled': ['finish', 'show_summary'].includes(getStep)}">
 						<span :class="{active: getRequiredMessage('staffname_field')}" class="ccb-error-tip front default" v-text="getRequiredMessage('staffname_field')"></span>
 						<div class="calc-item__title">
-							<span><?php esc_html_e( 'Staff Name', 'cost-calculator-builder-pro' ); ?></span>
+							<span><?php esc_html_e( 'Anställd Name', 'cost-calculator-builder-pro' ); ?></span>
 							<span class="ccb-required-mark"></span>
 						</div>
 						<div class="calc-input-wrapper ccb-field">
@@ -119,53 +119,29 @@ $general_settings = CCBSettingsData::get_calc_global_settings();
 					<div class="calc-item ccb-field ccb-field-quantity" :class="{required: getRequiredMessage('name_field'), 'calc-disabled': ['finish', 'show_summary'].includes(getStep)}">
 						<span :class="{active: getRequiredMessage('name_field')}" class="ccb-error-tip front default" v-text="getRequiredMessage('name_field')"></span>
 						<div class="calc-item__title">
-							<span><?php esc_html_e( 'Kontact Person First Name', 'cost-calculator-builder-pro' ); ?></span>
+							<span><?php esc_html_e( 'Ditt namn', 'cost-calculator-builder-pro' ); ?></span>
 							<span class="ccb-required-mark">*</span>
 						</div>
 						<div class="calc-input-wrapper ccb-field">
 							<input type="text" v-model="sendFields[0].value" @input="clearRequired('name_field')" :disabled="loader" class="calc-input ccb-field ccb-appearance-field">
 						</div>
 					</div>
-
+		<!--
 					<div class="calc-item ccb-field ccb-field-quantity" :class="{required: getRequiredMessage('lastname'), 'calc-disabled': ['finish', 'show_summary'].includes(getStep)}">
 						<span :class="{active: getRequiredMessage('lastname')}" class="ccb-error-tip front default" v-text="getRequiredMessage('lastname')"></span>
 						<div class="calc-item__title">
-							<span><?php esc_html_e( 'Kontact Person Last name', 'cost-calculator-builder-pro' ); ?></span>
+							<span><?php esc_html_e( 'Efternamn', 'cost-calculator-builder-pro' ); ?></span>
 							<span class="ccb-required-mark">*</span>
 						</div>
 						<div class="calc-input-wrapper ccb-field">
 							<input type="text" v-model="sendFields[7].value" @input="clearRequired('lastname')" :disabled="loader" class="calc-input ccb-field ccb-appearance-field">
 						</div>
 					</div>
-
-					<div class="calc-item ccb-field ccb-field-quantity" :class="{required: getRequiredMessage('email_field'), 'calc-disabled': ['finish', 'show_summary'].includes(getStep)}">
-						<span :class="{active: getRequiredMessage('email_field')}" class="ccb-error-tip front default" v-text="getRequiredMessage('email_field')"></span>
-						<div class="calc-item__title">
-							<span><?php esc_html_e( 'Email', 'cost-calculator-builder-pro' ); ?></span>
-							<span class="ccb-required-mark">*</span>
-						</div>
-						<div class="calc-input-wrapper ccb-field">
-							<input type="email" v-model="sendFields[1].value" @input="clearRequired('email_field')" :disabled="loader" class="calc-input ccb-field ccb-appearance-field">
-						</div>
-					</div>
-
-					<div class="calc-item ccb-field ccb-field-quantity" :class="{required: getRequiredMessage('phone_field'), 'calc-disabled': ['finish', 'show_summary'].includes(getStep)}">
-						<span :class="{active: getRequiredMessage('phone_field')}" class="ccb-error-tip front default" v-text="getRequiredMessage('phone_field')"></span>
-						<div class="calc-item__title">
-							<span><?php esc_html_e( 'Phone', 'cost-calculator-builder-pro' ); ?></span>
-							<span class="ccb-required-mark">*</span>
-						</div>
-						<div class="calc-input-wrapper ccb-field">
-							<input type="number" :disabled="loader" v-model="sendFields[2].value" @input="clearRequired('phone_field')" class="calc-input ccb-field ccb-appearance-field">
-						</div>
-					</div>
-
-
-
+		!-->
 					<div class="calc-item ccb-field ccb-field-quantity" :class="{required: getRequiredMessage('companyname_field'), 'calc-disabled': ['finish', 'show_summary'].includes(getStep)}">
 						<span :class="{active: getRequiredMessage('companyname_field')}" class="ccb-error-tip front default" v-text="getRequiredMessage('companyname_field')"></span>
 						<div class="calc-item__title">
-							<span><?php esc_html_e( 'Company name', 'cost-calculator-builder-pro' ); ?></span>
+							<span><?php esc_html_e( 'Företagsnamn', 'cost-calculator-builder-pro' ); ?></span>
 							<span class="ccb-required-mark">*</span>
 						</div>
 						<div class="calc-input-wrapper ccb-field">
@@ -184,10 +160,32 @@ $general_settings = CCBSettingsData::get_calc_global_settings();
 						</div>
 					</div>
 
+					<div class="calc-item ccb-field ccb-field-quantity" :class="{required: getRequiredMessage('email_field'), 'calc-disabled': ['finish', 'show_summary'].includes(getStep)}">
+						<span :class="{active: getRequiredMessage('email_field')}" class="ccb-error-tip front default" v-text="getRequiredMessage('email_field')"></span>
+						<div class="calc-item__title">
+							<span><?php esc_html_e( 'E-post', 'cost-calculator-builder-pro' ); ?></span>
+							<span class="ccb-required-mark">*</span>
+						</div>
+						<div class="calc-input-wrapper ccb-field">
+							<input type="email" v-model="sendFields[1].value" @input="clearRequired('email_field')" :disabled="loader" class="calc-input ccb-field ccb-appearance-field">
+						</div>
+					</div>
+
+					<div class="calc-item ccb-field ccb-field-quantity" :class="{required: getRequiredMessage('phone_field'), 'calc-disabled': ['finish', 'show_summary'].includes(getStep)}">
+						<span :class="{active: getRequiredMessage('phone_field')}" class="ccb-error-tip front default" v-text="getRequiredMessage('phone_field')"></span>
+						<div class="calc-item__title">
+							<span><?php esc_html_e( 'Telefon', 'cost-calculator-builder-pro' ); ?></span>
+							<span class="ccb-required-mark">*</span>
+						</div>
+						<div class="calc-input-wrapper ccb-field">
+							<input type="number" :disabled="loader" v-model="sendFields[2].value" @input="clearRequired('phone_field')" class="calc-input ccb-field ccb-appearance-field">
+						</div>
+					</div>
+
 
 					<div class="calc-item ccb-field ccb-field-quantity" :class="{'calc-disabled': ['finish', 'show_summary'].includes(getStep)}">
 						<div class="calc-item__title">
-							<span :class="{'require-fields': requires[3].required}"><?php esc_html_e( 'Message', 'cost-calculator-builder-pro' ); ?></span>
+							<span :class="{'require-fields': requires[3].required}"><?php esc_html_e( 'Meddelande', 'cost-calculator-builder-pro' ); ?></span>
 						</div>
 						<div class="calc-input-wrapper ccb-field">
 							<textarea v-model="sendFields[3].value" :disabled="loader" class="calc-input ccb-field ccb-appearance-field"></textarea>

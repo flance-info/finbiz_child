@@ -38287,7 +38287,7 @@
 						{name: "email", required: !0, value: ""},
 						{name: "phone", required: !0, value: ""},
 						{name: "message", required: !1, value: ""},
-						{name: "staff", required: !1, value: ""},
+						{name: "staff", required: !1, value: "customer"},
 						{name: "companyname", required: !1, value: ""},
 						{name: "orgnumber", required: !1, value: ""},
 						{name: "lastname", required: !1, value: ""},
