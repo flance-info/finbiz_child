@@ -980,7 +980,7 @@ Vi har prisgaranti som minst matchar priset!
 Boka möte?
 Kontakta: Support@Bokforingskompaniet.se		</div>
 <?php
-dsp($totals, $other_totals, $fields)
+//dsp($totals, $other_totals, $fields)
 ?>
 </body>
 
